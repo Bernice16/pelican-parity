@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Entry point required by the brief: ./run --prompt FILE --budget-usd N --out DIR
+set -euo pipefail
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# On Windows, "python3" can be a Microsoft Store stub that does nothing: test it.
+if python3 -c "" >/dev/null 2>&1; then PY=python3; else PY=python; fi
+exec "$PY" "$HERE/harness/main.py" "$@"

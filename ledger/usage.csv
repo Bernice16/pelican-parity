@@ -3,3 +3,5 @@ session_id,role,model,effort,round,input_tokens,output_tokens,cache_read_tokens,
 4459b3e4-f5e0-40b4-ba9e-35fa9565c86b,exploration,claude-haiku-5-5,low,,2,4,649,3218,0.0006523
 398db117-972e-450a-b9fa-fedf5b73e112,exploration,claude-fable-5-1,high,,2,4,649,4287,0.0861222
 c2875dc0-8ff4-4f46-a3fb-dd6ccdf5a307,exploration,claude-opus-5-5,high,,2,4,649,2466,0.0199458
+55a46b61-c7ef-4ecc-b2ee-e311432438b8,reference,claude-fable-5-1,high,0,2,2359,658,4376,0.2056545
+70dae8d3-f1e5-4407-93e2-ae0e0b968c74,baseline,claude-haiku-5-5,low,0,2,2132,658,3328,0.0017384

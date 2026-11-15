@@ -1,0 +1,29 @@
+{
+  "claude_bin": "claude",
+  "roles": {
+    "reference": { "model": "claude-fable-5-1", "effort": "high", "tools": "" },
+    "baseline":  { "model": "claude-haiku-5-5", "effort": "low",  "tools": "" },
+    "judge":     { "model": "claude-opus-5-5",  "effort": "high", "tools": "Read" },
+    "refine":    { "model": "claude-haiku-5-5", "effort": "low",  "tools": "" }
+  },
+  "isolation_flags": ["--strict-mcp-config", "--setting-sources", ""],
+  "max_step_usd": {
+    "reference": 2.00,
+    "baseline": 0.30,
+    "judge": 1.50,
+    "refine": 0.30
+  },
+  "session_timeout_s": 600,
+  "draw_instructions": "Reply with exactly one complete, self-contained SVG document inside a ```svg code block. Do not use any tools and do not write files. No external resources (no external images, fonts or links).",
+  "render": {
+    "width": 800,
+    "cmd": ["resvg", "--width", "{width}",
+            "--skip-system-fonts", "--use-fonts-dir", "{fonts_dir}",
+            "--font-family", "DejaVu Sans", "--sans-serif-family", "DejaVu Sans",
+            "--serif-family", "DejaVu Sans", "--monospace-family", "DejaVu Sans Mono",
+            "--cursive-family", "DejaVu Sans", "--fantasy-family", "DejaVu Sans",
+            "{svg}", "{png}"],
+    "version_cmd": ["resvg", "--version"]
+  },
+  "round_cap": 5
+}

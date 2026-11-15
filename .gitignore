@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Run outputs: only the release run folder is committed (force-add it with git add -f)
+out*/
+runs/
+
+# Per-session scratch inside a run dir (empty working dirs of claude -p)
+.sessions/
+
+# Local experiments, raw transcripts, never committed (brief: usage fields only, no transcripts)
+scratch/
+test*.json
+
+# Local tools (e.g. a downloaded resvg binary)
+bin/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

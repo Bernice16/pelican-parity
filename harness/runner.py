@@ -7,7 +7,9 @@ Usage is read from the JSON that Claude Code returns: measured, never estimated.
 """
 import json
 import os
+import signal
 import subprocess
+import sys
 from pathlib import Path
 
 
@@ -19,12 +21,29 @@ class SessionError(RuntimeError):
         self.detail = detail
 
 
+class SessionLost(SessionError):
+    """The session was killed (timeout or Ctrl+C) before it returned its usage.
+
+    Its real cost is unknown: the caller must reserve the step's worst case.
+    """
+
+    def __init__(self, message: str, detail: str = "", interrupted: bool = False):
+        super().__init__(message, detail)
+        self.interrupted = interrupted
+
+
+class StepCapHit(SessionError):
+    """Claude Code stopped the session at its --max-budget-usd. Cost is recorded."""
+
+
 def build_cmd(cfg: dict, role: str, system_append: str, max_budget_usd: float) -> list:
     """The prompt itself is NOT in the command line: it goes through stdin (see run_session)."""
     role_cfg = cfg["roles"][role]
-    claude_bin = os.environ.get("CLAUDE_BIN", cfg["claude_bin"])
+    claude_bin = os.environ.get("CLAUDE_BIN") or cfg["claude_bin"]
+    # A list lets the offline tests run `python tests/fake_claude.py` on any OS.
+    prefix = list(claude_bin) if isinstance(claude_bin, list) else [claude_bin]
     return [
-        claude_bin, "-p",
+        *prefix, "-p",
         "--model", role_cfg["model"],
         "--effort", role_cfg["effort"],
         "--output-format", "json",
@@ -37,30 +56,60 @@ def build_cmd(cfg: dict, role: str, system_append: str, max_budget_usd: float) -
     ]
 
 
+def _kill_tree(proc: subprocess.Popen) -> None:
+    """Kill the session and everything it started (claude may run under a shell shim)."""
+    if proc.poll() is not None:
+        return
+    if sys.platform == "win32":
+        subprocess.run(["taskkill", "/F", "/T", "/PID", str(proc.pid)], capture_output=True)
+    else:
+        try:
+            os.killpg(proc.pid, signal.SIGKILL)
+        except ProcessLookupError:
+            pass
+    try:
+        proc.wait(timeout=10)
+    except subprocess.TimeoutExpired:
+        proc.kill()
+
+
 def run_session(cfg: dict, role: str, prompt: str, system_append: str,
                 workdir: Path, raw_path: Path, max_budget_usd: float) -> dict:
     workdir.mkdir(parents=True, exist_ok=True)
     cmd = build_cmd(cfg, role, system_append, max_budget_usd)
+    # Own process group: on Ctrl+C the harness (not the console) decides how the
+    # session ends, so it can log the lost cost before exiting.
+    extra = ({"creationflags": subprocess.CREATE_NEW_PROCESS_GROUP} if sys.platform == "win32"
+             else {"start_new_session": True})
+    proc = subprocess.Popen(
+        cmd, cwd=workdir, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+        text=True, encoding="utf-8", **extra,
+    )
     try:
         # Prompt via stdin: long multi-line prompts (the judge's) are not subject to
         # the OS's command-line quoting rules or length limit.
-        proc = subprocess.run(
-            cmd, input=prompt, cwd=workdir, capture_output=True, text=True,
-            encoding="utf-8", timeout=cfg["session_timeout_s"],
-        )
+        stdout, stderr = proc.communicate(input=prompt, timeout=cfg["session_timeout_s"])
     except subprocess.TimeoutExpired as e:
-        partial = e.stdout.decode("utf-8", "replace") if isinstance(e.stdout, bytes) else (e.stdout or "")
-        raise SessionError(
-            f"{role}: session timed out after {e.timeout}s, cost unknown (not in ledger)",
-            detail=partial[-2000:],
+        _kill_tree(proc)
+        raise SessionLost(
+            f"{role}: session killed after {e.timeout}s timeout, real cost unknown "
+            f"(its step cap is reserved against the budget)",
+        ) from e
+    except KeyboardInterrupt as e:
+        _kill_tree(proc)
+        raise SessionLost(
+            f"{role}: session interrupted (Ctrl+C), real cost unknown "
+            f"(its step cap is reserved against the budget)", interrupted=True,
         ) from e
 
     try:
-        data = json.loads(proc.stdout)
+        data = json.loads(stdout)
     except json.JSONDecodeError as e:
-        raise SessionError(
-            f"{role}: output is not JSON (exit {proc.returncode}), cost unknown (not in ledger)",
-            detail=(proc.stderr or proc.stdout)[-2000:],
+        # No usage to read: treat like a lost session (never under-count).
+        raise SessionLost(
+            f"{role}: output is not JSON (exit {proc.returncode}), real cost unknown "
+            f"(its step cap is reserved against the budget)",
+            detail=(stderr or stdout)[-2000:],
         ) from e
 
     # Keep the raw JSON: every number can be traced back to it, and it is the
@@ -119,8 +168,12 @@ def usage_row(data: dict, role: str, model: str, effort: str, round_no: int):
 
 
 def check_session_ok(data: dict, role: str, expected_model: str) -> None:
+    if data.get("subtype") == "error_max_budget_usd":
+        raise StepCapHit(f"{role}: session stopped at its step cap ({'; '.join(data.get('errors') or [])}), "
+                         f"cost recorded. Raise max_step_usd.{role} in config.json if this prompt needs more")
     if data.get("is_error") or data.get("subtype") != "success":
-        raise SessionError(f"{role}: session failed ({data.get('subtype')}), cost recorded")
+        errs = "; ".join(data.get("errors") or []) or str(data.get("result", ""))[:200]
+        raise SessionError(f"{role}: session failed ({data.get('subtype')}: {errs}), cost recorded")
     models = set((data.get("modelUsage") or {}).keys())
     if models and expected_model not in models:
         raise SessionError(

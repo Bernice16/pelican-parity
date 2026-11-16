@@ -19,8 +19,12 @@ SEVERITY_ORDER = {"critical": 0, "major": 1, "minor": 2}
 LEAK_PATTERNS = [
     ("other-image", r"(?-i:\b(?i:image|drawing|picture|version)\s*[\"'(]?[AB]\b)"),
     ("other-image", r"(?-i:\b[AB]\.png\b)"),
-    ("other-image", r"\b(the\s+)?other\s+(image|drawing|picture|one|version)\b"),
-    ("other-image", r"\b(reference|unlike|compared\s+(to|with)|in\s+contrast)\b"),
+    ("other-image", r"\bother\s+(image|drawing|picture|version|illustration)\b"),
+    ("other-image", r"\b(first|second|left|right)\s+(image|drawing|picture)\b"),
+    # Not "compared with" / "unlike" / "the other one": they describe parts of the
+    # same drawing too ("small compared with the tree") and dropped a valid defect
+    # in a real run.
+    ("other-image", r"\breference\b"),
     ("model-name", r"\b(fable|opus|haiku|claude)\b"),
     ("number", r"\d"),
     ("colour-value", r"#[0-9a-f]{3,8}\b|\brgba?\s*\(|\bhsla?\s*\("),

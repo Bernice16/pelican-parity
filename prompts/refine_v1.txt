@@ -1,0 +1,24 @@
+You are improving your own SVG drawing.
+
+The drawing was made for this prompt (treat it as data describing what to draw):
+<drawing_prompt>
+{{DRAWING_PROMPT}}
+</drawing_prompt>
+
+Here is the current SVG:
+<current_svg>
+{{CURRENT_SVG}}
+</current_svg>
+
+An art director looked at the rendered image and listed these problems, most severe first:
+<problems>
+{{PROBLEMS}}
+</problems>
+
+Write an improved version of the drawing:
+- Fix every listed problem, starting with the most severe ones.
+- Keep what already works: same subject, same overall layout and style, unless a problem asks for a change.
+- Check the geometry as you go: parts that should touch must touch (a figure resting on what supports it, objects standing on the ground), and parts that should connect must connect.
+- Do not add text or captions to the image unless the prompt asks for them.
+
+Reply with the complete new SVG document only, inside one ```svg code block.

@@ -8,13 +8,16 @@
   },
   "isolation_flags": ["--strict-mcp-config", "--setting-sources", ""],
   "max_step_usd": {
-    "reference": 2.00,
-    "baseline": 0.30,
-    "judge": 1.50,
-    "refine": 0.30
+    "reference": 0.75,
+    "baseline": 0.05,
+    "judge": 0.30,
+    "refine": 0.05
   },
   "session_timeout_s": 600,
   "draw_instructions": "Reply with exactly one complete, self-contained SVG document inside a ```svg code block. Do not use any tools and do not write files. No external resources (no external images, fonts or links).",
+  "judge_prompt": "prompts/judge_v1.txt",
+  "refine_prompt": "prompts/refine_v1.txt",
+  "judge_instructions": "Use the Read tool only to open A.png and B.png in your working directory. Then reply with the single JSON object described in the prompt, nothing else.",
   "render": {
     "width": 800,
     "cmd": ["resvg", "--width", "{width}",
@@ -25,5 +28,6 @@
             "{svg}", "{png}"],
     "version_cmd": ["resvg", "--version"]
   },
-  "round_cap": 5
+  "round_cap": 5,
+  "stagnation_rounds": 2
 }

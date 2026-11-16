@@ -6,8 +6,12 @@ Each step: budget check -> claude -p session -> usage row -> step output.
 Round 00: reference + baseline drawings, then the blind judge.
 Round NN (1..round_cap): the firewall turns the best round's verdict into
 feedback, Haiku refines that round's SVG, the judge compares it again.
-Stops on: parity, attempt_exceeds_reference, round_cap, stagnation, budget.
-Every step is resumable: rerunning the same command never pays twice.
+A parity (or better) verdict is only accepted if a second judgment (same judge
+model and prompt, new session, A and B swapped) agrees.
+Stops on: parity, attempt_exceeds_reference, round_cap, stagnation, budget,
+no_svg; or step_cap / error / interrupted (rerun the same command to resume).
+Every step is resumable: rerunning the same command never pays twice. A session
+killed before reporting its usage has its step cap reserved (reserved.csv).
 """
 import argparse
 import datetime
@@ -21,7 +25,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import firewall  # noqa: E402
 import judge  # noqa: E402
 import ledger  # noqa: E402
-from runner import SessionError, check_session_ok, run_session, usage_row  # noqa: E402
+from runner import (  # noqa: E402
+    SessionError, SessionLost, StepCapHit, check_session_ok, run_session, usage_row,
+)
 from svgtools import (  # noqa: E402
     RenderError, SvgError, extract_svg, render_png, renderer_version, validate_svg,
 )
@@ -39,12 +45,14 @@ def load_config() -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def live(role, round_no, row, spent, budget):
+def live(role, round_no, row, out_dir, budget):
     tokens = (f"in={row['input_tokens']:,} out={row['output_tokens']:,} "
               f"cache_r={row['cache_read_tokens']:,} cache_w={row['cache_write_tokens']:,}")
+    measured, held = ledger.total_cost(out_dir / "usage.csv"), reserved_total(out_dir)
+    extra = f" (+${held:.2f} reserved)" if held else ""
     print(f"[round {round_no:02d}] {role:<9} {row['model']:<18} {tokens}  "
-          f"step=${row['cost_usd']:.4f}  total=${spent:.4f}  left=${budget - spent:.4f}",
-          flush=True)
+          f"step=${row['cost_usd']:.4f}  total=${measured:.4f}{extra}  "
+          f"left=${budget - measured - held:.4f}", flush=True)
 
 
 def log_incident(out_dir, role, round_no, message, detail=""):
@@ -61,6 +69,35 @@ def record(out_dir, row):
     """Write one paid session to both ledgers (idempotent on session_id)."""
     ledger.append_row(out_dir / "usage.csv", row)
     ledger.append_row(PROJECT_LEDGER, row)
+
+
+RESERVED_COLUMNS = ["role", "round", "reserved_usd", "reason"]
+
+
+def reserve(out_dir, role, round_no, amount, reason):
+    """A session died before reporting its usage: hold its worst case against the budget.
+
+    Kept apart from usage.csv, which holds measured usage only.
+    """
+    path = out_dir / "reserved.csv"
+    new = not path.exists()
+    with path.open("a", encoding="utf-8", newline="") as f:
+        if new:
+            f.write(",".join(RESERVED_COLUMNS) + "\n")
+        f.write(f"{role},{round_no},{amount:.4f},{reason}\n")
+
+
+def reserved_total(out_dir):
+    path = out_dir / "reserved.csv"
+    if not path.exists():
+        return 0.0
+    lines = path.read_text(encoding="utf-8").splitlines()[1:]
+    return round(sum(float(line.split(",")[2]) for line in lines if line.strip()), 4)
+
+
+def spent(out_dir):
+    """What the budget has to cover: measured cost + worst case of sessions lost mid-way."""
+    return ledger.total_cost(out_dir / "usage.csv") + reserved_total(out_dir)
 
 
 def reusable_session(raw_path, role, model):
@@ -90,7 +127,6 @@ def paid_session(cfg, role, prompt, system_append, out_dir, round_no, budget, st
     `prepare(workdir)` fills the session's working dir just before a new session starts.
     """
     raw_path = out_dir / "raw" / f"{round_no:02d}_{stem}.json"
-    run_csv = out_dir / "usage.csv"
     role_cfg = cfg["roles"][role]
 
     data = reusable_session(raw_path, role, role_cfg["model"])
@@ -104,8 +140,7 @@ def paid_session(cfg, role, prompt, system_append, out_dir, round_no, budget, st
     if raw_path.exists():
         archive_raw(raw_path, json.loads(raw_path.read_text(encoding="utf-8")), "failed")
 
-    spent = ledger.total_cost(run_csv)
-    remaining = budget - spent
+    remaining = budget - spent(out_dir)
     worst_case = cfg["max_step_usd"][role]
     if remaining < worst_case:
         raise BudgetRefused(
@@ -118,13 +153,18 @@ def paid_session(cfg, role, prompt, system_append, out_dir, round_no, budget, st
         prepare(workdir)
     print(f"[round {round_no:02d}] {role:<9} {role_cfg['model']} ({role_cfg['effort']}) "
           f"started, step cap ${worst_case:.2f}", flush=True)
+    cap = min(worst_case, remaining)
     try:
         data = run_session(
             cfg, role, prompt, system_append, workdir=workdir, raw_path=raw_path,
             # The step may not spend more than its own worst case, so one
             # step can never eat the budget reserved for the next ones.
-            max_budget_usd=min(worst_case, remaining),
+            max_budget_usd=cap,
         )
+    except SessionLost as e:
+        reserve(out_dir, role, round_no, cap, "interrupted" if e.interrupted else "lost")
+        log_incident(out_dir, role, round_no, f"{e}; reserved ${cap:.2f}", e.detail)
+        raise
     except SessionError as e:
         log_incident(out_dir, role, round_no, str(e), e.detail)
         raise
@@ -132,9 +172,17 @@ def paid_session(cfg, role, prompt, system_append, out_dir, round_no, budget, st
     # Record the cost before anything else: a failed session is still paid for.
     row, warnings = usage_row(data, role, role_cfg["model"], role_cfg["effort"], round_no)
     record(out_dir, row)
-    live(role, round_no, row, ledger.total_cost(run_csv), budget)
+    live(role, round_no, row, out_dir, budget)
     for w in warnings:
         log_incident(out_dir, role, round_no, f"session {row['session_id']}: {w}")
+    if row["cost_usd"] > cap:
+        # Claude Code checks --max-budget-usd between turns only, so a single
+        # long turn can go past it. Measured cost is what counts.
+        log_incident(out_dir, role, round_no,
+                     f"session {row['session_id']} cost ${row['cost_usd']:.4f}, above its cap ${cap:.2f}")
+    if spent(out_dir) > budget:
+        log_incident(out_dir, role, round_no,
+                     f"run budget exceeded: ${spent(out_dir):.4f} spent of ${budget:.2f}")
     try:
         check_session_ok(data, role, role_cfg["model"])
     except SessionError as e:
@@ -179,31 +227,37 @@ def draw_step(cfg, role, prompt, out_dir, round_no, budget, stem):
         encoding="utf-8")
 
 
-def judge_step(cfg, prompt, out_dir, round_no, budget):
+def judge_step(cfg, prompt, out_dir, round_no, budget, confirm=False):
     """Blind judge of rounds/NN/attempt.png against the reference. Returns the saved verdict.
 
-    Skipped if rounds/NN/verdict.json exists. An invalid verdict is archived
+    confirm=True is the second opinion asked before accepting parity: a new
+    judge session with A and B swapped (verdict_confirm.json).
+    Skipped if the verdict file exists. An invalid verdict is archived
     (its cost stays counted) and the judge is asked once more; a second invalid
     verdict stops the run.
     """
     role, role_cfg = "judge", cfg["roles"]["judge"]
     round_dir = out_dir / "rounds" / f"{round_no:02d}"
-    verdict_path = round_dir / "verdict.json"
+    stem = "judge_confirm" if confirm else "judge"
+    label = "judge*" if confirm else "judge"
+    verdict_path = round_dir / ("verdict_confirm.json" if confirm else "verdict.json")
     if verdict_path.exists():
         saved = json.loads(verdict_path.read_text(encoding="utf-8"))
-        print(f"[round {round_no:02d}] {role:<9} already judged (session {saved['session_id']}), "
+        print(f"[round {round_no:02d}] {label:<9} already judged (session {saved['session_id']}), "
               f"not re-run, parity={saved['parity']}", flush=True)
         return saved
 
     mapping = judge.blind_mapping(round_dir / "blind.json")
+    if confirm:
+        mapping = {"A": mapping["B"], "B": mapping["A"]}
     pngs = {"reference": out_dir / "rounds" / "00" / "reference.png",
             "attempt": round_dir / "attempt.png"}
     judge_prompt = judge.build_prompt(REPO_ROOT / cfg["judge_prompt"], prompt)
-    raw_path = out_dir / "raw" / f"{round_no:02d}_judge.json"
+    raw_path = out_dir / "raw" / f"{round_no:02d}_{stem}.json"
 
     for try_no in (1, 2):
         data = paid_session(cfg, role, judge_prompt, cfg["judge_instructions"], out_dir, round_no,
-                            budget, "judge", prepare=lambda wd: judge.prepare_workdir(wd, mapping, pngs))
+                            budget, stem, prepare=lambda wd: judge.prepare_workdir(wd, mapping, pngs))
         try:
             verdict, warnings = judge.parse_verdict(data.get("result", ""))
             break
@@ -236,8 +290,10 @@ def judge_step(cfg, prompt, out_dir, round_no, budget):
     verdict_path.write_text(json.dumps(saved, indent=2), encoding="utf-8")
     att, ref = by_role["attempt"], by_role["reference"]
     scores = " ".join(f"{c[:4]}={att['scores'][c]}/{ref['scores'][c]}" for c in judge.CRITERIA)
-    print(f"[round {round_no:02d}] {role:<9} parity={'yes' if saved['parity'] else 'no'}  "
-          f"attempt/ref {scores}  attempt defects={len(att['defects'])}", flush=True)
+    print(f"[round {round_no:02d}] {label:<9} parity={'yes' if saved['parity'] else 'no'}  "
+          f"attempt/ref {scores}  totals={totals(att)}/{totals(ref)}  "
+          f"attempt defects={len(att['defects'])}" + ("  (A/B swapped)" if confirm else ""),
+          flush=True)
     return saved
 
 
@@ -307,36 +363,76 @@ def history_entry(round_no, v):
         "reference_total": totals(ref),
         "attempt_scores": att["scores"],
         "attempt_defects": {s: sev.count(s) for s in judge.SEVERITIES},
+        "confirmation": None,
     }
 
 
+def success(v):
+    """The attempt is at least as good as the reference in this verdict."""
+    return v["parity"] or v["attempt_at_least_reference"]
+
+
 def round_cost_needed(cfg):
-    return cfg["max_step_usd"]["refine"] + cfg["max_step_usd"]["judge"]
+    """Worst case of one more round: refine (+1 retry if no SVG) + judge (+ confirmation)."""
+    caps = cfg["max_step_usd"]
+    return 2 * caps["refine"] + 2 * caps["judge"]
+
+
+def refine_with_retry(cfg, refine_text, out_dir, round_no, budget):
+    """Haiku's refine answer must hold a valid SVG; one new session is allowed if it does not.
+    Returns False (and leaves a marker, so a resume does not pay again) after two failures."""
+    marker = out_dir / "rounds" / f"{round_no:02d}" / "no_svg.json"
+    if marker.exists():
+        print(f"[round {round_no:02d}] refine    no usable SVG twice before, not re-run", flush=True)
+        return False
+    for try_no in (1, 2):
+        try:
+            draw_step(cfg, "refine", refine_text, out_dir, round_no, budget, "attempt")
+            return True
+        except SvgError as e:
+            if try_no == 2:
+                marker.write_text(json.dumps({"error": str(e)}), encoding="utf-8")
+                return False
+            print(f"[round {round_no:02d}] refine    no usable SVG, asking once more", flush=True)
 
 
 def run_loop(cfg, prompt, out_dir, budget, state):
     """Rounds 00..round_cap. Fills `state` as it goes, so the summary is right even on an error."""
     draw_step(cfg, "reference", prompt, out_dir, 0, budget, "reference")
     draw_step(cfg, "baseline", prompt, out_dir, 0, budget, "attempt")
+    state["final_round"] = 0
     round_cap, patience = cfg["round_cap"], cfg["stagnation_rounds"]
     best_round, best_rank, round_no = None, None, 0
 
     while True:
-        state["final_round"] = round_no if best_round is None else best_round
         verdict = judge_step(cfg, prompt, out_dir, round_no, budget)
-        state["history"].append(history_entry(round_no, verdict))
+        entry = history_entry(round_no, verdict)
+        state["history"].append(entry)
         state["rounds"] = round_no
         if best_round is None or rank(verdict) > best_rank:
             best_round, best_rank = round_no, rank(verdict)
-        state["best_round"] = best_round
-        state["final_round"] = best_round
+        state["best_round"] = state["final_round"] = best_round
 
-        if verdict["parity"]:
-            state.update(parity=True, final_round=round_no)
-            return "parity"
-        if verdict["attempt_at_least_reference"]:
-            state["final_round"] = round_no
-            return "attempt_exceeds_reference"
+        if success(verdict):
+            # A single judgment near the threshold is noisy, and a judge may
+            # favour one position: accept only if a second judge, with A and B
+            # swapped, agrees.
+            conf = judge_step(cfg, prompt, out_dir, round_no, budget, confirm=True)
+            entry["confirmation"] = {
+                "parity": conf["parity"],
+                "attempt_at_least_reference": conf["attempt_at_least_reference"],
+                "attempt_total": totals(conf["attempt"]),
+                "reference_total": totals(conf["reference"]),
+            }
+            if success(conf):
+                state["final_round"] = round_no
+                if verdict["parity"] and conf["parity"]:
+                    state["parity"] = True
+                    return "parity"
+                return "attempt_exceeds_reference"
+            print(f"[round {round_no:02d}] judge     not confirmed with A/B swapped, continuing",
+                  flush=True)
+
         if round_no >= round_cap:
             return "round_cap"
         if round_no - best_round >= patience:
@@ -345,13 +441,15 @@ def run_loop(cfg, prompt, out_dir, budget, state):
         nxt = round_no + 1
         nxt_dir = out_dir / "rounds" / f"{nxt:02d}"
         if not (nxt_dir / "attempt.done.json").exists():
-            remaining = budget - ledger.total_cost(out_dir / "usage.csv")
+            remaining = budget - spent(out_dir)
             if remaining < round_cost_needed(cfg):
                 print(f"STOP: a new round needs up to ${round_cost_needed(cfg):.2f} "
-                      f"(refine + judge), ${remaining:.4f} left", flush=True)
+                      f"(refine + judge, with retry and confirmation), ${remaining:.4f} left",
+                      flush=True)
                 return "budget"
         refine_text = refine_prompt_step(cfg, prompt, out_dir, nxt, best_round)
-        draw_step(cfg, "refine", refine_text, out_dir, nxt, budget, "attempt")
+        if not refine_with_retry(cfg, refine_text, out_dir, nxt, budget):
+            return "no_svg"
         round_no = nxt
 
 
@@ -378,6 +476,9 @@ def write_summary(cfg, out_dir, prompt, budget, stop_reason, state):
         "budget_usd": budget,
         "cost_usd": {k: round(v, 7) for k, v in per_role.items()},
         "total_cost_usd": round(sum(float(r["cost_usd"]) for r in rows), 7),
+        # Sessions killed before reporting usage (timeout, Ctrl+C): their worst
+        # case, held against the budget but not in usage.csv (not measured).
+        "reserved_unmeasured_usd": reserved_total(out_dir),
         "models": {role: f"{c['model']} ({c['effort']})" for role, c in cfg["roles"].items()},
         "judge_prompt": cfg["judge_prompt"],
         "refine_prompt": cfg["refine_prompt"],
@@ -420,13 +521,24 @@ def main(argv=None):
         # checks a whole round's worst case before starting it).
         stop_reason, exit_code = "budget", 2
         print(f"STOP: {e}", file=sys.stderr)
+    except SessionLost as e:
+        stop_reason, exit_code = ("interrupted", 130) if e.interrupted else ("error", 1)
+        print(f"STOP: {e}  (rerun the same command to resume)", file=sys.stderr)
+    except KeyboardInterrupt:
+        # Ctrl+C outside a model session (rendering, file writes): nothing is lost.
+        stop_reason, exit_code = "interrupted", 130
+        print("STOP: interrupted (Ctrl+C)  (rerun the same command to resume)", file=sys.stderr)
+    except StepCapHit as e:
+        stop_reason, exit_code = "step_cap", 1
+        print(f"STOP: {e}", file=sys.stderr)
     except (SessionError, SvgError, RenderError, judge.VerdictError) as e:
         stop_reason, exit_code = "error", 1
         print(f"ERROR: {e}  (rerun the same command to resume)", file=sys.stderr)
 
     s = write_summary(cfg, out_dir, prompt, args.budget_usd, stop_reason, state)
+    reserved = f"  reserved=${s['reserved_unmeasured_usd']:.2f}" if s["reserved_unmeasured_usd"] else ""
     print(f"stop_reason={s['stop_reason']}  parity={'yes' if s['parity'] else 'no'}  "
-          f"rounds={s['rounds']}  final={s['final_svg']}  total=${s['total_cost_usd']:.4f}  "
+          f"rounds={s['rounds']}  final={s['final_svg']}  total=${s['total_cost_usd']:.4f}{reserved}  "
           f"-> {(out_dir / 'summary.json').as_posix()}")
     return exit_code
 

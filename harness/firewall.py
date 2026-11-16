@@ -47,7 +47,9 @@ def filter_feedback(verdict: dict):
     """
     kept, dropped = [], []
     for d in verdict["attempt"]["defects"]:
-        found = leaks(" ".join(d[f] for f in ("what", "where", "expected")))
+        # Field by field: joined, "...of the image" + "A balanced framing..."
+        # read as "image A" and dropped a valid defect in a real run.
+        found = sorted({name for f in ("what", "where", "expected") for name in leaks(d[f])})
         if found:
             dropped.append((d, found))
         else:

@@ -1,0 +1,79 @@
+{
+  "name": "self",
+  "prompt": "Generate an SVG of a pelican riding a bicycle.",
+  "A": "out-m1-test/rounds/00/reference.png",
+  "B": "out-m1-test/rounds/00/reference.png",
+  "same_image": true,
+  "judge": "claude-opus-5-5 (high)",
+  "judge_prompt": "prompts/judge_v1.txt",
+  "judgments": [
+    {
+      "session_id": "08522cea-dc29-473a-b728-f39a46aa4b49",
+      "A_scores": {
+        "fidelity": 4,
+        "coherence": 3,
+        "readability": 4,
+        "composition": 4,
+        "craft": 4
+      },
+      "B_scores": {
+        "fidelity": 4,
+        "coherence": 3,
+        "readability": 4,
+        "composition": 4,
+        "craft": 4
+      },
+      "A_total": 19,
+      "B_total": 19,
+      "A_defects": 5,
+      "B_defects": 5,
+      "parity": true,
+      "rule_parity": true,
+      "parity_reason": "Both images get the same score on every criterion, so both totals are 19 and the difference is zero. Neither image has a critical defect, so all three parity conditions are met."
+    },
+    {
+      "session_id": "bcbbe417-56a6-44bc-a98d-16278787af03",
+      "A_scores": {
+        "fidelity": 5,
+        "coherence": 4,
+        "readability": 5,
+        "composition": 4,
+        "craft": 4
+      },
+      "B_scores": {
+        "fidelity": 5,
+        "coherence": 4,
+        "readability": 5,
+        "composition": 4,
+        "craft": 4
+      },
+      "A_total": 22,
+      "B_total": 22,
+      "A_defects": 4,
+      "B_defects": 4,
+      "parity": true,
+      "rule_parity": true,
+      "parity_reason": "Both images get the same score on every criterion (each totals 22), so no criterion differs. Neither image has a critical defect, so all three parity conditions are met."
+    }
+  ],
+  "A_total": {
+    "values": [
+      19,
+      22
+    ],
+    "min": 19,
+    "max": 22,
+    "mean": 20.5
+  },
+  "B_total": {
+    "values": [
+      19,
+      22
+    ],
+    "min": 19,
+    "max": 22,
+    "mean": 20.5
+  },
+  "parity_count": "2/2",
+  "cost_usd": 0.1179116
+}

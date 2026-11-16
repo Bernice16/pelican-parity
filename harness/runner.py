@@ -19,12 +19,12 @@ class SessionError(RuntimeError):
         self.detail = detail
 
 
-def build_cmd(cfg: dict, role: str, prompt: str, system_append: str,
-              max_budget_usd: float) -> list:
+def build_cmd(cfg: dict, role: str, system_append: str, max_budget_usd: float) -> list:
+    """The prompt itself is NOT in the command line: it goes through stdin (see run_session)."""
     role_cfg = cfg["roles"][role]
     claude_bin = os.environ.get("CLAUDE_BIN", cfg["claude_bin"])
     return [
-        claude_bin, "-p", prompt,
+        claude_bin, "-p",
         "--model", role_cfg["model"],
         "--effort", role_cfg["effort"],
         "--output-format", "json",
@@ -40,10 +40,12 @@ def build_cmd(cfg: dict, role: str, prompt: str, system_append: str,
 def run_session(cfg: dict, role: str, prompt: str, system_append: str,
                 workdir: Path, raw_path: Path, max_budget_usd: float) -> dict:
     workdir.mkdir(parents=True, exist_ok=True)
-    cmd = build_cmd(cfg, role, prompt, system_append, max_budget_usd)
+    cmd = build_cmd(cfg, role, system_append, max_budget_usd)
     try:
+        # Prompt via stdin: long multi-line prompts (the judge's) are not subject to
+        # the OS's command-line quoting rules or length limit.
         proc = subprocess.run(
-            cmd, cwd=workdir, capture_output=True, text=True,
+            cmd, input=prompt, cwd=workdir, capture_output=True, text=True,
             encoding="utf-8", timeout=cfg["session_timeout_s"],
         )
     except subprocess.TimeoutExpired as e:

@@ -4,7 +4,10 @@
 
 Each step: budget check -> claude -p session -> usage row -> step output.
 Round 00: reference + baseline drawings, then the blind judge.
-M2 in progress: refine, firewall and stop policy are not wired in yet.
+Round NN (1..round_cap): the firewall turns the best round's verdict into
+feedback, Haiku refines that round's SVG, the judge compares it again.
+Stops on: parity, attempt_exceeds_reference, round_cap, stagnation, budget.
+Every step is resumable: rerunning the same command never pays twice.
 """
 import argparse
 import datetime
@@ -15,6 +18,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+import firewall  # noqa: E402
 import judge  # noqa: E402
 import ledger  # noqa: E402
 from runner import SessionError, check_session_ok, run_session, usage_row  # noqa: E402
@@ -237,19 +241,146 @@ def judge_step(cfg, prompt, out_dir, round_no, budget):
     return saved
 
 
-def write_summary(out_dir, prompt, stop_reason, final_svg):
+def format_problems(kept):
+    if not kept:
+        return ("No specific problem was listed. Improve the overall quality: fidelity to the "
+                "prompt, coherence, readability, composition and craft.")
+    return "\n".join(
+        f"{i}. [{d['severity']}, {d['criterion']}] {d['what']}\n"
+        f"   Where: {d['where']}\n   Expected: {d['expected']}"
+        for i, d in enumerate(kept, 1))
+
+
+def refine_prompt_step(cfg, prompt, out_dir, round_no, source_round):
+    """Build (and save) what Haiku receives for round `round_no`: the drawing prompt,
+    its own SVG from `source_round` and that round's firewalled feedback. Nothing else."""
+    round_dir = out_dir / "rounds" / f"{round_no:02d}"
+    round_dir.mkdir(parents=True, exist_ok=True)
+    source_dir = out_dir / "rounds" / f"{source_round:02d}"
+    verdict = json.loads((source_dir / "verdict.json").read_text(encoding="utf-8"))
+    kept, dropped = firewall.filter_feedback(verdict)
+
+    feedback_path = round_dir / "feedback.json"
+    if not feedback_path.exists():  # log drops once, not on every resume
+        for d, found in dropped:
+            log_incident(out_dir, "firewall", round_no,
+                         f"dropped a round {source_round:02d} defect that leaks ({', '.join(found)})",
+                         json.dumps(d))
+    feedback_path.write_text(json.dumps({
+        "source_round": source_round,
+        "kept": kept,
+        "dropped": [{"defect": d, "leaks": found} for d, found in dropped],
+    }, indent=2), encoding="utf-8")
+
+    template = (REPO_ROOT / cfg["refine_prompt"]).read_text(encoding="utf-8")
+    text = (template
+            .replace("{{DRAWING_PROMPT}}", prompt)
+            .replace("{{CURRENT_SVG}}", (source_dir / "attempt.svg").read_text(encoding="utf-8").strip())
+            .replace("{{PROBLEMS}}", format_problems(kept)))
+    reference_svg = (out_dir / "rounds" / "00" / "reference.svg").read_text(encoding="utf-8")
+    firewall.check_refine_prompt(text, reference_svg)
+    (round_dir / "refine_prompt.txt").write_text(text, encoding="utf-8")
+    print(f"[round {round_no:02d}] firewall  refining round {source_round:02d}: "
+          f"{len(kept)} defect(s) passed, {len(dropped)} dropped", flush=True)
+    return text
+
+
+def totals(entry):
+    return sum(entry["scores"].values())
+
+
+def rank(verdict):
+    """Order attempts: higher total first, then fewer critical, then fewer major defects."""
+    att = verdict["attempt"]
+    sev = [d["severity"] for d in att["defects"]]
+    return (totals(att), -sev.count("critical"), -sev.count("major"))
+
+
+def history_entry(round_no, v):
+    att, ref = v["attempt"], v["reference"]
+    sev = [d["severity"] for d in att["defects"]]
+    return {
+        "round": round_no,
+        "parity": v["parity"],
+        "rule_parity": v["rule_parity"],
+        "attempt_total": totals(att),
+        "reference_total": totals(ref),
+        "attempt_scores": att["scores"],
+        "attempt_defects": {s: sev.count(s) for s in judge.SEVERITIES},
+    }
+
+
+def round_cost_needed(cfg):
+    return cfg["max_step_usd"]["refine"] + cfg["max_step_usd"]["judge"]
+
+
+def run_loop(cfg, prompt, out_dir, budget, state):
+    """Rounds 00..round_cap. Fills `state` as it goes, so the summary is right even on an error."""
+    draw_step(cfg, "reference", prompt, out_dir, 0, budget, "reference")
+    draw_step(cfg, "baseline", prompt, out_dir, 0, budget, "attempt")
+    round_cap, patience = cfg["round_cap"], cfg["stagnation_rounds"]
+    best_round, best_rank, round_no = None, None, 0
+
+    while True:
+        state["final_round"] = round_no if best_round is None else best_round
+        verdict = judge_step(cfg, prompt, out_dir, round_no, budget)
+        state["history"].append(history_entry(round_no, verdict))
+        state["rounds"] = round_no
+        if best_round is None or rank(verdict) > best_rank:
+            best_round, best_rank = round_no, rank(verdict)
+        state["best_round"] = best_round
+        state["final_round"] = best_round
+
+        if verdict["parity"]:
+            state.update(parity=True, final_round=round_no)
+            return "parity"
+        if verdict["attempt_at_least_reference"]:
+            state["final_round"] = round_no
+            return "attempt_exceeds_reference"
+        if round_no >= round_cap:
+            return "round_cap"
+        if round_no - best_round >= patience:
+            return "stagnation"
+
+        nxt = round_no + 1
+        nxt_dir = out_dir / "rounds" / f"{nxt:02d}"
+        if not (nxt_dir / "attempt.done.json").exists():
+            remaining = budget - ledger.total_cost(out_dir / "usage.csv")
+            if remaining < round_cost_needed(cfg):
+                print(f"STOP: a new round needs up to ${round_cost_needed(cfg):.2f} "
+                      f"(refine + judge), ${remaining:.4f} left", flush=True)
+                return "budget"
+        refine_text = refine_prompt_step(cfg, prompt, out_dir, nxt, best_round)
+        draw_step(cfg, "refine", refine_text, out_dir, nxt, budget, "attempt")
+        round_no = nxt
+
+
+def write_summary(cfg, out_dir, prompt, budget, stop_reason, state):
     rows = ledger.read_rows(out_dir / "usage.csv")
     per_role = {r: 0.0 for r in ("reference", "baseline", "judge", "refine")}
     for r in rows:
         per_role[r["role"]] = per_role.get(r["role"], 0.0) + float(r["cost_usd"])
+    final_round = state.get("final_round")
+    final = None
+    if final_round is not None:
+        # Forward slashes on every OS, so summary.json reads the same everywhere.
+        final = (out_dir / "rounds" / f"{final_round:02d}").as_posix()
     summary = {
         "prompt": prompt,
-        "parity": False,
-        "rounds": 0,
+        "parity": state.get("parity", False),
         "stop_reason": stop_reason,
+        "rounds": state.get("rounds", 0),
+        "final_round": final_round,
+        "final_svg": f"{final}/attempt.svg" if final else None,
+        "final_png": f"{final}/attempt.png" if final else None,
+        "reference_svg": (out_dir / "rounds" / "00" / "reference.svg").as_posix(),
+        "history": state.get("history", []),
+        "budget_usd": budget,
         "cost_usd": {k: round(v, 7) for k, v in per_role.items()},
         "total_cost_usd": round(sum(float(r["cost_usd"]) for r in rows), 7),
-        "final_svg": final_svg,
+        "models": {role: f"{c['model']} ({c['effort']})" for role, c in cfg["roles"].items()},
+        "judge_prompt": cfg["judge_prompt"],
+        "refine_prompt": cfg["refine_prompt"],
     }
     (out_dir / "summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
     return summary
@@ -280,23 +411,23 @@ def main(argv=None):
         return 1
     print(f"budget: ${args.budget_usd:.2f}   renderer: {version}")
 
-    # M2 in progress: the run currently stops after judging round 00 (refine not built yet).
-    stop_reason, final_svg, exit_code = "m2_judge_only", None, 0
+    state = {"history": []}
+    exit_code = 0
     try:
-        draw_step(cfg, "reference", prompt, out_dir, 0, args.budget_usd, "reference")
-        draw_step(cfg, "baseline", prompt, out_dir, 0, args.budget_usd, "attempt")
-        # Forward slashes on every OS, so summary.json reads the same everywhere.
-        final_svg = (out_dir / "rounds" / "00" / "attempt.svg").as_posix()
-        judge_step(cfg, prompt, out_dir, 0, args.budget_usd)
+        stop_reason = run_loop(cfg, prompt, out_dir, args.budget_usd, state)
     except BudgetRefused as e:
+        # A single step did not fit (normally only reference/baseline: the loop
+        # checks a whole round's worst case before starting it).
         stop_reason, exit_code = "budget", 2
         print(f"STOP: {e}", file=sys.stderr)
     except (SessionError, SvgError, RenderError, judge.VerdictError) as e:
         stop_reason, exit_code = "error", 1
         print(f"ERROR: {e}  (rerun the same command to resume)", file=sys.stderr)
 
-    s = write_summary(out_dir, prompt, stop_reason, final_svg)
-    print(f"stop_reason={s['stop_reason']}  total=${s['total_cost_usd']:.4f}  -> {(out_dir / 'summary.json').as_posix()}")
+    s = write_summary(cfg, out_dir, prompt, args.budget_usd, stop_reason, state)
+    print(f"stop_reason={s['stop_reason']}  parity={'yes' if s['parity'] else 'no'}  "
+          f"rounds={s['rounds']}  final={s['final_svg']}  total=${s['total_cost_usd']:.4f}  "
+          f"-> {(out_dir / 'summary.json').as_posix()}")
     return exit_code
 
 

@@ -86,6 +86,10 @@ def judge_answer():
             defects.append({"criterion": "composition", "severity": "major",
                             "what": "the monkey is small compared with the tree",
                             "where": "centre", "expected": "the monkey is the clear focal point"})
+            # Valid: "image" ends one field and "A" starts the next (dropped by mistake in a real run).
+            defects.append({"criterion": "composition", "severity": "minor",
+                            "what": "empty sky below the monkey", "where": "the lower third of the image",
+                            "expected": "A balanced framing"})
             defects.append({"criterion": "craft", "severity": "minor", "what": "unlike image A, no spokes",
                             "where": "wheels", "expected": "spokes"})
             defects.append({"criterion": "craft", "severity": "minor", "what": "sky colour",

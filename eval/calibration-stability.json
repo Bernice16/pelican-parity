@@ -1,0 +1,105 @@
+{
+  "name": "stability",
+  "prompt": "Generate an SVG of a pelican riding a bicycle.",
+  "A": "out-m1-test/rounds/00/reference.png",
+  "B": "out-m1-test/rounds/00/attempt.png",
+  "same_image": false,
+  "judge": "claude-opus-5-5 (high)",
+  "judge_prompt": "prompts/judge_v1.txt",
+  "judgments": [
+    {
+      "session_id": "03988855-3abf-48d7-acba-3d96256fe178",
+      "A_scores": {
+        "fidelity": 5,
+        "coherence": 4,
+        "readability": 5,
+        "composition": 5,
+        "craft": 4
+      },
+      "B_scores": {
+        "fidelity": 5,
+        "coherence": 3,
+        "readability": 4,
+        "composition": 4,
+        "craft": 4
+      },
+      "A_total": 23,
+      "B_total": 20,
+      "A_defects": 4,
+      "B_defects": 5,
+      "parity": false,
+      "rule_parity": false,
+      "parity_reason": "A totals 23 and B totals 20, which breaks the rule that totals differ by at most 1. Coherence also differs by only 1 (4 vs 3), but more than one criterion differs, so parity is false."
+    },
+    {
+      "session_id": "2feb8608-ede3-434b-83a9-6bdc9966664d",
+      "A_scores": {
+        "fidelity": 5,
+        "coherence": 4,
+        "readability": 5,
+        "composition": 5,
+        "craft": 4
+      },
+      "B_scores": {
+        "fidelity": 5,
+        "coherence": 4,
+        "readability": 5,
+        "composition": 4,
+        "craft": 4
+      },
+      "A_total": 23,
+      "B_total": 22,
+      "A_defects": 4,
+      "B_defects": 5,
+      "parity": true,
+      "rule_parity": true,
+      "parity_reason": "Scores differ by at most 1 on every criterion (only composition differs: 5 vs 4), the totals are 23 and 22 (a difference of 1), and neither image has a critical defect, so all three parity conditions hold."
+    },
+    {
+      "session_id": "090bee1f-7eff-4303-8960-4a27d1bec9a4",
+      "A_scores": {
+        "fidelity": 5,
+        "coherence": 4,
+        "readability": 5,
+        "composition": 5,
+        "craft": 4
+      },
+      "B_scores": {
+        "fidelity": 5,
+        "coherence": 3,
+        "readability": 5,
+        "composition": 5,
+        "craft": 4
+      },
+      "A_total": 23,
+      "B_total": 22,
+      "A_defects": 3,
+      "B_defects": 4,
+      "parity": true,
+      "rule_parity": true,
+      "parity_reason": "Only coherence differs, by 1 point (A 4, B 3), so the totals are 23 and 22 and differ by 1. Neither image has a critical defect, so all three parity conditions hold."
+    }
+  ],
+  "A_total": {
+    "values": [
+      23,
+      23,
+      23
+    ],
+    "min": 23,
+    "max": 23,
+    "mean": 23
+  },
+  "B_total": {
+    "values": [
+      20,
+      22,
+      22
+    ],
+    "min": 20,
+    "max": 22,
+    "mean": 21.33
+  },
+  "parity_count": "2/3",
+  "cost_usd": 0.1925438
+}

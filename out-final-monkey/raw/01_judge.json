@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 20017,
+  "stop_reason": "end_turn",
+  "session_id": "2d4716db-27dd-462c-813b-7c46cded093d",
+  "total_cost_usd": 0.0567866,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 2526,
+    "cache_read_input_tokens": 12313,
+    "output_tokens": 1705,
+    "output_tokens_details": {
+      "thinking_tokens": 401
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 2526,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1538,
+        "cache_read_input_tokens": 6346,
+        "cache_creation_input_tokens": 2147,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2147
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1705,
+      "cacheReadInputTokens": 12313,
+      "cacheCreationInputTokens": 2526,
+      "webSearchRequests": 0,
+      "costUSD": 0.0567866,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 401,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 2526,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"images\":{\"A\":{\"summary\":\"A cartoon monkey hangs from two lower branches in front of the trunk of an apple tree with red apples, under a sunny sky; it answers the prompt clearly, but the climbing pose is weak because the legs do not grip the trunk.\",\"scores\":{\"fidelity\":4,\"coherence\":3,\"readability\":4,\"composition\":4,\"craft\":4},\"defects\":[{\"criterion\":\"coherence\",\"severity\":\"major\",\"what\":\"The legs splay out sideways and the feet hang in the air beside the trunk instead of pressing against or wrapping around it\",\"where\":\"the monkey's legs and feet\",\"expected\":\"The legs should hug the trunk or the feet should press against the bark, so the monkey clearly holds its weight while climbing\"},{\"criterion\":\"fidelity\",\"severity\":\"minor\",\"what\":\"With both arms straight up holding branches and the legs dangling, the pose reads more like hanging or swinging than climbing\",\"where\":\"the monkey's overall pose\",\"expected\":\"A pose that clearly shows upward climbing, such as one arm reaching higher while the other limbs grip the trunk\"},{\"criterion\":\"coherence\",\"severity\":\"minor\",\"what\":\"The hands are drawn as dark blobs set on the branch ends, so it is not clear that they grip the branches\",\"where\":\"the monkey's hands at the lower branches\",\"expected\":\"The hands should visibly curl around the branches\"},{\"criterion\":\"composition\",\"severity\":\"minor\",\"what\":\"The monkey is fairly small compared with the large canopy and the big empty area of sky at the bottom of the picture\",\"where\":\"the centre and lower half of the image\",\"expected\":\"The monkey should be big enough to be the clear focal point, with less empty space around it\"}]},\"B\":{\"summary\":\"A large cartoon monkey climbs the trunk of an apple tree, with one arm wrapped around the trunk and the other reaching up toward an apple; the setting includes sky, a sun, a cloud and a fallen apple, and it answers the prompt well.\",\"scores\":{\"fidelity\":5,\"coherence\":4,\"readability\":5,\"composition\":4,\"craft\":4},\"defects\":[{\"criterion\":\"coherence\",\"severity\":\"major\",\"what\":\"The lower right leg, the foot and the curled tail blend into one tangle, so it is hard to tell which part is the leg and which is the tail, and the foot does not touch the trunk\",\"where\":\"the monkey's lower body, right side\",\"expected\":\"The leg and the tail should be clearly separate, with the foot visibly braced against the trunk\"},{\"criterion\":\"craft\",\"severity\":\"minor\",\"what\":\"Thin dark vine-like lines run down the trunk and through the monkey's left leg, which looks like a stray artefact\",\"where\":\"the lower left of the trunk, behind the monkey\",\"expected\":\"Any bark detail should sit clearly behind the monkey and not cut through its limbs\"},{\"criterion\":\"composition\",\"severity\":\"minor\",\"what\":\"The canopy fills almost the whole top of the picture and mostly hides the sun and cloud, so the top feels crowded\",\"where\":\"upper area of the image\",\"expected\":\"The canopy should leave some breathing room, or the background elements should be placed so they stay readable\"}]}},\"not_applicable\":[],\"parity\":false,\"parity_reason\":\"A totals 19 and B totals 22, so the totals differ by more than 1. A also scores 3 for coherence against B's 4, and several criteria differ, so the rule fails even though neither image has a critical defect.\"}",
+  "ttft_ms": 4868,
+  "type": "result",
+  "duration_ms": 22293,
+  "uuid": "7dc7fef7-1e39-478a-80f2-5c0179703bc9",
+  "ttft_stream_ms": 3993,
+  "time_to_request_ms": 2235,
+  "first_content_frame_ms": 3993,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:49.359Z"
+}

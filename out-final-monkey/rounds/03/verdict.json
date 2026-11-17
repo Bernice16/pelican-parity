@@ -1,0 +1,86 @@
+{
+  "session_id": "217a3764-e725-4657-8a06-bd0f34254f38",
+  "judge_prompt": "prompts/judge_v1.txt",
+  "blind": {
+    "A": "attempt",
+    "B": "reference"
+  },
+  "parity": false,
+  "parity_reason": "Coherence differs by 1 and fidelity differs by 1, so the totals are 22 and 19, a gap of 3. That exceeds the allowed difference of 1, so parity is false.",
+  "rule_parity": false,
+  "attempt_at_least_reference": true,
+  "reference": {
+    "summary": "A cartoon monkey stands at the base of an apple tree trunk and reaches up toward an apple, but it reads more as reaching from the ground than as climbing.",
+    "scores": {
+      "fidelity": 4,
+      "coherence": 3,
+      "readability": 4,
+      "composition": 4,
+      "craft": 4
+    },
+    "defects": [
+      {
+        "criterion": "fidelity",
+        "severity": "major",
+        "what": "The monkey's feet are near ground level, so it looks like it is standing beside the trunk and reaching rather than climbing.",
+        "where": "the monkey's legs and feet at the base of the trunk",
+        "expected": "The monkey should be clearly off the ground, gripping the trunk or branches with its hands and feet as it climbs."
+      },
+      {
+        "criterion": "coherence",
+        "severity": "major",
+        "what": "The monkey's body is pasted flat over the front of the trunk, and only one arm is loosely curved around the trunk's edge, so it is unclear how it holds on.",
+        "where": "the monkey's body and left arm against the trunk",
+        "expected": "The limbs should visibly wrap around or grip the trunk, so the monkey's contact with the tree reads clearly."
+      },
+      {
+        "criterion": "craft",
+        "severity": "minor",
+        "what": "Thin dark lines on the trunk run behind the monkey's limbs and look like stray strokes.",
+        "where": "the left side of the trunk next to the monkey",
+        "expected": "The bark details should read clearly as texture or be left out."
+      },
+      {
+        "criterion": "composition",
+        "severity": "minor",
+        "what": "The sun is mostly hidden behind the canopy and the cloud is cut off by the leaves, which clutters the upper background.",
+        "where": "upper left and upper right behind the canopy",
+        "expected": "The background elements should either be fully visible or left out, so they don't compete with the canopy edge."
+      }
+    ]
+  },
+  "attempt": {
+    "summary": "A cartoon monkey grips two branches of an apple tree with a leg braced against the trunk, which clearly shows a monkey climbing an apple tree.",
+    "scores": {
+      "fidelity": 5,
+      "coherence": 4,
+      "readability": 5,
+      "composition": 4,
+      "craft": 4
+    },
+    "defects": [
+      {
+        "criterion": "coherence",
+        "severity": "minor",
+        "what": "The bent lower leg sticks out to the side in the air, and its foot does not rest on or grip the trunk.",
+        "where": "the monkey's left leg, below the body",
+        "expected": "Both feet should press against or wrap around the trunk, so the climbing pose looks supported."
+      },
+      {
+        "criterion": "composition",
+        "severity": "minor",
+        "what": "The monkey sits in the middle of a long, empty stretch of trunk, leaving a large blank area of sky and trunk below it.",
+        "where": "lower half of the image",
+        "expected": "The tree and monkey should fill the frame more evenly, with less empty space under the subject."
+      },
+      {
+        "criterion": "craft",
+        "severity": "minor",
+        "what": "The arms are thin, uniform tubes that join the shoulders stiffly, so the upper body looks rigid.",
+        "where": "the monkey's raised arms",
+        "expected": "The arms should taper and join the shoulders smoothly for a more natural cartoon look."
+      }
+    ]
+  },
+  "not_applicable": []
+}

@@ -1,0 +1,41 @@
+{
+  "source_round": 0,
+  "kept": [
+    {
+      "severity": "major",
+      "criterion": "coherence",
+      "what": "The pedals are two loose dark bars floating in mid-air, with no crank, chainring or chain linking them to the bicycle.",
+      "where": "below the pelican's feet, inside the frame",
+      "expected": "The pedals sit on crank arms attached to a chainring at the bottom of the frame, with a chain running to the rear wheel."
+    },
+    {
+      "severity": "major",
+      "criterion": "coherence",
+      "what": "The frame is an odd parallelogram. It has no proper rear triangle and no front fork, and a single long diagonal tube runs from the seat area straight down to the front hub.",
+      "where": "the red bicycle frame",
+      "expected": "A recognisable bicycle frame with a rear triangle to the rear hub, a seat tube, and a head tube with a fork holding the front wheel."
+    },
+    {
+      "severity": "minor",
+      "criterion": "coherence",
+      "what": "The handlebar is a short dark stub at the top of the frame. The pelican does not hold or touch it, and it isn't clearly connected to the steering.",
+      "where": "the front top of the frame, just ahead of the pelican",
+      "expected": "A clear handlebar rising above the front fork, with the pelican's wing reaching toward it."
+    },
+    {
+      "severity": "minor",
+      "criterion": "craft",
+      "what": "The pelican's beak and throat pouch are small and thin, so the bird reads more like a generic white bird or a goose than a pelican.",
+      "where": "the pelican's head",
+      "expected": "A long, prominent beak with a clearly visible, large throat pouch typical of a pelican."
+    },
+    {
+      "severity": "minor",
+      "criterion": "composition",
+      "what": "The pelican sits high and small on the frame, and the caption adds text that the drawing does not need.",
+      "where": "the centre of the image and the bottom caption",
+      "expected": "The pelican and bicycle fill the frame as one strong focal group, and the drawing explains itself without a caption."
+    }
+  ],
+  "dropped": []
+}

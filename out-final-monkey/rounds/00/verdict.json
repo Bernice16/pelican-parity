@@ -1,0 +1,86 @@
+{
+  "session_id": "e1f312a5-45dd-429c-8871-79f015ceac1e",
+  "judge_prompt": "prompts/judge_v1.txt",
+  "blind": {
+    "A": "reference",
+    "B": "attempt"
+  },
+  "parity": false,
+  "parity_reason": "Totals are 22 for A and 19 for B, a gap of 3, and two criteria differ (fidelity and coherence), so the rule allowing a total gap of at most 1 fails, even though neither image has a critical defect.",
+  "rule_parity": false,
+  "attempt_at_least_reference": false,
+  "reference": {
+    "summary": "A cartoon brown monkey clings to the trunk of a leafy apple tree, reaching up to an apple with one hand, with a fallen apple on the grass; it answers the prompt clearly and well.",
+    "scores": {
+      "fidelity": 5,
+      "coherence": 4,
+      "readability": 5,
+      "composition": 4,
+      "craft": 4
+    },
+    "defects": [
+      {
+        "criterion": "coherence",
+        "severity": "minor",
+        "what": "The monkey's lower arm and legs are blobby, ambiguous shapes, so it is unclear which limb grips the trunk and where the feet are placed",
+        "where": "the monkey's left arm and legs against the trunk",
+        "expected": "Clearly distinct limbs wrapping around or pressing against the trunk, with visible hands and feet gripping the bark"
+      },
+      {
+        "criterion": "craft",
+        "severity": "minor",
+        "what": "Thin dark curved lines run over the trunk and the monkey's leg, reading as stray strokes rather than bark texture or limb outlines",
+        "where": "the lower trunk behind the monkey",
+        "expected": "Trunk texture and limb edges that read clearly as bark or limb contours, with no stray-looking lines"
+      },
+      {
+        "criterion": "composition",
+        "severity": "minor",
+        "what": "The canopy fills most of the frame and the monkey sits low on the trunk, partly crowded by the canopy edge and the ground",
+        "where": "centre and lower half of the image",
+        "expected": "The monkey reads as the clear focal point, with a little more breathing room around it"
+      }
+    ]
+  },
+  "attempt": {
+    "summary": "A cartoon monkey hangs by both hands from the lower branches of a round green apple tree, legs dangling in the air; the tree and monkey are clear, but the pose reads as hanging rather than climbing.",
+    "scores": {
+      "fidelity": 4,
+      "coherence": 3,
+      "readability": 4,
+      "composition": 4,
+      "craft": 4
+    },
+    "defects": [
+      {
+        "criterion": "fidelity",
+        "severity": "major",
+        "what": "The monkey dangles from branches with its legs hanging free, so it looks like it is hanging or swinging rather than climbing",
+        "where": "the monkey's body and legs",
+        "expected": "A climbing pose, with the feet or legs pushing against or gripping the trunk or a branch while the body moves upward"
+      },
+      {
+        "criterion": "coherence",
+        "severity": "major",
+        "what": "The monkey's hands grip dark knobs at the ends of thin branches that barely connect to the canopy, and its feet touch nothing",
+        "where": "the monkey's hands and feet, and the branches beneath the canopy",
+        "expected": "Hands holding clearly attached branches and feet making contact with the tree"
+      },
+      {
+        "criterion": "craft",
+        "severity": "minor",
+        "what": "Some apples have stems and highlights while others are flat red dots with no stem, so the fruit looks inconsistent",
+        "where": "the apples across the canopy",
+        "expected": "All apples drawn in one consistent style"
+      },
+      {
+        "criterion": "composition",
+        "severity": "minor",
+        "what": "A large empty band of sky below the monkey leaves the lower part of the frame unused while the tree crowds the top",
+        "where": "the lower third of the image",
+        "expected": "A balanced framing where the tree and monkey fill the frame more evenly"
+      }
+    ]
+  },
+  "not_applicable": []
+}

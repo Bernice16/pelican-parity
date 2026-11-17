@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 44187,
+  "stop_reason": "end_turn",
+  "session_id": "fc571b90-f6f2-4e33-8abd-257334bf49b6",
+  "total_cost_usd": 0.21897624999999998,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1152,
+    "cache_read_input_tokens": 4265,
+    "output_tokens": 3897,
+    "output_tokens_details": {
+      "thinking_tokens": 239
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1152,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 3897,
+        "cache_read_input_tokens": 4265,
+        "cache_creation_input_tokens": 1152,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1152
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-fable-5-1": {
+      "inputTokens": 2,
+      "outputTokens": 3897,
+      "cacheReadInputTokens": 4265,
+      "cacheCreationInputTokens": 1152,
+      "webSearchRequests": 0,
+      "costUSD": 0.21897624999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 239,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1152,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Voici le SVG du singe grimpant \u00e0 un pommier.\n\n```svg\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 500\" width=\"400\" height=\"500\">\n  <title>Monkey climbing an apple tree</title>\n  <defs>\n    <radialGradient id=\"sky\" cx=\"50%\" cy=\"20%\" r=\"80%\">\n      <stop offset=\"0\" stop-color=\"#cfe9ff\"/>\n      <stop offset=\"1\" stop-color=\"#8fc3f0\"/>\n    </radialGradient>\n    <radialGradient id=\"leaf\" cx=\"40%\" cy=\"35%\" r=\"70%\">\n      <stop offset=\"0\" stop-color=\"#7ccf5a\"/>\n      <stop offset=\"1\" stop-color=\"#3a8a2e\"/>\n    </radialGradient>\n    <radialGradient id=\"apple\" cx=\"35%\" cy=\"30%\" r=\"70%\">\n      <stop offset=\"0\" stop-color=\"#ff7b6b\"/>\n      <stop offset=\"1\" stop-color=\"#c0141c\"/>\n    </radialGradient>\n    <linearGradient id=\"bark\" x1=\"0\" x2=\"1\">\n      <stop offset=\"0\" stop-color=\"#5a3a1e\"/>\n      <stop offset=\"0.5\" stop-color=\"#8a5a32\"/>\n      <stop offset=\"1\" stop-color=\"#4a2e16\"/>\n    </linearGradient>\n    <linearGradient id=\"grass\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"0\" stop-color=\"#6cc24a\"/>\n      <stop offset=\"1\" stop-color=\"#3f8f2f\"/>\n    </linearGradient>\n  </defs>\n\n  <!-- background -->\n  <rect width=\"400\" height=\"500\" fill=\"url(#sky)\"/>\n  <circle cx=\"330\" cy=\"70\" r=\"34\" fill=\"#fff4b0\" opacity=\"0.9\"/>\n  <g fill=\"#fff\" opacity=\"0.85\">\n    <ellipse cx=\"80\" cy=\"80\" rx=\"34\" ry=\"14\"/>\n    <ellipse cx=\"100\" cy=\"70\" rx=\"24\" ry=\"14\"/>\n    <ellipse cx=\"60\" cy=\"72\" rx=\"20\" ry=\"12\"/>\n  </g>\n  <rect y=\"420\" width=\"400\" height=\"80\" fill=\"url(#grass)\"/>\n  <path d=\"M0 425 Q 60 410 120 425 T 240 425 T 400 425 V 500 H 0 Z\" fill=\"#4f9f3b\"/>\n\n  <!-- trunk and branches -->\n  <path d=\"M175 430 C 180 360 170 300 185 240 C 190 210 195 190 200 170 L 220 170 C 222 200 230 260 232 300 C 236 360 240 400 245 430 Z\" fill=\"url(#bark)\"/>\n  <path d=\"M198 220 C 160 200 130 190 110 160\" stroke=\"#6b4423\" stroke-width=\"12\" fill=\"none\" stroke-linecap=\"round\"/>\n  <path d=\"M222 215 C 260 200 290 190 300 150\" stroke=\"#6b4423\" stroke-width=\"12\" fill=\"none\" stroke-linecap=\"round\"/>\n  <path d=\"M205 180 C 190 150 170 130 150 120\" stroke=\"#6b4423\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/>\n  <path d=\"M215 175 C 240 150 250 130 270 115\" stroke=\"#6b4423\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/>\n  <!-- bark lines -->\n  <g stroke=\"#3f2612\" stroke-width=\"2\" opacity=\"0.6\" fill=\"none\">\n    <path d=\"M190 300 q 4 30 2 60\"/>\n    <path d=\"M215 260 q -3 40 1 80\"/>\n    <path d=\"M205 350 q 6 25 3 50\"/>\n  </g>\n\n  <!-- canopy -->\n  <g fill=\"url(#leaf)\">\n    <circle cx=\"210\" cy=\"110\" r=\"78\"/>\n    <circle cx=\"130\" cy=\"140\" r=\"58\"/>\n    <circle cx=\"290\" cy=\"135\" r=\"60\"/>\n    <circle cx=\"170\" cy=\"80\" r=\"50\"/>\n    <circle cx=\"255\" cy=\"75\" r=\"52\"/>\n    <circle cx=\"110\" cy=\"190\" r=\"40\"/>\n    <circle cx=\"310\" cy=\"190\" r=\"42\"/>\n    <circle cx=\"210\" cy=\"190\" r=\"48\"/>\n  </g>\n  <!-- leaf highlights -->\n  <g fill=\"#9ee07a\" opacity=\"0.5\">\n    <circle cx=\"180\" cy=\"60\" r=\"18\"/>\n    <circle cx=\"250\" cy=\"55\" r=\"14\"/>\n    <circle cx=\"120\" cy=\"125\" r=\"12\"/>\n    <circle cx=\"300\" cy=\"115\" r=\"12\"/>\n  </g>\n\n  <!-- apples -->\n  <g>\n    <g transform=\"translate(150 110)\">\n      <circle r=\"12\" fill=\"url(#apple)\"/><path d=\"M0 -11 q 2 -6 5 -8\" stroke=\"#4a2e16\" stroke-width=\"2\" fill=\"none\"/>\n    </g>\n    <g transform=\"translate(240 100)\">\n      <circle r=\"13\" fill=\"url(#apple)\"/><path d=\"M0 -12 q 2 -6 5 -8\" stroke=\"#4a2e16\" stroke-width=\"2\" fill=\"none\"/>\n    </g>\n    <g transform=\"translate(290 160)\">\n      <circle r=\"12\" fill=\"url(#apple)\"/><path d=\"M0 -11 q 2 -6 5 -8\" stroke=\"#4a2e16\" stroke-width=\"2\" fill=\"none\"/>\n    </g>\n    <g transform=\"translate(115 170)\">\n      <circle r=\"11\" fill=\"url(#apple)\"/><path d=\"M0 -10 q 2 -6 5 -8\" stroke=\"#4a2e16\" stroke-width=\"2\" fill=\"none\"/>\n    </g>\n    <g transform=\"translate(200 160)\">\n      <circle r=\"12\" fill=\"url(#apple)\"/><path d=\"M0 -11 q 2 -6 5 -8\" stroke=\"#4a2e16\" stroke-width=\"2\" fill=\"none\"/>\n    </g>\n    <g transform=\"translate(265 200)\">\n      <circle r=\"11\" fill=\"url(#apple)\"/><path d=\"M0 -10 q 2 -6 5 -8\" stroke=\"#4a2e16\" stroke-width=\"2\" fill=\"none\"/>\n    </g>\n    <g transform=\"translate(175 215)\">\n      <circle r=\"11\" fill=\"url(#apple)\"/><path d=\"M0 -10 q 2 -6 5 -8\" stroke=\"#4a2e16\" stroke-width=\"2\" fill=\"none\"/>\n    </g>\n    <g transform=\"translate(320 220)\">\n      <circle r=\"10\" fill=\"url(#apple)\"/><path d=\"M0 -9 q 2 -6 5 -8\" stroke=\"#4a2e16\" stroke-width=\"2\" fill=\"none\"/>\n    </g>\n  </g>\n  <!-- fallen apple -->\n  <circle cx=\"300\" cy=\"440\" r=\"11\" fill=\"url(#apple)\"/>\n  <path d=\"M300 429 q 2 -6 5 -8\" stroke=\"#4a2e16\" stroke-width=\"2\" fill=\"none\"/>\n\n  <!-- monkey -->\n  <g>\n    <!-- tail -->\n    <path d=\"M232 345 C 270 350 290 380 275 405 C 265 420 245 415 248 398\" stroke=\"#7a4a22\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/>\n    <!-- far leg (behind trunk) -->\n    <path d=\"M200 350 C 185 360 180 380 195 392\" stroke=\"#7a4a22\" stroke-width=\"13\" fill=\"none\" stroke-linecap=\"round\"/>\n    <!-- far arm (behind trunk) -->\n    <path d=\"M205 300 C 185 290 178 270 190 258\" stroke=\"#7a4a22\" stroke-width=\"12\" fill=\"none\" stroke-linecap=\"round\"/>\n    <!-- body -->\n    <ellipse cx=\"228\" cy=\"330\" rx=\"28\" ry=\"40\" fill=\"#8b5a2b\"/>\n    <ellipse cx=\"228\" cy=\"336\" rx=\"17\" ry=\"28\" fill=\"#d9a877\"/>\n    <!-- near leg wrapped around trunk -->\n    <path d=\"M240 362 C 262 375 252 400 232 398\" stroke=\"#8b5a2b\" stroke-width=\"14\" fill=\"none\" stroke-linecap=\"round\"/>\n    <ellipse cx=\"230\" cy=\"400\" rx=\"10\" ry=\"7\" fill=\"#d9a877\"/>\n    <!-- near arm reaching up for apple -->\n    <path d=\"M240 298 C 258 280 258 250 248 232\" stroke=\"#8b5a2b\" stroke-width=\"13\" fill=\"none\" stroke-linecap=\"round\"/>\n    <ellipse cx=\"246\" cy=\"228\" rx=\"9\" ry=\"8\" fill=\"#d9a877\"/>\n    <!-- apple in hand -->\n    <circle cx=\"252\" cy=\"218\" r=\"9\" fill=\"url(#apple)\"/>\n    <!-- head -->\n    <circle cx=\"225\" cy=\"280\" r=\"26\" fill=\"#8b5a2b\"/>\n    <circle cx=\"200\" cy=\"276\" r=\"9\" fill=\"#8b5a2b\"/>\n    <circle cx=\"250\" cy=\"276\" r=\"9\" fill=\"#8b5a2b\"/>\n    <circle cx=\"200\" cy=\"276\" r=\"5\" fill=\"#d9a877\"/>\n    <circle cx=\"250\" cy=\"276\" r=\"5\" fill=\"#d9a877\"/>\n    <path d=\"M207 284 C 207 265 243 265 243 284 C 245 300 205 300 207 284 Z\" fill=\"#d9a877\"/>\n    <circle cx=\"218\" cy=\"276\" r=\"4\" fill=\"#1a1a1a\"/>\n    <circle cx=\"232\" cy=\"276\" r=\"4\" fill=\"#1a1a1a\"/>\n    <circle cx=\"219.5\" cy=\"274.5\" r=\"1.4\" fill=\"#fff\"/>\n    <circle cx=\"233.5\" cy=\"274.5\" r=\"1.4\" fill=\"#fff\"/>\n    <ellipse cx=\"223\" cy=\"285\" rx=\"2\" ry=\"1.5\" fill=\"#5a3a1e\"/>\n    <ellipse cx=\"228\" cy=\"285\" rx=\"2\" ry=\"1.5\" fill=\"#5a3a1e\"/>\n    <path d=\"M216 291 Q 225 299 234 291\" stroke=\"#5a3a1e\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\"/>\n    <!-- hair tuft -->\n    <path d=\"M220 256 q 4 -10 10 -2 q 2 -8 8 0\" stroke=\"#5a3a1e\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\"/>\n  </g>\n</svg>\n```",
+  "ttft_ms": 6217,
+  "type": "result",
+  "duration_ms": 45961,
+  "uuid": "18a9ee3e-65b4-4492-831d-ac9952cb103a",
+  "ttft_stream_ms": 3328,
+  "time_to_request_ms": 1773,
+  "first_content_frame_ms": 3328,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:49.359Z"
+}

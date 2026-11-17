@@ -1,0 +1,86 @@
+{
+  "session_id": "2d4716db-27dd-462c-813b-7c46cded093d",
+  "judge_prompt": "prompts/judge_v1.txt",
+  "blind": {
+    "A": "attempt",
+    "B": "reference"
+  },
+  "parity": false,
+  "parity_reason": "A totals 19 and B totals 22, so the totals differ by more than 1. A also scores 3 for coherence against B's 4, and several criteria differ, so the rule fails even though neither image has a critical defect.",
+  "rule_parity": false,
+  "attempt_at_least_reference": false,
+  "reference": {
+    "summary": "A large cartoon monkey climbs the trunk of an apple tree, with one arm wrapped around the trunk and the other reaching up toward an apple; the setting includes sky, a sun, a cloud and a fallen apple, and it answers the prompt well.",
+    "scores": {
+      "fidelity": 5,
+      "coherence": 4,
+      "readability": 5,
+      "composition": 4,
+      "craft": 4
+    },
+    "defects": [
+      {
+        "criterion": "coherence",
+        "severity": "major",
+        "what": "The lower right leg, the foot and the curled tail blend into one tangle, so it is hard to tell which part is the leg and which is the tail, and the foot does not touch the trunk",
+        "where": "the monkey's lower body, right side",
+        "expected": "The leg and the tail should be clearly separate, with the foot visibly braced against the trunk"
+      },
+      {
+        "criterion": "craft",
+        "severity": "minor",
+        "what": "Thin dark vine-like lines run down the trunk and through the monkey's left leg, which looks like a stray artefact",
+        "where": "the lower left of the trunk, behind the monkey",
+        "expected": "Any bark detail should sit clearly behind the monkey and not cut through its limbs"
+      },
+      {
+        "criterion": "composition",
+        "severity": "minor",
+        "what": "The canopy fills almost the whole top of the picture and mostly hides the sun and cloud, so the top feels crowded",
+        "where": "upper area of the image",
+        "expected": "The canopy should leave some breathing room, or the background elements should be placed so they stay readable"
+      }
+    ]
+  },
+  "attempt": {
+    "summary": "A cartoon monkey hangs from two lower branches in front of the trunk of an apple tree with red apples, under a sunny sky; it answers the prompt clearly, but the climbing pose is weak because the legs do not grip the trunk.",
+    "scores": {
+      "fidelity": 4,
+      "coherence": 3,
+      "readability": 4,
+      "composition": 4,
+      "craft": 4
+    },
+    "defects": [
+      {
+        "criterion": "coherence",
+        "severity": "major",
+        "what": "The legs splay out sideways and the feet hang in the air beside the trunk instead of pressing against or wrapping around it",
+        "where": "the monkey's legs and feet",
+        "expected": "The legs should hug the trunk or the feet should press against the bark, so the monkey clearly holds its weight while climbing"
+      },
+      {
+        "criterion": "fidelity",
+        "severity": "minor",
+        "what": "With both arms straight up holding branches and the legs dangling, the pose reads more like hanging or swinging than climbing",
+        "where": "the monkey's overall pose",
+        "expected": "A pose that clearly shows upward climbing, such as one arm reaching higher while the other limbs grip the trunk"
+      },
+      {
+        "criterion": "coherence",
+        "severity": "minor",
+        "what": "The hands are drawn as dark blobs set on the branch ends, so it is not clear that they grip the branches",
+        "where": "the monkey's hands at the lower branches",
+        "expected": "The hands should visibly curl around the branches"
+      },
+      {
+        "criterion": "composition",
+        "severity": "minor",
+        "what": "The monkey is fairly small compared with the large canopy and the big empty area of sky at the bottom of the picture",
+        "where": "the centre and lower half of the image",
+        "expected": "The monkey should be big enough to be the clear focal point, with less empty space around it"
+      }
+    ]
+  },
+  "not_applicable": []
+}

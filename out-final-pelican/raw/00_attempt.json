@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 8191,
+  "stop_reason": "end_turn",
+  "session_id": "23b51d09-5b0b-4673-ac63-d47d5406478f",
+  "total_cost_usd": 0.00122264,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1155,
+    "cache_read_input_tokens": 3194,
+    "output_tokens": 1919,
+    "output_tokens_details": {
+      "thinking_tokens": 69
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1155,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1919,
+        "cache_read_input_tokens": 3194,
+        "cache_creation_input_tokens": 1155,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1155
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-haiku-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1919,
+      "cacheReadInputTokens": 3194,
+      "cacheCreationInputTokens": 1155,
+      "webSearchRequests": 0,
+      "costUSD": 0.00122264,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 69,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1155,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```svg\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 500\" width=\"800\" height=\"500\">\n  <!-- Sky and ground -->\n  <rect width=\"800\" height=\"500\" fill=\"#cfe9ff\"/>\n  <rect y=\"400\" width=\"800\" height=\"100\" fill=\"#8bc37a\"/>\n  <path d=\"M0 400 Q200 385 400 400 T800 400\" fill=\"none\" stroke=\"#6aa85c\" stroke-width=\"3\"/>\n\n  <!-- Sun -->\n  <circle cx=\"700\" cy=\"90\" r=\"45\" fill=\"#ffd54a\"/>\n\n  <!-- Bicycle: wheels -->\n  <circle cx=\"220\" cy=\"350\" r=\"78\" fill=\"none\" stroke=\"#222\" stroke-width=\"12\"/>\n  <circle cx=\"580\" cy=\"350\" r=\"78\" fill=\"none\" stroke=\"#222\" stroke-width=\"12\"/>\n  <circle cx=\"220\" cy=\"350\" r=\"8\" fill=\"#222\"/>\n  <circle cx=\"580\" cy=\"350\" r=\"8\" fill=\"#222\"/>\n  <!-- Spokes -->\n  <g stroke=\"#888\" stroke-width=\"2\">\n    <line x1=\"220\" y1=\"350\" x2=\"220\" y2=\"272\"/>\n    <line x1=\"220\" y1=\"350\" x2=\"288\" y2=\"350\"/>\n    <line x1=\"220\" y1=\"350\" x2=\"152\" y2=\"350\"/>\n    <line x1=\"220\" y1=\"350\" x2=\"174\" y2=\"289\"/>\n    <line x1=\"220\" y1=\"350\" x2=\"266\" y2=\"289\"/>\n    <line x1=\"580\" y1=\"350\" x2=\"580\" y2=\"272\"/>\n    <line x1=\"580\" y1=\"350\" x2=\"648\" y2=\"350\"/>\n    <line x1=\"580\" y1=\"350\" x2=\"512\" y2=\"350\"/>\n    <line x1=\"580\" y1=\"350\" x2=\"534\" y2=\"289\"/>\n    <line x1=\"580\" y1=\"350\" x2=\"626\" y2=\"289\"/>\n  </g>\n\n  <!-- Bicycle frame -->\n  <g stroke=\"#d7263d\" stroke-width=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\">\n    <path d=\"M220 350 L340 350 L400 230 L290 230 L220 350\"/>\n    <path d=\"M400 230 L580 350\"/>\n    <path d=\"M340 350 L400 230\"/>\n    <path d=\"M400 230 L420 200\"/>\n    <path d=\"M410 200 L440 195\"/>\n  </g>\n  <!-- Seat and handlebar -->\n  <path d=\"M280 222 L310 222\" stroke=\"#222\" stroke-width=\"10\" stroke-linecap=\"round\"/>\n  <path d=\"M420 200 L440 195\" stroke=\"#222\" stroke-width=\"8\" stroke-linecap=\"round\"/>\n\n  <!-- Pelican body -->\n  <ellipse cx=\"350\" cy=\"190\" rx=\"75\" ry=\"42\" fill=\"#f4f4f4\" stroke=\"#333\" stroke-width=\"3\" transform=\"rotate(-12 350 190)\"/>\n  <!-- Wing -->\n  <path d=\"M290 185 Q330 130 395 170 Q340 200 290 185 Z\" fill=\"#dcdcdc\" stroke=\"#333\" stroke-width=\"3\"/>\n  <!-- Tail -->\n  <path d=\"M278 200 L240 215 L270 222 Z\" fill=\"#cfcfcf\" stroke=\"#333\" stroke-width=\"2\"/>\n\n  <!-- Neck and head -->\n  <path d=\"M400 170 Q425 120 440 95\" fill=\"none\" stroke=\"#f4f4f4\" stroke-width=\"26\" stroke-linecap=\"round\"/>\n  <path d=\"M400 170 Q425 120 440 95\" fill=\"none\" stroke=\"#333\" stroke-width=\"30\" stroke-linecap=\"round\" opacity=\"0\"/>\n  <circle cx=\"448\" cy=\"88\" r=\"22\" fill=\"#f4f4f4\" stroke=\"#333\" stroke-width=\"3\"/>\n\n  <!-- Beak with pouch -->\n  <path d=\"M462 84 Q520 80 540 100 Q500 108 468 100 Z\" fill=\"#ffb347\" stroke=\"#333\" stroke-width=\"3\"/>\n  <path d=\"M466 98 Q490 135 512 112 Q500 104 468 100 Z\" fill=\"#ffd08a\" stroke=\"#333\" stroke-width=\"2\"/>\n\n  <!-- Eye -->\n  <circle cx=\"454\" cy=\"82\" r=\"5\" fill=\"#222\"/>\n  <circle cx=\"455\" cy=\"81\" r=\"1.5\" fill=\"#fff\"/>\n\n  <!-- Legs on pedals -->\n  <path d=\"M345 215 L330 262 L300 290\" fill=\"none\" stroke=\"#ffb347\" stroke-width=\"8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n  <path d=\"M365 220 L380 262 L355 282\" fill=\"none\" stroke=\"#ffb347\" stroke-width=\"8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n  <!-- Feet/pedals -->\n  <rect x=\"290\" y=\"290\" width=\"26\" height=\"8\" rx=\"3\" fill=\"#333\"/>\n  <rect x=\"345\" y=\"280\" width=\"26\" height=\"8\" rx=\"3\" fill=\"#333\"/>\n\n  <!-- Title -->\n  <text x=\"400\" y=\"470\" font-family=\"Arial, sans-serif\" font-size=\"22\" text-anchor=\"middle\" fill=\"#333\">A Pelican Riding a Bicycle</text>\n</svg>\n```",
+  "ttft_ms": 2909,
+  "type": "result",
+  "duration_ms": 9391,
+  "uuid": "35197e43-be3d-4553-934a-caf92bbcc454",
+  "ttft_stream_ms": 2908,
+  "time_to_request_ms": 1198,
+  "first_content_frame_ms": 2908,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:49.359Z"
+}

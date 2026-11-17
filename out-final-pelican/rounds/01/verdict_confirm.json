@@ -1,0 +1,100 @@
+{
+  "session_id": "30bd4671-fc69-44cc-ba31-ab734368ac41",
+  "judge_prompt": "prompts/judge_v1.txt",
+  "blind": {
+    "A": "attempt",
+    "B": "reference"
+  },
+  "parity": true,
+  "parity_reason": "No criterion score differs by more than 1 (only coherence differs, 3 vs 4), the totals are 21 vs 22 (a gap of 1), and neither image has a critical defect, so all three parity conditions hold.",
+  "rule_parity": true,
+  "attempt_at_least_reference": false,
+  "reference": {
+    "summary": "A white pelican with an orange pouch pedals a red bicycle across grass, with clouds, a sun and speed lines; it is a clear, polished answer to the prompt.",
+    "scores": {
+      "fidelity": 5,
+      "coherence": 4,
+      "readability": 5,
+      "composition": 4,
+      "craft": 4
+    },
+    "defects": [
+      {
+        "criterion": "coherence",
+        "severity": "major",
+        "what": "The body sits over the frame with no visible saddle, so the seating reads ambiguously",
+        "where": "the pelican's body over the top tube",
+        "expected": "The pelican clearly sits on a saddle attached to the seat post"
+      },
+      {
+        "criterion": "coherence",
+        "severity": "minor",
+        "what": "The wing reaches forward to the handlebar but its grip is vague and it blends into the bar",
+        "where": "the wing tip at the handlebar",
+        "expected": "The wing tip clearly holds the handlebar"
+      },
+      {
+        "criterion": "craft",
+        "severity": "minor",
+        "what": "One leg crosses in front of the chainring and frame tubes, making the lines tangled",
+        "where": "the crank and chainring area",
+        "expected": "The legs and drivetrain are clearly layered so each part reads on its own"
+      },
+      {
+        "criterion": "composition",
+        "severity": "minor",
+        "what": "The beak and pouch overlap a cloud, so the head merges with the background",
+        "where": "upper middle, at the pelican's head",
+        "expected": "The head stands out clearly against open sky"
+      }
+    ]
+  },
+  "attempt": {
+    "summary": "A white pelican with a big orange pouch rides a red bicycle on a green hill under a sun; the scene answers the prompt clearly, but the rider's connection to the bike is loose.",
+    "scores": {
+      "fidelity": 5,
+      "coherence": 3,
+      "readability": 5,
+      "composition": 4,
+      "craft": 4
+    },
+    "defects": [
+      {
+        "criterion": "coherence",
+        "severity": "major",
+        "what": "The pelican's body floats above the frame with no seat or saddle under it, so it is unclear what it is sitting on",
+        "where": "the pelican's body over the top tube",
+        "expected": "The pelican visibly sits on a saddle attached to the seat post"
+      },
+      {
+        "criterion": "coherence",
+        "severity": "major",
+        "what": "One leg ends in mid-air beside the crank instead of resting on a pedal, and the feet are just thin line ends",
+        "where": "the pelican's legs and the pedals",
+        "expected": "Both feet are on the pedals, with recognisable webbed feet"
+      },
+      {
+        "criterion": "coherence",
+        "severity": "minor",
+        "what": "The wing tip stretches out to the handlebar like an arm, but it does not clearly grip it",
+        "where": "the wing near the handlebar",
+        "expected": "The wing tip clearly rests on or holds the handlebar"
+      },
+      {
+        "criterion": "craft",
+        "severity": "minor",
+        "what": "The wheels have only a few uneven spokes, so they look unfinished",
+        "where": "both wheels",
+        "expected": "Evenly spaced spokes, or a deliberately simplified wheel style"
+      },
+      {
+        "criterion": "composition",
+        "severity": "minor",
+        "what": "The beak reaches almost to the sun and crowds the upper right",
+        "where": "upper right, between the beak and the sun",
+        "expected": "More breathing room between the bird's head and the sun"
+      }
+    ]
+  },
+  "not_applicable": []
+}

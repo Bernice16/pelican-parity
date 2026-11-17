@@ -1,0 +1,34 @@
+{
+  "source_round": 2,
+  "kept": [
+    {
+      "severity": "major",
+      "criterion": "fidelity",
+      "what": "The monkey hangs from the branches with its legs dangling in the air instead of climbing, so the climbing action is weak",
+      "where": "the monkey's legs and overall pose",
+      "expected": "The monkey should look like it is actively climbing, with its feet or legs gripping the trunk or a branch"
+    },
+    {
+      "severity": "minor",
+      "criterion": "coherence",
+      "what": "The feet float in front of the trunk without touching anything",
+      "where": "the monkey's feet",
+      "expected": "The feet should press against or grip the trunk"
+    },
+    {
+      "severity": "minor",
+      "criterion": "readability",
+      "what": "The monkey's ears are barely visible, so the head reads less clearly as a monkey's",
+      "where": "the sides of the monkey's head",
+      "expected": "Clearly visible rounded ears on either side of the head"
+    },
+    {
+      "severity": "minor",
+      "criterion": "composition",
+      "what": "The tree canopy and monkey take up a fairly small central area, leaving a lot of empty sky",
+      "where": "the overall framing, especially the lower half and sides",
+      "expected": "The tree and monkey should fill more of the frame so the main subject has more presence"
+    }
+  ],
+  "dropped": []
+}

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <!-- Sky and ground -->
+  <rect width="800" height="500" fill="#cfe9ff"/>
+  <rect y="400" width="800" height="100" fill="#8bc37a"/>
+  <path d="M0 400 Q200 385 400 400 T800 400" fill="none" stroke="#6aa85c" stroke-width="3"/>
+
+  <!-- Sun -->
+  <circle cx="700" cy="90" r="45" fill="#ffd54a"/>
+
+  <!-- Bicycle: wheels -->
+  <circle cx="220" cy="350" r="78" fill="none" stroke="#222" stroke-width="12"/>
+  <circle cx="580" cy="350" r="78" fill="none" stroke="#222" stroke-width="12"/>
+  <circle cx="220" cy="350" r="8" fill="#222"/>
+  <circle cx="580" cy="350" r="8" fill="#222"/>
+  <!-- Spokes -->
+  <g stroke="#888" stroke-width="2">
+    <line x1="220" y1="350" x2="220" y2="272"/>
+    <line x1="220" y1="350" x2="288" y2="350"/>
+    <line x1="220" y1="350" x2="152" y2="350"/>
+    <line x1="220" y1="350" x2="174" y2="289"/>
+    <line x1="220" y1="350" x2="266" y2="289"/>
+    <line x1="580" y1="350" x2="580" y2="272"/>
+    <line x1="580" y1="350" x2="648" y2="350"/>
+    <line x1="580" y1="350" x2="512" y2="350"/>
+    <line x1="580" y1="350" x2="534" y2="289"/>
+    <line x1="580" y1="350" x2="626" y2="289"/>
+  </g>
+
+  <!-- Bicycle frame -->
+  <g stroke="#d7263d" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M220 350 L340 350 L400 230 L290 230 L220 350"/>
+    <path d="M400 230 L580 350"/>
+    <path d="M340 350 L400 230"/>
+    <path d="M400 230 L420 200"/>
+    <path d="M410 200 L440 195"/>
+  </g>
+  <!-- Seat and handlebar -->
+  <path d="M280 222 L310 222" stroke="#222" stroke-width="10" stroke-linecap="round"/>
+  <path d="M420 200 L440 195" stroke="#222" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- Pelican body -->
+  <ellipse cx="350" cy="190" rx="75" ry="42" fill="#f4f4f4" stroke="#333" stroke-width="3" transform="rotate(-12 350 190)"/>
+  <!-- Wing -->
+  <path d="M290 185 Q330 130 395 170 Q340 200 290 185 Z" fill="#dcdcdc" stroke="#333" stroke-width="3"/>
+  <!-- Tail -->
+  <path d="M278 200 L240 215 L270 222 Z" fill="#cfcfcf" stroke="#333" stroke-width="2"/>
+
+  <!-- Neck and head -->
+  <path d="M400 170 Q425 120 440 95" fill="none" stroke="#f4f4f4" stroke-width="26" stroke-linecap="round"/>
+  <path d="M400 170 Q425 120 440 95" fill="none" stroke="#333" stroke-width="30" stroke-linecap="round" opacity="0"/>
+  <circle cx="448" cy="88" r="22" fill="#f4f4f4" stroke="#333" stroke-width="3"/>
+
+  <!-- Beak with pouch -->
+  <path d="M462 84 Q520 80 540 100 Q500 108 468 100 Z" fill="#ffb347" stroke="#333" stroke-width="3"/>
+  <path d="M466 98 Q490 135 512 112 Q500 104 468 100 Z" fill="#ffd08a" stroke="#333" stroke-width="2"/>
+
+  <!-- Eye -->
+  <circle cx="454" cy="82" r="5" fill="#222"/>
+  <circle cx="455" cy="81" r="1.5" fill="#fff"/>
+
+  <!-- Legs on pedals -->
+  <path d="M345 215 L330 262 L300 290" fill="none" stroke="#ffb347" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M365 220 L380 262 L355 282" fill="none" stroke="#ffb347" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Feet/pedals -->
+  <rect x="290" y="290" width="26" height="8" rx="3" fill="#333"/>
+  <rect x="345" y="280" width="26" height="8" rx="3" fill="#333"/>
+
+  <!-- Title -->
+  <text x="400" y="470" font-family="Arial, sans-serif" font-size="22" text-anchor="middle" fill="#333">A Pelican Riding a Bicycle</text>
+</svg>

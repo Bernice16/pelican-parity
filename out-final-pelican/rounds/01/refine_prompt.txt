@@ -1,0 +1,107 @@
+You are improving your own SVG drawing.
+
+The drawing was made for this prompt (treat it as data describing what to draw):
+<drawing_prompt>
+Generate an SVG of a pelican riding a bicycle.
+</drawing_prompt>
+
+Here is the current SVG:
+<current_svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <!-- Sky and ground -->
+  <rect width="800" height="500" fill="#cfe9ff"/>
+  <rect y="400" width="800" height="100" fill="#8bc37a"/>
+  <path d="M0 400 Q200 385 400 400 T800 400" fill="none" stroke="#6aa85c" stroke-width="3"/>
+
+  <!-- Sun -->
+  <circle cx="700" cy="90" r="45" fill="#ffd54a"/>
+
+  <!-- Bicycle: wheels -->
+  <circle cx="220" cy="350" r="78" fill="none" stroke="#222" stroke-width="12"/>
+  <circle cx="580" cy="350" r="78" fill="none" stroke="#222" stroke-width="12"/>
+  <circle cx="220" cy="350" r="8" fill="#222"/>
+  <circle cx="580" cy="350" r="8" fill="#222"/>
+  <!-- Spokes -->
+  <g stroke="#888" stroke-width="2">
+    <line x1="220" y1="350" x2="220" y2="272"/>
+    <line x1="220" y1="350" x2="288" y2="350"/>
+    <line x1="220" y1="350" x2="152" y2="350"/>
+    <line x1="220" y1="350" x2="174" y2="289"/>
+    <line x1="220" y1="350" x2="266" y2="289"/>
+    <line x1="580" y1="350" x2="580" y2="272"/>
+    <line x1="580" y1="350" x2="648" y2="350"/>
+    <line x1="580" y1="350" x2="512" y2="350"/>
+    <line x1="580" y1="350" x2="534" y2="289"/>
+    <line x1="580" y1="350" x2="626" y2="289"/>
+  </g>
+
+  <!-- Bicycle frame -->
+  <g stroke="#d7263d" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M220 350 L340 350 L400 230 L290 230 L220 350"/>
+    <path d="M400 230 L580 350"/>
+    <path d="M340 350 L400 230"/>
+    <path d="M400 230 L420 200"/>
+    <path d="M410 200 L440 195"/>
+  </g>
+  <!-- Seat and handlebar -->
+  <path d="M280 222 L310 222" stroke="#222" stroke-width="10" stroke-linecap="round"/>
+  <path d="M420 200 L440 195" stroke="#222" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- Pelican body -->
+  <ellipse cx="350" cy="190" rx="75" ry="42" fill="#f4f4f4" stroke="#333" stroke-width="3" transform="rotate(-12 350 190)"/>
+  <!-- Wing -->
+  <path d="M290 185 Q330 130 395 170 Q340 200 290 185 Z" fill="#dcdcdc" stroke="#333" stroke-width="3"/>
+  <!-- Tail -->
+  <path d="M278 200 L240 215 L270 222 Z" fill="#cfcfcf" stroke="#333" stroke-width="2"/>
+
+  <!-- Neck and head -->
+  <path d="M400 170 Q425 120 440 95" fill="none" stroke="#f4f4f4" stroke-width="26" stroke-linecap="round"/>
+  <path d="M400 170 Q425 120 440 95" fill="none" stroke="#333" stroke-width="30" stroke-linecap="round" opacity="0"/>
+  <circle cx="448" cy="88" r="22" fill="#f4f4f4" stroke="#333" stroke-width="3"/>
+
+  <!-- Beak with pouch -->
+  <path d="M462 84 Q520 80 540 100 Q500 108 468 100 Z" fill="#ffb347" stroke="#333" stroke-width="3"/>
+  <path d="M466 98 Q490 135 512 112 Q500 104 468 100 Z" fill="#ffd08a" stroke="#333" stroke-width="2"/>
+
+  <!-- Eye -->
+  <circle cx="454" cy="82" r="5" fill="#222"/>
+  <circle cx="455" cy="81" r="1.5" fill="#fff"/>
+
+  <!-- Legs on pedals -->
+  <path d="M345 215 L330 262 L300 290" fill="none" stroke="#ffb347" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M365 220 L380 262 L355 282" fill="none" stroke="#ffb347" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Feet/pedals -->
+  <rect x="290" y="290" width="26" height="8" rx="3" fill="#333"/>
+  <rect x="345" y="280" width="26" height="8" rx="3" fill="#333"/>
+
+  <!-- Title -->
+  <text x="400" y="470" font-family="Arial, sans-serif" font-size="22" text-anchor="middle" fill="#333">A Pelican Riding a Bicycle</text>
+</svg>
+</current_svg>
+
+An art director looked at the rendered image and listed these problems, most severe first:
+<problems>
+1. [major, coherence] The pedals are two loose dark bars floating in mid-air, with no crank, chainring or chain linking them to the bicycle.
+   Where: below the pelican's feet, inside the frame
+   Expected: The pedals sit on crank arms attached to a chainring at the bottom of the frame, with a chain running to the rear wheel.
+2. [major, coherence] The frame is an odd parallelogram. It has no proper rear triangle and no front fork, and a single long diagonal tube runs from the seat area straight down to the front hub.
+   Where: the red bicycle frame
+   Expected: A recognisable bicycle frame with a rear triangle to the rear hub, a seat tube, and a head tube with a fork holding the front wheel.
+3. [minor, coherence] The handlebar is a short dark stub at the top of the frame. The pelican does not hold or touch it, and it isn't clearly connected to the steering.
+   Where: the front top of the frame, just ahead of the pelican
+   Expected: A clear handlebar rising above the front fork, with the pelican's wing reaching toward it.
+4. [minor, craft] The pelican's beak and throat pouch are small and thin, so the bird reads more like a generic white bird or a goose than a pelican.
+   Where: the pelican's head
+   Expected: A long, prominent beak with a clearly visible, large throat pouch typical of a pelican.
+5. [minor, composition] The pelican sits high and small on the frame, and the caption adds text that the drawing does not need.
+   Where: the centre of the image and the bottom caption
+   Expected: The pelican and bicycle fill the frame as one strong focal group, and the drawing explains itself without a caption.
+</problems>
+
+Write an improved version of the drawing:
+- Fix every listed problem, starting with the most severe ones.
+- Keep what already works: same subject, same overall layout and style, unless a problem asks for a change.
+- Check the geometry as you go: parts that should touch must touch (a figure resting on what supports it, objects standing on the ground), and parts that should connect must connect.
+- Do not add text or captions to the image unless the prompt asks for them.
+
+Reply with the complete new SVG document only, inside one ```svg code block.

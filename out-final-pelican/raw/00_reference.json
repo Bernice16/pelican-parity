@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 42776,
+  "stop_reason": "end_turn",
+  "session_id": "d41a07e5-6fbc-488c-a092-3fb32c732506",
+  "total_cost_usd": 0.20270624999999998,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1136,
+    "cache_read_input_tokens": 4265,
+    "output_tokens": 3578,
+    "output_tokens_details": {
+      "thinking_tokens": 783
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1136,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 3578,
+        "cache_read_input_tokens": 4265,
+        "cache_creation_input_tokens": 1136,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1136
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-fable-5-1": {
+      "inputTokens": 2,
+      "outputTokens": 3578,
+      "cacheReadInputTokens": 4265,
+      "cacheCreationInputTokens": 1136,
+      "webSearchRequests": 0,
+      "costUSD": 0.20270624999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 783,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1136,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Voici le p\u00e9lican \u00e0 v\u00e9lo :\n\n```svg\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 500\" width=\"800\" height=\"500\">\n  <defs>\n    <linearGradient id=\"sky\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"0\" stop-color=\"#8ecbf0\"/>\n      <stop offset=\"1\" stop-color=\"#e3f3fb\"/>\n    </linearGradient>\n  </defs>\n\n  <!-- Background -->\n  <rect width=\"800\" height=\"500\" fill=\"url(#sky)\"/>\n  <circle cx=\"680\" cy=\"80\" r=\"42\" fill=\"#ffd95c\"/>\n  <g fill=\"#ffffff\" opacity=\"0.9\">\n    <ellipse cx=\"140\" cy=\"90\" rx=\"55\" ry=\"22\"/>\n    <ellipse cx=\"175\" cy=\"78\" rx=\"40\" ry=\"26\"/>\n    <ellipse cx=\"520\" cy=\"60\" rx=\"45\" ry=\"18\"/>\n    <ellipse cx=\"548\" cy=\"50\" rx=\"30\" ry=\"20\"/>\n  </g>\n  <rect y=\"430\" width=\"800\" height=\"70\" fill=\"#7cb46b\"/>\n  <rect y=\"425\" width=\"800\" height=\"12\" fill=\"#5f9552\"/>\n\n  <!-- Bicycle -->\n  <g stroke=\"#333\" stroke-width=\"6\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <!-- wheels -->\n    <circle cx=\"220\" cy=\"380\" r=\"70\" stroke=\"#222\" stroke-width=\"10\"/>\n    <circle cx=\"560\" cy=\"380\" r=\"70\" stroke=\"#222\" stroke-width=\"10\"/>\n    <circle cx=\"220\" cy=\"380\" r=\"60\" stroke=\"#999\" stroke-width=\"2\"/>\n    <circle cx=\"560\" cy=\"380\" r=\"60\" stroke=\"#999\" stroke-width=\"2\"/>\n    <g stroke=\"#aaa\" stroke-width=\"2\">\n      <line x1=\"220\" y1=\"310\" x2=\"220\" y2=\"450\"/>\n      <line x1=\"150\" y1=\"380\" x2=\"290\" y2=\"380\"/>\n      <line x1=\"170\" y1=\"330\" x2=\"270\" y2=\"430\"/>\n      <line x1=\"170\" y1=\"430\" x2=\"270\" y2=\"330\"/>\n      <line x1=\"560\" y1=\"310\" x2=\"560\" y2=\"450\"/>\n      <line x1=\"490\" y1=\"380\" x2=\"630\" y2=\"380\"/>\n      <line x1=\"510\" y1=\"330\" x2=\"610\" y2=\"430\"/>\n      <line x1=\"510\" y1=\"430\" x2=\"610\" y2=\"330\"/>\n    </g>\n    <!-- frame -->\n    <g stroke=\"#d9452b\" stroke-width=\"9\">\n      <line x1=\"220\" y1=\"380\" x2=\"390\" y2=\"380\"/>\n      <line x1=\"390\" y1=\"380\" x2=\"340\" y2=\"240\"/>\n      <line x1=\"220\" y1=\"380\" x2=\"340\" y2=\"240\"/>\n      <line x1=\"340\" y1=\"240\" x2=\"500\" y2=\"250\"/>\n      <line x1=\"390\" y1=\"380\" x2=\"500\" y2=\"250\"/>\n      <line x1=\"500\" y1=\"250\" x2=\"560\" y2=\"380\"/>\n    </g>\n    <!-- seat post, handlebars -->\n    <line x1=\"340\" y1=\"240\" x2=\"335\" y2=\"222\" stroke=\"#555\"/>\n    <line x1=\"500\" y1=\"250\" x2=\"492\" y2=\"210\" stroke=\"#555\"/>\n    <path d=\"M470 212 Q492 200 514 214\" stroke=\"#333\" stroke-width=\"7\"/>\n    <!-- chainring and cranks -->\n    <circle cx=\"390\" cy=\"380\" r=\"22\" stroke=\"#555\" stroke-width=\"5\"/>\n    <circle cx=\"220\" cy=\"380\" r=\"9\" stroke=\"#555\" stroke-width=\"4\"/>\n    <line x1=\"235\" y1=\"371\" x2=\"390\" y2=\"358\" stroke=\"#555\" stroke-width=\"3\"/>\n    <line x1=\"230\" y1=\"389\" x2=\"392\" y2=\"402\" stroke=\"#555\" stroke-width=\"3\"/>\n    <line x1=\"355\" y1=\"360\" x2=\"425\" y2=\"400\" stroke=\"#333\" stroke-width=\"7\"/>\n    <rect x=\"412\" y=\"394\" width=\"26\" height=\"10\" fill=\"#333\" stroke=\"none\"/>\n    <rect x=\"342\" y=\"355\" width=\"26\" height=\"10\" fill=\"#333\" stroke=\"none\"/>\n  </g>\n  <!-- seat -->\n  <ellipse cx=\"335\" cy=\"220\" rx=\"32\" ry=\"10\" fill=\"#4a2f1b\"/>\n\n  <!-- Pelican -->\n  <!-- legs -->\n  <g stroke=\"#f0a030\" stroke-width=\"9\" stroke-linecap=\"round\" fill=\"none\">\n    <path d=\"M330 255 L350 330 L355 362\"/>\n    <path d=\"M345 255 L395 330 L425 398\"/>\n  </g>\n  <g fill=\"#f0a030\">\n    <path d=\"M340 362 L368 356 L372 368 L348 372 Z\"/>\n    <path d=\"M410 398 L438 390 L442 404 L418 410 Z\"/>\n  </g>\n\n  <!-- tail -->\n  <path d=\"M250 205 L200 185 L215 215 L195 240 L245 235 Z\" fill=\"#e8e8e8\" stroke=\"#bbb\" stroke-width=\"2\"/>\n\n  <!-- body -->\n  <ellipse cx=\"330\" cy=\"205\" rx=\"92\" ry=\"58\" fill=\"#f7f7f7\" stroke=\"#c9c9c9\" stroke-width=\"3\" transform=\"rotate(-8 330 205)\"/>\n\n  <!-- wing reaching the handlebar -->\n  <path d=\"M300 190 Q370 150 490 208 Q400 215 345 240 Q320 230 300 190 Z\" fill=\"#e6e6e6\" stroke=\"#bdbdbd\" stroke-width=\"3\"/>\n  <path d=\"M330 200 Q400 185 470 207\" fill=\"none\" stroke=\"#cfcfcf\" stroke-width=\"2\"/>\n  <path d=\"M325 215 Q395 200 455 215\" fill=\"none\" stroke=\"#cfcfcf\" stroke-width=\"2\"/>\n\n  <!-- neck -->\n  <path d=\"M395 175 C 430 160, 440 120, 455 95\" fill=\"none\" stroke=\"#f7f7f7\" stroke-width=\"30\" stroke-linecap=\"round\"/>\n  <path d=\"M395 175 C 430 160, 440 120, 455 95\" fill=\"none\" stroke=\"#c9c9c9\" stroke-width=\"34\" stroke-linecap=\"round\" opacity=\"0.35\"/>\n  <path d=\"M395 175 C 430 160, 440 120, 455 95\" fill=\"none\" stroke=\"#f7f7f7\" stroke-width=\"28\" stroke-linecap=\"round\"/>\n\n  <!-- head -->\n  <circle cx=\"468\" cy=\"82\" r=\"28\" fill=\"#f7f7f7\" stroke=\"#c9c9c9\" stroke-width=\"3\"/>\n  <path d=\"M452 58 Q470 40 490 56 Q476 56 452 58 Z\" fill=\"#ededed\"/>\n\n  <!-- beak + pouch -->\n  <path d=\"M486 72 L600 92 L590 100 L488 92 Z\" fill=\"#f5b942\" stroke=\"#d69a25\" stroke-width=\"2\" stroke-linejoin=\"round\"/>\n  <path d=\"M488 92 L590 100 Q560 140 505 128 Q488 115 488 92 Z\" fill=\"#f2a24a\" stroke=\"#d69a25\" stroke-width=\"2\" stroke-linejoin=\"round\"/>\n  <line x1=\"488\" y1=\"92\" x2=\"590\" y2=\"100\" stroke=\"#b87a18\" stroke-width=\"2\"/>\n\n  <!-- eye -->\n  <circle cx=\"478\" cy=\"76\" r=\"6\" fill=\"#222\"/>\n  <circle cx=\"480\" cy=\"74\" r=\"2\" fill=\"#fff\"/>\n\n  <!-- motion lines -->\n  <g stroke=\"#ffffff\" stroke-width=\"4\" stroke-linecap=\"round\" opacity=\"0.8\">\n    <line x1=\"60\" y1=\"300\" x2=\"110\" y2=\"300\"/>\n    <line x1=\"40\" y1=\"330\" x2=\"100\" y2=\"330\"/>\n    <line x1=\"70\" y1=\"360\" x2=\"120\" y2=\"360\"/>\n  </g>\n</svg>\n```",
+  "ttft_ms": 13429,
+  "type": "result",
+  "duration_ms": 43425,
+  "uuid": "d8bea541-ae4d-4a25-a67d-a175e7dd37ba",
+  "ttft_stream_ms": 2372,
+  "time_to_request_ms": 651,
+  "first_content_frame_ms": 2372,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:49.359Z"
+}

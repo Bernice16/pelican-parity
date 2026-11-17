@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 20351,
+  "stop_reason": "end_turn",
+  "session_id": "fa676108-1876-4700-a5ef-a9836eb75e42",
+  "total_cost_usd": 0.0526786,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 1685,
+    "cache_read_input_tokens": 12313,
+    "output_tokens": 1836,
+    "output_tokens_details": {
+      "thinking_tokens": 666
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1685,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1669,
+        "cache_read_input_tokens": 6346,
+        "cache_creation_input_tokens": 1306,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1306
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1836,
+      "cacheReadInputTokens": 12313,
+      "cacheCreationInputTokens": 1685,
+      "webSearchRequests": 0,
+      "costUSD": 0.0526786,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 666,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1685,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"images\":{\"A\":{\"summary\":\"A white pelican with a large orange pouch rides a red bicycle in a sunny landscape, with its feet on the pedals and its wing reaching the handlebars; it answers the prompt clearly and cleanly.\",\"scores\":{\"fidelity\":5,\"coherence\":4,\"readability\":5,\"composition\":5,\"craft\":4},\"defects\":[{\"criterion\":\"coherence\",\"severity\":\"minor\",\"what\":\"There is no saddle or seat post, so the body floats on the top tube instead of sitting on a seat\",\"where\":\"between the pelican's body and the bicycle frame\",\"expected\":\"The pelican visibly sits on a saddle attached to the frame\"},{\"criterion\":\"coherence\",\"severity\":\"minor\",\"what\":\"The legs are thin straight sticks that bend stiffly and do not clearly match the positions of the crank arms\",\"where\":\"the pelican's legs and the pedals\",\"expected\":\"The legs bend naturally, with each foot clearly placed on its own pedal at opposite points of the crank\"},{\"criterion\":\"craft\",\"severity\":\"minor\",\"what\":\"The wing tip overlaps the handlebar grip, so it is unclear whether the wing holds the bar or passes over it\",\"where\":\"the front tip of the wing at the handlebars\",\"expected\":\"The wing tip clearly grips or rests on the handlebar\"}]},\"B\":{\"summary\":\"A pelican with a big pouched beak rides a red bicycle on a green hill under a sun, with its feet on the pedals; it is clear and on prompt but less polished.\",\"scores\":{\"fidelity\":5,\"coherence\":4,\"readability\":5,\"composition\":5,\"craft\":3},\"defects\":[{\"criterion\":\"craft\",\"severity\":\"major\",\"what\":\"The wheels have only a few uneven spokes, set at irregular angles, so they look unfinished\",\"where\":\"both bicycle wheels\",\"expected\":\"Each wheel has evenly spaced spokes running all the way around the hub\"},{\"criterion\":\"craft\",\"severity\":\"minor\",\"what\":\"The neck has no outline while the head and body do, and its pale colour almost disappears against the light sky\",\"where\":\"the pelican's neck\",\"expected\":\"The neck is drawn in the same outlined style as the body and stands out clearly from the background\"},{\"criterion\":\"coherence\",\"severity\":\"minor\",\"what\":\"There is no saddle, so the pelican's body rests directly on the frame tubes\",\"where\":\"under the pelican's body\",\"expected\":\"The pelican visibly sits on a saddle mounted on the frame\"},{\"criterion\":\"coherence\",\"severity\":\"minor\",\"what\":\"The legs are very thin and angular, and the upper foot only barely meets its pedal\",\"where\":\"the pelican's legs and pedals\",\"expected\":\"Both feet rest clearly on the pedals, with legs in proportion to the body\"}]}},\"not_applicable\":[],\"parity\":true,\"parity_reason\":\"The scores differ by at most 1 on every criterion (only craft differs), the totals are 23 vs 22 (a difference of 1), and neither image has a critical defect, so all three parity conditions hold.\"}",
+  "ttft_ms": 3975,
+  "type": "result",
+  "duration_ms": 22495,
+  "uuid": "4cbfb434-1a93-42ac-b07d-3095b812dc25",
+  "ttft_stream_ms": 3751,
+  "time_to_request_ms": 2106,
+  "first_content_frame_ms": 3751,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:49.359Z"
+}

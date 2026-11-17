@@ -1,0 +1,93 @@
+{
+  "session_id": "5f507977-11b0-4b51-a112-64b81bf1f21f",
+  "judge_prompt": "prompts/judge_v1.txt",
+  "blind": {
+    "A": "reference",
+    "B": "attempt"
+  },
+  "parity": true,
+  "parity_reason": "Both images score 22 in total and get the same score on every criterion, so no criterion differs by more than 1. Neither image has a critical defect, so all three parity conditions hold.",
+  "rule_parity": true,
+  "attempt_at_least_reference": true,
+  "reference": {
+    "summary": "A cartoon brown monkey clings to the trunk of an apple tree full of red apples and reaches up toward the canopy, with a sky, sun, clouds and grass behind; it answers the prompt well.",
+    "scores": {
+      "fidelity": 5,
+      "coherence": 4,
+      "readability": 5,
+      "composition": 4,
+      "craft": 4
+    },
+    "defects": [
+      {
+        "criterion": "coherence",
+        "severity": "major",
+        "what": "The lower body reads as a shapeless curled blob, and the single visible foot hangs loosely in front of the trunk instead of gripping it.",
+        "where": "the monkey's legs and feet",
+        "expected": "Clearly drawn legs whose feet press against or wrap around the trunk, so the climbing grip is believable."
+      },
+      {
+        "criterion": "craft",
+        "severity": "minor",
+        "what": "Thin dark lines on the trunk cross behind and beside the monkey's body and look like stray strokes rather than bark or vines.",
+        "where": "the trunk around the monkey",
+        "expected": "Bark detail that clearly belongs to the trunk and does not tangle with the monkey's outline."
+      },
+      {
+        "criterion": "coherence",
+        "severity": "minor",
+        "what": "The raised hand floats just under an apple without clearly holding a branch or the fruit.",
+        "where": "the monkey's raised arm at the bottom edge of the canopy",
+        "expected": "The raised hand visibly grips a branch or holds an apple."
+      },
+      {
+        "criterion": "composition",
+        "severity": "minor",
+        "what": "The large canopy dominates the frame and the monkey sits fairly low, so the eye goes to the foliage first.",
+        "where": "overall framing",
+        "expected": "The monkey stands out as the clear focal point, with the canopy supporting it."
+      }
+    ]
+  },
+  "attempt": {
+    "summary": "A cartoon brown monkey hangs from two branches of an apple tree, its body against the trunk and one leg bent, under a sun in a clear sky; it answers the prompt well.",
+    "scores": {
+      "fidelity": 5,
+      "coherence": 4,
+      "readability": 5,
+      "composition": 4,
+      "craft": 4
+    },
+    "defects": [
+      {
+        "criterion": "coherence",
+        "severity": "major",
+        "what": "Only one leg is visible, and it is kicked out to the side with the foot in mid-air instead of bracing on the trunk.",
+        "where": "the monkey's lower body",
+        "expected": "Two legs, with feet gripping or pushing against the trunk in a climbing pose."
+      },
+      {
+        "criterion": "craft",
+        "severity": "minor",
+        "what": "The ground is a thin flat sliver at the very bottom, so the tree base looks barely planted.",
+        "where": "bottom edge of the image",
+        "expected": "The tree's base sits clearly in a visible patch of ground."
+      },
+      {
+        "criterion": "composition",
+        "severity": "minor",
+        "what": "The lower half of the frame is mostly empty trunk and sky, which leaves the image top-heavy.",
+        "where": "lower half of the image",
+        "expected": "A more balanced layout where the space below the monkey is not left empty."
+      },
+      {
+        "criterion": "craft",
+        "severity": "minor",
+        "what": "The flat dark green canopy makes the overlapping foliage circles merge, and some apples blend into the dense shape.",
+        "where": "the tree canopy",
+        "expected": "Foliage with enough tonal variation to separate the leaf clusters and make the apples stand out."
+      }
+    ]
+  },
+  "not_applicable": []
+}

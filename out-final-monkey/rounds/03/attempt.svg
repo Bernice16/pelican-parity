@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9fd8f5"/>
+      <stop offset="1" stop-color="#e8f7ff"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="400" height="400" fill="url(#sky)"/>
+
+  <!-- Sun -->
+  <circle cx="340" cy="60" r="28" fill="#ffd84d"/>
+
+  <!-- Ground -->
+  <ellipse cx="200" cy="392" rx="210" ry="22" fill="#6abf4b"/>
+
+  <!-- Tree and monkey, scaled up to fill more of the frame -->
+  <g transform="translate(200 400) scale(1.12) translate(-200 -400)">
+
+    <!-- Trunk -->
+    <path d="M176 392 L180 240 Q182 200 176 170 L196 170 Q190 200 202 240 L206 392 Z" fill="#7a4a24"/>
+
+    <!-- Branches -->
+    <path d="M188 222 Q170 200 140 188" stroke="#7a4a24" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <path d="M196 210 Q220 190 252 166" stroke="#7a4a24" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <path d="M190 180 Q188 150 200 128" stroke="#7a4a24" stroke-width="7" fill="none" stroke-linecap="round"/>
+
+    <!-- Canopy -->
+    <g fill="#2e8b3a">
+      <circle cx="200" cy="120" r="50"/>
+      <circle cx="150" cy="150" r="38"/>
+      <circle cx="252" cy="142" r="42"/>
+      <circle cx="120" cy="184" r="28"/>
+      <circle cx="282" cy="180" r="30"/>
+      <circle cx="210" cy="82" r="32"/>
+    </g>
+    <g fill="#3fa84d" opacity="0.8">
+      <circle cx="188" cy="108" r="22"/>
+      <circle cx="260" cy="128" r="20"/>
+      <circle cx="140" cy="140" r="18"/>
+    </g>
+
+    <!-- Apples -->
+    <g>
+      <circle cx="140" cy="150" r="8" fill="#d62828"/>
+      <circle cx="262" cy="150" r="8" fill="#d62828"/>
+      <circle cx="200" cy="100" r="8" fill="#d62828"/>
+      <circle cx="232" cy="118" r="8" fill="#d62828"/>
+      <circle cx="170" cy="128" r="8" fill="#d62828"/>
+      <circle cx="282" cy="186" r="8" fill="#d62828"/>
+      <circle cx="118" cy="190" r="8" fill="#d62828"/>
+      <g fill="#ffffff" opacity="0.6">
+        <circle cx="137" cy="147" r="2"/>
+        <circle cx="259" cy="147" r="2"/>
+        <circle cx="197" cy="97" r="2"/>
+        <circle cx="229" cy="115" r="2"/>
+        <circle cx="167" cy="125" r="2"/>
+        <circle cx="279" cy="183" r="2"/>
+        <circle cx="115" cy="187" r="2"/>
+      </g>
+      <g stroke="#5a3a1a" stroke-width="2">
+        <path d="M140 142 L141 136"/>
+        <path d="M262 142 L263 136"/>
+        <path d="M200 92 L202 86"/>
+        <path d="M232 110 L233 104"/>
+        <path d="M170 120 L171 114"/>
+        <path d="M282 178 L283 172"/>
+        <path d="M118 182 L119 176"/>
+      </g>
+    </g>
+
+    <!-- Monkey tail, curling out from the base of the body -->
+    <path d="M200 300 Q232 304 234 280 Q236 262 226 256" stroke="#8b5a2b" stroke-width="6" fill="none" stroke-linecap="round"/>
+
+    <!-- Monkey legs: climbing pose, knees bent outward, feet pressed onto the trunk -->
+    <path d="M186 284 L170 294 L182 306" stroke="#8b5a2b" stroke-width="11" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M202 282 L214 272 L200 266" stroke="#8b5a2b" stroke-width="11" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <ellipse cx="184" cy="309" rx="7" ry="4.5" fill="#5c3a1c"/>
+    <ellipse cx="199" cy="264" rx="7" ry="4.5" fill="#5c3a1c"/>
+
+    <!-- Monkey body, pressed against the trunk -->
+    <ellipse cx="194" cy="262" rx="18" ry="28" fill="#8b5a2b"/>
+    <ellipse cx="195" cy="270" rx="9" ry="13" fill="#d9a86c"/>
+
+    <!-- Monkey arms: reaching up to the branches -->
+    <path d="M184 246 Q172 232 166 202" stroke="#8b5a2b" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <path d="M206 240 Q216 214 222 190" stroke="#8b5a2b" stroke-width="10" fill="none" stroke-linecap="round"/>
+
+    <!-- Hands curled around the branches -->
+    <ellipse cx="166" cy="198" rx="7" ry="6" fill="#5c3a1c"/>
+    <path d="M160 196 Q166 190 172 196" stroke="#5c3a1c" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <ellipse cx="222" cy="186" rx="7" ry="6" fill="#5c3a1c"/>
+    <path d="M216 184 Q222 178 228 184" stroke="#5c3a1c" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+    <!-- Monkey ears: larger, rounded, clearly outside the head -->
+    <circle cx="177" cy="214" r="8" fill="#8b5a2b"/>
+    <circle cx="177" cy="214" r="4.5" fill="#d9a86c"/>
+    <circle cx="215" cy="214" r="8" fill="#8b5a2b"/>
+    <circle cx="215" cy="214" r="4.5" fill="#d9a86c"/>
+
+    <!-- Monkey head -->
+    <circle cx="196" cy="218" r="18" fill="#a0692f"/>
+    <ellipse cx="196" cy="225" rx="11" ry="9" fill="#f5deb3"/>
+
+    <!-- Face -->
+    <circle cx="189" cy="214" r="2.6" fill="#2b1a0e"/>
+    <circle cx="203" cy="214" r="2.6" fill="#2b1a0e"/>
+    <circle cx="190" cy="213" r="0.8" fill="#ffffff"/>
+    <circle cx="204" cy="213" r="0.8" fill="#ffffff"/>
+    <ellipse cx="196" cy="221" rx="2" ry="1.5" fill="#2b1a0e"/>
+    <path d="M191 228 Q196 231 201 228" stroke="#2b1a0e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

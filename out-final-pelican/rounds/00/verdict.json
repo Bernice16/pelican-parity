@@ -1,0 +1,93 @@
+{
+  "session_id": "c15dbc91-5a66-47cd-bc01-3f85965920c2",
+  "judge_prompt": "prompts/judge_v1.txt",
+  "blind": {
+    "A": "attempt",
+    "B": "reference"
+  },
+  "parity": false,
+  "parity_reason": "B beats A by 1 on fidelity, coherence, readability and craft (A 18, B 23). Several criteria differ and the totals differ by 5, so rule 2 fails and there is no parity.",
+  "rule_parity": false,
+  "attempt_at_least_reference": false,
+  "reference": {
+    "summary": "A large white pelican rides a red bicycle with its feet on the pedals and its wing toward the handlebar, against a sky with clouds, sun and speed lines; it answers the prompt clearly and well.",
+    "scores": {
+      "fidelity": 5,
+      "coherence": 4,
+      "readability": 5,
+      "composition": 5,
+      "craft": 4
+    },
+    "defects": [
+      {
+        "criterion": "coherence",
+        "severity": "minor",
+        "what": "There is no visible seat. The pelican's body hovers over the top tube, so it is unclear what the bird is sitting on.",
+        "where": "under the pelican's body, along the top of the frame",
+        "expected": "A saddle under the pelican's body, so the bird clearly sits on the bicycle."
+      },
+      {
+        "criterion": "craft",
+        "severity": "minor",
+        "what": "The wing shape overlaps the base of the neck and the edge of the body awkwardly, so the shapes look stacked rather than joined.",
+        "where": "the pelican's wing and lower neck",
+        "expected": "The wing sits naturally on the body's side, and the neck joins the body cleanly."
+      },
+      {
+        "criterion": "coherence",
+        "severity": "minor",
+        "what": "The legs are long thin straight sticks that stretch down at a stiff angle, and one foot reaches past the frame to the far pedal.",
+        "where": "the pelican's legs and feet",
+        "expected": "Legs bent at the knee and sized to the bird, with each foot resting naturally on its pedal."
+      }
+    ]
+  },
+  "attempt": {
+    "summary": "A white pelican sits on a red bicycle in a sunny meadow with a caption below; the subject is clear, but the bicycle frame is oddly built and the pedals float without a crank.",
+    "scores": {
+      "fidelity": 4,
+      "coherence": 3,
+      "readability": 4,
+      "composition": 4,
+      "craft": 3
+    },
+    "defects": [
+      {
+        "criterion": "coherence",
+        "severity": "major",
+        "what": "The pedals are two loose dark bars floating in mid-air, with no crank, chainring or chain linking them to the bicycle.",
+        "where": "below the pelican's feet, inside the frame",
+        "expected": "The pedals sit on crank arms attached to a chainring at the bottom of the frame, with a chain running to the rear wheel."
+      },
+      {
+        "criterion": "coherence",
+        "severity": "major",
+        "what": "The frame is an odd parallelogram. It has no proper rear triangle and no front fork, and a single long diagonal tube runs from the seat area straight down to the front hub.",
+        "where": "the red bicycle frame",
+        "expected": "A recognisable bicycle frame with a rear triangle to the rear hub, a seat tube, and a head tube with a fork holding the front wheel."
+      },
+      {
+        "criterion": "coherence",
+        "severity": "minor",
+        "what": "The handlebar is a short dark stub at the top of the frame. The pelican does not hold or touch it, and it isn't clearly connected to the steering.",
+        "where": "the front top of the frame, just ahead of the pelican",
+        "expected": "A clear handlebar rising above the front fork, with the pelican's wing reaching toward it."
+      },
+      {
+        "criterion": "craft",
+        "severity": "minor",
+        "what": "The pelican's beak and throat pouch are small and thin, so the bird reads more like a generic white bird or a goose than a pelican.",
+        "where": "the pelican's head",
+        "expected": "A long, prominent beak with a clearly visible, large throat pouch typical of a pelican."
+      },
+      {
+        "criterion": "composition",
+        "severity": "minor",
+        "what": "The pelican sits high and small on the frame, and the caption adds text that the drawing does not need.",
+        "where": "the centre of the image and the bottom caption",
+        "expected": "The pelican and bicycle fill the frame as one strong focal group, and the drawing explains itself without a caption."
+      }
+    ]
+  },
+  "not_applicable": []
+}

@@ -1,112 +1,122 @@
 # REPORT
 
-Every number below comes from the run folders' `usage.csv` and `summary.json`. The judge totals are sums of 5 criteria, scored 1–5, so the maximum is 25.
+All numbers come from the run folders' `usage.csv` and `summary.json`. Judge totals are the sum of 5 criteria scored 1–5 (max 25).
 
-## 1. Results: rounds to parity and cost
+## 1. Results
 
-| run | prompt | stop | refine rounds | Haiku total (round 0 → final) | reference total | judgments | total cost |
-|---|---|---|---|---|---|---|---|
-| `out-final-pelican` | pelican riding a bicycle | `parity` | 1 | 18 → 22 | 23 (confirmation: 21 vs 22) | 3 | **$0.3819** |
-| `out-final-monkey` | a monkey climbing an apple tree (own prompt) | `attempt_exceeds_reference` | 3 | 19 → 22 | 19 (confirmation: 22 vs 22) | 5 | **$0.5295** |
+| run | stop | refine rounds | Haiku total, round 0 → final | reference total (confirmation) | judgments | cost |
+|---|---|---|---|---|---|---|
+| `out-final-pelican`: pelican on a bicycle | `parity` | 1 | 18 → 22 | 23 (21 vs 22) | 3 | **$0.3819** |
+| `out-final-monkey`: a monkey climbing an apple tree (own prompt) | `attempt_exceeds_reference` | 3 | 19 → 22 | 19 (22 vs 22) | 5 | **$0.5295** |
 
 **Cost by role:**
-- pelican: reference $0.2027, baseline $0.0012, judge $0.1753, refine $0.0026;
-- monkey: reference $0.2190, baseline $0.0018, judge $0.2999, refine $0.0087.
 
-**Summary flags.** Neither run had a lost session (`reserved_unmeasured_usd` = 0). In the monkey run, the judge rated the attempt *above* the reference, so `summary.json` says `parity: false` and stop `attempt_exceeds_reference`. The confirmation judgment called it parity (22 vs 22).
-
-**Numbers agree.** Each run's `usage.csv` total equals its `summary.json` `total_cost_usd`. All rows are also in `ledger/usage.csv`.
-
-**Project spend (all sessions, `ledger/usage.csv`): $3.2175.** It splits as:
-- reference $1.0512;
-- judge $1.4664;
-- baseline and refine $0.0371;
-- judge calibration $0.3105;
-- manual exploration before the harness existed $0.3523.
-
-## 2. Headline: is the cheap model plus judge cheaper?
-
-**No, not at these prices.** The table covers the four runs made with the final code (see [`eval/headline.md`](eval/headline.md)):
-
-| | Fable alone | Haiku drawings | Opus judgments | loop (Haiku + judge) |
+| run | reference | baseline | judge | refine |
 |---|---|---|---|---|
-| average per run | **$0.165** | $0.008 | $0.291 | **$0.299 (1.8×)** |
+| pelican | $0.2027 | $0.0012 | $0.1753 | $0.0026 |
+| monkey | $0.2190 | $0.0018 | $0.2999 | $0.0087 |
 
-Per run, the loop costs between 0.88× and 3.15× what Fable alone costs.
+**Run checks:**
+- **No lost sessions.** Neither run had a lost session.
+- **Monkey `parity: false`.** The first judgment rated the attempt *above* the reference, so `summary.json` has `parity: false` (see §4).
+- **Totals match.** Each run's `usage.csv` total equals its `total_cost_usd`.
+- **Ledger complete.** Every row is also in `ledger/usage.csv`.
 
-**Haiku is not the problem.** Its drawings cost about 20× less than Fable's, and it reached the reference's level in 1–4 rounds in all four runs. **The judge is the problem**: it makes up about 97% of the loop's cost. Each judgment costs $0.05–0.09, about a third of a Fable drawing, and a run needs 3–7 of them.
+**Project spend: $3.2175** (all sessions):
 
-The loop only pays off when the judge is cheaper than the drawing it replaces. That would happen with a much longer or harder drawing, or if one judgment could serve many attempts (see §5).
+| item | cost |
+|---|---|
+| reference | $1.0512 |
+| judge | $1.4664 |
+| Haiku | $0.0371 |
+| judge calibration | $0.3105 |
+| manual exploration before the harness existed | $0.3523 |
 
-## 3. Decisions ("You decide")
+## 2. Headline: is cheap model + judge cheaper?
 
-**Judge prompt and criteria** ([`prompts/judge_v1.txt`](prompts/judge_v1.txt), the only version):
-- **Blind A/B.** The judge sees `A.png` and `B.png` in random order (`blind.json`), not "reference" and "attempt", so it cannot favour the strong model by name.
-- **Five generic criteria, scored 1–5 with shared anchors.** Fidelity, coherence, readability, composition and craft. Each is defined relative to the prompt, so the prompt works for any drawing.
-- **Up to 5 concrete defects per image.** Each one has a criterion, a severity, *what*, *where* and *expected*. *Expected* is written as an outcome, not as a recipe, and coordinates, numbers, colour values, code and mentions of the other image are forbidden.
-- **The parity rule is written into the prompt.** Every criterion must be within 1, the totals within 1, and neither image may have a critical defect. The judge applies the rule. The harness recomputes it and logs any disagreement.
-- **Why "totals within 1" was added.** A first draft, without that condition, declared 23 vs 20 a parity during development. I tightened it before the prompt was ever committed.
+**No.** Over the four runs made with the final code ([`eval/headline.md`](eval/headline.md)), a run cost on average:
 
-**Confirmation.** A "yes" (parity, or attempt ≥ reference) is accepted only if a second judgment agrees. It uses the same judge and prompt in a new session, with A and B swapped.
-- **Why.** Calibration showed the judge is noisy near the threshold (see §4), and a false "yes" ends the run. A false "no" costs one extra round and corrects itself, so "no" verdicts are not re-checked.
-- **Effect.** In the four final-code runs, the confirmation rejected 2 of the 6 first-judgment "yes" verdicts.
+| Fable alone | Haiku drawings | Opus judgments | full loop |
+|---|---|---|---|
+| **$0.165** | $0.008 | $0.291 | **$0.299 (1.8×)** |
+
+Per run, the full loop cost 0.88× to 3.15× what Fable alone cost.
+
+- **Haiku is cheap enough.** Its drawings cost about 20× less than Fable's, and it reached the reference's level in 1–4 rounds every time.
+- **The judge is what makes the loop expensive.** It is about 97% of the loop's cost. One judgment costs $0.05–0.09, about a third of a Fable drawing, and a run needs 3–7 judgments.
+- **When the loop would pay off.** Only when judging costs much less than the drawing it replaces.
+
+## 3. Decisions
+
+**Judge** ([`prompts/judge_v1.txt`](prompts/judge_v1.txt), the only version):
+- **Blind A/B.** The judge sees `A.png` and `B.png` in random order, so it cannot favour the strong model by name.
+- **Five generic criteria.** Fidelity, coherence, readability, composition and craft, each scored 1–5 on the same anchors. Each criterion is defined relative to the prompt, so the same judge prompt works for any drawing.
+- **Concrete defects.** Up to 5 per image. Each has a criterion, a severity, *what*, *where* and *expected*. *Expected* is written as an outcome. Numbers, colour values, code and any mention of the other image are forbidden.
+- **Parity rule in the prompt.** Every criterion within 1, totals within 1, and no critical defect. The harness recomputes the rule and logs any disagreement with the judge.
+- **Why "totals within 1".** I added it after a draft without it declared 23 vs 20 a parity. This happened before the prompt was first committed.
+
+**Confirmation.** A "yes" (parity, or attempt ≥ reference) stands only if a second judgment agrees. It is a new session with the same judge, and A and B swapped.
+- **Why.** The judge is noisy near the threshold (§4). A false "yes" ends the run, while a false "no" only costs one round.
+- **Result.** The confirmation rejected 2 of 6 first-judgment "yes" verdicts.
 
 **Firewall** (`harness/firewall.py`). This is the only path from the judge to Haiku.
-- **What passes.** Only the attempt's own defects pass: no scores, summaries, A/B labels or reference defects.
-- **Leak checks.** Each defect is checked, field by field, for mentions of the other image, numbers, colour values and code words. A leaking defect is dropped whole and logged; it is never edited.
-- **Last check.** The final refine prompt is checked for the reference SVG.
-- **What Haiku gets.** The original prompt, its own best SVG so far, and the defects (`refine_prompt.txt` in each round). It gets no tools and an empty folder.
+- **What Haiku gets.** It receives the prompt, its own best SVG and the attempt's defects. It never gets scores, summaries, labels or the reference's defects. It has no tools and works in an empty folder.
+- **Leak check.** Each defect field is checked for leaks: other-image mentions, numbers, colour values and code words. A leaking defect is dropped whole and logged.
+- **Final check.** The refine prompt is checked for the reference SVG.
 - **No Ralph loop.** Every round is built from a new verdict.
 
 **Stop rules.**
-- The run stops on success, which is a confirmed parity or a confirmed attempt ≥ reference.
-- It also stops at the round cap of 5 or on stagnation, when the best total has not improved for 2 rounds.
-- Before a round starts, the runtime checks that the round's worst case fits in the budget; if not, the run stops with `budget`.
-- Haiku always refines its *best* round so far, so a bad refine never becomes the base for the next one.
-- **Why these numbers.** In every run, success came within 1–4 rounds. A cap of 5 leaves room for noise. Even in the worst case (every step at its cap), round 0 and 5 rounds come to about $5.10, well under $20. Observed rounds cost about $0.06–0.12.
+- **Success.** A confirmed parity, or a confirmed attempt ≥ reference.
+- **Other stops.** The run also stops at the round cap (5), on stagnation (best total not improved for 2 rounds), or when the next round's worst case does not fit the budget.
+- **Refine base.** Haiku always refines its *best* round so far.
+- **Why a cap of 5.** Success came in 1–4 rounds. Even with every step at its cap, 5 rounds cost about $5.10, well under $20.
 
-**Budget.** Each role has a worst case per session (`max_step_usd`), set at about 3× the highest cost observed.
-- **Refusal.** A step is refused before any spend if that worst case does not fit in `budget − measured − reserved`.
-- **Second guard.** `--max-budget-usd` is passed too. Probes showed it is checked only between turns (a $0.0001 cap spent $0.00098), so it is not a hard cap; any overrun is logged.
-- **Lost sessions.** If a session is lost before reporting its cost (timeout, Ctrl+C), its cap is *reserved* in `reserved.csv`. It counts against the budget but never goes into `usage.csv`, which holds measured costs only.
+**Budget.**
+- **Step caps.** Each role has a worst case per session, `max_step_usd`, set at about 3× the highest cost observed.
+- **Refusal.** A step is refused before any spend if its cap does not fit in `budget − measured − reserved`.
+- **Not a hard cap.** `--max-budget-usd` is passed as a second guard. It is only checked between turns: a $0.0001 cap spent $0.00098.
+- **Lost sessions.** A session lost before reporting its cost (timeout, Ctrl+C) has its cap *reserved* in `reserved.csv`, which counts against the budget. `usage.csv` stays measured-only.
 
-**Live output.** One line per session: round, role, model, the four token counts, step cost, run total and budget left. Judge lines add per-criterion scores and totals. I chose this because it is plain text, greppable, and readable while the run is going.
+**Live output.** The runtime prints one plain-text line per session: role, model, the 4 token counts, step cost, run total and budget left. Judge lines add the scores. It is readable live and greppable afterwards.
 
-**Resume.** Each paid result is saved as soon as it arrives: done markers, verdict files and `raw/`. A rerun of the same command reuses them and pays only for what is missing.
-- **Tested for real:** Ctrl+C during the Fable session, then a rerun (`out-m3-crash`).
-- **Tested offline:** timeout with kill, reserve and resume, and a rerun of a finished run, which makes 0 new calls.
+**Resume.**
+- **What is saved.** Every paid result is saved on arrival: done markers, verdicts and `raw/`.
+- **What a rerun pays for.** Rerunning the same command pays only for what is missing.
+- **Real test.** A Ctrl+C during the Fable step, then a rerun (`out-m3-crash`).
+- **Offline tests.** A timeout with kill, reserve and resume. A rerun of a finished run makes 0 calls.
 
 **Orchestration and merging.**
-- **One process drives the run.** `harness/main.py` runs every session in sequence. Sessions never talk to each other: the harness moves files between them and owns all decisions.
-- **Testing without paying.** A fake `claude` and a fake renderer run 16 scenarios offline at $0.
-- **Repo.** One issue, branch and PR per milestone (M0–M5), and I merge each PR myself. I built the harness with Claude Code as a pair programmer, and I reviewed, ran and committed everything myself.
+- **One process.** `harness/main.py` runs every session in sequence, and sessions never talk to each other.
+- **Offline tests.** 16 scenarios run with a fake `claude` and a fake renderer, at $0.
+- **Repo.** One issue, branch and PR per milestone, and I merge each one myself.
+- **How it was built.** I built the harness with Claude Code as a pair programmer, and I reviewed, ran and committed everything myself.
 
 ## 4. Where the judge was wrong
 
-**Scores are noisy; comparisons are steadier** ([`eval/calibration-*.json`](eval)).
-- **Self-comparison.** Shown the same image as both A and B, the judge gave identical scores and parity both times.
-- **Same reference, different scores.** The same Fable PNG got totals from 19 to 23. In the monkey run, the reference scored 22–23 in rounds 0–2 and 19 in the round 3 primary judgment. That low score is what made "attempt exceeds reference" possible, and the confirmation scored the same pair 22 vs 22.
-- **Same pair, different verdicts.** Over five judgments of one pair (23 vs 20–22), parity flipped twice. This is why I added the confirmation and kept the parity rule strict.
+**Calibration** ([`eval/`](eval)): absolute scores are noisy, comparisons are steadier.
+- **Same image twice.** Shown the same image as A and B, the judge gave identical scores and parity, 2 times out of 2.
+- **Same pair, verdict flips.** One pair (23 vs 20–22) flipped parity in 2 of 5 judgments.
+- **Same reference, different totals.** One unchanged Fable PNG got totals from 19 to 23.
 
-**False "yes" verdicts caught by the confirmation.** Two first-judgment "yes" verdicts were not confirmed when A and B were swapped:
-- `out-m3-crash` round 0: 21 vs 22, then 19 vs 22;
-- `out-m3-second` round 3: 20 vs 19, then 19 vs 22.
+**Review of the 8 judgments of the final runs** ([`eval/verdict_review.md`](eval/verdict_review.md)):
+- **Parity decision: right in 7 of 8.**
+  - **The error.** The monkey round 3 first judgment scored the unchanged reference 19. The other four judgments of that image gave it 22–23 and fidelity 5. That one low score is why the run ended as `attempt_exceeds_reference`.
+  - **My view.** The reference is still about one point better, so the confirmation's 22 vs 22 parity is defensible, but "attempt exceeds reference" is not.
+- **Defects are almost always real and fixable without the reference.** The refiner fixed 4 of the 5 pelican defects in one round.
+  - **Missed.** Half-drawn spokes and the missing chain on the first pelican attempt, and the monkey's single visible leg (only the confirmation caught it).
+  - **A stretch.** "Ears barely visible".
+- **Noise.** The same defect changes severity between sessions: "no saddle" was minor in one session and major in another.
+- **No systematic error,** so `judge_v1` is kept. The weak spot is the stop rule (§5).
 
-In `out-final-monkey` round 3, the two judgments disagreed on the kind of success: the primary said "better", the confirmation said "parity". I found no consistent position effect.
-
-**The judge never leaked.** In every run, no defect broke the firewall rules. The firewall's three drops were all *false positives*, and both causes were fixed with a regression test:
-- **"compared with".** "The monkey is small compared with the tree" was dropped twice, because "compared with" was then a leak pattern.
-- **Joined fields.** The fields "…the lower third of the image" and "A balanced framing…" were checked joined together, so they read as "image A". The final monkey run still ran with this bug and lost that one minor defect.
-
-**Review of the final runs' verdicts** ([`eval/verdict_review.md`](eval/verdict_review.md)): _TODO, filled in after my review. For each verdict: was parity right, which defects were missed, which were unfair._
+**Firewall.** The judge never leaked. The firewall's three drops were all false positives, and both causes now have a fix and a regression test:
+- **"compared with" pattern.** "small compared with the tree" was dropped twice because "compared with" was treated as a leak.
+- **Joined fields.** "…of the image" + "A balanced framing" were checked together and read as "image A". The final monkey run still had this bug and lost one minor defect.
 
 ## 5. What I would change next
 
-1. **Make the judge cheaper, since it is ~97% of the loop.**
-   - Run the primary judgment at a lower effort and keep high effort for the confirmation.
-   - Skip judging attempts that obviously fail.
-   - Ask for defects only for the attempt, not the reference.
-2. **Let Haiku see its own render.** Right now it refines the SVG text blind. A PNG of its *own* attempt does not break the firewall and would help with layout defects.
-3. **Average judgments instead of trusting one.** Use the median of 2–3 cheap judgments near the threshold rather than a single score.
-4. **Run more prompts and more runs per prompt.** With 4 runs, the rounds-to-parity and cost figures are anecdotes, not estimates.
-5. **Close the plain-word leak.** The judge's *expected* text can still describe the reference in plain words ("a long orange beak"). The firewall cannot tell this apart from a valid outcome. A second, cheap judge pass that rewrites *expected* without looking at the reference would close it.
+1. **Make "attempt exceeds reference" need both judgments.** Today, "better" followed by "parity" stops as `attempt_exceeds_reference`; it should stop as `parity`.
+2. **Cut the judge's cost within the fixed model and effort.** Ask for the attempt's defects only, and skip judging attempts that obviously fail.
+3. **Show Haiku the PNG of its own attempt.** It refines the SVG text blind today. Its own render does not break the firewall and would help with layout defects.
+4. **Use the median of 2–3 judgments near the threshold** instead of trusting a single score.
+5. **Get more data.** 4 runs give anecdotes, not estimates. Run more prompts, several times each.
+6. **Close the plain-word leak.** *Expected* can still describe the reference in plain words ("a long orange beak"), and pattern checks cannot catch that.

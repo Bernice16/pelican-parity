@@ -70,6 +70,7 @@ Every session is also appended to `ledger/usage.csv`, the project-wide ledger. T
 | `budget` | the next round's worst case (2 refines + 2 judgments) does not fit in what is left | 0 |
 | `budget` | a single step does not fit (for example a tiny budget before the reference) | 2 |
 | `no_svg` | Haiku returned no usable SVG twice in a row | 0 |
+| `no_new_feedback` | safety net: the next refine prompt would be identical to an earlier one (no Ralph loop). Should never happen | 0 |
 | `step_cap` | one session hit its own `max_step_usd`. Raise it in `config.json`, then rerun | 1 |
 | `error` | a session failed (timeout, API error, invalid verdict twice). Rerun to resume | 1 |
 | `interrupted` | Ctrl+C. Rerun to resume | 130 |
@@ -110,9 +111,9 @@ To use another `claude` binary, set `CLAUDE_BIN=path`. To use another config, se
 tests/run_offline.sh
 ```
 
-This runs 16 scenarios with a fake `claude` and a fake renderer: no model call, no cost.
+This runs 19 scenarios with a fake `claude` and a fake renderer: no model call, no cost.
 
-**What they cover:** confirmed parity, rerun with zero new calls, firewall leaks (including the two real false positives), stagnation, attempt above reference, position bias rejected by the A/B-swapped confirmation, tiny budget, budget stop before a round, round cap, missing SVG (once and twice), malformed judge JSON (once and twice), timeout with kill, reserve and resume, step cap, and missing renderer.
+**What they cover:** confirmed parity, only the reference and baseline get the drawing prompt, rerun with zero new calls, firewall leaks (including the real false positives), stagnation, no Ralph loop (no refine prompt sent twice), attempt above reference, position bias rejected by the A/B-swapped confirmation, tiny budget, budget stop before a round, round cap, missing SVG (once and twice), malformed judge JSON (once and twice), timeout with kill, reserve and resume, step cap, missing renderer, and the firewall word list (plain words pass, code is caught).
 
 **What they check:** every scenario checks that `usage.csv`, the ledger and `summary.json` agree.
 

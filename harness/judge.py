@@ -25,9 +25,9 @@ class VerdictError(RuntimeError):
 
 
 def build_prompt(template_path: Path, drawing_prompt: str) -> str:
+    """The judge prompt as sent. judge_v1 carried the drawing prompt ({{DRAWING_PROMPT}});
+    from judge_v2 on, the judge sees only the two renders, so there is nothing to insert."""
     template = template_path.read_text(encoding="utf-8")
-    if PROMPT_PLACEHOLDER not in template:
-        raise ValueError(f"{template_path} has no {PROMPT_PLACEHOLDER} placeholder")
     return template.replace(PROMPT_PLACEHOLDER, drawing_prompt)
 
 

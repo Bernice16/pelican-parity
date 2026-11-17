@@ -4,12 +4,14 @@
 
 Each step: budget check -> claude -p session -> usage row -> step output.
 Round 00: reference + baseline drawings, then the blind judge.
-Round NN (1..round_cap): the firewall turns the best round's verdict into
-feedback, Haiku refines that round's SVG, the judge compares it again.
+Round NN (1..round_cap): the firewall turns a verdict into feedback, Haiku
+refines that round's SVG, the judge compares it again. The source is the best
+round, or the round just judged once the best round's verdict has been used:
+every refine carries feedback never sent before (no Ralph loop).
 A parity (or better) verdict is only accepted if a second judgment (same judge
 model and prompt, new session, A and B swapped) agrees.
 Stops on: parity, attempt_exceeds_reference, round_cap, stagnation, budget,
-no_svg; or step_cap / error / interrupted (rerun the same command to resume).
+no_svg, no_new_feedback; or step_cap / error / interrupted (rerun the same command to resume).
 Every step is resumable: rerunning the same command never pays twice. A session
 killed before reporting its usage has its step cap reserved (reserved.csv).
 """
@@ -308,8 +310,9 @@ def format_problems(kept):
 
 
 def refine_prompt_step(cfg, prompt, out_dir, round_no, source_round):
-    """Build (and save) what Haiku receives for round `round_no`: the drawing prompt,
-    its own SVG from `source_round` and that round's firewalled feedback. Nothing else."""
+    """Build (and save) what Haiku receives for round `round_no`: its own SVG from
+    `source_round` and that round's firewalled feedback. Nothing else: from refine_v2
+    on, not even the drawing prompt (refine_v1 carried it in {{DRAWING_PROMPT}})."""
     round_dir = out_dir / "rounds" / f"{round_no:02d}"
     round_dir.mkdir(parents=True, exist_ok=True)
     source_dir = out_dir / "rounds" / f"{source_round:02d}"
@@ -403,6 +406,7 @@ def run_loop(cfg, prompt, out_dir, budget, state):
     state["final_round"] = 0
     round_cap, patience = cfg["round_cap"], cfg["stagnation_rounds"]
     best_round, best_rank, round_no = None, None, 0
+    used_sources = set()  # rounds whose verdict already fed a refine
 
     while True:
         verdict = judge_step(cfg, prompt, out_dir, round_no, budget)
@@ -447,7 +451,19 @@ def run_loop(cfg, prompt, out_dir, budget, state):
                       f"(refine + judge, with retry and confirmation), ${remaining:.4f} left",
                       flush=True)
                 return "budget"
-        refine_text = refine_prompt_step(cfg, prompt, out_dir, nxt, best_round)
+        # No Ralph loop: every refine must carry judge feedback not used before.
+        # Start from the best round while its verdict is unused; once it has fed a
+        # refine, start from the round just judged, whose verdict is always new.
+        source = best_round if best_round not in used_sources else round_no
+        used_sources.add(source)
+        refine_text = refine_prompt_step(cfg, prompt, out_dir, nxt, source)
+        for earlier in range(1, nxt):
+            earlier_prompt = out_dir / "rounds" / f"{earlier:02d}" / "refine_prompt.txt"
+            if earlier_prompt.exists() and earlier_prompt.read_text(encoding="utf-8") == refine_text:
+                # Safety net (the source choice above should make this unreachable).
+                print(f"STOP: round {nxt:02d} refine prompt is identical to round {earlier:02d}'s; "
+                      "re-running an unchanged prompt is not allowed", flush=True)
+                return "no_new_feedback"
         if not refine_with_retry(cfg, refine_text, out_dir, nxt, budget):
             return "no_svg"
         round_no = nxt

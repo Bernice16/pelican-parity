@@ -28,7 +28,9 @@ calls = os.environ["FAKE_CALLS"]
 refining = "<current_svg>" in prompt
 
 with open(calls, "a", encoding="utf-8") as f:
-    f.write(f"{model} tools={tools!r} cwd={sorted(os.listdir('.'))}\n")
+    # dp: does this session's prompt carry the drawing prompt? (only the two drawers may)
+    dp = "pelican riding a bicycle" in prompt.lower()
+    f.write(f"{model} tools={tools!r} refine={refining} dp={dp} cwd={sorted(os.listdir('.'))}\n")
 
 
 def once(name):

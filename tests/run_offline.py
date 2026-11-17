@@ -110,6 +110,13 @@ def main():
             ("confirmation recorded", s["history"][-1]["confirmation"] is not None),
             ("money adds up", money_adds_up(r)),
         ], p)
+        calls = r.calls.read_text(encoding="utf-8").splitlines()
+        drawers = [c for c in calls if "opus" not in c and "refine=False" in c]
+        others = [c for c in calls if c not in drawers]
+        check("only the reference and the baseline get the drawing prompt", [
+            ("reference and baseline get it", len(drawers) == 2 and all("dp=True" in c for c in drawers)),
+            ("judge and refine never get it", bool(others) and all("dp=False" in c for c in others)),
+        ], p)
 
         # 2. Rerunning a finished run pays nothing.
         before = r.call_count()
@@ -154,6 +161,15 @@ def main():
             ("stop_reason=stagnation", s["stop_reason"] == "stagnation"),
             ("final round is 00", s["final_round"] == 0),
             ("money adds up", money_adds_up(r)),
+        ], p)
+        prompts = refine_prompts(r)
+        sources = [json.loads(f.read_text(encoding="utf-8"))["source_round"]
+                   for f in sorted(r.out.glob("rounds/*/feedback.json"))]
+        check("no Ralph loop: every refine carries feedback not used before", [
+            ("2 refines", len(prompts) == 2),
+            ("no two refine prompts are identical", len(set(prompts)) == len(prompts)),
+            ("each verdict feeds at most one refine", len(set(sources)) == len(sources)),
+            ("round 02 refines round 01 (round 00 already used)", sources == [0, 1]),
         ], p)
 
         # 5. Attempt better than the reference (confirmed).
@@ -287,6 +303,18 @@ def main():
             ("exit 1", p.returncode == 1),
             ("0 calls", r.call_count() == 0),
         ], p)
+
+        # 17. Firewall word list: plain English passes, code does not.
+        sys.path.insert(0, str(REPO / "harness"))
+        import firewall
+        check("firewall code check: plain words pass, real code is caught", [
+            ("'a background element' passes", firewall.leaks("the sun is a background element") == []),
+            ("'any sky element' passes", firewall.leaks("Any sun or sky element is clear") == []),
+            ("'attribute' passes", firewall.leaks("an attribute of the monkey") == []),
+            ("an SVG tag is caught", "code" in firewall.leaks("draw it as <circle>")),
+            ("an attribute assignment is caught", "code" in firewall.leaks("set fill='red'")),
+            ("'viewBox' is caught", "code" in firewall.leaks("widen the viewBox")),
+        ])
     finally:
         shutil.rmtree(base, ignore_errors=True)
 

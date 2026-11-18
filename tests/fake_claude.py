@@ -8,7 +8,8 @@ The judge scores the attempt from its level, so a run "improves" round by round.
 
 Behaviour is set with environment variables (see tests/run_offline.py):
   FAKE_CALLS   file where every call is logged (model, tools, working dir)
-  FAKE_JUDGE   improve (default) | flat | leak | exceed | biased | bad | badonce
+  FAKE_JUDGE   improve (default) | flat | leak | exceed | biased | bad | badonce | gap2
+  FAKE_TOTAL_GAP  largest total gap the fake judge calls parity (default 1)
   FAKE_DRAW    nosvg (refine never returns an SVG) | nosvgonce (first refine only)
   FAKE_SLEEP   "<model substring>:<seconds>" sleep before answering (timeout test)
   FAKE_CAP     "<model substring>" answer as if the step cap was hit
@@ -47,7 +48,7 @@ if sleep and sleep.split(":")[0] in model:
     time.sleep(float(sleep.split(":")[1]))
     open(f"{calls}.slept-to-the-end", "w").close()  # must never appear: the harness kills us
 
-CRITERIA = ("fidelity", "coherence", "readability", "composition", "craft")
+CRITERIA = tuple(os.environ.get("FAKE_CRITERIA", "fidelity,coherence,readability,composition,craft").split(","))
 
 
 def scores(v):
@@ -72,34 +73,39 @@ def judge_answer():
             verdict["images"][lab] = {
                 "summary": "reference", "scores": scores(3 if mode == "exceed" else 5),
                 # Text that must never reach Haiku: it describes the reference.
-                "defects": [{"criterion": "craft", "severity": "minor", "what": "REFSECRET detail",
+                "defects": [{"criterion": CRITERIA[-1], "severity": "minor", "what": "REFSECRET detail",
                              "where": "somewhere", "expected": "something"}]}
             continue
         lvl = level_of(txt)
         s = {"flat": 3, "exceed": 5}.get(mode, min(5, 2 + lvl))
         if mode == "biased" and lab == "B":
             s = min(5, s + 1)  # a judge that favours whatever is shown second
+        sc = scores(s)
+        if mode == "gap2":  # 1 point below the reference on two criteria: total gap 2
+            sc = scores(5)
+            sc[CRITERIA[0]] = sc[CRITERIA[1]] = 4
         defects = []
         if s < 5:
-            defects.append({"criterion": "coherence", "severity": "major", "what": "the body floats",
+            defects.append({"criterion": CRITERIA[1], "severity": "major", "what": "the body floats",
                             "where": "middle", "expected": "the body rests on the seat"})
         if mode == "leak":
             # Valid: compares parts of the same drawing (dropped by mistake in a real run).
-            defects.append({"criterion": "composition", "severity": "major",
+            defects.append({"criterion": CRITERIA[0], "severity": "major",
                             "what": "the monkey is small compared with the tree",
                             "where": "centre", "expected": "the monkey is the clear focal point"})
             # Valid: "image" ends one field and "A" starts the next (dropped by mistake in a real run).
-            defects.append({"criterion": "composition", "severity": "minor",
+            defects.append({"criterion": CRITERIA[0], "severity": "minor",
                             "what": "empty sky below the monkey", "where": "the lower third of the image",
                             "expected": "A balanced framing"})
-            defects.append({"criterion": "craft", "severity": "minor", "what": "unlike image A, no spokes",
+            defects.append({"criterion": CRITERIA[-1], "severity": "minor", "what": "unlike image A, no spokes",
                             "where": "wheels", "expected": "spokes"})
-            defects.append({"criterion": "craft", "severity": "minor", "what": "sky colour",
+            defects.append({"criterion": CRITERIA[-1], "severity": "minor", "what": "sky colour",
                             "where": "sky", "expected": "use #88ccff"})
-        verdict["images"][lab] = {"summary": "attempt", "scores": scores(s), "defects": defects}
+        verdict["images"][lab] = {"summary": "attempt", "scores": sc, "defects": defects}
     a, b = (verdict["images"][lab]["scores"] for lab in ("A", "B"))
     verdict["parity"] = (all(abs(a[c] - b[c]) <= 1 for c in CRITERIA)
-                         and abs(sum(a.values()) - sum(b.values())) <= 1)
+                         and abs(sum(a.values()) - sum(b.values()))
+                         <= int(os.environ.get("FAKE_TOTAL_GAP", "1")))
     verdict["parity_reason"] = "fake"
     return "```json\n" + json.dumps(verdict) + "\n```"
 

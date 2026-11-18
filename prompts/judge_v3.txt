@@ -1,0 +1,76 @@
+You are judging two drawings made from the same request. You are not told the request.
+
+The two images are the files A.png and B.png in your working directory. Open both with the Read tool before judging. Nothing else in the directory matters.
+
+## Ground rules
+
+- Work out what the drawings are meant to show from the drawings themselves: the subjects, what they are doing, and the setting. A "subject" is any character or thing that matters to the scene: who acts, and what they ride, hold or use (a knight and his horse; a child, a kite and its string).
+- Judge only what you see.
+- Judge each image on its own first, then compare.
+
+## Criteria
+
+Score each image from 1 to 5 on each criterion. Judge each drawing against the scene it sets out to show, not against realism.
+
+- main: look at the main subjects first. They are all there, complete, easy to recognise, and doing what the scene shows.
+- background: the background fits the scene and does not pull attention from the main subjects.
+- count: each subject has the number of parts the scene gives it. Both drawings come from the same request: if both show the same unusual choice (a dog on two legs, a three-eyed cat), that is the scene, not a mistake.
+- shape: each subject has a clear shape and sensible size and proportions for what it is.
+- contact: things that should touch really touch (feet on the pedals, a body on its seat, hands on what they hold), and each subject faces the way its action needs.
+- clean: no broken, stray or overlapping shapes, and any text is readable.
+- color: colours are clear and work together. Which colours are used does not matter, as long as the whole scene stays clearly visible.
+
+Scale (same anchors for every criterion):
+- 5 excellent: no meaningful flaw for this criterion.
+- 4 good: minor flaws a careful viewer would notice.
+- 3 acceptable: clear flaws, but the criterion is still mostly met.
+- 2 weak: major flaws, the criterion is only partly met.
+- 1 failing: the criterion is not met.
+
+If a criterion genuinely does not apply to these drawings, give both images the same score and list it in "not_applicable" with a one-line reason.
+
+## Defects
+
+For each image, list its defects, most important first, at most 5. A defect must be concrete and fixable by someone who has never seen the other image. Each defect has:
+- criterion: one of the criteria above, by its name ("main", "contact", ...).
+- severity: "critical" (the drawing fails to show its scene or is badly broken), "major" (clearly visible, hurts the result), or "minor".
+- what: what is wrong, in plain visual language.
+- where: which part of the drawing, in words ("the rear wheel", "upper left", "the character's legs").
+- expected: what should be true instead, described as an outcome for this drawing's own scene, not as a construction recipe.
+
+Forbidden in defects (they would leak one drawing into the other):
+- coordinates, pixel or unit sizes, angles, or any other numbers describing geometry;
+- exact colour values (hex, rgb, hsl). Plain colour words like "orange" are fine;
+- SVG, XML or any code, element or attribute names;
+- any mention of the other image ("unlike A", "as in the other drawing", "like image B");
+- anything about the other drawing's layout, pose, positions, colours, style or extra details. Those are free.
+
+Both drawings come from the same request, so they should show the same scene: the same subjects doing the same things. If this drawing is missing a subject or an action that the other drawing clearly shows, list it as a defect of at least "major" severity, described as an outcome for this drawing, never by mentioning the other image.
+
+## Parity
+
+Parity means the two images are of equal quality. Set "parity" to true only if all three hold:
+1. on every criterion, the two images' scores differ by at most 1;
+2. the two images' total scores (sum of all criteria) differ by at most 1. Several criteria may differ, as long as the totals stay within 1;
+3. neither image has a "critical" defect.
+Otherwise set it to false. Apply this rule to your own scores exactly; do not override it with an overall impression.
+
+## Output
+
+Reply with one JSON object and nothing else: no prose, no code fence. Use exactly this shape:
+
+{
+  "images": {
+    "A": {
+      "summary": "<one sentence: what this image shows and how well it is drawn>",
+      "scores": {"main": 1-5, "background": 1-5, "count": 1-5, "shape": 1-5, "contact": 1-5, "clean": 1-5, "color": 1-5},
+      "defects": [
+        {"criterion": "...", "severity": "critical|major|minor", "what": "...", "where": "...", "expected": "..."}
+      ]
+    },
+    "B": { same shape as A }
+  },
+  "not_applicable": [{"criterion": "...", "reason": "..."}],
+  "parity": true or false,
+  "parity_reason": "<one or two sentences applying the parity rule to the scores and defects above>"
+}

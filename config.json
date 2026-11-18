@@ -15,8 +15,10 @@
   },
   "session_timeout_s": 600,
   "draw_instructions": "Reply with exactly one complete, self-contained SVG document inside a ```svg code block. Do not use any tools and do not write files. No external resources (no external images, fonts or links).",
-  "judge_prompt": "prompts/judge_v2.txt",
+  "judge_prompt": "prompts/judge_v3.txt",
   "refine_prompt": "prompts/refine_v2.txt",
+  "criteria": ["main", "background", "count", "shape", "contact", "clean", "color"],
+  "parity_max_total_gap": 1,
   "judge_instructions": "Use the Read tool only to open A.png and B.png in your working directory. Then reply with the single JSON object described in the prompt, nothing else.",
   "render": {
     "width": 800,
@@ -29,5 +31,5 @@
     "version_cmd": ["resvg", "--version"]
   },
   "round_cap": 5,
-  "stagnation_rounds": 2
+  "stagnation_rounds": 3
 }

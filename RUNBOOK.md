@@ -34,18 +34,18 @@ The harness checks resvg before it spends anything.
 **Live output.** One line per paid session:
 
 ```
-[round 00] reference claude-fable-5-1   in=2 out=3,578 cache_r=4,265 cache_w=1,136  step=$0.2027  total=$0.2027  left=$19.7973
+[round 00] reference claude-fable-5-1   in=2 out=2,813 cache_r=5,594 cache_w=0  step=$0.1421  total=$0.1421  left=$19.8579
 ```
 
-Judge lines add the verdict, the attempt/reference score per criterion and the totals, for example `parity=no  attempt/ref fide=4/5 ... totals=18/23`. A last line gives `stop_reason`, `parity`, the final SVG and the total cost.
+Judge lines add the verdict, the attempt/reference score per criterion and the totals, for example `parity=no  attempt/ref main=3/4 back=4/4 ... totals=25/30`. A last line gives `stop_reason`, `success`, `parity`, the final SVG and the total cost. `success=yes` means the attempt reached the reference: equal (`parity`) or better on every criterion (`attempt_exceeds_reference`). `parity` stays strict: it means "equal".
 
-**Typical run:** $0.30 to $0.60 and 3 to 10 minutes. The judge (Opus) is about 95% of the cost of the loop.
+**Typical run:** $0.33 to $0.82 for the final runs, and 3 to 10 minutes. The judge (Opus) is about 96% of the cost of the loop.
 
 ## 3. Outputs
 
 ```
 DIR/
-  summary.json      prompt, parity, rounds, stop_reason, cost_usd per role, total_cost_usd,
+  summary.json      prompt, success, parity, rounds, stop_reason, cost_usd per role, total_cost_usd,
                     final_svg / final_png, per-round history (scores, confirmation), models, prompt files
   usage.csv         one row per paid session, measured from claude's JSON (never estimated)
   rounds/00/        reference.svg/.png, attempt.svg/.png (baseline), blind.json (A/B order), verdict.json
@@ -66,7 +66,7 @@ Every session is also appended to `ledger/usage.csv`, the project-wide ledger. T
 | `parity` | the judge declared parity, and a second judgment with A/B swapped agreed | 0 |
 | `attempt_exceeds_reference` | both judgments rated the attempt at least as good as the reference on every criterion | 0 |
 | `round_cap` | 5 refine rounds done without success | 0 |
-| `stagnation` | the best total did not improve for 2 rounds | 0 |
+| `stagnation` | the best total did not improve for `stagnation_rounds` (3) rounds in a row | 0 |
 | `budget` | the next round's worst case (2 refines + 2 judgments) does not fit in what is left | 0 |
 | `budget` | a single step does not fit (for example a tiny budget before the reference) | 2 |
 | `no_svg` | Haiku returned no usable SVG twice in a row | 0 |
@@ -87,7 +87,7 @@ To start over, use a new `--out` directory.
 
 ## 5. Budget control
 
-- `config.json → max_step_usd` gives each role's worst case per session: reference 0.75, baseline 0.05, judge 0.30, refine 0.05. These are about 3× the highest cost observed.
+- `config.json → max_step_usd` gives each role's worst case per session: reference 0.75, baseline 0.05, judge 0.30, refine 0.05. They are worst cases, not expected costs: over the project, references averaged $0.23 (max $0.49), judgments $0.06 (max $0.09), Haiku sessions under $0.01.
 - **Before each session:** if `budget − spent < step cap`, the step is refused before any money is spent. "Spent" means measured plus reserved.
 - **Before each new round:** the round needs 2 × refine + 2 × judge (one retry and one confirmation). If that does not fit, the run stops with `budget`.
 - **During a session:** `claude --max-budget-usd min(step cap, remaining)` acts as a second guard. It is not a hard cap: Claude Code checks it between turns, so a session can go slightly over. Any overrun is logged in `incidents.log`.
@@ -99,8 +99,10 @@ To start over, use a new `--out` directory.
 - `max_step_usd`;
 - `session_timeout_s` (600);
 - `round_cap` (5);
-- `stagnation_rounds` (2);
+- `stagnation_rounds` (3): rounds in a row without a better best total before the run stops;
 - the judge and refine prompt files;
+- `criteria`: the judge's score names. The current judge (`judge_v3.txt`) uses main, background, count, shape, contact, clean, color; `judge_v4.txt` uses fidelity, coherence, readability, composition, clean. Without this line, the harness falls back to the judge_v1/v2 names (fidelity, coherence, readability, composition, craft). If you change them, the judge prompt's JSON shape must list the same names; the run is refused before any spend otherwise;
+- `parity_max_total_gap`: the largest gap between the two totals that still counts as parity. It must match the number written in the judge prompt. Every judge prompt uses 1 (the default when the line is missing). judge_v3 was tried with 2 (same strictness on 35 points as 1 on 25), but that let a weaker drawing pass, so it went back to 1. The harness uses it to recheck the judge's parity;
 - the render command (width 800).
 
 To use another `claude` binary, set `CLAUDE_BIN=path`. To use another config, set `HARNESS_CONFIG=path`.
@@ -111,9 +113,9 @@ To use another `claude` binary, set `CLAUDE_BIN=path`. To use another config, se
 tests/run_offline.sh
 ```
 
-This runs 19 scenarios with a fake `claude` and a fake renderer: no model call, no cost.
+This runs 23 scenarios with a fake `claude` and a fake renderer: no model call, no cost.
 
-**What they cover:** confirmed parity, only the reference and baseline get the drawing prompt, rerun with zero new calls, firewall leaks (including the real false positives), stagnation, no Ralph loop (no refine prompt sent twice), attempt above reference, position bias rejected by the A/B-swapped confirmation, tiny budget, budget stop before a round, round cap, missing SVG (once and twice), malformed judge JSON (once and twice), timeout with kill, reserve and resume, step cap, missing renderer, and the firewall word list (plain words pass, code is caught).
+**What they cover:** confirmed parity, only the reference and baseline get the drawing prompt, rerun with zero new calls, firewall leaks (including the real false positives), stagnation, no Ralph loop (no refine prompt sent twice), attempt above reference, position bias rejected by the A/B-swapped confirmation, tiny budget, budget stop before a round, round cap, missing SVG (once and twice), malformed judge JSON (once and twice), timeout with kill, reserve and resume, step cap, missing renderer, custom criteria from `config.json`, criteria missing from the judge prompt refused before any spend, and the firewall word list (plain words pass, code is caught), a total gap of 2 accepted as parity when `parity_max_total_gap` is 2, and `success=yes` when the attempt beats the reference.
 
 **What they check:** every scenario checks that `usage.csv`, the ledger and `summary.json` agree.
 
@@ -122,12 +124,12 @@ This runs 19 scenarios with a fake `claude` and a fake renderer: no model call, 
 ```bash
 # Judge the same pair N times (judge noise); writes eval/calibration-NAME.json
 python harness/calibrate.py --name self --prompt prompts/pelican.txt \
-    --a out-final-pelican/rounds/00/reference.png --b out-final-pelican/rounds/00/reference.png \
+    --a out-final-v3-pelican/rounds/00/reference.png --b out-final-v3-pelican/rounds/00/reference.png \
     --times 2 --budget-usd 1
-# Page for reviewing every verdict -> eval/verdict_review.md (never overwrites without --force)
-python harness/review.py out-final-pelican out-final-monkey
+# Page for reviewing every verdict -> eval/verdict_review.md, or another name with --out (never overwrites without --force)
+python harness/review.py --out verdict_final_review.md out-final-v3-pelican out-final-v3-beaver
 # Reference alone vs loop cost table -> eval/headline.md
-python harness/headline.py out-final-pelican out-final-monkey
+python harness/headline.py out-final-v3-pelican out-final-v3-beaver
 ```
 
 ## 9. Troubleshooting

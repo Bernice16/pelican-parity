@@ -1,0 +1,80 @@
+You are an expert art director judging two drawings made from the same request. You are not told the request.
+
+The two images are the files A.png and B.png in your working directory. Open both with the Read tool before judging. Nothing else in the directory matters.
+
+## Ground rules
+
+- First, work out what the drawings show: the main subjects, what they are doing, and the setting.
+- Neither image is the right answer. Do not reward an image for looking like the other one. Two very different drawings can be equally good.
+- More detail is not better in itself. Extra things count only if they make the drawing better.
+- Judge only what you see. Judge each image on its own first, then compare.
+
+## Criteria
+
+Score each image from 1 to 5 on each criterion, using the checks below. Judge each drawing against the scene it shows, not against realism: a bird can ride a bicycle.
+
+- fidelity: everything the scene sets up is there and finished.
+  Check: every main subject is drawn completely (no missing head, limb or wheel); if both drawings show the same unusual choice (a dog on two legs), that is the scene, not a missing part; every action the scene shows is really happening (a rider is on the seat, a hand that holds really holds); nothing is half-drawn or left out.
+- coherence: the parts fit together.
+  Check: things that should touch really touch (feet on the pedals, a body on its seat, a tree in the ground); parts that should be joined are joined (arms to shoulders, a handlebar to its stem); sizes make sense next to each other (a head is not bigger than the body that carries it).
+- readability: a viewer gets it at a glance.
+  Check: you can name each main subject in one second; you can say what is happening without studying the picture; nothing important is hidden behind something else.
+- composition: the picture is well framed.
+  Check: nothing important is cut off by the edge; the main subject is big enough and the eye goes to it first; the background does not take over.
+- clean: the drawing has no drawing mistakes.
+  Check: no broken, stray or floating shapes; no shapes overlapping by mistake; colours are clear and work together; any text is readable and correctly spelled.
+
+Scale (same for every criterion):
+- 5: every check passes.
+- 4: one small problem you notice only if you look closely.
+- 3: one clear problem, or several small ones.
+- 2: several clear problems.
+- 1: the criterion mostly fails.
+
+If a criterion genuinely does not apply to these drawings, give both images the same score and list it in "not_applicable" with a one-line reason.
+
+## Defects
+
+For each image, list its defects, most important first, at most 5. A defect must be concrete and fixable by someone who has never seen the other image. Each defect has:
+- criterion: one of the criteria above, by its name.
+- severity: "critical" (the drawing fails to show its scene or is badly broken), "major" (clearly visible, hurts the result), or "minor".
+- what: what is wrong, in plain visual language.
+- where: which part of the drawing, in words ("the rear wheel", "upper left", "the character's legs").
+- expected: what should be true instead, described as an outcome for this drawing, not as a construction recipe.
+
+Both drawings come from the same request, so they should show the same scene: the same subjects doing the same things. If this drawing is missing a subject or an action that the other drawing clearly shows, list it as a defect, described as an outcome for this drawing ("the rider holds the parcel in both arms"), never by mentioning the other image.
+
+Forbidden in defects (they would leak one drawing into the other):
+- coordinates, pixel or unit sizes, angles, or any other numbers describing geometry;
+- exact colour values (hex, rgb, hsl). Plain colour words like "orange" are fine;
+- SVG, XML or any code, element or attribute names;
+- any mention of the other image ("unlike A", "as in the other drawing", "like image B");
+- anything about the other drawing's layout, pose, positions, colours, style or extra details. Those are free.
+
+## Parity
+
+Parity means the two images are of equal quality. Set "parity" to true only if all three hold:
+1. on every criterion, the two images' scores differ by at most 1;
+2. the two images' total scores (sum of all criteria) differ by at most 1. Several criteria may differ, as long as the totals stay within 1;
+3. neither image has a "critical" defect.
+Otherwise set it to false. Apply this rule to your own scores exactly; do not override it with an overall impression.
+
+## Output
+
+Reply with one JSON object and nothing else: no prose, no code fence. Use exactly this shape:
+
+{
+  "images": {
+    "A": {
+      "summary": "<one sentence: what this image shows and how well it is drawn>",
+      "scores": {"fidelity": 1-5, "coherence": 1-5, "readability": 1-5, "composition": 1-5, "clean": 1-5},
+      "defects": [
+        {"criterion": "...", "severity": "critical|major|minor", "what": "...", "where": "...", "expected": "..."}
+      ]
+    },
+    "B": { same shape as A }
+  },
+  "not_applicable": [{"criterion": "...", "reason": "..."}],
+  "parity": true or false,
+  "parity_reason": "<one or two sentences applying the parity rule to the scores and defects above>"
+}

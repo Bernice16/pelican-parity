@@ -44,7 +44,13 @@ class BudgetRefused(RuntimeError):
 
 def load_config() -> dict:
     path = Path(os.environ.get("HARNESS_CONFIG", REPO_ROOT / "config.json"))
-    return json.loads(path.read_text(encoding="utf-8"))
+    cfg = json.loads(path.read_text(encoding="utf-8"))
+    cfg["criteria_from_config"] = "criteria" in cfg
+    cfg.setdefault("criteria", list(judge.CRITERIA))
+    # Largest gap between the two totals that still counts as parity. Must match
+    # the judge prompt: 1 for 5 criteria, 2 for judge_v3's 7 criteria.
+    cfg.setdefault("parity_max_total_gap", 1)
+    return cfg
 
 
 def live(role, round_no, row, out_dir, budget):
@@ -238,7 +244,7 @@ def judge_step(cfg, prompt, out_dir, round_no, budget, confirm=False):
     (its cost stays counted) and the judge is asked once more; a second invalid
     verdict stops the run.
     """
-    role, role_cfg = "judge", cfg["roles"]["judge"]
+    role = "judge"
     round_dir = out_dir / "rounds" / f"{round_no:02d}"
     stem = "judge_confirm" if confirm else "judge"
     label = "judge*" if confirm else "judge"
@@ -261,7 +267,7 @@ def judge_step(cfg, prompt, out_dir, round_no, budget, confirm=False):
         data = paid_session(cfg, role, judge_prompt, cfg["judge_instructions"], out_dir, round_no,
                             budget, stem, prepare=lambda wd: judge.prepare_workdir(wd, mapping, pngs))
         try:
-            verdict, warnings = judge.parse_verdict(data.get("result", ""))
+            verdict, warnings = judge.parse_verdict(data.get("result", ""), cfg["criteria"])
             break
         except judge.VerdictError as e:
             archive_raw(raw_path, data, "invalid")
@@ -272,7 +278,7 @@ def judge_step(cfg, prompt, out_dir, round_no, budget, confirm=False):
         log_incident(out_dir, role, round_no, w)
 
     by_role = judge.unblind(verdict, mapping)
-    rule = judge.rule_parity(verdict)
+    rule = judge.rule_parity(verdict, cfg["parity_max_total_gap"])
     if rule != verdict["parity"]:
         log_incident(out_dir, role, round_no,
                      f"judge said parity={verdict['parity']} but its own scores give {rule} "
@@ -291,7 +297,7 @@ def judge_step(cfg, prompt, out_dir, round_no, budget, confirm=False):
     }
     verdict_path.write_text(json.dumps(saved, indent=2), encoding="utf-8")
     att, ref = by_role["attempt"], by_role["reference"]
-    scores = " ".join(f"{c[:4]}={att['scores'][c]}/{ref['scores'][c]}" for c in judge.CRITERIA)
+    scores = " ".join(f"{c[:4]}={att['scores'][c]}/{ref['scores'][c]}" for c in cfg["criteria"])
     print(f"[round {round_no:02d}] {label:<9} parity={'yes' if saved['parity'] else 'no'}  "
           f"attempt/ref {scores}  totals={totals(att)}/{totals(ref)}  "
           f"attempt defects={len(att['defects'])}" + ("  (A/B swapped)" if confirm else ""),
@@ -299,10 +305,10 @@ def judge_step(cfg, prompt, out_dir, round_no, budget, confirm=False):
     return saved
 
 
-def format_problems(kept):
+def format_problems(kept, criteria):
     if not kept:
-        return ("No specific problem was listed. Improve the overall quality: fidelity to the "
-                "prompt, coherence, readability, composition and craft.")
+        return ("No specific problem was listed. Improve the overall quality: "
+                + ", ".join(criteria) + ".")
     return "\n".join(
         f"{i}. [{d['severity']}, {d['criterion']}] {d['what']}\n"
         f"   Where: {d['where']}\n   Expected: {d['expected']}"
@@ -333,9 +339,11 @@ def refine_prompt_step(cfg, prompt, out_dir, round_no, source_round):
 
     template = (REPO_ROOT / cfg["refine_prompt"]).read_text(encoding="utf-8")
     text = (template
+            # v1 only: refine_v1.txt gave Haiku the drawing prompt. refine_v2 has no
+            # placeholder, so this is a no-op and Haiku never sees the request.
             .replace("{{DRAWING_PROMPT}}", prompt)
             .replace("{{CURRENT_SVG}}", (source_dir / "attempt.svg").read_text(encoding="utf-8").strip())
-            .replace("{{PROBLEMS}}", format_problems(kept)))
+            .replace("{{PROBLEMS}}", format_problems(kept, cfg["criteria"])))
     reference_svg = (out_dir / "rounds" / "00" / "reference.svg").read_text(encoding="utf-8")
     firewall.check_refine_prompt(text, reference_svg)
     (round_dir / "refine_prompt.txt").write_text(text, encoding="utf-8")
@@ -481,6 +489,10 @@ def write_summary(cfg, out_dir, prompt, budget, stop_reason, state):
         final = (out_dir / "rounds" / f"{final_round:02d}").as_posix()
     summary = {
         "prompt": prompt,
+        # success: the attempt reached the reference's quality, either equal
+        # (parity) or better on every criterion (attempt_exceeds_reference).
+        # parity stays strict ("equal"): the blind judge can only say "close".
+        "success": stop_reason in ("parity", "attempt_exceeds_reference"),
         "parity": state.get("parity", False),
         "stop_reason": stop_reason,
         "rounds": state.get("rounds", 0),
@@ -516,6 +528,14 @@ def main(argv=None):
     if not prompt.strip():
         ap.error("prompt file is empty")
     cfg = load_config()
+    source = "config.json" if cfg.get("criteria_from_config") else 'the defaults (config.json has no "criteria")'
+    missing = judge.check_prompt_criteria(
+        (REPO_ROOT / cfg["judge_prompt"]).read_text(encoding="utf-8"), cfg["criteria"])
+    if missing:
+        print(f"ERROR: the judge prompt {cfg['judge_prompt']} does not use the criteria "
+              f"{', '.join(missing)} from {source} (each must appear quoted, as in its JSON "
+              f"shape). Make them match; nothing was spent.", file=sys.stderr)
+        return 1
     out_dir = args.out
     out_dir.mkdir(parents=True, exist_ok=True)
 
@@ -553,7 +573,8 @@ def main(argv=None):
 
     s = write_summary(cfg, out_dir, prompt, args.budget_usd, stop_reason, state)
     reserved = f"  reserved=${s['reserved_unmeasured_usd']:.2f}" if s["reserved_unmeasured_usd"] else ""
-    print(f"stop_reason={s['stop_reason']}  parity={'yes' if s['parity'] else 'no'}  "
+    print(f"stop_reason={s['stop_reason']}  success={'yes' if s['success'] else 'no'}  "
+          f"parity={'yes' if s['parity'] else 'no'}  "
           f"rounds={s['rounds']}  final={s['final_svg']}  total=${s['total_cost_usd']:.4f}{reserved}  "
           f"-> {(out_dir / 'summary.json').as_posix()}")
     return exit_code

@@ -52,6 +52,16 @@ def make_config(base, **overrides):
     cfg["claude_bin"] = [PY, str(TESTS / "fake_claude.py")]
     cfg["render"]["cmd"] = [PY, str(TESTS / "fake_render.py"), "{svg}", "{png}"]
     cfg["render"]["version_cmd"] = [PY, str(TESTS / "fake_render.py"), "--version"]
+    # The tests never use the real judge prompt (it is edited while tuning): a stub
+    # that lists the criteria the way a judge prompt's JSON shape does.
+    criteria = overrides.pop("criteria", None)
+    cfg.pop("criteria", None)
+    if criteria:
+        cfg["criteria"] = criteria
+    names = criteria or ["fidelity", "coherence", "readability", "composition", "craft"]
+    stub = base / f"judge_stub_{'_'.join(names)}.txt"
+    stub.write_text("Judge A.png and B.png. " + ", ".join(f'"{c}": 1-5' for c in names), encoding="utf-8")
+    cfg["judge_prompt"] = str(stub)
     cfg.update(overrides)
     path = base / f"cfg_{abs(hash(json.dumps(overrides, sort_keys=True)))}.json"
     path.write_text(json.dumps(cfg), encoding="utf-8")
@@ -106,6 +116,7 @@ def main():
         check("improving attempts reach confirmed parity", [
             ("exit 0", p.returncode == 0),
             ("stop_reason=parity", s["stop_reason"] == "parity" and s["parity"]),
+            ("success=true", s["success"] is True),
             ("parity at round 3", s["rounds"] == 3 and s["final_round"] == 3),
             ("confirmation recorded", s["history"][-1]["confirmation"] is not None),
             ("money adds up", money_adds_up(r)),
@@ -165,11 +176,15 @@ def main():
         prompts = refine_prompts(r)
         sources = [json.loads(f.read_text(encoding="utf-8"))["source_round"]
                    for f in sorted(r.out.glob("rounds/*/feedback.json"))]
+        # The best round (00) feeds round 01; after that, each round refines the one
+        # just judged, since round 00's verdict is already used.
+        n = json.loads(cfg.read_text(encoding="utf-8"))["stagnation_rounds"]
         check("no Ralph loop: every refine carries feedback not used before", [
-            ("2 refines", len(prompts) == 2),
+            (f"{n} refines (stagnation_rounds)", len(prompts) == n),
             ("no two refine prompts are identical", len(set(prompts)) == len(prompts)),
             ("each verdict feeds at most one refine", len(set(sources)) == len(sources)),
-            ("round 02 refines round 01 (round 00 already used)", sources == [0, 1]),
+            ("round 00 used once, then each round refines the one before",
+             sources == list(range(n))),
         ], p)
 
         # 5. Attempt better than the reference (confirmed).
@@ -178,6 +193,8 @@ def main():
         s = r.summary()
         check("attempt above the reference stops the run", [
             ("stop_reason=attempt_exceeds_reference", s["stop_reason"] == "attempt_exceeds_reference"),
+            ("success=true, parity=false", s["success"] is True and s["parity"] is False),
+            ("final line says success=yes", "success=yes" in p.stdout),
             ("round 0", s["rounds"] == 0),
         ], p)
 
@@ -303,6 +320,51 @@ def main():
             ("exit 1", p.returncode == 1),
             ("0 calls", r.call_count() == 0),
         ], p)
+
+        # 18. Custom criteria from config.json: the judge, parity and the live line follow them.
+        r = Run(base, "criteria")
+        mine = ["main", "contact", "direction"]
+        p = harness(r, 20, make_config(base, criteria=mine), FAKE_CRITERIA=",".join(mine))
+        s = r.summary()
+        check("custom criteria from config.json are used end to end", [
+            ("exit 0", p.returncode == 0),
+            ("stop_reason=parity", s["stop_reason"] == "parity"),
+            ("scores use the custom criteria", set(s["history"][-1]["attempt_scores"]) == set(mine)),
+            ("money adds up", money_adds_up(r)),
+        ], p)
+
+        # 19. Criteria in config.json missing from the judge prompt: refused before any spend.
+        r = Run(base, "criteria-mismatch")
+        bad = make_config(base, criteria=["main", "contact"])
+        cfg_bad = json.loads(bad.read_text(encoding="utf-8"))
+        cfg_bad["criteria"] = ["main", "contact", "color"]  # "color" is not in the stub prompt
+        bad.write_text(json.dumps(cfg_bad), encoding="utf-8")
+        p = harness(r, 20, bad)
+        check("criteria missing from the judge prompt are refused before any spend", [
+            ("exit 1", p.returncode == 1),
+            ("0 calls", r.call_count() == 0),
+            ("the error names the missing criterion", "color" in p.stderr),
+        ], p)
+
+        # 20. Total gap 2 allowed (judge_v3, 7 criteria): parity, and the harness agrees.
+        r = Run(base, "gap2")
+        p = harness(r, 20, make_config(base, parity_max_total_gap=2), FAKE_JUDGE="gap2", FAKE_TOTAL_GAP=2)
+        s = r.summary()
+        incidents = r.file("incidents.log")
+        check("a total gap of 2 is parity when parity_max_total_gap is 2", [
+            ("exit 0", p.returncode == 0),
+            ("stop_reason=parity at round 0", s["stop_reason"] == "parity" and s["rounds"] == 0),
+            ("harness rule agrees (no parity-rule incident)",
+             not incidents.exists() or "parity rule" not in incidents.read_text(encoding="utf-8")),
+        ], p)
+        sys.path.insert(0, str(REPO / "harness"))
+        import judge as judge_mod
+        v = {"images": {"A": {"scores": {"x": 5, "y": 5, "z": 5}, "defects": []},
+                        "B": {"scores": {"x": 4, "y": 4, "z": 5}, "defects": []}}}
+        check("parity rule: total gap 2 fails by default, passes with 2", [
+            ("default (1): no parity", judge_mod.rule_parity(v) is False),
+            ("max_total_gap=2: parity", judge_mod.rule_parity(v, 2) is True),
+        ])
 
         # 17. Firewall word list: plain English passes, code does not.
         sys.path.insert(0, str(REPO / "harness"))

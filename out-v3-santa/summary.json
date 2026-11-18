@@ -5,9 +5,9 @@
   "stop_reason": "parity",
   "rounds": 1,
   "final_round": 1,
-  "final_svg": "out-final-v3-santa/rounds/01/attempt.svg",
-  "final_png": "out-final-v3-santa/rounds/01/attempt.png",
-  "reference_svg": "out-final-v3-santa/rounds/00/reference.svg",
+  "final_svg": "out-v3-santa/rounds/01/attempt.svg",
+  "final_png": "out-v3-santa/rounds/01/attempt.png",
+  "reference_svg": "out-v3-santa/rounds/00/reference.svg",
   "history": [
     {
       "round": 0,

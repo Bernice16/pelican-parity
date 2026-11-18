@@ -2,6 +2,16 @@
 
 How to rerun the harness from scratch on a new machine. Tested on Windows 11 with Git Bash. Nothing in it is Windows-specific: Linux and macOS use the same steps with their own package manager.
 
+## 0. Get the code
+
+```bash
+git clone https://github.com/Bernice16/pelican-parity.git
+cd pelican-parity
+git checkout v1.1
+```
+
+Or download the source archive of the [v1.1 release](https://github.com/Bernice16/pelican-parity/releases/tag/v1.1). Python uses the standard library only: nothing to `pip install`. If `./run` says "Permission denied" (archive download), run `chmod +x run tests/run_offline.sh` once.
+
 ## 1. Install
 
 | tool | version used | check |
@@ -13,7 +23,7 @@ How to rerun the harness from scratch on a new machine. Tested on Windows 11 wit
 
 **resvg.** Take the 0.49.0 binary for your OS from https://github.com/linebender/resvg/releases/tag/v0.49.0, or run `cargo install resvg --version 0.49.0`. On Windows, `winget install resvg` also works if it installs 0.49.0. Put it on `PATH`, then **open a new terminal** so the shell picks the new `PATH` up.
 
-The renderer version matters because renders must be reproducible. Fonts are pinned in `fonts/`: resvg ignores the machine's fonts and uses only those (see `fonts/README.md`). The same SVG gives the same PNG on any machine with resvg 0.49.0.
+The renderer version matters because renders must be reproducible. Fonts are pinned in `fonts/`: resvg ignores the machine's fonts and uses only those (see `fonts/README.md`). Renders were bit-identical across reruns on Windows; other OSes were not tested, but the renderer version and fonts are pinned.
 
 **Claude Code.** Install it, run `claude` once and log in. Each session runs with `--strict-mcp-config --setting-sources ""`, so your own MCP servers and settings are ignored.
 

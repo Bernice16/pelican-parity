@@ -32,8 +32,7 @@ All numbers come from each run's `usage.csv` and `summary.json`. The final runs 
 | Santa (no success) | $0.253 | $0.437 | 1.7× |
 | monkey (no success) | $0.183 | $0.247 | 1.3× |
 
-- **Haiku is almost free.** A Haiku drawing costs $0.001–0.006, under 3% of a Fable drawing (average $0.23 over 28 references).
-- **The judge is the cost.** It is about 96% of the loop. One judgment costs about $0.06, a quarter of a Fable drawing, and a run needs at least 3 (round 0, the round that passes, its confirmation).
+- **The judge is the cost.** Haiku is almost free ($0.001–0.006 a drawing); the judge is about 96% of the loop. One judgment costs about $0.06, a quarter of a Fable drawing, and a run needs at least 3 (round 0, the round that passes, its confirmation).
 - **So the loop only breaks even when Fable is expensive** (the beaver reference cost $0.39) and Haiku succeeds in a round or two. It would pay off if judging cost much less than the drawing it replaces.
 
 ## 3. Decisions ("You decide")
@@ -47,9 +46,12 @@ All numbers come from each run's `usage.csv` and `summary.json`. The final runs 
 | version | change | why |
 |---|---|---|
 | v1 | 5 criteria, gets the drawing prompt | first version |
-| v2 | no drawing prompt, 5 generic criteria | follow the brief as written |
-| v3 (final) | 7 short criteria in plain words: main, background, count, shape, contact, clean, color | v2's criteria could be read several ways |
-| v4 | v2's 5 criteria with a "Check" line each and a counting scale | tried on one run (`out-v4-santa`), not kept |
+| v2 | no drawing prompt, 5 generic criteria | follow the brief |
+| v3 (final) | 7 plain-word criteria: main, background, count, shape, contact, clean, color | v2's were ambiguous |
+| v4 | v2's 5 criteria with a "Check" line each | tried once (`out-v4-santa`), not kept |
+
+**Judge Criteria** (v3), each scored 1–5 with the same anchors (5 = no meaningful flaw, 3 = clear flaws but mostly met, 1 = not met): **main** (all subjects there, recognisable, doing the action), **background** (fits, does not distract), **count** (right number of parts), **shape** (clear shapes, sensible proportions), **contact** (what should touch does), **clean** (no broken or stray shapes, readable text), **color** (clear and working together). 
+Why these criteria: each checks one thing a viewer can see, none mentions a subject, so they work for any prompt, and a defect filed under one tells the refiner what to fix. Drawings are judged against the scene they show, not against realism.
 
 Three rules were added to v3 after real runs:
 - **Scene rule.** Both drawings come from the same request, so they must show the same subjects doing the same things; layout, pose, colours and extras are free. A missing subject or action is at least a "major" defect.
@@ -64,11 +66,18 @@ Three rules were added to v3 after real runs:
 
 **Firewall** (`harness/firewall.py`). The only path from the judge to Haiku. Haiku gets its own SVG and at most 5 of its own defects, never the reference, scores, summaries or the prompt. Defects mentioning the other image, numbers, colour values or code are dropped and logged. The first version also dropped plain words ("a background element", "compared with"); those were fixed and are tested.
 
-**Stop rules.** Round cap 5. Stagnation: the best total has not improved for 3 rounds in a row (it was 2, and an earlier Santa run stopped only 2 points short). Budget: the next round's worst case must fit. Haiku refines its best round; each judge verdict feeds at most one refine, so the same prompt is never sent twice (no Ralph loop).
+**Stop rules.** Round cap 5. The successes came in round 1 (pelican) and round 4 (beaver); past that, Haiku mostly traded one defect for another (Santa's best was round 3 of 5). Even at the worst-case step caps, 5 rounds stay far under $20. Stagnation: the best total has not improved for 3 rounds in a row (it was 2, and an earlier Santa run stopped only 2 points short). 
+Budget: the next round's worst case must fit. Haiku refines its best round; each judge verdict feeds at most one refine, so the same prompt is never sent twice (no Ralph loop).
 
 **Budget.** Each role has a worst-case step cap, checked before every session against `budget − measured − reserved`. A session lost before reporting its cost is reserved, not billed. `--max-budget-usd` is a second guard only.
 
-**Live output, resume, tests.** One line per session with tokens, step cost, total and budget left. Every paid result is saved on arrival, so rerunning the same command pays only for what is missing. 23 offline scenarios run with a fake `claude` at $0. I built the harness with Claude Code as a pair programmer, and reviewed, ran and committed everything myself.
+**Orchestration.** One Python process runs the steps in order (reference → baseline → judge → refine → judge …) and is the only part that decides what runs next. Steps run one at a time: each depends on the previous one, and a sequential run keeps the budget check exact. Each role is a separate `claude -p --output-format json` session in its own empty folder, with the prompt sent on stdin and tools restricted (the judge can only `Read` the two PNGs; the drawers and the refiner have none). The models never talk to each other; only the harness passes results between them.
+
+**Who merges.** The harness merges the results. It picks the final drawing (the round with the best total), recomputes parity from the scores, and builds `summary.json` from `usage.csv` only, so the totals always agree. In git, each milestone was one issue and one PR, which I reviewed and merged myself. I built the harness with Claude Code as a pair programmer, and reviewed, ran and committed everything myself.
+
+**Live output.** One line per session: round, role, model, tokens (in, out, cache read, cache write), step cost, running total and budget left. Judge lines add the scores per criterion and the parity decision. It is readable while it runs and easy to compare with `usage.csv`.
+
+**Resume.** Every paid result is written to disk as soon as it arrives (SVG, PNG, verdict, a `.done.json` marker and a `usage.csv` row). Rerunning the same command skips every step whose files exist and continues the loop where it stopped. A session lost before reporting its cost (Ctrl+C, timeout) is not billed: its step cap is reserved in `reserved.csv`, so the budget stays safe without ever writing an estimate into `usage.csv`. Tests: 23 offline scenarios with a fake `claude` at $0, including a killed session and its resume.
 
 ## 4. Where the judge was wrong
 
@@ -77,7 +86,7 @@ I reviewed all 21 judgments of the four final runs ([`eval/verdict_final_review.
 - **Santa sitting on the presents** (`out-v3-santa`, total gap 2). The request was "holding presents". In Haiku's drawing the presents sit on the deck and Santa's hand is a dot on top of them; he looks like he is sitting on them. The judge saw it ("unclear whether he is holding them") but rated it minor, and the confirmation passed at 28 vs 30. Fixes: a missing action is now at least major, `contact` checks "hands on what they hold", and the gap went back to 1.
 - **It cannot check the request.** In an earlier Santa run, Fable also put the presents on the deck. Both drawings missed "holding", so a blind judge with no prompt saw nothing wrong.
 - **Noise.** The same unchanged reference PNG got 27 to 31 within the beaver run, 30 to 32 in the Santa run and 29 to 31 in the monkey run. The same pair can flip: Santa round 3 got 31 vs 30 (attempt better), then 28 vs 32 with A and B swapped; beaver round 3 got 29 vs 30, then 26 vs 29. Comparisons are steadier than absolute scores, which is why every "yes" is confirmed.
-- **Text in the image.** Haiku sometimes adds a title. The judge counted Santa's "Merry Christmas!" as a plus in one session and as a distraction in the next. Fable does it too (the beaver reference has a caption). I do not remove text: the request might ask for it.
+- **Text in the image** (both models add captions) was a plus in one judgment and a distraction in the next. I do not remove it: a request might ask for it.
 - **Defects are concrete and usable.** On the pelican, one refine took Haiku from 25 to 29. On the monkey, the judge described the same real problem in every round; Haiku is what failed.
 
 ## 5. What I would change next
@@ -86,5 +95,4 @@ I reviewed all 21 judgments of the four final runs ([`eval/verdict_final_review.
 2. **Stop refine regressions.** On Santa, each refine fixed the listed defects and broke something else. Also pass the attempt's own strengths ("keep: …"), which is about the attempt only and leaks nothing.
 3. **Add a request check.** A separate session that sees the prompt and the attempt only (never the reference) and answers "does it show what was asked?". It closes the gap in §4 without unblinding the judge.
 4. **Cut the judge's cost.** Ask for the attempt's defects only, and skip the full judgment when the attempt obviously fails.
-5. **Get more data.** A few runs per prompt are anecdotes; run each prompt several times and report the spread.
-6. **Close the plain-word leak.** A defect's "expected" can still describe the reference in plain words ("a long orange beak"); pattern checks cannot catch that.
+5. **More data, tighter firewall.** Run each prompt several times and report the spread; and catch plain-word leaks (an "expected" like "a long orange beak" describes the reference, and pattern checks miss it).

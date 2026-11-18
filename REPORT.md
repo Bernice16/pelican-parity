@@ -50,6 +50,9 @@ All numbers come from each run's `usage.csv` and `summary.json`. The final runs 
 | v3 (final) | 7 plain-word criteria: main, background, count, shape, contact, clean, color | v2's were ambiguous |
 | v4 | v2's 5 criteria with a "Check" line each | tried once (`out-v4-santa`), not kept |
 
+**Judge Criteria** (v3), each scored 1–5 with the same anchors (5 = no meaningful flaw, 3 = clear flaws but mostly met, 1 = not met): **main** (all subjects there, recognisable, doing the action), **background** (fits, does not distract), **count** (right number of parts), **shape** (clear shapes, sensible proportions), **contact** (what should touch does), **clean** (no broken or stray shapes, readable text), **color** (clear and working together). 
+Why these criteria: each checks one thing a viewer can see, none mentions a subject, so they work for any prompt, and a defect filed under one tells the refiner what to fix. Drawings are judged against the scene they show, not against realism.
+
 Three rules were added to v3 after real runs:
 - **Scene rule.** Both drawings come from the same request, so they must show the same subjects doing the same things; layout, pose, colours and extras are free. A missing subject or action is at least a "major" defect.
 - **Shared unusual choices are the scene.** If both drawings show a dog on two legs, that is not a mistake.
@@ -63,7 +66,8 @@ Three rules were added to v3 after real runs:
 
 **Firewall** (`harness/firewall.py`). The only path from the judge to Haiku. Haiku gets its own SVG and at most 5 of its own defects, never the reference, scores, summaries or the prompt. Defects mentioning the other image, numbers, colour values or code are dropped and logged. The first version also dropped plain words ("a background element", "compared with"); those were fixed and are tested.
 
-**Stop rules.** Round cap 5. Stagnation: the best total has not improved for 3 rounds in a row (it was 2, and an earlier Santa run stopped only 2 points short). Budget: the next round's worst case must fit. Haiku refines its best round; each judge verdict feeds at most one refine, so the same prompt is never sent twice (no Ralph loop).
+**Stop rules.** Round cap 5. The successes came in round 1 (pelican) and round 4 (beaver); past that, Haiku mostly traded one defect for another (Santa's best was round 3 of 5). Even at the worst-case step caps, 5 rounds stay far under $20. Stagnation: the best total has not improved for 3 rounds in a row (it was 2, and an earlier Santa run stopped only 2 points short). 
+Budget: the next round's worst case must fit. Haiku refines its best round; each judge verdict feeds at most one refine, so the same prompt is never sent twice (no Ralph loop).
 
 **Budget.** Each role has a worst-case step cap, checked before every session against `budget − measured − reserved`. A session lost before reporting its cost is reserved, not billed. `--max-budget-usd` is a second guard only.
 

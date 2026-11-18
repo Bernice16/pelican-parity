@@ -1,0 +1,2 @@
+2026-11-16T15:32:47-05:00 round=01 role=firewall dropped a round 00 defect that leaks (other-image)
+    {"criterion": "composition", "severity": "minor", "what": "A large empty band of sky below the monkey leaves the lower part of the frame unused while the tree crowds the top", "where": "the lower third of the image", "expected": "A balanced framing where the tree and monkey fill the frame more evenly"}

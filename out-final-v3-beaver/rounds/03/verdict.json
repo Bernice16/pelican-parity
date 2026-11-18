@@ -1,0 +1,111 @@
+{
+  "session_id": "5be27fec-b395-401d-89e1-bf70baae1637",
+  "judge_prompt": "prompts/judge_v3.txt",
+  "blind": {
+    "A": "reference",
+    "B": "attempt"
+  },
+  "parity": true,
+  "parity_reason": "No criterion differs by more than 1 point. The totals are A 30 and B 29, which differ by 1, and neither image has a critical defect, so all three parity conditions are met.",
+  "rule_parity": true,
+  "attempt_at_least_reference": false,
+  "reference": {
+    "summary": "A beaver chef in a white hat and apron stands in a sunny kitchen, flipping two sunny-side-up eggs in a pan on a stove. The drawing is cheerful and clear, with a few small anatomy and contact flaws.",
+    "scores": {
+      "main": 4,
+      "background": 4,
+      "count": 5,
+      "shape": 4,
+      "contact": 4,
+      "clean": 4,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "shape",
+        "severity": "minor",
+        "what": "The arm holding the spatula is a very thin, stick-like line that does not match the beaver's chunky body",
+        "where": "the beaver's right arm reaching toward the pan",
+        "expected": "The arm is as thick and rounded as the rest of the beaver's furry body"
+      },
+      {
+        "criterion": "contact",
+        "severity": "minor",
+        "what": "The spatula blade floats in the air above the pan without touching the eggs or the pan",
+        "where": "the spatula over the frying pan",
+        "expected": "The spatula blade rests on or slides under an egg in the pan"
+      },
+      {
+        "criterion": "background",
+        "severity": "minor",
+        "what": "The big smiling sun in the window and the floating pink heart draw the eye away from the beaver and its cooking",
+        "where": "the upper left window and the space above the pan",
+        "expected": "The background details stay quiet, so the beaver and the eggs are the focus"
+      },
+      {
+        "criterion": "shape",
+        "severity": "minor",
+        "what": "The other arm is short and awkwardly bent, with a small round paw stuck to the side of the body",
+        "where": "the beaver's left arm",
+        "expected": "The free arm hangs or rests naturally at the beaver's side"
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "The tail overlaps the feet and the floor line in a way that looks like a flat, cut-out shape",
+        "where": "the tail at the beaver's feet",
+        "expected": "The tail sits clearly behind the beaver and comes out of its body"
+      }
+    ]
+  },
+  "attempt": {
+    "summary": "A large beaver behind a stove cooks two sunny-side-up eggs in a pan with a spatula, and a simple kitchen is in the background. The drawing is clean and easy to read, but the hat shape and the spatula area are awkward.",
+    "scores": {
+      "main": 4,
+      "background": 5,
+      "count": 5,
+      "shape": 3,
+      "contact": 4,
+      "clean": 3,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "shape",
+        "severity": "major",
+        "what": "The chef hat looks like a white crescent headband with puffs, not a tall chef's toque",
+        "where": "the top of the beaver's head",
+        "expected": "The beaver wears a recognisable tall white chef's hat"
+      },
+      {
+        "criterion": "clean",
+        "severity": "major",
+        "what": "The spatula blade is drawn on top of the second egg and covers most of it, so the egg looks cut off",
+        "where": "the spatula and the right egg in the pan",
+        "expected": "Both eggs are clearly visible, and the spatula sits beside or slides under an egg"
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "Stray crossed dark lines lie over the paw that holds the spatula, which makes the grip look scribbled",
+        "where": "the beaver's right paw on the spatula handle",
+        "expected": "The paw wraps cleanly around the handle with no stray marks"
+      },
+      {
+        "criterion": "shape",
+        "severity": "minor",
+        "what": "The body is a huge round blob that fills much of the scene, and the head sits on it with almost no neck or shoulders",
+        "where": "the beaver's torso",
+        "expected": "The beaver's body has readable shoulders and proportions that suit its head and arms"
+      },
+      {
+        "criterion": "main",
+        "severity": "minor",
+        "what": "The beaver has no apron or other cooking outfit apart from the hat, so it reads less clearly as a chef",
+        "where": "the beaver's chest and belly",
+        "expected": "The beaver clearly looks dressed as a cook"
+      }
+    ]
+  },
+  "not_applicable": []
+}

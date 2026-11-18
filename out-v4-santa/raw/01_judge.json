@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 22872,
+  "stop_reason": "end_turn",
+  "session_id": "1664f46c-c6c4-42c7-a4ed-cac8fa803205",
+  "total_cost_usd": 0.0599588,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 1830,
+    "cache_read_input_tokens": 12714,
+    "output_tokens": 2138,
+    "output_tokens_details": {
+      "thinking_tokens": 710
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1830,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1971,
+        "cache_read_input_tokens": 6561,
+        "cache_creation_input_tokens": 1422,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1422
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 2138,
+      "cacheReadInputTokens": 12714,
+      "cacheCreationInputTokens": 1830,
+      "webSearchRequests": 0,
+      "costUSD": 0.0599588,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 710,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1830,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"images\":{\"A\":{\"summary\":\"Santa in a red suit rides a red kick scooter at night, with a brown sack of presents behind him on the deck, under a moon over snow, captioned 'Santa on a Scooter'; the drawing is clean and flat but the arms are simplified and stiff.\",\"scores\":{\"fidelity\":4,\"coherence\":3,\"readability\":5,\"composition\":4,\"clean\":4},\"defects\":[{\"criterion\":\"coherence\",\"severity\":\"major\",\"what\":\"Both arms are drawn as one thick red band coming out of the chest, so there are no separate arms and no shoulders.\",\"where\":\"Santa's arms reaching to the handlebar\",\"expected\":\"Two distinct arms, each attached at a shoulder, each ending in a hand gripping one side of the handlebar.\"},{\"criterion\":\"fidelity\",\"severity\":\"minor\",\"what\":\"The face is very small and plain, with a tiny beard and hardly any features, so it reads less clearly as Santa than the rest of the costume.\",\"where\":\"Santa's head\",\"expected\":\"A clearly drawn Santa face with a full white beard and readable features.\"},{\"criterion\":\"coherence\",\"severity\":\"minor\",\"what\":\"The sack's flat bottom overlaps the end of the deck, so it looks pasted on instead of sitting on the deck.\",\"where\":\"the sack at the back of the scooter\",\"expected\":\"The sack rests firmly on the deck or is clearly tied to the scooter.\"},{\"criterion\":\"composition\",\"severity\":\"minor\",\"what\":\"Santa and the scooter fill only a modest part of the frame, and the caption box at the bottom pulls attention from the scene.\",\"where\":\"overall framing and the bottom caption\",\"expected\":\"The rider and scooter are larger and centred so they clearly dominate the picture.\"},{\"criterion\":\"clean\",\"severity\":\"minor\",\"what\":\"The hat's white brim looks slightly separate from the hat and head, like a floating strip.\",\"where\":\"Santa's hat brim\",\"expected\":\"The brim fits snugly where the hat meets the head.\"}]},\"B\":{\"summary\":\"Santa in a red suit rides a grey kick scooter over snow at night, gripping the handlebar with one hand and holding a stack of wrapped presents in the other, with speed lines and a moon; well drawn and lively.\",\"scores\":{\"fidelity\":5,\"coherence\":4,\"readability\":5,\"composition\":5,\"clean\":4},\"defects\":[{\"criterion\":\"coherence\",\"severity\":\"minor\",\"what\":\"The rear fender arc sits behind and above the back wheel instead of over it, so it looks detached.\",\"where\":\"the back wheel at the lower right\",\"expected\":\"The fender curves tightly over the rear wheel and joins the deck.\"},{\"criterion\":\"clean\",\"severity\":\"minor\",\"what\":\"A black ball and the white glove overlap awkwardly where the stem meets the handlebar, so the grip is hard to read.\",\"where\":\"the top of the scooter stem, upper left\",\"expected\":\"The gloved hand clearly wraps around the handlebar grip with no stray shapes.\"},{\"criterion\":\"clean\",\"severity\":\"minor\",\"what\":\"The pink cheeks and nose overlap the beard edge, and the eyes are partly hidden under the hat brim.\",\"where\":\"Santa's face\",\"expected\":\"Clear eyes below the brim and cheeks that sit neatly above the beard.\"},{\"criterion\":\"coherence\",\"severity\":\"minor\",\"what\":\"The hand holding the presents only shows under the bottom box, so the stack looks like it is balancing instead of being held.\",\"where\":\"the stack of presents at the right\",\"expected\":\"The arm and hand visibly support or hug the stack of presents.\"}]}},\"not_applicable\":[],\"parity\":false,\"parity_reason\":\"No criterion differs by more than 1 and neither image has a critical defect, but the totals are A=20 and B=23, a gap of 3, which is more than 1.\"}",
+  "ttft_ms": 2177,
+  "type": "result",
+  "duration_ms": 23540,
+  "uuid": "b90b288f-091c-4ba9-a99e-9cc16e59f80c",
+  "ttft_stream_ms": 2173,
+  "time_to_request_ms": 364,
+  "first_content_frame_ms": 2173,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:48.999Z"
+}

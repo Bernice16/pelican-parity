@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 59229,
+  "stop_reason": "end_turn",
+  "session_id": "8cab582b-5f28-4b6a-91bc-5644df40d389",
+  "total_cost_usd": 0.33128450000000004,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 4935,
+    "cache_read_input_tokens": 658,
+    "output_tokens": 4648,
+    "output_tokens_details": {
+      "thinking_tokens": 1186
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 4935,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 4648,
+        "cache_read_input_tokens": 658,
+        "cache_creation_input_tokens": 4935,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 4935
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-fable-5-1": {
+      "inputTokens": 2,
+      "outputTokens": 4648,
+      "cacheReadInputTokens": 658,
+      "cacheCreationInputTokens": 4935,
+      "webSearchRequests": 0,
+      "costUSD": 0.33128450000000004,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 1186,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 4935,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```svg\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 600\" width=\"800\" height=\"600\">\n  <defs>\n    <linearGradient id=\"sky\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"0\" stop-color=\"#0b1e3f\"/>\n      <stop offset=\"1\" stop-color=\"#2c4a7a\"/>\n    </linearGradient>\n    <radialGradient id=\"moon\" cx=\"0.5\" cy=\"0.5\" r=\"0.5\">\n      <stop offset=\"0\" stop-color=\"#fff8d6\"/>\n      <stop offset=\"1\" stop-color=\"#f3e4a0\"/>\n    </radialGradient>\n  </defs>\n\n  <!-- background -->\n  <rect width=\"800\" height=\"600\" fill=\"url(#sky)\"/>\n  <circle cx=\"660\" cy=\"110\" r=\"55\" fill=\"url(#moon)\"/>\n  <g fill=\"#ffffff\" opacity=\"0.9\">\n    <circle cx=\"80\" cy=\"70\" r=\"3\"/><circle cx=\"150\" cy=\"140\" r=\"2\"/><circle cx=\"260\" cy=\"60\" r=\"2.5\"/>\n    <circle cx=\"420\" cy=\"100\" r=\"3\"/><circle cx=\"520\" cy=\"40\" r=\"2\"/><circle cx=\"740\" cy=\"200\" r=\"2.5\"/>\n    <circle cx=\"60\" cy=\"260\" r=\"2\"/><circle cx=\"600\" cy=\"250\" r=\"2\"/><circle cx=\"720\" cy=\"330\" r=\"3\"/>\n    <circle cx=\"340\" cy=\"30\" r=\"2\"/><circle cx=\"470\" cy=\"190\" r=\"2\"/><circle cx=\"120\" cy=\"360\" r=\"2.5\"/>\n  </g>\n  <!-- snowy ground -->\n  <path d=\"M0 520 Q 200 500 400 520 T 800 520 L 800 600 L 0 600 Z\" fill=\"#eaf2fb\"/>\n  <path d=\"M0 540 Q 250 525 500 545 T 800 540 L 800 600 L 0 600 Z\" fill=\"#d6e4f3\"/>\n\n  <!-- speed lines -->\n  <g stroke=\"#ffffff\" stroke-width=\"5\" stroke-linecap=\"round\" opacity=\"0.6\">\n    <line x1=\"620\" y1=\"420\" x2=\"700\" y2=\"420\"/>\n    <line x1=\"640\" y1=\"450\" x2=\"740\" y2=\"450\"/>\n    <line x1=\"610\" y1=\"480\" x2=\"680\" y2=\"480\"/>\n  </g>\n\n  <!-- scooter -->\n  <g>\n    <!-- rear fender -->\n    <path d=\"M520 470 A 42 42 0 0 1 600 495\" fill=\"none\" stroke=\"#3a3f47\" stroke-width=\"12\" stroke-linecap=\"round\"/>\n    <!-- deck -->\n    <rect x=\"265\" y=\"462\" width=\"285\" height=\"18\" rx=\"9\" fill=\"#444a55\"/>\n    <rect x=\"280\" y=\"466\" width=\"255\" height=\"6\" rx=\"3\" fill=\"#6b7280\"/>\n    <!-- stem -->\n    <line x1=\"265\" y1=\"470\" x2=\"205\" y2=\"215\" stroke=\"#3a3f47\" stroke-width=\"16\" stroke-linecap=\"round\"/>\n    <line x1=\"265\" y1=\"470\" x2=\"205\" y2=\"215\" stroke=\"#8c94a3\" stroke-width=\"5\" stroke-linecap=\"round\"/>\n    <!-- fork to front wheel -->\n    <line x1=\"258\" y1=\"455\" x2=\"240\" y2=\"500\" stroke=\"#3a3f47\" stroke-width=\"12\" stroke-linecap=\"round\"/>\n    <!-- handlebar -->\n    <line x1=\"160\" y1=\"205\" x2=\"250\" y2=\"205\" stroke=\"#3a3f47\" stroke-width=\"12\" stroke-linecap=\"round\"/>\n    <rect x=\"150\" y=\"196\" width=\"34\" height=\"18\" rx=\"9\" fill=\"#c0392b\"/>\n    <rect x=\"230\" y=\"196\" width=\"30\" height=\"18\" rx=\"9\" fill=\"#c0392b\"/>\n    <!-- bell -->\n    <circle cx=\"200\" cy=\"190\" r=\"8\" fill=\"#f1c40f\" stroke=\"#b7950b\" stroke-width=\"2\"/>\n    <!-- wheels -->\n    <g>\n      <circle cx=\"240\" cy=\"500\" r=\"32\" fill=\"#1f2328\"/>\n      <circle cx=\"240\" cy=\"500\" r=\"17\" fill=\"#9aa3b2\"/>\n      <circle cx=\"240\" cy=\"500\" r=\"6\" fill=\"#3a3f47\"/>\n      <circle cx=\"565\" cy=\"500\" r=\"32\" fill=\"#1f2328\"/>\n      <circle cx=\"565\" cy=\"500\" r=\"17\" fill=\"#9aa3b2\"/>\n      <circle cx=\"565\" cy=\"500\" r=\"6\" fill=\"#3a3f47\"/>\n    </g>\n  </g>\n\n  <!-- Santa -->\n  <g>\n    <!-- legs -->\n    <path d=\"M330 370 L322 450\" stroke=\"#c0392b\" stroke-width=\"30\" stroke-linecap=\"round\"/>\n    <path d=\"M372 370 L380 450\" stroke=\"#c0392b\" stroke-width=\"30\" stroke-linecap=\"round\"/>\n    <!-- boots -->\n    <path d=\"M300 445 L340 445 Q346 458 340 466 L300 466 Q292 456 300 445 Z\" fill=\"#1f2328\"/>\n    <path d=\"M362 445 L402 445 Q410 458 402 466 L362 466 Q355 456 362 445 Z\" fill=\"#1f2328\"/>\n    <rect x=\"298\" y=\"436\" width=\"46\" height=\"12\" rx=\"6\" fill=\"#ffffff\"/>\n    <rect x=\"358\" y=\"436\" width=\"46\" height=\"12\" rx=\"6\" fill=\"#ffffff\"/>\n\n    <!-- back arm (holding presents) -->\n    <path d=\"M400 285 Q450 330 450 395\" fill=\"none\" stroke=\"#c0392b\" stroke-width=\"28\" stroke-linecap=\"round\"/>\n    <circle cx=\"450\" cy=\"397\" r=\"15\" fill=\"#ffffff\"/>\n\n    <!-- coat -->\n    <path d=\"M310 260 Q355 235 400 260 L418 385 Q355 405 292 385 Z\" fill=\"#d63a2f\"/>\n    <path d=\"M292 385 Q355 405 418 385 L420 398 Q355 420 290 398 Z\" fill=\"#ffffff\"/>\n    <!-- belt -->\n    <rect x=\"296\" y=\"335\" width=\"118\" height=\"18\" fill=\"#1f2328\"/>\n    <rect x=\"345\" y=\"331\" width=\"26\" height=\"26\" rx=\"4\" fill=\"#f1c40f\" stroke=\"#b7950b\" stroke-width=\"2\"/>\n    <rect x=\"352\" y=\"338\" width=\"12\" height=\"12\" fill=\"#1f2328\"/>\n    <!-- coat front trim -->\n    <rect x=\"348\" y=\"260\" width=\"12\" height=\"74\" fill=\"#ffffff\"/>\n\n    <!-- front arm to handlebar -->\n    <path d=\"M315 275 Q260 240 220 212\" fill=\"none\" stroke=\"#d63a2f\" stroke-width=\"28\" stroke-linecap=\"round\"/>\n    <circle cx=\"236\" cy=\"222\" r=\"12\" fill=\"#ffffff\"/>\n    <circle cx=\"214\" cy=\"208\" r=\"13\" fill=\"#1f2328\"/>\n\n    <!-- head -->\n    <circle cx=\"350\" cy=\"200\" r=\"40\" fill=\"#f5cba7\"/>\n    <!-- beard -->\n    <path d=\"M312 205 Q320 280 350 290 Q380 280 388 205 Q368 230 350 225 Q332 230 312 205 Z\" fill=\"#ffffff\"/>\n    <ellipse cx=\"350\" cy=\"222\" rx=\"18\" ry=\"8\" fill=\"#ffffff\"/>\n    <!-- nose -->\n    <circle cx=\"334\" cy=\"208\" r=\"7\" fill=\"#e8a085\"/>\n    <!-- eyes -->\n    <circle cx=\"338\" cy=\"192\" r=\"3.5\" fill=\"#1f2328\"/>\n    <circle cx=\"360\" cy=\"192\" r=\"3.5\" fill=\"#1f2328\"/>\n    <!-- cheeks -->\n    <circle cx=\"326\" cy=\"204\" r=\"6\" fill=\"#f3a39c\" opacity=\"0.6\"/>\n    <circle cx=\"372\" cy=\"204\" r=\"6\" fill=\"#f3a39c\" opacity=\"0.6\"/>\n    <!-- hat -->\n    <path d=\"M308 182 Q350 130 392 182 L400 175 Q370 120 340 128 Q320 134 308 182 Z\" fill=\"#d63a2f\"/>\n    <path d=\"M340 128 Q380 110 420 135 Q405 150 400 175 Q395 145 340 128 Z\" fill=\"#d63a2f\"/>\n    <rect x=\"304\" y=\"172\" width=\"92\" height=\"20\" rx=\"10\" fill=\"#ffffff\"/>\n    <circle cx=\"420\" cy=\"138\" r=\"13\" fill=\"#ffffff\"/>\n  </g>\n\n  <!-- presents stack -->\n  <g>\n    <!-- big gift -->\n    <rect x=\"420\" y=\"330\" width=\"85\" height=\"60\" rx=\"4\" fill=\"#2e86de\"/>\n    <rect x=\"455\" y=\"330\" width=\"14\" height=\"60\" fill=\"#f1c40f\"/>\n    <rect x=\"420\" y=\"355\" width=\"85\" height=\"12\" fill=\"#f1c40f\"/>\n    <!-- medium gift -->\n    <rect x=\"430\" y=\"285\" width=\"68\" height=\"45\" rx=\"4\" fill=\"#27ae60\"/>\n    <rect x=\"458\" y=\"285\" width=\"12\" height=\"45\" fill=\"#ffffff\"/>\n    <rect x=\"430\" y=\"303\" width=\"68\" height=\"10\" fill=\"#ffffff\"/>\n    <!-- small gift -->\n    <rect x=\"442\" y=\"250\" width=\"44\" height=\"35\" rx=\"4\" fill=\"#e84393\"/>\n    <rect x=\"459\" y=\"250\" width=\"10\" height=\"35\" fill=\"#f1c40f\"/>\n    <rect x=\"442\" y=\"263\" width=\"44\" height=\"8\" fill=\"#f1c40f\"/>\n    <!-- bow -->\n    <path d=\"M464 250 Q452 232 460 232 Q468 234 464 250 Q476 232 468 232 Q462 234 464 250 Z\" fill=\"#f1c40f\" stroke=\"#b7950b\" stroke-width=\"1.5\"/>\n  </g>\n</svg>\n```",
+  "ttft_ms": 21167,
+  "type": "result",
+  "duration_ms": 59534,
+  "uuid": "e64d1128-db47-483c-93ed-bd51eb548f16",
+  "ttft_stream_ms": 2262,
+  "time_to_request_ms": 315,
+  "first_content_frame_ms": 2262,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:48.999Z"
+}

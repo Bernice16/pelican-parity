@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 21804,
+  "stop_reason": "end_turn",
+  "session_id": "aa972c15-d9d0-4063-9ea2-5718745d823a",
+  "total_cost_usd": 0.00309434,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 3471,
+    "cache_read_input_tokens": 3194,
+    "output_tokens": 4736,
+    "output_tokens_details": {
+      "thinking_tokens": 2623
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 3471,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 4736,
+        "cache_read_input_tokens": 3194,
+        "cache_creation_input_tokens": 3471,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 3471
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-haiku-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4736,
+      "cacheReadInputTokens": 3194,
+      "cacheCreationInputTokens": 3471,
+      "webSearchRequests": 0,
+      "costUSD": 0.00309434,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2623,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 3471,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```svg\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 300\" width=\"400\" height=\"300\">\n  <!-- Sky, grass, road -->\n  <rect width=\"400\" height=\"300\" fill=\"#cfe9ff\"/>\n  <circle cx=\"330\" cy=\"50\" r=\"22\" fill=\"#ffd54f\"/>\n  <!-- Distant hills and trees -->\n  <path d=\"M0,215 Q60,185 130,210 T260,205 T400,200 L400,240 L0,240 Z\" fill=\"#a5d6a7\"/>\n  <circle cx=\"30\" cy=\"200\" r=\"14\" fill=\"#66bb6a\"/>\n  <rect x=\"27\" y=\"210\" width=\"6\" height=\"22\" fill=\"#6d4c41\"/>\n  <circle cx=\"370\" cy=\"195\" r=\"16\" fill=\"#66bb6a\"/>\n  <rect x=\"367\" y=\"207\" width=\"6\" height=\"25\" fill=\"#6d4c41\"/>\n  <!-- Grass and road -->\n  <rect y=\"240\" width=\"400\" height=\"25\" fill=\"#8bc34a\"/>\n  <rect y=\"265\" width=\"400\" height=\"35\" fill=\"#78909c\"/>\n  <line x1=\"0\" y1=\"282\" x2=\"400\" y2=\"282\" stroke=\"#eceff1\" stroke-width=\"2\" stroke-dasharray=\"14,10\"/>\n\n  <!-- Wheels -->\n  <g fill=\"none\" stroke=\"#222\" stroke-width=\"6\">\n    <circle cx=\"110\" cy=\"220\" r=\"45\"/>\n    <circle cx=\"290\" cy=\"220\" r=\"45\"/>\n  </g>\n  <g stroke=\"#999\" stroke-width=\"1.5\">\n    <line x1=\"110\" y1=\"175\" x2=\"110\" y2=\"265\"/>\n    <line x1=\"65\" y1=\"220\" x2=\"155\" y2=\"220\"/>\n    <line x1=\"83\" y1=\"193\" x2=\"137\" y2=\"247\"/>\n    <line x1=\"137\" y1=\"193\" x2=\"83\" y2=\"247\"/>\n    <line x1=\"290\" y1=\"175\" x2=\"290\" y2=\"265\"/>\n    <line x1=\"245\" y1=\"220\" x2=\"335\" y2=\"220\"/>\n    <line x1=\"263\" y1=\"193\" x2=\"317\" y2=\"247\"/>\n    <line x1=\"317\" y1=\"193\" x2=\"263\" y2=\"247\"/>\n  </g>\n\n  <!-- Bicycle frame -->\n  <g stroke=\"#d32f2f\" stroke-width=\"6\" stroke-linecap=\"round\" fill=\"none\">\n    <polyline points=\"110,220 160,160 250,160 290,220\"/>\n    <polyline points=\"190,220 160,160\"/>\n    <line x1=\"190\" y1=\"220\" x2=\"250\" y2=\"160\"/>\n    <line x1=\"250\" y1=\"160\" x2=\"262\" y2=\"130\"/>\n  </g>\n  <!-- Handlebar -->\n  <line x1=\"252\" y1=\"130\" x2=\"276\" y2=\"124\" stroke=\"#222\" stroke-width=\"5\" stroke-linecap=\"round\"/>\n  <!-- Saddle and seat post -->\n  <line x1=\"170\" y1=\"152\" x2=\"165\" y2=\"160\" stroke=\"#444\" stroke-width=\"4\"/>\n  <rect x=\"160\" y=\"146\" width=\"28\" height=\"7\" rx=\"3\" fill=\"#222\"/>\n\n  <!-- Cranks and pedals -->\n  <line x1=\"190\" y1=\"220\" x2=\"200\" y2=\"234\" stroke=\"#444\" stroke-width=\"4\" stroke-linecap=\"round\"/>\n  <line x1=\"190\" y1=\"220\" x2=\"180\" y2=\"206\" stroke=\"#444\" stroke-width=\"4\" stroke-linecap=\"round\"/>\n  <rect x=\"195\" y=\"232\" width=\"12\" height=\"4\" rx=\"1\" fill=\"#222\"/>\n  <rect x=\"174\" y=\"204\" width=\"12\" height=\"4\" rx=\"1\" fill=\"#222\"/>\n  <circle cx=\"190\" cy=\"220\" r=\"6\" fill=\"#444\"/>\n\n  <!-- Pelican legs, feet on pedals -->\n  <g stroke=\"#ff8f00\" stroke-width=\"5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\">\n    <polyline points=\"186,150 204,180 181,203\"/>\n    <polyline points=\"194,150 214,190 201,231\"/>\n  </g>\n\n  <!-- Pelican tail -->\n  <path d=\"M150,112 L118,92 L128,122 Z\" fill=\"#6d7b8d\"/>\n\n  <!-- Pelican body -->\n  <ellipse cx=\"190\" cy=\"120\" rx=\"52\" ry=\"30\" transform=\"rotate(-12 190 120)\" fill=\"#eceff1\" stroke=\"#6d7b8d\" stroke-width=\"2\"/>\n\n  <!-- Wing reaching forward to handlebar -->\n  <path d=\"M168,110 Q205,94 254,118 Q258,124 250,128 Q220,120 190,124 Q176,124 168,110 Z\" fill=\"#b0bec5\" stroke=\"#6d7b8d\" stroke-width=\"2\"/>\n\n  <!-- Long neck and head -->\n  <path d=\"M222,104 Q244,82 248,56\" stroke=\"#eceff1\" stroke-width=\"16\" stroke-linecap=\"round\" fill=\"none\"/>\n  <path d=\"M222,104 Q244,82 248,56\" stroke=\"#6d7b8d\" stroke-width=\"1\" stroke-linecap=\"round\" fill=\"none\" transform=\"translate(0,0)\" opacity=\"0\"/>\n  <circle cx=\"252\" cy=\"48\" r=\"17\" fill=\"#eceff1\" stroke=\"#6d7b8d\" stroke-width=\"2\"/>\n\n  <!-- Smaller beak with pouch -->\n  <path d=\"M266,42 L316,60 Q310,80 284,78 Q272,76 266,60 Z\" fill=\"#ffb300\" stroke=\"#e65100\" stroke-width=\"2\"/>\n  <path d=\"M268,60 Q276,76 284,78\" fill=\"none\" stroke=\"#e65100\" stroke-width=\"1.5\"/>\n\n  <!-- Eye -->\n  <circle cx=\"257\" cy=\"44\" r=\"3.5\" fill=\"#111\"/>\n  <circle cx=\"258\" cy=\"43\" r=\"1\" fill=\"#fff\"/>\n\n  <!-- Ground shadow -->\n  <ellipse cx=\"200\" cy=\"268\" rx=\"130\" ry=\"5\" fill=\"#455a64\" opacity=\"0.4\"/>\n</svg>\n```",
+  "ttft_ms": 15444,
+  "type": "result",
+  "duration_ms": 21954,
+  "uuid": "88699491-f461-4c89-8c32-79d806377302",
+  "ttft_stream_ms": 1769,
+  "time_to_request_ms": 143,
+  "first_content_frame_ms": 1769,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:48.999Z"
+}

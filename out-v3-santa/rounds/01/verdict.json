@@ -1,0 +1,104 @@
+{
+  "session_id": "eebd4854-a903-4901-ad95-1639cb32c876",
+  "judge_prompt": "prompts/judge_v3.txt",
+  "blind": {
+    "A": "attempt",
+    "B": "reference"
+  },
+  "parity": true,
+  "parity_reason": "No criterion's scores differ by more than 1 (A totals 30, B totals 31, a gap of 1), and neither image has a critical defect, so all three parity conditions hold.",
+  "rule_parity": true,
+  "attempt_at_least_reference": false,
+  "reference": {
+    "summary": "Santa rides a green-and-black scooter over a snowy landscape at night, holding a stack of gifts, with a moon, snowflakes and motion lines; it is well drawn, apart from some messy overlapping around the gifts.",
+    "scores": {
+      "main": 5,
+      "background": 5,
+      "count": 5,
+      "shape": 4,
+      "contact": 4,
+      "clean": 3,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "clean",
+        "severity": "major",
+        "what": "a loose teal curved stroke floats across Santa's shoulder and does not belong to any recognisable object",
+        "where": "above the gift stack, at Santa's back shoulder",
+        "expected": "no stray strokes; any strap or ribbon is clearly attached to the sack or gifts it belongs to"
+      },
+      {
+        "criterion": "clean",
+        "severity": "major",
+        "what": "the stack of gifts overlaps Santa's body and arm in a confusing way, so it is unclear whether the gifts sit behind him, in his arm or on the deck",
+        "where": "the gift stack on Santa's back side",
+        "expected": "the gifts sit clearly in Santa's arm or on the scooter, with clean edges against his coat"
+      },
+      {
+        "criterion": "shape",
+        "severity": "minor",
+        "what": "one trouser leg is a different, darker shade of red than the other, so the legs look mismatched",
+        "where": "Santa's legs",
+        "expected": "both trouser legs look like a matching pair, with any shading clearly reading as shadow"
+      },
+      {
+        "criterion": "contact",
+        "severity": "minor",
+        "what": "the scooter's rear mudguard and the snow behind it leave a dark wedge-shaped gap under the deck that looks like a hole in the ground",
+        "where": "under the scooter deck, between the wheels",
+        "expected": "the snowy ground runs smoothly under the scooter, and the wheels rest on it"
+      }
+    ]
+  },
+  "attempt": {
+    "summary": "Santa rides a blue kick scooter across a snowy hill at night, with a stack of presents behind him, a full moon and a readable 'Merry Christmas!' greeting; it is clear and pleasant, but the figure is simplified and a little stiff.",
+    "scores": {
+      "main": 4,
+      "background": 5,
+      "count": 5,
+      "shape": 3,
+      "contact": 4,
+      "clean": 4,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "shape",
+        "severity": "major",
+        "what": "Santa's body is a shapeless red blob, and his legs are thin black sticks that look like separate pieces rather than trousers attached to the body",
+        "where": "Santa's torso and legs",
+        "expected": "Santa has a readable coat with a belt and proper trouser legs that come out of the coat and end in boots"
+      },
+      {
+        "criterion": "contact",
+        "severity": "minor",
+        "what": "Santa's face looks straight at the viewer while his body and arm ride towards the right, so he does not seem to be looking where he is going",
+        "where": "Santa's head",
+        "expected": "Santa's head is turned towards the direction of travel, or at least partly towards it"
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "a dark red strip runs down the side of the body behind the presents and does not read clearly as an arm or a sack strap",
+        "where": "left side of Santa's body, next to the presents",
+        "expected": "every shape on Santa's side reads clearly as an arm, a strap or part of the coat"
+      },
+      {
+        "criterion": "main",
+        "severity": "minor",
+        "what": "Santa's free hand is a small white dot sitting on the presents with no visible arm leading to it, so it is unclear whether he is holding them",
+        "where": "the hand next to the presents",
+        "expected": "Santa's free arm is clearly visible and holds or steadies the presents"
+      },
+      {
+        "criterion": "contact",
+        "severity": "minor",
+        "what": "the scooter deck floats above the snow while the wheels sink partly into the hill",
+        "where": "the scooter's wheels and the snow",
+        "expected": "the wheels sit on top of the snowy ground and the deck rides evenly above it"
+      }
+    ]
+  },
+  "not_applicable": []
+}

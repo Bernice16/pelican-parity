@@ -1,6 +1,7 @@
 """Build eval/verdict_review.md: every verdict of the given runs, for review.
 
     python harness/review.py out-final-pelican out-final-monkey ...
+    python harness/review.py --out verdict_final_review.md out-final-v3-pelican ...
 
 For each round: the reference and the attempt side by side, the judge's scores
 and defects (and the A/B-swapped confirmation when there is one), what the
@@ -15,7 +16,6 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 EVAL = REPO / "eval"
-CRITERIA = ("fidelity", "coherence", "readability", "composition", "craft")
 
 
 def load(path):
@@ -30,14 +30,15 @@ def defects_md(defects):
 
 
 def scores_md(v, conf):
-    head = "| | " + " | ".join(CRITERIA) + " | total |\n|---|" + "---|" * (len(CRITERIA) + 1) + "\n"
+    criteria = list(v["reference"]["scores"])  # whatever criteria the run was judged on
+    head = "| | " + " | ".join(criteria) + " | total |\n|---|" + "---|" * (len(criteria) + 1) + "\n"
     rows = ""
     for label, verdict in (("judgment", v), ("confirmation (A/B swapped)", conf)):
         if verdict is None:
             continue
         for role in ("reference", "attempt"):
             s = verdict[role]["scores"]
-            rows += (f"| {role}, {label} | " + " | ".join(str(s[c]) for c in CRITERIA)
+            rows += (f"| {role}, {label} | " + " | ".join(str(s[c]) for c in criteria)
                      + f" | **{sum(s.values())}** |\n")
     return head + rows
 
@@ -91,10 +92,15 @@ def run_md(run):
 def main(argv):
     force = "--force" in argv
     argv = [a for a in argv if a != "--force"]
+    name = "verdict_review.md"
+    if "--out" in argv:  # another page name under eval/, so an earlier review is kept
+        i = argv.index("--out")
+        name = argv[i + 1]
+        del argv[i:i + 2]
     if not argv:
         print(__doc__)
         return 1
-    path = EVAL / "verdict_review.md"
+    path = EVAL / name
     if path.exists() and not force:
         # The page holds review notes: never overwrite them silently.
         print(f"{path.relative_to(REPO).as_posix()} already exists (it may hold your notes); "

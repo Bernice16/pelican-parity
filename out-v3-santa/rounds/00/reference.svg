@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b1d3a"/>
+      <stop offset="1" stop-color="#2a4a7f"/>
+    </linearGradient>
+    <radialGradient id="moon" cx="0.4" cy="0.4" r="0.7">
+      <stop offset="0" stop-color="#fffbe6"/>
+      <stop offset="1" stop-color="#f3e3a0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Sky and ground -->
+  <rect width="800" height="600" fill="url(#sky)"/>
+  <circle cx="690" cy="95" r="48" fill="url(#moon)"/>
+  <g fill="#ffffff" opacity="0.9">
+    <circle cx="80" cy="70" r="3"/><circle cx="160" cy="130" r="2"/><circle cx="240" cy="60" r="2.5"/>
+    <circle cx="330" cy="140" r="2"/><circle cx="430" cy="80" r="3"/><circle cx="520" cy="150" r="2"/>
+    <circle cx="600" cy="40" r="2.5"/><circle cx="120" cy="230" r="2"/><circle cx="740" cy="220" r="2.5"/>
+    <circle cx="60" cy="330" r="2"/><circle cx="700" cy="320" r="2"/><circle cx="280" cy="250" r="2"/>
+  </g>
+  <!-- Distant hills and trees -->
+  <ellipse cx="150" cy="520" rx="260" ry="70" fill="#dfe9f5"/>
+  <ellipse cx="650" cy="530" rx="300" ry="80" fill="#e7eef8"/>
+  <g fill="#1f4d3a">
+    <polygon points="90,470 120,400 150,470"/><polygon points="95,440 120,380 145,440"/>
+    <polygon points="700,470 730,395 760,470"/><polygon points="705,440 730,375 755,440"/>
+  </g>
+  <rect y="505" width="800" height="95" fill="#f4f8fc"/>
+
+  <!-- Shadow -->
+  <ellipse cx="440" cy="528" rx="200" ry="12" fill="#b8c6d8" opacity="0.6"/>
+
+  <!-- Speed lines -->
+  <g stroke="#cfe0f5" stroke-width="5" stroke-linecap="round" opacity="0.8">
+    <line x1="150" y1="420" x2="230" y2="420"/>
+    <line x1="120" y1="450" x2="215" y2="450"/>
+    <line x1="170" y1="480" x2="250" y2="480"/>
+  </g>
+
+  <!-- Scooter -->
+  <!-- Rear fender -->
+  <path d="M265,500 A38,38 0 0 1 335,500" fill="none" stroke="#2e8b57" stroke-width="10"/>
+  <!-- Stem -->
+  <line x1="548" y1="470" x2="600" y2="222" stroke="#2e8b57" stroke-width="14" stroke-linecap="round"/>
+  <line x1="548" y1="470" x2="600" y2="222" stroke="#5fd48a" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+  <!-- Deck -->
+  <rect x="285" y="462" width="270" height="16" rx="6" fill="#2b2b2b"/>
+  <rect x="300" y="458" width="240" height="8" rx="3" fill="#444"/>
+  <!-- Front fork and wheels -->
+  <line x1="552" y1="470" x2="572" y2="500" stroke="#2e8b57" stroke-width="8" stroke-linecap="round"/>
+  <g>
+    <circle cx="300" cy="500" r="30" fill="#1b1b1b"/>
+    <circle cx="300" cy="500" r="14" fill="#9aa5b1"/>
+    <circle cx="300" cy="500" r="5" fill="#333"/>
+    <circle cx="572" cy="500" r="30" fill="#1b1b1b"/>
+    <circle cx="572" cy="500" r="14" fill="#9aa5b1"/>
+    <circle cx="572" cy="500" r="5" fill="#333"/>
+  </g>
+  <!-- Handlebar and grip -->
+  <rect x="578" y="208" width="46" height="18" rx="9" fill="#333"/>
+  <line x1="590" y1="226" x2="612" y2="244" stroke="#555" stroke-width="5" stroke-linecap="round"/>
+  <!-- Headlight -->
+  <circle cx="612" cy="262" r="9" fill="#ffe680" stroke="#2e8b57" stroke-width="3"/>
+  <!-- Small bell -->
+  <circle cx="571" cy="240" r="6" fill="#f4c542"/>
+
+  <!-- Santa -->
+  <!-- Boots -->
+  <rect x="372" y="440" width="44" height="28" rx="8" fill="#111"/>
+  <rect x="420" y="440" width="46" height="28" rx="8" fill="#111"/>
+  <!-- Legs -->
+  <rect x="378" y="380" width="34" height="66" fill="#c0392b"/>
+  <rect x="420" y="380" width="34" height="66" fill="#d62828"/>
+  <!-- Coat -->
+  <path d="M342,398 Q340,285 412,280 Q484,285 482,398 Z" fill="#d62828"/>
+  <rect x="340" y="386" width="144" height="18" rx="8" fill="#ffffff"/>
+  <!-- Coat front line and buttons -->
+  <line x1="412" y1="290" x2="412" y2="386" stroke="#b71c1c" stroke-width="3"/>
+  <circle cx="412" cy="320" r="4" fill="#f4f4f4"/>
+  <circle cx="412" cy="340" r="4" fill="#f4f4f4"/>
+  <!-- Belt -->
+  <rect x="344" y="350" width="136" height="16" fill="#1a1a1a"/>
+  <rect x="400" y="346" width="24" height="24" rx="3" fill="#f4c542" stroke="#8a6d00" stroke-width="2"/>
+  <rect x="407" y="353" width="10" height="10" fill="#1a1a1a"/>
+
+  <!-- Presents (held in left arm) -->
+  <g>
+    <rect x="318" y="330" width="72" height="50" rx="3" fill="#2a9d8f"/>
+    <rect x="348" y="330" width="12" height="50" fill="#e63946"/>
+    <rect x="318" y="350" width="72" height="10" fill="#e63946"/>
+    <rect x="326" y="292" width="58" height="40" rx="3" fill="#3a6ea5"/>
+    <rect x="349" y="292" width="12" height="40" fill="#f4c542"/>
+    <rect x="326" y="308" width="58" height="9" fill="#f4c542"/>
+    <rect x="334" y="262" width="42" height="30" rx="3" fill="#e63946"/>
+    <rect x="350" y="262" width="10" height="30" fill="#ffffff"/>
+    <rect x="334" y="273" width="42" height="8" fill="#ffffff"/>
+    <!-- bow -->
+    <path d="M355,262 Q343,246 350,243 Q357,244 355,262 Q367,246 360,243 Q353,244 355,262 Z" fill="#ffffff"/>
+    <circle cx="355" cy="262" r="4" fill="#ffffff"/>
+  </g>
+
+  <!-- Left arm wrapping around presents -->
+  <path d="M368,305 Q330,315 326,350" fill="none" stroke="#d62828" stroke-width="24" stroke-linecap="round"/>
+  <circle cx="326" cy="350" r="14" fill="#ffffff"/>
+  <circle cx="322" cy="362" r="11" fill="#111"/>
+
+  <!-- Right arm to handlebar -->
+  <path d="M460,310 Q530,270 586,232" fill="none" stroke="#d62828" stroke-width="24" stroke-linecap="round"/>
+  <circle cx="586" cy="232" r="14" fill="#ffffff"/>
+  <circle cx="596" cy="220" r="11" fill="#111"/>
+
+  <!-- Head -->
+  <ellipse cx="416" cy="286" rx="44" ry="36" fill="#ffffff"/>
+  <circle cx="418" cy="246" r="38" fill="#f5cba7"/>
+  <!-- Beard overlap under face -->
+  <path d="M382,256 Q390,318 418,322 Q450,318 456,256 Q440,282 418,278 Q396,282 382,256 Z" fill="#ffffff"/>
+  <!-- Moustache -->
+  <ellipse cx="432" cy="266" rx="16" ry="7" fill="#ffffff" transform="rotate(10 432 266)"/>
+  <ellipse cx="452" cy="264" rx="12" ry="6" fill="#ffffff" transform="rotate(-20 452 264)"/>
+  <!-- Nose, eye, cheek -->
+  <circle cx="448" cy="256" r="8" fill="#e8a07a"/>
+  <circle cx="436" cy="240" r="4" fill="#1a1a1a"/>
+  <circle cx="437" cy="239" r="1.3" fill="#ffffff"/>
+  <circle cx="452" cy="248" r="6" fill="#f0a0a0" opacity="0.6"/>
+  <!-- Eyebrow -->
+  <path d="M428,230 Q437,225 446,231" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Hat -->
+  <path d="M378,232 L456,232 Q448,188 418,184 Q385,178 352,192 Q345,196 348,200 Q375,196 392,206 Q384,214 378,232 Z" fill="#d62828"/>
+  <circle cx="350" cy="198" r="13" fill="#ffffff"/>
+  <rect x="372" y="222" width="92" height="18" rx="9" fill="#ffffff"/>
+
+  <!-- Scarf tail flying back -->
+  <path d="M372,296 Q330,280 300,300" fill="none" stroke="#2a9d8f" stroke-width="10" stroke-linecap="round"/>
+
+  <!-- Falling snowflakes -->
+  <g stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.85">
+    <g transform="translate(200,200)"><line x1="-7" y1="0" x2="7" y2="0"/><line x1="0" y1="-7" x2="0" y2="7"/><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+    <g transform="translate(560,120)"><line x1="-7" y1="0" x2="7" y2="0"/><line x1="0" y1="-7" x2="0" y2="7"/><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+    <g transform="translate(660,380)"><line x1="-6" y1="0" x2="6" y2="0"/><line x1="0" y1="-6" x2="0" y2="6"/><line x1="-4" y1="-4" x2="4" y2="4"/><line x1="-4" y1="4" x2="4" y2="-4"/></g>
+    <g transform="translate(90,300)"><line x1="-6" y1="0" x2="6" y2="0"/><line x1="0" y1="-6" x2="0" y2="6"/><line x1="-4" y1="-4" x2="4" y2="4"/><line x1="-4" y1="4" x2="4" y2="-4"/></g>
+  </g>
+</svg>

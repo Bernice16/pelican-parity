@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 19565,
+  "stop_reason": "end_turn",
+  "session_id": "8de8ace1-d071-4d4b-b308-5deb4b103363",
+  "total_cost_usd": 0.0553618,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 1958,
+    "cache_read_input_tokens": 12509,
+    "output_tokens": 1859,
+    "output_tokens_details": {
+      "thinking_tokens": 434
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1958,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1686,
+        "cache_read_input_tokens": 6460,
+        "cache_creation_input_tokens": 1547,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1547
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1859,
+      "cacheReadInputTokens": 12509,
+      "cacheCreationInputTokens": 1958,
+      "webSearchRequests": 0,
+      "costUSD": 0.0553618,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 434,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1958,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"images\":{\"A\":{\"summary\":\"A brown beaver in a chef's hat stands behind a counter, frying two sunny-side-up eggs in a pan with a spatula, against a plain cream wall; it is readable but simple, with weak arms and loose contacts.\",\"scores\":{\"main\":3,\"background\":3,\"count\":4,\"shape\":3,\"contact\":2,\"clean\":3,\"color\":4},\"defects\":[{\"criterion\":\"contact\",\"severity\":\"major\",\"what\":\"The frying pan floats in mid-air in front of the beaver's belly, above a flat red burner shape, with no stove under it and no paw holding its handle.\",\"where\":\"the frying pan and the red burner, lower right\",\"expected\":\"The pan clearly rests on a visible stove or burner, or the beaver clearly holds its handle.\"},{\"criterion\":\"main\",\"severity\":\"major\",\"what\":\"The beaver has no clear arms. A small bump on each side stands in for a paw, so it does not clearly look like it is cooking with the spatula.\",\"where\":\"the beaver's arms and paws\",\"expected\":\"Visible arms reaching to the pan, with one paw clearly gripping the spatula.\"},{\"criterion\":\"background\",\"severity\":\"major\",\"what\":\"The setting is only a plain two-tone wall and a grey counter. It has no stove, shelf or window, so it barely reads as a kitchen.\",\"where\":\"the whole background\",\"expected\":\"A recognisable kitchen setting, such as a stove and some kitchen details, that supports the cooking scene without distracting from it.\"},{\"criterion\":\"clean\",\"severity\":\"minor\",\"what\":\"A stray orange sliver sticks out from behind the beaver's left foot and is not part of anything.\",\"where\":\"bottom, near the beaver's left foot\",\"expected\":\"No stray fragments around the beaver's feet.\"},{\"criterion\":\"shape\",\"severity\":\"minor\",\"what\":\"The chef's hat sits on top of the head like a separate cut-out, and its band is not shaped to fit the head.\",\"where\":\"the chef's hat\",\"expected\":\"The hat sits snugly on the beaver's head, between or over the ears.\"}]},\"B\":{\"summary\":\"A brown beaver in a chef's hat and an apron with a sun on it holds a spatula over a pan of two fried eggs on a stove, in a cosy kitchen with a smiling sun in the window. It is detailed and clearly drawn.\",\"scores\":{\"main\":5,\"background\":4,\"count\":5,\"shape\":4,\"contact\":4,\"clean\":4,\"color\":5},\"defects\":[{\"criterion\":\"contact\",\"severity\":\"minor\",\"what\":\"The pan sits above the stove's top edge instead of resting on a burner, so it looks slightly lifted.\",\"where\":\"the frying pan on the stove, right side\",\"expected\":\"The pan clearly rests on one of the stove's burners.\"},{\"criterion\":\"shape\",\"severity\":\"minor\",\"what\":\"The arm holding the spatula is very thin and stretched long compared with the beaver's chubby body.\",\"where\":\"the beaver's right arm, holding the spatula\",\"expected\":\"An arm in proportion with the beaver's plump body.\"},{\"criterion\":\"background\",\"severity\":\"minor\",\"what\":\"The large, bright smiling sun in the window competes for attention with the beaver.\",\"where\":\"the window, upper left\",\"expected\":\"Window details that stay secondary to the beaver and the eggs.\"},{\"criterion\":\"clean\",\"severity\":\"minor\",\"what\":\"A floating pink heart shape near the pan handle is not connected to anything and looks like a stray mark.\",\"where\":\"above the pan handle, right of center\",\"expected\":\"Decorative touches read clearly as intentional, or are left out.\"}]}},\"not_applicable\":[],\"parity\":false,\"parity_reason\":\"B outscores A by 2 on main and contact, and the totals differ by 9 (A 22, B 31). Rules 1 and 2 both fail, so parity is false.\"}",
+  "ttft_ms": 1784,
+  "type": "result",
+  "duration_ms": 19763,
+  "uuid": "99c74c0a-477e-4277-b311-e2b24722ad21",
+  "ttft_stream_ms": 1782,
+  "time_to_request_ms": 166,
+  "first_content_frame_ms": 1782,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:48.999Z"
+}

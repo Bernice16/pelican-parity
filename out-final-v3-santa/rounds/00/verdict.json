@@ -1,0 +1,97 @@
+{
+  "session_id": "6dab42b6-8954-4b1c-b553-ec7f19c06e47",
+  "judge_prompt": "prompts/judge_v3.txt",
+  "blind": {
+    "A": "attempt",
+    "B": "reference"
+  },
+  "parity": false,
+  "parity_reason": "The totals are A 28 and B 32, a gap of 4, which breaks the totals rule, and shape, contact and clean each differ by only 1. Neither image has a critical defect, but parity fails on the totals.",
+  "rule_parity": false,
+  "attempt_at_least_reference": false,
+  "reference": {
+    "summary": "Santa rides a kick scooter across snow at night, gripping the handlebar, with a stack of presents at his side and speed lines behind; it is clean, well proportioned and easy to read.",
+    "scores": {
+      "main": 5,
+      "background": 5,
+      "count": 5,
+      "shape": 4,
+      "contact": 4,
+      "clean": 4,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "contact",
+        "severity": "minor",
+        "what": "The stack of presents hovers beside Santa and is only touched at one bottom corner by his hand, so it looks like it is floating",
+        "where": "the present stack left of Santa",
+        "expected": "The presents should be clearly held from underneath or rest on the scooter deck"
+      },
+      {
+        "criterion": "shape",
+        "severity": "minor",
+        "what": "The hat's tail flies up in a long, thin, wavy streamer that looks more like a ribbon than a hat",
+        "where": "top of Santa's hat",
+        "expected": "The hat should have a natural floppy tip with its pom-pom close to the hat"
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "The present stack overlaps Santa's arm and body edge, which muddles the outline",
+        "where": "Santa's left side",
+        "expected": "The presents and Santa's arm should have clearly separate outlines"
+      }
+    ]
+  },
+  "attempt": {
+    "summary": "Santa rides a kick scooter through a snowy night, holding a small gift, with a sack and loose presents behind him; the scene reads clearly, but the sack and gifts float and the figure is stubby.",
+    "scores": {
+      "main": 4,
+      "background": 5,
+      "count": 5,
+      "shape": 3,
+      "contact": 3,
+      "clean": 3,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "contact",
+        "severity": "major",
+        "what": "The gift sack and the two presents in front of it hang in the air behind Santa and are not attached to him or the scooter",
+        "where": "left of Santa, behind his raised arm",
+        "expected": "The sack and presents should rest on the scooter deck, sit on Santa's back, or be clearly held, so they travel with him"
+      },
+      {
+        "criterion": "clean",
+        "severity": "major",
+        "what": "A loose red square floats above the sack and isn't connected to anything",
+        "where": "above the brown sack, middle left",
+        "expected": "No stray shapes; any tie or decoration should be visibly attached to the sack"
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "The green and yellow presents overlap each other, the sack and Santa's arm in a cluttered pile",
+        "where": "around Santa's left hand",
+        "expected": "Each present should sit in its own clear place, either in his hand or on the sack, without tangled overlaps"
+      },
+      {
+        "criterion": "shape",
+        "severity": "minor",
+        "what": "Santa's legs are very short stubs under a boxy body, so the figure looks squashed",
+        "where": "Santa's legs and lower body",
+        "expected": "Santa should have legs of believable length for a standing rider"
+      },
+      {
+        "criterion": "contact",
+        "severity": "minor",
+        "what": "The hand on the handlebar sits just below the grip instead of clearly wrapping around it",
+        "where": "Santa's right hand at the top of the scooter stem",
+        "expected": "The hand should clearly grip the handlebar"
+      }
+    ]
+  },
+  "not_applicable": []
+}

@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 22991,
+  "stop_reason": "end_turn",
+  "session_id": "307c8b7a-6436-4605-85d3-326ba24a4ed8",
+  "total_cost_usd": 0.062374599999999995,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 1967,
+    "cache_read_input_tokens": 12513,
+    "output_tokens": 2206,
+    "output_tokens_details": {
+      "thinking_tokens": 630
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1967,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 2025,
+        "cache_read_input_tokens": 6464,
+        "cache_creation_input_tokens": 1552,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1552
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 2206,
+      "cacheReadInputTokens": 12513,
+      "cacheCreationInputTokens": 1967,
+      "webSearchRequests": 0,
+      "costUSD": 0.062374599999999995,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 630,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1967,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\n  \"images\": {\n    \"A\": {\n      \"summary\": \"A big brown beaver in a chef's hat fries two sunny-side-up eggs in a pan with a spatula at a kitchen counter. It reads clearly, but the hat is oddly shaped and the spatula awkwardly covers one of the eggs.\",\n      \"scores\": {\"main\": 4, \"background\": 4, \"count\": 4, \"shape\": 3, \"contact\": 3, \"clean\": 3, \"color\": 5},\n      \"defects\": [\n        {\"criterion\": \"clean\", \"severity\": \"major\", \"what\": \"The grey spatula blade sits on top of the second egg and hides most of it, so the two shapes become a muddle.\", \"where\": \"right side of the frying pan\", \"expected\": \"The spatula should slide under or rest beside an egg, with both eggs clearly visible.\"},\n        {\"criterion\": \"shape\", \"severity\": \"major\", \"what\": \"The chef's hat is a flat white arc band with puffs on top, so it looks more like a headband than a chef's toque.\", \"where\": \"top of the beaver's head\", \"expected\": \"A recognisable chef's hat: a band around the head with a tall puffy top.\"},\n        {\"criterion\": \"contact\", \"severity\": \"minor\", \"what\": \"The spatula is held up in the air at a steep slant and is not working on the egg. The other paw just rests on the pan's rim.\", \"where\": \"the beaver's paws and the spatula\", \"expected\": \"One paw should hold the pan handle or the pan steadily while the spatula clearly works on the eggs in the pan.\"},\n        {\"criterion\": \"clean\", \"severity\": \"minor\", \"what\": \"The beaver's tail is cut off sharply by the counter edge and looks like a separate dark blob next to the body.\", \"where\": \"lower left, the tail\", \"expected\": \"The tail should clearly join the beaver's body and read as its flat paddle tail.\"},\n        {\"criterion\": \"shape\", \"severity\": \"minor\", \"what\": \"The beaver is very large compared with the pan and the kitchen, and its body fills most of the scene.\", \"where\": \"centre, the beaver's body\", \"expected\": \"The beaver should be sized so that the cooking action and the pan stand out as clearly as the cook.\"}\n      ]\n    },\n    \"B\": {\n      \"summary\": \"A brown beaver in a chef's hat and an apron with a sun on it holds a spatula over a pan of two sunny-side-up eggs on a stove, with a smiling sun in the window. It is clear and charming but has small contact and proportion problems.\",\n      \"scores\": {\"main\": 4, \"background\": 4, \"count\": 5, \"shape\": 4, \"contact\": 3, \"clean\": 4, \"color\": 5},\n      \"defects\": [\n        {\"criterion\": \"contact\", \"severity\": \"major\", \"what\": \"The pan floats above the stove top instead of resting on a burner, and the spatula hovers above the eggs without touching them.\", \"where\": \"the frying pan and spatula above the stove\", \"expected\": \"The pan should sit firmly on a burner and the spatula should touch or lift an egg.\"},\n        {\"criterion\": \"shape\", \"severity\": \"minor\", \"what\": \"The arm holding the spatula is a long thin stick that stretches unnaturally far from the body.\", \"where\": \"the beaver's right arm\", \"expected\": \"The arm should be thick enough for the beaver's body and in proportion with it while still reaching the pan.\"},\n        {\"criterion\": \"contact\", \"severity\": \"minor\", \"what\": \"The plate with an egg sits on the floor at the foot of the stove, as if dropped.\", \"where\": \"lower right, in front of the stove\", \"expected\": \"The plate should rest on a counter or the stove side where a served egg would sensibly go.\"},\n        {\"criterion\": \"clean\", \"severity\": \"minor\", \"what\": \"A pink heart floats in the air above the pan with no clear meaning and adds clutter near the main action.\", \"where\": \"above the pan's handle\", \"expected\": \"The area around the pan should stay clear so the cooking action reads at once.\"}\n      ]\n    }\n  },\n  \"not_applicable\": [],\n  \"parity\": false,\n  \"parity_reason\": \"No criterion differs by more than 1 and neither image has a critical defect, but the totals are A 26 and B 29. That difference of 3 breaks the rule that totals may differ by at most 1.\"\n}",
+  "ttft_ms": 1895,
+  "type": "result",
+  "duration_ms": 23168,
+  "uuid": "e18cfe40-6ff2-4c81-ac85-2b70b897df56",
+  "ttft_stream_ms": 1892,
+  "time_to_request_ms": 149,
+  "first_content_frame_ms": 1893,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:48.999Z"
+}

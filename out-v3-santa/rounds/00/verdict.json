@@ -1,0 +1,104 @@
+{
+  "session_id": "fb6c0ca6-6eb5-4382-b915-38241d4c1688",
+  "judge_prompt": "prompts/judge_v3.txt",
+  "blind": {
+    "A": "reference",
+    "B": "attempt"
+  },
+  "parity": false,
+  "parity_reason": "The totals differ by 5 (A 29, B 24), which is more than the allowed 2, so parity is false even though no criterion differs by more than 1 and neither image has a critical defect.",
+  "rule_parity": false,
+  "attempt_at_least_reference": false,
+  "reference": {
+    "summary": "Santa stands on a kick scooter, gripping the handlebar and carrying a stack of presents through a snowy night with a moon and pine trees; the drawing is polished, with a few small rough spots around the presents.",
+    "scores": {
+      "main": 4,
+      "background": 5,
+      "count": 4,
+      "shape": 4,
+      "contact": 4,
+      "clean": 3,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "clean",
+        "severity": "major",
+        "what": "A teal curved stroke floats across Santa's shoulder and the presents. It doesn't read as a strap or a sack and looks like a stray shape.",
+        "where": "Santa's back, left of his head",
+        "expected": "Any strap or sack holding the presents should be clearly shaped and attached. Otherwise it should not be there."
+      },
+      {
+        "criterion": "contact",
+        "severity": "minor",
+        "what": "The stack of presents overlaps Santa's arm and torso without being clearly held or strapped, so it seems to hover behind him.",
+        "where": "the presents at Santa's left side",
+        "expected": "The presents should clearly rest in Santa's arm, in a sack, or on his back."
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "Green curved shapes behind the wheels show only partly and look like leftover fragments.",
+        "where": "behind the front and rear wheels",
+        "expected": "Wheel guards should be clearly shaped. Otherwise only the wheels should show."
+      },
+      {
+        "criterion": "shape",
+        "severity": "minor",
+        "what": "The scooter deck is very long and low, and the front end connects awkwardly to the stem.",
+        "where": "the scooter deck and the bottom of the stem",
+        "expected": "The deck and stem should join cleanly at a believable scooter size."
+      }
+    ]
+  },
+  "attempt": {
+    "summary": "A simple Santa rides a blue scooter with presents stacked at the back under a 'Merry Christmas!' banner on a snowy night; the figure is crude, has only one arm, and the presents are badly placed.",
+    "scores": {
+      "main": 3,
+      "background": 4,
+      "count": 3,
+      "shape": 3,
+      "contact": 3,
+      "clean": 3,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "count",
+        "severity": "major",
+        "what": "Santa has only one arm. The other is missing completely.",
+        "where": "Santa's left side",
+        "expected": "Santa should have two arms, with the second one visible holding on or resting at his side."
+      },
+      {
+        "criterion": "contact",
+        "severity": "major",
+        "what": "The bottom present sits below the deck and overlaps the rear wheel, so the stack isn't resting on the scooter.",
+        "where": "the stack of presents at the rear of the scooter",
+        "expected": "The presents should sit on the scooter deck or be held by Santa, clear of the wheel."
+      },
+      {
+        "criterion": "shape",
+        "severity": "major",
+        "what": "Santa's body is a plain egg shape with no legs, and the boots stick out from under it. He looks more like a blob than a rider.",
+        "where": "Santa's body and lower half",
+        "expected": "Santa should have a recognisable body with legs reaching down to his boots on the deck."
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "A star dot sits on the first letter of the greeting.",
+        "where": "the 'M' of 'Merry Christmas!' in the upper left",
+        "expected": "The text should be clear of stars and other shapes."
+      },
+      {
+        "criterion": "background",
+        "severity": "minor",
+        "what": "The background is sparse: just a few dots and a flat snow hill, with little winter setting.",
+        "where": "the whole background",
+        "expected": "The snowy night setting should be clearly shown, for example with falling snow or trees, without pulling attention from Santa."
+      }
+    ]
+  },
+  "not_applicable": []
+}

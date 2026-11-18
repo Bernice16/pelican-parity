@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 18917,
+  "stop_reason": "end_turn",
+  "session_id": "5f507977-11b0-4b51-a112-64b81bf1f21f",
+  "total_cost_usd": 0.0565234,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 2538,
+    "cache_read_input_tokens": 12317,
+    "output_tokens": 1687,
+    "output_tokens_details": {
+      "thinking_tokens": 376
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 2538,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1512,
+        "cache_read_input_tokens": 6350,
+        "cache_creation_input_tokens": 2155,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2155
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1687,
+      "cacheReadInputTokens": 12317,
+      "cacheCreationInputTokens": 2538,
+      "webSearchRequests": 0,
+      "costUSD": 0.0565234,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 376,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 2538,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"images\":{\"A\":{\"summary\":\"A cartoon brown monkey clings to the trunk of an apple tree full of red apples and reaches up toward the canopy, with a sky, sun, clouds and grass behind; it answers the prompt well.\",\"scores\":{\"fidelity\":5,\"coherence\":4,\"readability\":5,\"composition\":4,\"craft\":4},\"defects\":[{\"criterion\":\"coherence\",\"severity\":\"major\",\"what\":\"The lower body reads as a shapeless curled blob, and the single visible foot hangs loosely in front of the trunk instead of gripping it.\",\"where\":\"the monkey's legs and feet\",\"expected\":\"Clearly drawn legs whose feet press against or wrap around the trunk, so the climbing grip is believable.\"},{\"criterion\":\"craft\",\"severity\":\"minor\",\"what\":\"Thin dark lines on the trunk cross behind and beside the monkey's body and look like stray strokes rather than bark or vines.\",\"where\":\"the trunk around the monkey\",\"expected\":\"Bark detail that clearly belongs to the trunk and does not tangle with the monkey's outline.\"},{\"criterion\":\"coherence\",\"severity\":\"minor\",\"what\":\"The raised hand floats just under an apple without clearly holding a branch or the fruit.\",\"where\":\"the monkey's raised arm at the bottom edge of the canopy\",\"expected\":\"The raised hand visibly grips a branch or holds an apple.\"},{\"criterion\":\"composition\",\"severity\":\"minor\",\"what\":\"The large canopy dominates the frame and the monkey sits fairly low, so the eye goes to the foliage first.\",\"where\":\"overall framing\",\"expected\":\"The monkey stands out as the clear focal point, with the canopy supporting it.\"}]},\"B\":{\"summary\":\"A cartoon brown monkey hangs from two branches of an apple tree, its body against the trunk and one leg bent, under a sun in a clear sky; it answers the prompt well.\",\"scores\":{\"fidelity\":5,\"coherence\":4,\"readability\":5,\"composition\":4,\"craft\":4},\"defects\":[{\"criterion\":\"coherence\",\"severity\":\"major\",\"what\":\"Only one leg is visible, and it is kicked out to the side with the foot in mid-air instead of bracing on the trunk.\",\"where\":\"the monkey's lower body\",\"expected\":\"Two legs, with feet gripping or pushing against the trunk in a climbing pose.\"},{\"criterion\":\"craft\",\"severity\":\"minor\",\"what\":\"The ground is a thin flat sliver at the very bottom, so the tree base looks barely planted.\",\"where\":\"bottom edge of the image\",\"expected\":\"The tree's base sits clearly in a visible patch of ground.\"},{\"criterion\":\"composition\",\"severity\":\"minor\",\"what\":\"The lower half of the frame is mostly empty trunk and sky, which leaves the image top-heavy.\",\"where\":\"lower half of the image\",\"expected\":\"A more balanced layout where the space below the monkey is not left empty.\"},{\"criterion\":\"craft\",\"severity\":\"minor\",\"what\":\"The flat dark green canopy makes the overlapping foliage circles merge, and some apples blend into the dense shape.\",\"where\":\"the tree canopy\",\"expected\":\"Foliage with enough tonal variation to separate the leaf clusters and make the apples stand out.\"}]}},\"not_applicable\":[],\"parity\":true,\"parity_reason\":\"Both images score 22 in total and get the same score on every criterion, so no criterion differs by more than 1. Neither image has a critical defect, so all three parity conditions hold.\"}",
+  "ttft_ms": 5252,
+  "type": "result",
+  "duration_ms": 22608,
+  "uuid": "db8f94ac-56cb-48c3-8f22-c703d4d44a71",
+  "ttft_stream_ms": 5250,
+  "time_to_request_ms": 3596,
+  "first_content_frame_ms": 5250,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:49.359Z"
+}

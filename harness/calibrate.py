@@ -61,14 +61,14 @@ def main(argv=None):
             data = harness.paid_session(
                 cfg, "calibration", judge_prompt, cfg["judge_instructions"], out_dir, i,
                 args.budget_usd, "calib", prepare=lambda wd: prepare(wd, args.a, args.b))
-            v, _ = judge.parse_verdict(data.get("result", ""))
+            v, _ = judge.parse_verdict(data.get("result", ""), cfg["criteria"])
             a, b = v["images"]["A"], v["images"]["B"]
             judgments.append({
                 "session_id": data.get("session_id"),
                 "A_scores": a["scores"], "B_scores": b["scores"],
                 "A_total": sum(a["scores"].values()), "B_total": sum(b["scores"].values()),
                 "A_defects": len(a["defects"]), "B_defects": len(b["defects"]),
-                "parity": v["parity"], "rule_parity": judge.rule_parity(v),
+                "parity": v["parity"], "rule_parity": judge.rule_parity(v, cfg["parity_max_total_gap"]),
                 "parity_reason": v["parity_reason"],
             })
             j = judgments[-1]

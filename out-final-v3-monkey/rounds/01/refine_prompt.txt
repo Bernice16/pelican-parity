@@ -1,0 +1,115 @@
+You are improving your own SVG drawing.
+
+Here is the current SVG:
+<current_svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+  <!-- Sky -->
+  <rect width="400" height="500" fill="#bfe6ff"/>
+  <!-- Sun -->
+  <circle cx="340" cy="60" r="90" fill="#ffe27a" opacity="0.6"/>
+  <!-- Ground -->
+  <rect y="440" width="400" height="60" fill="#7cc35a"/>
+  <path d="M0 440 Q100 425 200 440 T400 440 L400 445 L0 445 Z" fill="#6ab04c"/>
+
+  <!-- Tree trunk -->
+  <path d="M175 440 L165 260 Q160 230 140 210 L155 205 Q178 225 185 255 L200 255 Q210 225 235 200 L248 210 Q225 232 222 262 L228 440 Z" fill="#8b5a2b"/>
+  <path d="M190 440 L186 300" stroke="#6b4420" stroke-width="4" fill="none"/>
+  <path d="M205 380 L200 320" stroke="#6b4420" stroke-width="3" fill="none"/>
+
+  <!-- Canopy -->
+  <g fill="#3f9b3a">
+    <circle cx="200" cy="170" r="75"/>
+    <circle cx="140" cy="200" r="55"/>
+    <circle cx="265" cy="195" r="58"/>
+    <circle cx="200" cy="110" r="55"/>
+    <circle cx="120" cy="140" r="40"/>
+    <circle cx="285" cy="130" r="42"/>
+  </g>
+  <g fill="#56b84c">
+    <circle cx="185" cy="150" r="30"/>
+    <circle cx="255" cy="165" r="25"/>
+  </g>
+
+  <!-- Apples -->
+  <g>
+    <circle cx="160" cy="130" r="10" fill="#d62828"/>
+    <circle cx="232" cy="110" r="10" fill="#d62828"/>
+    <circle cx="275" cy="160" r="10" fill="#d62828"/>
+    <circle cx="120" cy="180" r="10" fill="#d62828"/>
+    <circle cx="205" cy="180" r="10" fill="#d62828"/>
+    <circle cx="300" cy="200" r="10" fill="#d62828"/>
+    <circle cx="170" cy="210" r="9" fill="#e63946"/>
+    <path d="M160 120 Q163 114 166 120" stroke="#2d6a2d" stroke-width="2" fill="none"/>
+    <path d="M232 100 Q235 94 238 100" stroke="#2d6a2d" stroke-width="2" fill="none"/>
+    <path d="M275 150 Q278 144 281 150" stroke="#2d6a2d" stroke-width="2" fill="none"/>
+  </g>
+
+  <!-- Monkey climbing the trunk -->
+  <g id="monkey">
+    <!-- Tail -->
+    <path d="M182 330 Q165 320 170 300 Q175 288 165 280" stroke="#7a4a1e" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <!-- Body -->
+    <ellipse cx="200" cy="320" rx="22" ry="28" fill="#a0692f"/>
+    <!-- Belly -->
+    <ellipse cx="200" cy="325" rx="13" ry="18" fill="#e8c39e"/>
+    <!-- Arms reaching up the trunk -->
+    <path d="M182 305 Q168 285 178 268" stroke="#8b5a2b" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M218 300 Q232 280 222 262" stroke="#a0692f" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <!-- Hands -->
+    <circle cx="178" cy="266" r="6" fill="#5c3a1a"/>
+    <circle cx="222" cy="260" r="6" fill="#5c3a1a"/>
+    <!-- Legs -->
+    <path d="M190 342 Q184 362 190 372" stroke="#8b5a2b" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <path d="M210 342 Q216 362 210 372" stroke="#a0692f" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <!-- Feet -->
+    <ellipse cx="188" cy="374" rx="7" ry="4" fill="#5c3a1a"/>
+    <ellipse cx="212" cy="374" rx="7" ry="4" fill="#5c3a1a"/>
+    <!-- Head -->
+    <circle cx="200" cy="282" r="20" fill="#a0692f"/>
+    <!-- Face -->
+    <ellipse cx="200" cy="288" rx="12" ry="10" fill="#e8c39e"/>
+    <!-- Ears -->
+    <circle cx="181" cy="278" r="6" fill="#8b5a2b"/>
+    <circle cx="219" cy="278" r="6" fill="#8b5a2b"/>
+    <!-- Eyes -->
+    <circle cx="194" cy="279" r="2.5" fill="#1a1a1a"/>
+    <circle cx="206" cy="279" r="2.5" fill="#1a1a1a"/>
+    <circle cx="195" cy="278" r="0.8" fill="#fff"/>
+    <circle cx="207" cy="278" r="0.8" fill="#fff"/>
+    <!-- Nose and smile -->
+    <ellipse cx="200" cy="287" rx="2.5" ry="1.8" fill="#5c3a1a"/>
+    <path d="M194 292 Q200 297 206 292" stroke="#5c3a1a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Title -->
+  <text x="200" y="478" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#2d4a22">A monkey climbing an apple tree</text>
+</svg>
+</current_svg>
+
+An art director looked at the rendered image and listed these problems, most severe first:
+<problems>
+1. [major, shape] The monkey's arms, ears and hands blend into one shapeless mass around the head, with dark balls for hands that look like extra ears
+   Where: the monkey's head and raised arms
+   Expected: Ears, arms and hands should be separate and recognisable, with the arms clearly reaching up the trunk
+2. [major, count] The legs are thin sticks ending in dark ovals and blend into a stray line on the trunk, so you can't count the legs and tail
+   Where: the monkey's lower body and the trunk below it
+   Expected: Two clear legs gripping the trunk and one clearly visible tail
+3. [major, clean] Stray dark lines and blobs run down the trunk below the monkey and look like broken pieces
+   Where: the middle of the trunk under the monkey
+   Expected: The trunk should be clean, and only the monkey's own limbs should show on it
+4. [minor, background] A huge pale sun is cut off at the edge and fills much of the upper right, so it competes with the tree
+   Where: upper right sky
+   Expected: A smaller sun that sits fully in the sky and stays in the background
+5. [minor, contact] The monkey's hands and feet don't clearly hold the trunk; the feet sit as flat ovals on its surface
+   Where: the monkey's hands and feet
+   Expected: Hands and feet should visibly wrap around and grip the trunk
+</problems>
+
+Write an improved version of the drawing:
+- Fix every listed problem, starting with the most severe ones.
+- Make meaningful, visible improvements for each listed problem. Never return an unchanged or nearly identical SVG.
+- Keep what already works: same subject, same overall layout and style, unless a problem asks for a change.
+- Check the geometry as you go: parts that should touch must touch (a figure resting on what supports it, objects standing on the ground), and parts that should connect must connect.
+- Ensure the root `<svg>` tag preserves a valid `viewBox` and proper dimensions so nothing is clipped.
+
+Reply with the complete new SVG document only, inside one ```svg code block.

@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <!-- Sky and ground -->
+  <rect width="800" height="500" fill="#cfe9ff"/>
+  <rect y="440" width="800" height="60" fill="#8bc37a"/>
+  <path d="M0 440 Q200 425 400 440 T800 440" fill="none" stroke="#6aa85c" stroke-width="3"/>
+
+  <!-- Sun -->
+  <circle cx="710" cy="80" r="40" fill="#ffd54a"/>
+
+  <!-- Wheels -->
+  <circle cx="230" cy="370" r="80" fill="none" stroke="#222" stroke-width="10"/>
+  <circle cx="570" cy="370" r="80" fill="none" stroke="#222" stroke-width="10"/>
+  <g stroke="#888" stroke-width="2">
+    <line x1="230" y1="370" x2="230" y2="290"/>
+    <line x1="230" y1="370" x2="300" y2="370"/>
+    <line x1="230" y1="370" x2="160" y2="370"/>
+    <line x1="230" y1="370" x2="180" y2="305"/>
+    <line x1="230" y1="370" x2="280" y2="305"/>
+    <line x1="570" y1="370" x2="570" y2="290"/>
+    <line x1="570" y1="370" x2="640" y2="370"/>
+    <line x1="570" y1="370" x2="500" y2="370"/>
+    <line x1="570" y1="370" x2="520" y2="305"/>
+    <line x1="570" y1="370" x2="620" y2="305"/>
+  </g>
+  <circle cx="230" cy="370" r="7" fill="#222"/>
+  <circle cx="570" cy="370" r="7" fill="#222"/>
+
+  <!-- Chainring, rear cog and chain -->
+  <circle cx="380" cy="370" r="22" fill="none" stroke="#555" stroke-width="4"/>
+  <circle cx="230" cy="370" r="12" fill="none" stroke="#555" stroke-width="4"/>
+  <line x1="380" y1="348" x2="230" y2="358" stroke="#555" stroke-width="3"/>
+  <line x1="380" y1="392" x2="230" y2="382" stroke="#555" stroke-width="3"/>
+
+  <!-- Bicycle frame -->
+  <g stroke="#d7263d" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Chainstays and seatstays (rear triangle) -->
+    <path d="M230 370 L380 370"/>
+    <path d="M230 370 L330 240"/>
+    <!-- Seat tube -->
+    <path d="M380 370 L330 240"/>
+    <!-- Top tube -->
+    <path d="M330 240 L510 240"/>
+    <!-- Down tube -->
+    <path d="M380 370 L520 300"/>
+    <!-- Head tube -->
+    <path d="M510 240 L520 300"/>
+  </g>
+  <!-- Fork -->
+  <path d="M520 300 L570 370" fill="none" stroke="#d7263d" stroke-width="9" stroke-linecap="round"/>
+
+  <!-- Saddle -->
+  <path d="M300 236 L352 232" stroke="#222" stroke-width="9" stroke-linecap="round"/>
+
+  <!-- Handlebar stem and bars -->
+  <path d="M510 240 L528 212" stroke="#222" stroke-width="8" stroke-linecap="round"/>
+  <path d="M528 212 L562 204" stroke="#222" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- Crank arms and pedals -->
+  <path d="M380 370 L356 332" stroke="#555" stroke-width="7" stroke-linecap="round"/>
+  <path d="M380 370 L404 408" stroke="#555" stroke-width="7" stroke-linecap="round"/>
+  <rect x="338" y="324" width="28" height="8" rx="3" fill="#333"/>
+  <rect x="392" y="406" width="28" height="8" rx="3" fill="#333"/>
+
+  <!-- Legs -->
+  <path d="M352 246 L338 298 L356 330" fill="none" stroke="#ffb347" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M372 250 L398 296 L404 408" fill="none" stroke="#ffb347" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Pelican tail -->
+  <path d="M286 220 L240 236 L278 246 Z" fill="#cfcfcf" stroke="#333" stroke-width="2"/>
+
+  <!-- Pelican body -->
+  <ellipse cx="370" cy="200" rx="95" ry="46" fill="#f4f4f4" stroke="#333" stroke-width="3" transform="rotate(-12 370 200)"/>
+  <!-- Wing reaching toward handlebar -->
+  <path d="M300 190 Q370 120 470 170 Q500 185 548 206 Q490 218 450 200 Q380 228 300 190 Z" fill="#dcdcdc" stroke="#333" stroke-width="3"/>
+
+  <!-- Neck -->
+  <path d="M440 170 Q470 120 500 84" fill="none" stroke="#f4f4f4" stroke-width="28" stroke-linecap="round"/>
+  <path d="M440 170 Q470 120 500 84" fill="none" stroke="#333" stroke-width="2" opacity="0"/>
+
+  <!-- Head -->
+  <circle cx="510" cy="68" r="24" fill="#f4f4f4" stroke="#333" stroke-width="3"/>
+
+  <!-- Long beak -->
+  <path d="M528 62 Q590 58 652 96 Q596 88 530 84 Z" fill="#ffb347" stroke="#333" stroke-width="3" stroke-linejoin="round"/>
+  <!-- Large throat pouch -->
+  <path d="M532 84 Q600 96 648 96 Q640 140 596 146 Q566 140 548 116 Q536 102 532 84 Z" fill="#ffd08a" stroke="#333" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <!-- Eye -->
+  <circle cx="520" cy="60" r="5" fill="#222"/>
+  <circle cx="521" cy="59" r="1.5" fill="#fff"/>
+</svg>

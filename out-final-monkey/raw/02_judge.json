@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 17996,
+  "stop_reason": "end_turn",
+  "session_id": "f0ba134f-c03e-4c15-8914-12ab16674939",
+  "total_cost_usd": 0.0548466,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 2526,
+    "cache_read_input_tokens": 12313,
+    "output_tokens": 1608,
+    "output_tokens_details": {
+      "thinking_tokens": 410
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 2526,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1441,
+        "cache_read_input_tokens": 6346,
+        "cache_creation_input_tokens": 2147,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2147
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1608,
+      "cacheReadInputTokens": 12313,
+      "cacheCreationInputTokens": 2526,
+      "webSearchRequests": 0,
+      "costUSD": 0.0548466,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 410,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 2526,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"images\":{\"A\":{\"summary\":\"A cartoon monkey clings to the trunk of a large apple tree full of red apples and reaches up toward an apple, which clearly answers the prompt.\",\"scores\":{\"fidelity\":5,\"coherence\":4,\"readability\":5,\"composition\":5,\"craft\":4},\"defects\":[{\"criterion\":\"coherence\",\"severity\":\"minor\",\"what\":\"The monkey's lower leg and gripping limb blend into the trunk, so it is hard to tell which limb wraps the trunk and where the foot is anchored\",\"where\":\"the monkey's left side and lower body against the trunk\",\"expected\":\"Each limb should clearly read as an arm or a leg gripping the trunk, with a visible hand or foot holding on\"},{\"criterion\":\"craft\",\"severity\":\"minor\",\"what\":\"Thin dark vertical lines on the trunk look like stray strokes and do not clearly read as bark or as a limb outline\",\"where\":\"the trunk behind the monkey's left leg\",\"expected\":\"Trunk marks should read clearly as bark texture or be part of a clearly shaped limb\"},{\"criterion\":\"coherence\",\"severity\":\"minor\",\"what\":\"The raised hand sits next to an apple without clearly grasping it, so it is unclear whether the monkey is holding the apple or a branch\",\"where\":\"the monkey's raised right hand under the canopy\",\"expected\":\"The hand should clearly grip either an apple or a branch\"}]},\"B\":{\"summary\":\"A cartoon monkey hangs by both arms from the branches of an apple tree with its legs dangling, which reads more as hanging than climbing but still fits the prompt.\",\"scores\":{\"fidelity\":4,\"coherence\":4,\"readability\":4,\"composition\":4,\"craft\":4},\"defects\":[{\"criterion\":\"fidelity\",\"severity\":\"major\",\"what\":\"The monkey hangs from the branches with its legs dangling in the air instead of climbing, so the climbing action is weak\",\"where\":\"the monkey's legs and overall pose\",\"expected\":\"The monkey should look like it is actively climbing, with its feet or legs gripping the trunk or a branch\"},{\"criterion\":\"coherence\",\"severity\":\"minor\",\"what\":\"The feet float in front of the trunk without touching anything\",\"where\":\"the monkey's feet\",\"expected\":\"The feet should press against or grip the trunk\"},{\"criterion\":\"readability\",\"severity\":\"minor\",\"what\":\"The monkey's ears are barely visible, so the head reads less clearly as a monkey's\",\"where\":\"the sides of the monkey's head\",\"expected\":\"Clearly visible rounded ears on either side of the head\"},{\"criterion\":\"composition\",\"severity\":\"minor\",\"what\":\"The tree canopy and monkey take up a fairly small central area, leaving a lot of empty sky\",\"where\":\"the overall framing, especially the lower half and sides\",\"expected\":\"The tree and monkey should fill more of the frame so the main subject has more presence\"}]}},\"not_applicable\":[],\"parity\":false,\"parity_reason\":\"Each criterion differs by at most 1 and neither image has a critical defect, but the totals are 23 for A and 20 for B. That 3-point gap is more than the allowed 1, so parity is false.\"}",
+  "ttft_ms": 2935,
+  "type": "result",
+  "duration_ms": 18744,
+  "uuid": "27b6e4cd-1d6a-4b3e-ae20-3d4a5079a452",
+  "ttft_stream_ms": 2470,
+  "time_to_request_ms": 721,
+  "first_content_frame_ms": 2470,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:49.359Z"
+}

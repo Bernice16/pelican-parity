@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 20596,
+  "stop_reason": "end_turn",
+  "session_id": "dd2ee876-0a4e-4b21-a32c-cb6b6fdf53d2",
+  "total_cost_usd": 0.05581960000000001,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 1845,
+    "cache_read_input_tokens": 12718,
+    "output_tokens": 1925,
+    "output_tokens_details": {
+      "thinking_tokens": 564
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1845,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1750,
+        "cache_read_input_tokens": 6565,
+        "cache_creation_input_tokens": 1433,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1433
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1925,
+      "cacheReadInputTokens": 12718,
+      "cacheCreationInputTokens": 1845,
+      "webSearchRequests": 0,
+      "costUSD": 0.05581960000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 564,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1845,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"images\":{\"A\":{\"summary\":\"Santa stands on a red kick scooter at night in the snow, with a brown sack of presents on the deck behind him; the drawing is simple and readable, but one arm is missing and the sack and gifts look pasted on.\",\"scores\":{\"fidelity\":3,\"coherence\":3,\"readability\":4,\"composition\":4,\"clean\":3},\"defects\":[{\"criterion\":\"fidelity\",\"severity\":\"major\",\"what\":\"Only one arm is drawn; the second hand sits on the handlebar with no arm attached to it\",\"where\":\"Santa's left side and the handlebar\",\"expected\":\"Both of Santa's arms are drawn, each running from a shoulder to a hand gripping the handlebar\"},{\"criterion\":\"coherence\",\"severity\":\"major\",\"what\":\"The visible arm comes out of the beard and chest area instead of a shoulder\",\"where\":\"Santa's right arm\",\"expected\":\"The arm is attached at the shoulder at the side of the body\"},{\"criterion\":\"clean\",\"severity\":\"minor\",\"what\":\"The gift boxes look flatly stuck onto the front of the sack rather than sitting in it or poking out of it\",\"where\":\"the sack at the back of the scooter\",\"expected\":\"The presents clearly sit inside the sack or stick out of its open top\"},{\"criterion\":\"coherence\",\"severity\":\"minor\",\"what\":\"The sack is a stiff, slab-like shape with a flat back edge, so it reads more like a board than a soft bag\",\"where\":\"the brown sack on the left\",\"expected\":\"The sack has a rounded, soft bag shape with a tied or gathered top\"},{\"criterion\":\"composition\",\"severity\":\"minor\",\"what\":\"The big caption box at the bottom adds nothing and pulls attention from the snowy ground\",\"where\":\"bottom center\",\"expected\":\"The scene speaks for itself with no label taking up the foreground\"}]},\"B\":{\"summary\":\"Santa rides a grey kick scooter through a snowy night, with one hand on the handlebar and a stack of wrapped presents in the other arm, and speed lines showing motion; it is well drawn, with small joining issues.\",\"scores\":{\"fidelity\":4,\"coherence\":4,\"readability\":5,\"composition\":5,\"clean\":4},\"defects\":[{\"criterion\":\"coherence\",\"severity\":\"minor\",\"what\":\"The white glove sits slightly below and beside the grip, and a black knob takes the place where the hand should be, so the hand does not clearly hold the handlebar\",\"where\":\"the handlebar at upper left\",\"expected\":\"Santa's gloved hand clearly wraps around the handlebar grip\"},{\"criterion\":\"coherence\",\"severity\":\"minor\",\"what\":\"The hand under the stack of presents shows only as a white ball under the boxes, so the hold looks weak\",\"where\":\"the presents on Santa's left\",\"expected\":\"Santa's arm and hand visibly cradle or hold the stack of gifts\"},{\"criterion\":\"clean\",\"severity\":\"minor\",\"what\":\"The hat brim covers the top of the eyes and the cheek blush overlaps the nose, which muddies the face\",\"where\":\"Santa's face\",\"expected\":\"Eyes, nose and cheeks are clearly separated and readable\"},{\"criterion\":\"fidelity\",\"severity\":\"minor\",\"what\":\"Santa carries no sack of presents, only a stack of boxes\",\"where\":\"around Santa on the scooter\",\"expected\":\"Santa has a sack of presents with him on the scooter\"}]}},\"not_applicable\":[],\"parity\":false,\"parity_reason\":\"B's total is 22 and A's is 17, a gap far above 1. Several criteria also differ by up to 2 points, so parity fails even though neither image has a critical defect.\"}",
+  "ttft_ms": 2230,
+  "type": "result",
+  "duration_ms": 21237,
+  "uuid": "88f5a161-69bb-4174-a78c-22761ff2a905",
+  "ttft_stream_ms": 2226,
+  "time_to_request_ms": 336,
+  "first_content_frame_ms": 2227,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:48.999Z"
+}

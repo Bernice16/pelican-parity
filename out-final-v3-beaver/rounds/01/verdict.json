@@ -1,0 +1,104 @@
+{
+  "session_id": "8de8ace1-d071-4d4b-b308-5deb4b103363",
+  "judge_prompt": "prompts/judge_v3.txt",
+  "blind": {
+    "A": "attempt",
+    "B": "reference"
+  },
+  "parity": false,
+  "parity_reason": "B outscores A by 2 on main and contact, and the totals differ by 9 (A 22, B 31). Rules 1 and 2 both fail, so parity is false.",
+  "rule_parity": false,
+  "attempt_at_least_reference": false,
+  "reference": {
+    "summary": "A brown beaver in a chef's hat and an apron with a sun on it holds a spatula over a pan of two fried eggs on a stove, in a cosy kitchen with a smiling sun in the window. It is detailed and clearly drawn.",
+    "scores": {
+      "main": 5,
+      "background": 4,
+      "count": 5,
+      "shape": 4,
+      "contact": 4,
+      "clean": 4,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "contact",
+        "severity": "minor",
+        "what": "The pan sits above the stove's top edge instead of resting on a burner, so it looks slightly lifted.",
+        "where": "the frying pan on the stove, right side",
+        "expected": "The pan clearly rests on one of the stove's burners."
+      },
+      {
+        "criterion": "shape",
+        "severity": "minor",
+        "what": "The arm holding the spatula is very thin and stretched long compared with the beaver's chubby body.",
+        "where": "the beaver's right arm, holding the spatula",
+        "expected": "An arm in proportion with the beaver's plump body."
+      },
+      {
+        "criterion": "background",
+        "severity": "minor",
+        "what": "The large, bright smiling sun in the window competes for attention with the beaver.",
+        "where": "the window, upper left",
+        "expected": "Window details that stay secondary to the beaver and the eggs."
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "A floating pink heart shape near the pan handle is not connected to anything and looks like a stray mark.",
+        "where": "above the pan handle, right of center",
+        "expected": "Decorative touches read clearly as intentional, or are left out."
+      }
+    ]
+  },
+  "attempt": {
+    "summary": "A brown beaver in a chef's hat stands behind a counter, frying two sunny-side-up eggs in a pan with a spatula, against a plain cream wall; it is readable but simple, with weak arms and loose contacts.",
+    "scores": {
+      "main": 3,
+      "background": 3,
+      "count": 4,
+      "shape": 3,
+      "contact": 2,
+      "clean": 3,
+      "color": 4
+    },
+    "defects": [
+      {
+        "criterion": "contact",
+        "severity": "major",
+        "what": "The frying pan floats in mid-air in front of the beaver's belly, above a flat red burner shape, with no stove under it and no paw holding its handle.",
+        "where": "the frying pan and the red burner, lower right",
+        "expected": "The pan clearly rests on a visible stove or burner, or the beaver clearly holds its handle."
+      },
+      {
+        "criterion": "main",
+        "severity": "major",
+        "what": "The beaver has no clear arms. A small bump on each side stands in for a paw, so it does not clearly look like it is cooking with the spatula.",
+        "where": "the beaver's arms and paws",
+        "expected": "Visible arms reaching to the pan, with one paw clearly gripping the spatula."
+      },
+      {
+        "criterion": "background",
+        "severity": "major",
+        "what": "The setting is only a plain two-tone wall and a grey counter. It has no stove, shelf or window, so it barely reads as a kitchen.",
+        "where": "the whole background",
+        "expected": "A recognisable kitchen setting, such as a stove and some kitchen details, that supports the cooking scene without distracting from it."
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "A stray orange sliver sticks out from behind the beaver's left foot and is not part of anything.",
+        "where": "bottom, near the beaver's left foot",
+        "expected": "No stray fragments around the beaver's feet."
+      },
+      {
+        "criterion": "shape",
+        "severity": "minor",
+        "what": "The chef's hat sits on top of the head like a separate cut-out, and its band is not shaped to fit the head.",
+        "where": "the chef's hat",
+        "expected": "The hat sits snugly on the beaver's head, between or over the ears."
+      }
+    ]
+  },
+  "not_applicable": []
+}

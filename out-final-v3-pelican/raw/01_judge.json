@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 20214,
+  "stop_reason": "end_turn",
+  "session_id": "fd2cfc01-b59b-4f8b-bcaa-52139e9a42de",
+  "total_cost_usd": 0.0568538,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 1842,
+    "cache_read_input_tokens": 12509,
+    "output_tokens": 1980,
+    "output_tokens_details": {
+      "thinking_tokens": 585
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1842,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1807,
+        "cache_read_input_tokens": 6460,
+        "cache_creation_input_tokens": 1431,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1431
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1980,
+      "cacheReadInputTokens": 12509,
+      "cacheCreationInputTokens": 1842,
+      "webSearchRequests": 0,
+      "costUSD": 0.0568538,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 585,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1842,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"images\":{\"A\":{\"summary\":\"A white pelican rides a red bicycle on grass under a sunny sky. It reads clearly, but the bird floats above a bike with no saddle, and its very long thin neck makes it look a bit like a stork.\",\"scores\":{\"main\":4,\"background\":5,\"count\":5,\"shape\":3,\"contact\":3,\"clean\":4,\"color\":5},\"defects\":[{\"criterion\":\"contact\",\"severity\":\"major\",\"what\":\"The bicycle has no saddle or seat post, so the pelican's body floats above the top tube with nothing holding it up\",\"where\":\"the middle of the bicycle under the bird's body\",\"expected\":\"The pelican sits on a visible saddle that is joined to the bicycle frame\"},{\"criterion\":\"shape\",\"severity\":\"major\",\"what\":\"The bicycle frame is oddly built: the tubes do not form a normal triangle with a seat tube rising from the pedals to the seat\",\"where\":\"the red bicycle frame\",\"expected\":\"The frame reads as a normal bicycle, with a seat tube going up from the crank to the saddle\"},{\"criterion\":\"shape\",\"severity\":\"minor\",\"what\":\"The neck is very long and thin, which makes the bird look more like a stork than a pelican\",\"where\":\"the bird's neck\",\"expected\":\"The pelican has a shorter, thicker neck that suits a pelican\"},{\"criterion\":\"contact\",\"severity\":\"minor\",\"what\":\"The wing only just reaches the handlebar and does not clearly grip it\",\"where\":\"the front of the bird's wing at the handlebar\",\"expected\":\"The wing tip clearly rests on the handlebar\"},{\"criterion\":\"clean\",\"severity\":\"minor\",\"what\":\"The legs cross the frame tubes in a way that makes the crank area hard to read\",\"where\":\"around the pedals and crank\",\"expected\":\"The legs and the frame stay easy to tell apart near the pedals\"}]},\"B\":{\"summary\":\"A grey-white pelican with a big orange beak rides a red bicycle along a road with hills and trees. It is well built and sits on a saddle, but the beak overlaps the sun.\",\"scores\":{\"main\":5,\"background\":4,\"count\":5,\"shape\":4,\"contact\":4,\"clean\":3,\"color\":4},\"defects\":[{\"criterion\":\"clean\",\"severity\":\"major\",\"what\":\"The beak and pouch overlap the yellow sun, so the two shapes merge and the beak's outline is hard to read\",\"where\":\"upper right, at the beak\",\"expected\":\"The beak stands out clearly against open sky, and the sun sits apart from it\"},{\"criterion\":\"background\",\"severity\":\"minor\",\"what\":\"The sun sits right behind the bird's head and draws the eye away from the rider\",\"where\":\"upper right sky\",\"expected\":\"The sun is placed where it does not compete with the pelican's head\"},{\"criterion\":\"color\",\"severity\":\"minor\",\"what\":\"The yellow-orange beak is close in colour to the yellow sun behind it, so there is little contrast between them\",\"where\":\"the beak against the sun\",\"expected\":\"The beak contrasts clearly with whatever lies behind it\"},{\"criterion\":\"contact\",\"severity\":\"minor\",\"what\":\"The wing tip only roughly meets the handlebar instead of clearly holding it\",\"where\":\"the front of the wing at the handlebar\",\"expected\":\"The wing tip clearly grips the handlebar\"},{\"criterion\":\"shape\",\"severity\":\"minor\",\"what\":\"The neck joins the body as a separate tube with a round blob at its base, which looks pasted on\",\"where\":\"where the neck meets the body\",\"expected\":\"The neck flows smoothly into the body\"}]}},\"not_applicable\":[],\"parity\":true,\"parity_reason\":\"No criterion differs by more than 1 point, both totals are 29, and neither image has a critical defect, so all three parity conditions are met.\"}",
+  "ttft_ms": 1831,
+  "type": "result",
+  "duration_ms": 20400,
+  "uuid": "93a42ee9-4a6c-4372-bb3a-6fc4c0516e13",
+  "ttft_stream_ms": 1829,
+  "time_to_request_ms": 153,
+  "first_content_frame_ms": 1829,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:48.999Z"
+}

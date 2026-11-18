@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 31797,
+  "stop_reason": "end_turn",
+  "session_id": "7e0ae59c-641b-4c2a-a330-2b795f01c6f5",
+  "total_cost_usd": 0.1420685,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 5594,
+    "output_tokens": 2813,
+    "output_tokens_details": {
+      "thinking_tokens": 127
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 2813,
+        "cache_read_input_tokens": 5594,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-fable-5-1": {
+      "inputTokens": 2,
+      "outputTokens": 2813,
+      "cacheReadInputTokens": 5594,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.1420685,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 127,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```svg\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 500\" width=\"800\" height=\"500\">\n  <defs>\n    <linearGradient id=\"sky\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"0\" stop-color=\"#9fd3f7\"/>\n      <stop offset=\"1\" stop-color=\"#e8f6ff\"/>\n    </linearGradient>\n  </defs>\n\n  <!-- Background -->\n  <rect width=\"800\" height=\"500\" fill=\"url(#sky)\"/>\n  <circle cx=\"680\" cy=\"90\" r=\"45\" fill=\"#ffe27a\"/>\n  <g fill=\"#ffffff\" opacity=\"0.9\">\n    <ellipse cx=\"150\" cy=\"90\" rx=\"60\" ry=\"22\"/>\n    <ellipse cx=\"190\" cy=\"75\" rx=\"45\" ry=\"20\"/>\n    <ellipse cx=\"480\" cy=\"130\" rx=\"50\" ry=\"18\"/>\n    <ellipse cx=\"515\" cy=\"118\" rx=\"35\" ry=\"16\"/>\n  </g>\n  <!-- Ground -->\n  <rect x=\"0\" y=\"400\" width=\"800\" height=\"100\" fill=\"#7cc46b\"/>\n  <rect x=\"0\" y=\"395\" width=\"800\" height=\"12\" fill=\"#5a9c4a\"/>\n  <line x1=\"0\" y1=\"440\" x2=\"800\" y2=\"440\" stroke=\"#6ab15a\" stroke-width=\"3\" stroke-dasharray=\"40 25\"/>\n\n  <!-- Bicycle -->\n  <g stroke=\"#333\" stroke-width=\"6\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <!-- Wheels -->\n    <circle cx=\"230\" cy=\"370\" r=\"65\" stroke=\"#222\" stroke-width=\"8\"/>\n    <circle cx=\"530\" cy=\"370\" r=\"65\" stroke=\"#222\" stroke-width=\"8\"/>\n    <circle cx=\"230\" cy=\"370\" r=\"55\" stroke=\"#888\" stroke-width=\"2\"/>\n    <circle cx=\"530\" cy=\"370\" r=\"55\" stroke=\"#888\" stroke-width=\"2\"/>\n    <!-- Spokes -->\n    <g stroke=\"#999\" stroke-width=\"2\">\n      <line x1=\"230\" y1=\"305\" x2=\"230\" y2=\"435\"/>\n      <line x1=\"165\" y1=\"370\" x2=\"295\" y2=\"370\"/>\n      <line x1=\"184\" y1=\"324\" x2=\"276\" y2=\"416\"/>\n      <line x1=\"184\" y1=\"416\" x2=\"276\" y2=\"324\"/>\n      <line x1=\"530\" y1=\"305\" x2=\"530\" y2=\"435\"/>\n      <line x1=\"465\" y1=\"370\" x2=\"595\" y2=\"370\"/>\n      <line x1=\"484\" y1=\"324\" x2=\"576\" y2=\"416\"/>\n      <line x1=\"484\" y1=\"416\" x2=\"576\" y2=\"324\"/>\n    </g>\n    <circle cx=\"230\" cy=\"370\" r=\"8\" fill=\"#333\"/>\n    <circle cx=\"530\" cy=\"370\" r=\"8\" fill=\"#333\"/>\n    <!-- Frame -->\n    <g stroke=\"#d9342b\">\n      <line x1=\"230\" y1=\"370\" x2=\"340\" y2=\"250\"/>\n      <line x1=\"340\" y1=\"250\" x2=\"470\" y2=\"250\"/>\n      <line x1=\"470\" y1=\"250\" x2=\"530\" y2=\"370\"/>\n      <line x1=\"230\" y1=\"370\" x2=\"380\" y2=\"370\"/>\n      <line x1=\"380\" y1=\"370\" x2=\"340\" y2=\"250\"/>\n      <line x1=\"380\" y1=\"370\" x2=\"470\" y2=\"250\"/>\n      <line x1=\"470\" y1=\"250\" x2=\"490\" y2=\"200\"/>\n      <line x1=\"340\" y1=\"250\" x2=\"330\" y2=\"215\"/>\n    </g>\n    <!-- Handlebar -->\n    <line x1=\"490\" y1=\"200\" x2=\"520\" y2=\"190\"/>\n    <line x1=\"490\" y1=\"200\" x2=\"465\" y2=\"195\"/>\n    <!-- Seat -->\n    <line x1=\"305\" y1=\"213\" x2=\"355\" y2=\"213\" stroke-width=\"10\" stroke=\"#222\"/>\n    <!-- Crank & pedals -->\n    <circle cx=\"380\" cy=\"370\" r=\"14\" fill=\"#555\"/>\n    <line x1=\"380\" y1=\"370\" x2=\"405\" y2=\"400\"/>\n    <line x1=\"380\" y1=\"370\" x2=\"355\" y2=\"340\"/>\n    <line x1=\"395\" y1=\"402\" x2=\"418\" y2=\"402\" stroke-width=\"8\"/>\n    <line x1=\"343\" y1=\"338\" x2=\"366\" y2=\"338\" stroke-width=\"8\"/>\n  </g>\n\n  <!-- Pelican -->\n  <g stroke=\"#333\" stroke-width=\"3\" stroke-linejoin=\"round\" stroke-linecap=\"round\">\n    <!-- Tail -->\n    <path d=\"M300 215 L260 235 L275 205 Z\" fill=\"#e8e8e8\"/>\n    <!-- Body -->\n    <ellipse cx=\"350\" cy=\"200\" rx=\"75\" ry=\"48\" fill=\"#f5f5f5\"/>\n    <!-- Wing -->\n    <path d=\"M330 180 Q380 170 410 200 Q380 225 335 215 Q320 200 330 180 Z\" fill=\"#dcdcdc\"/>\n    <!-- Leg to pedal -->\n    <path d=\"M365 240 L390 300 L405 398\" fill=\"none\" stroke=\"#f0a030\" stroke-width=\"7\"/>\n    <path d=\"M345 240 L350 300 L358 338\" fill=\"none\" stroke=\"#e08a20\" stroke-width=\"7\"/>\n    <!-- Feet -->\n    <path d=\"M395 402 L420 402 L410 392 Z\" fill=\"#f0a030\"/>\n    <path d=\"M348 340 L372 340 L362 330 Z\" fill=\"#e08a20\"/>\n    <!-- Neck -->\n    <path d=\"M400 185 Q440 160 445 110 Q447 90 460 85\" fill=\"none\" stroke=\"#f5f5f5\" stroke-width=\"26\"/>\n    <path d=\"M400 185 Q440 160 445 110 Q447 90 460 85\" fill=\"none\" stroke=\"#333\" stroke-width=\"30\" opacity=\"0\"/>\n    <path d=\"M388 190 Q432 162 436 110 Q438 86 458 76\" fill=\"none\" stroke=\"#333\" stroke-width=\"3\"/>\n    <path d=\"M412 196 Q454 166 458 112 Q460 94 468 92\" fill=\"none\" stroke=\"#333\" stroke-width=\"3\"/>\n    <!-- Head -->\n    <circle cx=\"470\" cy=\"80\" r=\"26\" fill=\"#f5f5f5\"/>\n    <!-- Beak -->\n    <path d=\"M488 76 L585 92 L490 100 Z\" fill=\"#ffb84d\"/>\n    <path d=\"M490 100 Q540 130 580 94 L585 92 Z\" fill=\"#ffa726\"/>\n    <line x1=\"488\" y1=\"88\" x2=\"582\" y2=\"92\" stroke=\"#c77a10\" stroke-width=\"2\"/>\n    <!-- Eye -->\n    <circle cx=\"476\" cy=\"72\" r=\"5\" fill=\"#222\"/>\n    <circle cx=\"478\" cy=\"70\" r=\"1.8\" fill=\"#fff\" stroke=\"none\"/>\n    <!-- Wing arm to handlebar -->\n    <path d=\"M400 200 Q450 210 490 200\" fill=\"none\" stroke=\"#dcdcdc\" stroke-width=\"14\"/>\n    <path d=\"M400 200 Q450 210 490 200\" fill=\"none\" stroke=\"#333\" stroke-width=\"3\" opacity=\"0.4\"/>\n  </g>\n\n  <!-- Motion lines -->\n  <g stroke=\"#6aa9d8\" stroke-width=\"4\" stroke-linecap=\"round\" opacity=\"0.7\">\n    <line x1=\"90\" y1=\"330\" x2=\"140\" y2=\"330\"/>\n    <line x1=\"70\" y1=\"355\" x2=\"130\" y2=\"355\"/>\n    <line x1=\"100\" y1=\"380\" x2=\"145\" y2=\"380\"/>\n  </g>\n</svg>\n```",
+  "ttft_ms": 2175,
+  "type": "result",
+  "duration_ms": 32161,
+  "uuid": "7b7ae2fe-8acf-4861-ad7a-959149e4dddd",
+  "ttft_stream_ms": 2102,
+  "time_to_request_ms": 361,
+  "first_content_frame_ms": 2103,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:48.999Z"
+}

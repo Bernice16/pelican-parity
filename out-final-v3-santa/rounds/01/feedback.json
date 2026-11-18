@@ -1,0 +1,41 @@
+{
+  "source_round": 0,
+  "kept": [
+    {
+      "severity": "major",
+      "criterion": "contact",
+      "what": "The gift sack and the two presents in front of it hang in the air behind Santa and are not attached to him or the scooter",
+      "where": "left of Santa, behind his raised arm",
+      "expected": "The sack and presents should rest on the scooter deck, sit on Santa's back, or be clearly held, so they travel with him"
+    },
+    {
+      "severity": "major",
+      "criterion": "clean",
+      "what": "A loose red square floats above the sack and isn't connected to anything",
+      "where": "above the brown sack, middle left",
+      "expected": "No stray shapes; any tie or decoration should be visibly attached to the sack"
+    },
+    {
+      "severity": "minor",
+      "criterion": "clean",
+      "what": "The green and yellow presents overlap each other, the sack and Santa's arm in a cluttered pile",
+      "where": "around Santa's left hand",
+      "expected": "Each present should sit in its own clear place, either in his hand or on the sack, without tangled overlaps"
+    },
+    {
+      "severity": "minor",
+      "criterion": "shape",
+      "what": "Santa's legs are very short stubs under a boxy body, so the figure looks squashed",
+      "where": "Santa's legs and lower body",
+      "expected": "Santa should have legs of believable length for a standing rider"
+    },
+    {
+      "severity": "minor",
+      "criterion": "contact",
+      "what": "The hand on the handlebar sits just below the grip instead of clearly wrapping around it",
+      "where": "Santa's right hand at the top of the scooter stem",
+      "expected": "The hand should clearly grip the handlebar"
+    }
+  ],
+  "dropped": []
+}

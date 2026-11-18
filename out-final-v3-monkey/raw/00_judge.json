@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 18109,
+  "stop_reason": "end_turn",
+  "session_id": "9bfe475e-a9a3-4022-a628-ab92f012c2cf",
+  "total_cost_usd": 0.06157780000000001,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 2770,
+    "cache_read_input_tokens": 12509,
+    "output_tokens": 1845,
+    "output_tokens_details": {
+      "thinking_tokens": 312
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 2770,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1672,
+        "cache_read_input_tokens": 6460,
+        "cache_creation_input_tokens": 2359,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2359
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1845,
+      "cacheReadInputTokens": 12509,
+      "cacheCreationInputTokens": 2770,
+      "webSearchRequests": 0,
+      "costUSD": 0.06157780000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 312,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 2770,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\n  \"images\": {\n    \"A\": {\n      \"summary\": \"A cheerful brown monkey clings to the trunk of a leafy apple tree full of red apples, with a sun, sky and grassy ground; it is clean and easy to read.\",\n      \"scores\": {\"main\": 5, \"background\": 5, \"count\": 4, \"shape\": 4, \"contact\": 4, \"clean\": 4, \"color\": 5},\n      \"defects\": [\n        {\"criterion\": \"shape\", \"severity\": \"minor\", \"what\": \"The legs are drawn as thick round loops, so they look like rings more than bent limbs gripping the trunk\", \"where\": \"the monkey's lower body and legs\", \"expected\": \"The legs should read clearly as bent legs wrapped around the trunk, with knees and feet you can tell apart\"},\n        {\"criterion\": \"count\", \"severity\": \"minor\", \"what\": \"Hard to tell which loop is a leg and which is the tail, so the monkey seems to have one leg too few or too many\", \"where\": \"the monkey's hips, legs and tail\", \"expected\": \"Two legs and one tail should be easy to pick out on their own\"},\n        {\"criterion\": \"contact\", \"severity\": \"minor\", \"what\": \"The raised hand above the head floats beside the trunk instead of clearly gripping it\", \"where\": \"the monkey's upper raised hand\", \"expected\": \"Both hands should visibly grip the trunk or a branch as the monkey climbs\"},\n        {\"criterion\": \"clean\", \"severity\": \"minor\", \"what\": \"The leg loops and tail cross over each other and the trunk edge, which looks a bit tangled\", \"where\": \"the base of the trunk around the monkey's legs\", \"expected\": \"The limbs and tail should overlap neatly so their outlines stay clear\"}\n      ]\n    },\n    \"B\": {\n      \"summary\": \"A small brown monkey on the trunk of an apple tree, with a caption reading 'A monkey climbing an apple tree'; the monkey's limbs are muddled and hard to read.\",\n      \"scores\": {\"main\": 3, \"background\": 3, \"count\": 3, \"shape\": 2, \"contact\": 3, \"clean\": 2, \"color\": 4},\n      \"defects\": [\n        {\"criterion\": \"shape\", \"severity\": \"major\", \"what\": \"The monkey's arms, ears and hands blend into one shapeless mass around the head, with dark balls for hands that look like extra ears\", \"where\": \"the monkey's head and raised arms\", \"expected\": \"Ears, arms and hands should be separate and recognisable, with the arms clearly reaching up the trunk\"},\n        {\"criterion\": \"count\", \"severity\": \"major\", \"what\": \"The legs are thin sticks ending in dark ovals and blend into a stray line on the trunk, so you can't count the legs and tail\", \"where\": \"the monkey's lower body and the trunk below it\", \"expected\": \"Two clear legs gripping the trunk and one clearly visible tail\"},\n        {\"criterion\": \"clean\", \"severity\": \"major\", \"what\": \"Stray dark lines and blobs run down the trunk below the monkey and look like broken pieces\", \"where\": \"the middle of the trunk under the monkey\", \"expected\": \"The trunk should be clean, and only the monkey's own limbs should show on it\"},\n        {\"criterion\": \"background\", \"severity\": \"minor\", \"what\": \"A huge pale sun is cut off at the edge and fills much of the upper right, so it competes with the tree\", \"where\": \"upper right sky\", \"expected\": \"A smaller sun that sits fully in the sky and stays in the background\"},\n        {\"criterion\": \"contact\", \"severity\": \"minor\", \"what\": \"The monkey's hands and feet don't clearly hold the trunk; the feet sit as flat ovals on its surface\", \"where\": \"the monkey's hands and feet\", \"expected\": \"Hands and feet should visibly wrap around and grip the trunk\"}\n      ]\n    }\n  },\n  \"not_applicable\": [],\n  \"parity\": false,\n  \"parity_reason\": \"Shape differs by 2 (4 vs 2) and clean by 2 (4 vs 2), and the totals differ by 11 (31 vs 20), so conditions 1 and 2 fail even though neither image has a critical defect.\"\n}",
+  "ttft_ms": 1896,
+  "type": "result",
+  "duration_ms": 18397,
+  "uuid": "fcced068-f7ff-462f-ad55-07de84f9a640",
+  "ttft_stream_ms": 1895,
+  "time_to_request_ms": 188,
+  "first_content_frame_ms": 1895,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:48.999Z"
+}

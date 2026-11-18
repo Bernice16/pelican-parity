@@ -1,0 +1,97 @@
+{
+  "session_id": "c99f9792-9658-4c71-b3e3-4af707ea7f44",
+  "judge_prompt": "prompts/judge_v3.txt",
+  "blind": {
+    "A": "reference",
+    "B": "attempt"
+  },
+  "parity": false,
+  "parity_reason": "Contact differs by 2 (4 vs 2) and clean differs by 2 (4 vs 2), and the totals differ by 9 (29 vs 20), so conditions 1 and 2 fail.",
+  "rule_parity": false,
+  "attempt_at_least_reference": false,
+  "reference": {
+    "summary": "A brown cartoon monkey clings to the trunk of a leafy apple tree full of red apples, under a sunny sky on a grassy hill; it is clearly drawn and well composed.",
+    "scores": {
+      "main": 4,
+      "background": 5,
+      "count": 4,
+      "shape": 4,
+      "contact": 4,
+      "clean": 4,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "An extra tan round blob sticks up behind the top of the monkey's head and reads as a stray shape.",
+        "where": "top right of the monkey's head",
+        "expected": "The monkey's head outline is clean, and any raised hand is clearly attached to an arm that grips the trunk."
+      },
+      {
+        "criterion": "contact",
+        "severity": "minor",
+        "what": "The raised hand on the left floats slightly beside the trunk instead of clearly gripping it.",
+        "where": "the monkey's left raised hand",
+        "expected": "Both hands visibly grip the trunk."
+      },
+      {
+        "criterion": "shape",
+        "severity": "minor",
+        "what": "The legs are thick loops whose feet end in loose tan dots, so the leg shapes are hard to read.",
+        "where": "the monkey's legs at the bottom of the trunk",
+        "expected": "The legs clearly bend around the trunk, with feet pressed against the bark."
+      }
+    ]
+  },
+  "attempt": {
+    "summary": "A small brown monkey on the trunk of a round green apple tree, with a sun and a readable caption 'A monkey climbing an apple tree'; the monkey's limbs are broken and its hands and feet float apart from the body.",
+    "scores": {
+      "main": 3,
+      "background": 4,
+      "count": 3,
+      "shape": 3,
+      "contact": 2,
+      "clean": 2,
+      "color": 4
+    },
+    "defects": [
+      {
+        "criterion": "contact",
+        "severity": "major",
+        "what": "The two dark brown hand blobs float above the monkey at the base of the leaves and connect to no arm.",
+        "where": "just under the canopy, above the monkey",
+        "expected": "Each hand sits at the end of an arm and grips the trunk or a branch."
+      },
+      {
+        "criterion": "count",
+        "severity": "major",
+        "what": "There is only one clear arm, and one leg is missing. The feet are loose dark ovals that are detached from the body.",
+        "where": "the monkey's arms and legs",
+        "expected": "The monkey has two arms and two legs, each attached to the body and ending in a hand or foot on the trunk."
+      },
+      {
+        "criterion": "shape",
+        "severity": "major",
+        "what": "The left limb is a thin curving line that looks more like a tail than an arm, so the pose is hard to read as climbing.",
+        "where": "left side of the monkey",
+        "expected": "A clear climbing pose, with limbs wrapped around the trunk and a separate tail."
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "Small dark arcs sit on top of the floating hand blobs like stray marks.",
+        "where": "the two dark blobs under the canopy",
+        "expected": "No stray marks around the hands."
+      },
+      {
+        "criterion": "shape",
+        "severity": "minor",
+        "what": "The apples are small round dots with thin hooked stems, so they look like cherries.",
+        "where": "the fruit in the canopy",
+        "expected": "The fruit is clearly apple-shaped."
+      }
+    ]
+  },
+  "not_applicable": []
+}

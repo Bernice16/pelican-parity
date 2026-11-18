@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 13584,
+  "stop_reason": "end_turn",
+  "session_id": "d2831e32-fea1-4f93-b263-7860809a3f71",
+  "total_cost_usd": 0.00183164,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1155,
+    "cache_read_input_tokens": 3194,
+    "output_tokens": 3137,
+    "output_tokens_details": {
+      "thinking_tokens": 738
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1155,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 3137,
+        "cache_read_input_tokens": 3194,
+        "cache_creation_input_tokens": 1155,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1155
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-haiku-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3137,
+      "cacheReadInputTokens": 3194,
+      "cacheCreationInputTokens": 1155,
+      "webSearchRequests": 0,
+      "costUSD": 0.00183164,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 738,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1155,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```svg\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 400\" width=\"400\" height=\"400\">\n  <defs>\n    <linearGradient id=\"sky\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"0\" stop-color=\"#9fd8f5\"/>\n      <stop offset=\"1\" stop-color=\"#e8f7ff\"/>\n    </linearGradient>\n  </defs>\n\n  <!-- Sky -->\n  <rect width=\"400\" height=\"400\" fill=\"url(#sky)\"/>\n\n  <!-- Sun -->\n  <circle cx=\"340\" cy=\"60\" r=\"28\" fill=\"#ffd84d\"/>\n\n  <!-- Ground -->\n  <ellipse cx=\"200\" cy=\"392\" rx=\"210\" ry=\"22\" fill=\"#6abf4b\"/>\n\n  <!-- Trunk -->\n  <path d=\"M176 392 L180 240 Q182 200 176 170 L196 170 Q190 200 202 240 L206 392 Z\" fill=\"#7a4a24\"/>\n\n  <!-- Branches -->\n  <path d=\"M182 230 Q150 210 128 180\" stroke=\"#7a4a24\" stroke-width=\"8\" fill=\"none\" stroke-linecap=\"round\"/>\n  <path d=\"M198 200 Q230 180 262 160\" stroke=\"#7a4a24\" stroke-width=\"7\" fill=\"none\" stroke-linecap=\"round\"/>\n  <path d=\"M190 180 Q188 150 200 128\" stroke=\"#7a4a24\" stroke-width=\"6\" fill=\"none\" stroke-linecap=\"round\"/>\n\n  <!-- Canopy -->\n  <g fill=\"#2e8b3a\">\n    <circle cx=\"200\" cy=\"120\" r=\"50\"/>\n    <circle cx=\"150\" cy=\"150\" r=\"38\"/>\n    <circle cx=\"252\" cy=\"142\" r=\"42\"/>\n    <circle cx=\"120\" cy=\"184\" r=\"28\"/>\n    <circle cx=\"282\" cy=\"180\" r=\"30\"/>\n    <circle cx=\"210\" cy=\"82\" r=\"32\"/>\n  </g>\n  <g fill=\"#3fa84d\" opacity=\"0.8\">\n    <circle cx=\"188\" cy=\"108\" r=\"22\"/>\n    <circle cx=\"260\" cy=\"128\" r=\"20\"/>\n    <circle cx=\"140\" cy=\"140\" r=\"18\"/>\n  </g>\n\n  <!-- Apples -->\n  <g>\n    <circle cx=\"140\" cy=\"150\" r=\"8\" fill=\"#d62828\"/>\n    <circle cx=\"262\" cy=\"150\" r=\"8\" fill=\"#d62828\"/>\n    <circle cx=\"200\" cy=\"100\" r=\"8\" fill=\"#d62828\"/>\n    <circle cx=\"232\" cy=\"118\" r=\"7\" fill=\"#d62828\"/>\n    <circle cx=\"170\" cy=\"128\" r=\"7\" fill=\"#d62828\"/>\n    <circle cx=\"282\" cy=\"186\" r=\"7\" fill=\"#d62828\"/>\n    <circle cx=\"118\" cy=\"190\" r=\"7\" fill=\"#d62828\"/>\n    <g fill=\"#ffffff\" opacity=\"0.6\">\n      <circle cx=\"137\" cy=\"147\" r=\"2\"/>\n      <circle cx=\"259\" cy=\"147\" r=\"2\"/>\n      <circle cx=\"197\" cy=\"97\" r=\"2\"/>\n      <circle cx=\"229\" cy=\"115\" r=\"2\"/>\n      <circle cx=\"167\" cy=\"125\" r=\"2\"/>\n    </g>\n    <!-- Stem on apples -->\n    <path d=\"M200 92 L202 86\" stroke=\"#5a3a1a\" stroke-width=\"2\"/>\n    <path d=\"M140 142 L141 137\" stroke=\"#5a3a1a\" stroke-width=\"2\"/>\n  </g>\n\n  <!-- Monkey tail -->\n  <path d=\"M212 272 Q244 270 246 248 Q248 232 236 226\" stroke=\"#8b5a2b\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\"/>\n\n  <!-- Monkey legs -->\n  <path d=\"M186 278 L172 300 L166 306\" stroke=\"#8b5a2b\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n  <path d=\"M204 278 L216 298 L224 302\" stroke=\"#8b5a2b\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n  <ellipse cx=\"164\" cy=\"308\" rx=\"7\" ry=\"4\" fill=\"#5c3a1c\"/>\n  <ellipse cx=\"226\" cy=\"304\" rx=\"7\" ry=\"4\" fill=\"#5c3a1c\"/>\n\n  <!-- Monkey arms reaching up the trunk -->\n  <path d=\"M180 236 Q168 216 166 192\" stroke=\"#8b5a2b\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/>\n  <path d=\"M212 232 Q224 212 222 186\" stroke=\"#8b5a2b\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/>\n  <circle cx=\"166\" cy=\"188\" r=\"6\" fill=\"#5c3a1c\"/>\n  <circle cx=\"222\" cy=\"182\" r=\"6\" fill=\"#5c3a1c\"/>\n\n  <!-- Monkey body -->\n  <ellipse cx=\"196\" cy=\"252\" rx=\"22\" ry=\"30\" fill=\"#8b5a2b\"/>\n  <ellipse cx=\"196\" cy=\"262\" rx=\"12\" ry=\"16\" fill=\"#d9a86c\"/>\n\n  <!-- Monkey ears -->\n  <circle cx=\"178\" cy=\"204\" r=\"7\" fill=\"#8b5a2b\"/>\n  <circle cx=\"178\" cy=\"204\" r=\"3.5\" fill=\"#d9a86c\"/>\n  <circle cx=\"214\" cy=\"204\" r=\"7\" fill=\"#8b5a2b\"/>\n  <circle cx=\"214\" cy=\"204\" r=\"3.5\" fill=\"#d9a86c\"/>\n\n  <!-- Monkey head -->\n  <circle cx=\"196\" cy=\"206\" r=\"19\" fill=\"#a0692f\"/>\n  <ellipse cx=\"196\" cy=\"213\" rx=\"11\" ry=\"9\" fill=\"#f5deb3\"/>\n\n  <!-- Face -->\n  <circle cx=\"189\" cy=\"202\" r=\"2.5\" fill=\"#2b1a0e\"/>\n  <circle cx=\"203\" cy=\"202\" r=\"2.5\" fill=\"#2b1a0e\"/>\n  <circle cx=\"190\" cy=\"201\" r=\"0.8\" fill=\"#ffffff\"/>\n  <circle cx=\"204\" cy=\"201\" r=\"0.8\" fill=\"#ffffff\"/>\n  <ellipse cx=\"196\" cy=\"210\" rx=\"2\" ry=\"1.5\" fill=\"#2b1a0e\"/>\n  <path d=\"M190 217 Q196 221 202 217\" stroke=\"#2b1a0e\" stroke-width=\"1.5\" fill=\"none\" stroke-linecap=\"round\"/>\n\n  <!-- Caption -->\n  <text x=\"200\" y=\"390\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"12\" fill=\"#2b4a1e\" opacity=\"0\">Monkey climbing an apple tree</text>\n</svg>\n```",
+  "ttft_ms": 5872,
+  "type": "result",
+  "duration_ms": 14590,
+  "uuid": "31d62a7c-7791-4d46-8d1a-b27d5df500ff",
+  "ttft_stream_ms": 2637,
+  "time_to_request_ms": 1002,
+  "first_content_frame_ms": 2637,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:49.359Z"
+}

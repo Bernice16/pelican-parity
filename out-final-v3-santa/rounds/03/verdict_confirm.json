@@ -1,0 +1,97 @@
+{
+  "session_id": "6fe4a942-b7fb-42f5-a27e-fdc4fde76be4",
+  "judge_prompt": "prompts/judge_v3.txt",
+  "blind": {
+    "A": "reference",
+    "B": "attempt"
+  },
+  "parity": false,
+  "parity_reason": "A totals 32 and B totals 28, a gap of 4, which breaks the rule that totals may differ by at most 1. Contact and clean also differ by only 1 each, but the total alone rules out parity.",
+  "rule_parity": false,
+  "attempt_at_least_reference": false,
+  "reference": {
+    "summary": "Santa rides a kick scooter across a snowy hill at night under a full moon, holding a stack of wrapped presents, with speed lines behind him; the drawing is clean and easy to read.",
+    "scores": {
+      "main": 5,
+      "background": 5,
+      "count": 5,
+      "shape": 4,
+      "contact": 4,
+      "clean": 4,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "contact",
+        "severity": "minor",
+        "what": "The stack of presents seems to float beside Santa. His hand only touches the bottom corner of the lowest box.",
+        "where": "the present stack and Santa's left hand",
+        "expected": "The presents should clearly rest in Santa's arm or hand, or sit on the scooter deck."
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "A small dark green curved shape sticks up from the back of the deck and looks like a stray piece.",
+        "where": "rear end of the scooter deck, above the back wheel",
+        "expected": "The back of the scooter should end neatly, with a clearly drawn rear fender or no extra shape."
+      },
+      {
+        "criterion": "shape",
+        "severity": "minor",
+        "what": "Santa's arms are stretched very long and rubbery to reach both the handlebar and the presents.",
+        "where": "Santa's arms",
+        "expected": "The arms should have believable length and bend while he holds the handlebar and the presents."
+      }
+    ]
+  },
+  "attempt": {
+    "summary": "Santa stands on a kick scooter on snowy hills at night under a full moon, with a gift sack and a present on the deck and another present in his hand; it is readable, but the scooter and the gift-holding are clumsy.",
+    "scores": {
+      "main": 4,
+      "background": 5,
+      "count": 5,
+      "shape": 3,
+      "contact": 3,
+      "clean": 3,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "shape",
+        "severity": "major",
+        "what": "Both wheels are tucked far under the middle of a long deck, so the deck sticks out past them and the scooter looks like a flat cart.",
+        "where": "the scooter deck and wheels",
+        "expected": "The scooter should look like a kick scooter, with the wheels near each end of the deck and the front wheel under the steering post."
+      },
+      {
+        "criterion": "contact",
+        "severity": "major",
+        "what": "The yellow present floats over Santa's forearm while his hand hangs below it, so he does not really hold it.",
+        "where": "Santa's left hand and the yellow present",
+        "expected": "Santa's hand should clearly grip or support the present."
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "The arm, the present and the hand stack on top of each other in a confusing way.",
+        "where": "Santa's left arm area",
+        "expected": "The arm, hand and present should read as separate parts with a clear outline."
+      },
+      {
+        "criterion": "contact",
+        "severity": "minor",
+        "what": "Santa's hand sits beside the handlebar grip instead of wrapping around it.",
+        "where": "Santa's right hand at the handlebar",
+        "expected": "The hand should clearly grasp the handlebar grip."
+      },
+      {
+        "criterion": "main",
+        "severity": "minor",
+        "what": "Santa's arm on the present side comes out of his body at an odd angle and has no clear shoulder, so his pose is hard to read.",
+        "where": "Santa's left arm",
+        "expected": "Santa's arms should attach naturally at the shoulders and show what he is doing."
+      }
+    ]
+  },
+  "not_applicable": []
+}

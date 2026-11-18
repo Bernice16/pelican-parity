@@ -1,0 +1,118 @@
+You are improving your own SVG drawing.
+
+Here is the current SVG:
+<current_svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <!-- Background wall -->
+  <rect width="400" height="300" fill="#fdf6e3"/>
+  <rect x="0" y="0" width="400" height="60" fill="#f5e6c8"/>
+
+  <!-- Stove top -->
+  <rect x="0" y="230" width="400" height="70" fill="#8d8d8d"/>
+  <rect x="0" y="230" width="400" height="8" fill="#6b6b6b"/>
+
+  <!-- Burner flame -->
+  <path d="M170 232 Q165 215 175 205 Q172 220 182 212 Q180 225 190 232 Z" fill="#ff8c1a"/>
+  <path d="M182 232 Q180 222 186 216 Q186 226 194 222 Q192 230 198 232 Z" fill="#ffd23f"/>
+
+  <!-- Beaver tail (behind body) -->
+  <ellipse cx="120" cy="185" rx="28" ry="45" fill="#4a2c1a" transform="rotate(-20 120 185)"/>
+  <path d="M104 150 L134 140 L132 220 L102 222 Z" fill="#3a2214" opacity="0.4"/>
+
+  <!-- Beaver body -->
+  <ellipse cx="220" cy="175" rx="70" ry="75" fill="#8b5a2b"/>
+  <!-- Belly -->
+  <ellipse cx="225" cy="190" rx="42" ry="48" fill="#c9a06a"/>
+
+  <!-- Feet -->
+  <ellipse cx="195" cy="245" rx="22" ry="10" fill="#4a2c1a"/>
+  <ellipse cx="250" cy="245" rx="22" ry="10" fill="#4a2c1a"/>
+
+  <!-- Head -->
+  <circle cx="220" cy="95" r="52" fill="#8b5a2b"/>
+  <!-- Ears -->
+  <circle cx="180" cy="55" r="10" fill="#6b4220"/>
+  <circle cx="260" cy="55" r="10" fill="#6b4220"/>
+  <!-- Muzzle -->
+  <ellipse cx="220" cy="115" rx="26" ry="20" fill="#c9a06a"/>
+  <!-- Nose -->
+  <ellipse cx="220" cy="106" rx="7" ry="5" fill="#2a1a10"/>
+  <!-- Eyes -->
+  <circle cx="200" cy="88" r="5" fill="#1a1a1a"/>
+  <circle cx="240" cy="88" r="5" fill="#1a1a1a"/>
+  <circle cx="202" cy="86" r="1.5" fill="#ffffff"/>
+  <circle cx="242" cy="86" r="1.5" fill="#ffffff"/>
+  <!-- Smile -->
+  <path d="M208 120 Q220 130 232 120" stroke="#2a1a10" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Buck teeth -->
+  <rect x="215" y="124" width="5" height="11" rx="1" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+  <rect x="221" y="124" width="5" height="11" rx="1" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+
+  <!-- Chef hat -->
+  <rect x="190" y="30" width="60" height="18" rx="4" fill="#ffffff" stroke="#ccc" stroke-width="1"/>
+  <ellipse cx="200" cy="20" rx="14" ry="12" fill="#ffffff" stroke="#ccc" stroke-width="1"/>
+  <ellipse cx="220" cy="16" rx="16" ry="14" fill="#ffffff" stroke="#ccc" stroke-width="1"/>
+  <ellipse cx="240" cy="20" rx="14" ry="12" fill="#ffffff" stroke="#ccc" stroke-width="1"/>
+
+  <!-- Left arm -->
+  <path d="M165 165 Q150 200 170 215" stroke="#8b5a2b" stroke-width="18" fill="none" stroke-linecap="round"/>
+
+  <!-- Frying pan -->
+  <ellipse cx="290" cy="208" rx="62" ry="16" fill="#2b2b2b"/>
+  <ellipse cx="290" cy="204" rx="56" ry="13" fill="#444"/>
+  <!-- Pan handle -->
+  <rect x="345" y="200" width="45" height="9" rx="4" fill="#1a1a1a"/>
+
+  <!-- Egg 1 -->
+  <ellipse cx="270" cy="202" rx="26" ry="14" fill="#ffffff"/>
+  <circle cx="270" cy="201" r="9" fill="#ffb300"/>
+  <circle cx="267" cy="198" r="2.5" fill="#ffe082"/>
+
+  <!-- Egg 2 -->
+  <ellipse cx="308" cy="200" rx="24" ry="13" fill="#ffffff"/>
+  <circle cx="308" cy="199" r="8.5" fill="#ffb300"/>
+  <circle cx="305" cy="196" r="2.5" fill="#ffe082"/>
+
+  <!-- Right arm holding spatula -->
+  <path d="M265 165 Q280 180 292 190" stroke="#8b5a2b" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <!-- Spatula -->
+  <rect x="285" y="170" width="6" height="40" rx="2" fill="#777" transform="rotate(25 288 190)"/>
+  <rect x="278" y="200" width="22" height="12" rx="3" fill="#999" transform="rotate(25 289 206)"/>
+
+  <!-- Sizzle marks -->
+  <path d="M255 185 L250 178" stroke="#e0a030" stroke-width="2" stroke-linecap="round"/>
+  <path d="M320 185 L325 178" stroke="#e0a030" stroke-width="2" stroke-linecap="round"/>
+  <path d="M290 178 L290 170" stroke="#e0a030" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Title -->
+  <text x="200" y="290" font-family="Arial, sans-serif" font-size="14" fill="#5a3a1a" text-anchor="middle">Beaver cooking sunshine eggs</text>
+</svg>
+</current_svg>
+
+An art director looked at the rendered image and listed these problems, most severe first:
+<problems>
+1. [major, contact] The frying pan floats in front of the beaver's belly. No paw grips its handle and it is not resting on any cooking surface.
+   Where: the frying pan at the right of the beaver's body
+   Expected: The pan should clearly sit on a stove or be held by its handle in the beaver's paw, so the beaver is visibly cooking.
+2. [major, main] There is no stove, heat source or kitchen setting, so the beaver looks like it is holding a pan rather than cooking eggs.
+   Where: the area around and below the pan
+   Expected: A stove or burner under the pan should show that the eggs are being cooked.
+3. [major, clean] A see-through brownish rectangle overlaps the tail and looks like a leftover shape.
+   Where: the beaver's tail on the left
+   Expected: The tail should be one clean, solid flat tail with no stray overlapping panel.
+4. [minor, clean] A small orange fragment pokes out near the beaver's left foot and has no clear meaning.
+   Where: bottom of the beaver's body, near the left foot
+   Expected: No stray fragments around the feet.
+5. [minor, shape] The arms are vague blobs merged into the body, and the chef's hat floats slightly above the head.
+   Where: the beaver's arms and the top of the head
+   Expected: The arms should be clearly drawn reaching to the spatula and pan, and the hat should sit on the head.
+</problems>
+
+Write an improved version of the drawing:
+- Fix every listed problem, starting with the most severe ones.
+- Make meaningful, visible improvements for each listed problem. Never return an unchanged or nearly identical SVG.
+- Keep what already works: same subject, same overall layout and style, unless a problem asks for a change.
+- Check the geometry as you go: parts that should touch must touch (a figure resting on what supports it, objects standing on the ground), and parts that should connect must connect.
+- Ensure the root `<svg>` tag preserves a valid `viewBox` and proper dimensions so nothing is clipped.
+
+Reply with the complete new SVG document only, inside one ```svg code block.

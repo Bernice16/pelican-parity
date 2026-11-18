@@ -1,0 +1,41 @@
+{
+  "source_round": 4,
+  "kept": [
+    {
+      "severity": "major",
+      "criterion": "contact",
+      "what": "A loose black shape sits next to Santa's bare hand at the handlebar, so the hand does not clearly grip the bar.",
+      "where": "Santa's hand at the top of the scooter handlebar",
+      "expected": "Santa's hand, gloved or bare, visibly wraps around the handlebar grip."
+    },
+    {
+      "severity": "major",
+      "criterion": "shape",
+      "what": "The scooter deck sticks out far behind the rear wheel, and the rear wheel sits near the middle of the deck, so the scooter looks unbalanced.",
+      "where": "the scooter deck and rear wheel",
+      "expected": "The rear wheel sits near the back end of the deck, like a normal scooter."
+    },
+    {
+      "severity": "minor",
+      "criterion": "shape",
+      "what": "The toy sack is a lumpy brown blob that is hard to recognise as a tied sack.",
+      "where": "the sack at the back of the deck",
+      "expected": "The sack reads clearly as a full cloth bag tied at the top."
+    },
+    {
+      "severity": "minor",
+      "criterion": "main",
+      "what": "Santa's face is small and shows only one eye, so his expression is hard to read.",
+      "where": "Santa's head",
+      "expected": "Santa's face is clearly readable, with visible eyes and a cheerful look."
+    },
+    {
+      "severity": "minor",
+      "criterion": "clean",
+      "what": "A small white dot floats on Santa's coat sleeve near the shoulder with no clear purpose.",
+      "where": "Santa's upper arm",
+      "expected": "No stray marks on the coat; any trim or buttons are clearly placed."
+    }
+  ],
+  "dropped": []
+}

@@ -1,0 +1,34 @@
+{
+  "source_round": 1,
+  "kept": [
+    {
+      "severity": "major",
+      "criterion": "coherence",
+      "what": "The legs splay out sideways and the feet hang in the air beside the trunk instead of pressing against or wrapping around it",
+      "where": "the monkey's legs and feet",
+      "expected": "The legs should hug the trunk or the feet should press against the bark, so the monkey clearly holds its weight while climbing"
+    },
+    {
+      "severity": "minor",
+      "criterion": "fidelity",
+      "what": "With both arms straight up holding branches and the legs dangling, the pose reads more like hanging or swinging than climbing",
+      "where": "the monkey's overall pose",
+      "expected": "A pose that clearly shows upward climbing, such as one arm reaching higher while the other limbs grip the trunk"
+    },
+    {
+      "severity": "minor",
+      "criterion": "coherence",
+      "what": "The hands are drawn as dark blobs set on the branch ends, so it is not clear that they grip the branches",
+      "where": "the monkey's hands at the lower branches",
+      "expected": "The hands should visibly curl around the branches"
+    },
+    {
+      "severity": "minor",
+      "criterion": "composition",
+      "what": "The monkey is fairly small compared with the large canopy and the big empty area of sky at the bottom of the picture",
+      "where": "the centre and lower half of the image",
+      "expected": "The monkey should be big enough to be the clear focal point, with less empty space around it"
+    }
+  ],
+  "dropped": []
+}

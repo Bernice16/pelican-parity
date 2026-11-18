@@ -1,0 +1,41 @@
+{
+  "source_round": 0,
+  "kept": [
+    {
+      "severity": "major",
+      "criterion": "count",
+      "what": "Santa has only one arm. The other is missing completely.",
+      "where": "Santa's left side",
+      "expected": "Santa should have two arms, with the second one visible holding on or resting at his side."
+    },
+    {
+      "severity": "major",
+      "criterion": "contact",
+      "what": "The bottom present sits below the deck and overlaps the rear wheel, so the stack isn't resting on the scooter.",
+      "where": "the stack of presents at the rear of the scooter",
+      "expected": "The presents should sit on the scooter deck or be held by Santa, clear of the wheel."
+    },
+    {
+      "severity": "major",
+      "criterion": "shape",
+      "what": "Santa's body is a plain egg shape with no legs, and the boots stick out from under it. He looks more like a blob than a rider.",
+      "where": "Santa's body and lower half",
+      "expected": "Santa should have a recognisable body with legs reaching down to his boots on the deck."
+    },
+    {
+      "severity": "minor",
+      "criterion": "clean",
+      "what": "A star dot sits on the first letter of the greeting.",
+      "where": "the 'M' of 'Merry Christmas!' in the upper left",
+      "expected": "The text should be clear of stars and other shapes."
+    },
+    {
+      "severity": "minor",
+      "criterion": "background",
+      "what": "The background is sparse: just a few dots and a flat snow hill, with little winter setting.",
+      "where": "the whole background",
+      "expected": "The snowy night setting should be clearly shown, for example with falling snow or trees, without pulling attention from Santa."
+    }
+  ],
+  "dropped": []
+}

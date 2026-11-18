@@ -1,0 +1,86 @@
+{
+  "session_id": "fb206c00-8f79-4084-a79b-906833f0f41e",
+  "judge_prompt": "prompts/judge_v4.txt",
+  "blind": {
+    "A": "attempt",
+    "B": "reference"
+  },
+  "parity": false,
+  "parity_reason": "No criterion differs by more than 1 and there are no critical defects, but the totals are A 21 and B 23. They differ by 2, so rule 2 fails.",
+  "rule_parity": false,
+  "attempt_at_least_reference": false,
+  "reference": {
+    "summary": "Santa rides a grey kick scooter over snow at night, one hand on the handlebar and the other carrying a stack of wrapped presents, with speed lines and a big moon; the scene is lively and well drawn, with small face and overlap issues.",
+    "scores": {
+      "fidelity": 5,
+      "coherence": 4,
+      "readability": 5,
+      "composition": 5,
+      "clean": 4
+    },
+    "defects": [
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "The nose and one cheek blush overlap into a muddy blob, and the eyes are partly hidden under the hat brim",
+        "where": "Santa's face",
+        "expected": "A clear nose, rosy cheeks and visible eyes that read as separate features"
+      },
+      {
+        "criterion": "coherence",
+        "severity": "minor",
+        "what": "The stack of presents seems to hover beside the body, held only by a small glove under its corner, and the arm holding it is mostly hidden",
+        "where": "The presents on Santa's left side",
+        "expected": "The presents sit firmly in Santa's arm or hand, so the holding is obvious"
+      },
+      {
+        "criterion": "coherence",
+        "severity": "minor",
+        "what": "The glove at the handlebar sits below the grip rather than wrapping around it",
+        "where": "Santa's hand at the handlebar, upper left",
+        "expected": "The hand clearly grips the handlebar"
+      }
+    ]
+  },
+  "attempt": {
+    "summary": "Santa in a red suit stands on a long red kick scooter with a brown sack of presents on the deck, under a night sky with a moon and snow; the picture is clean and easy to read, but the arms and hands are weak.",
+    "scores": {
+      "fidelity": 4,
+      "coherence": 3,
+      "readability": 5,
+      "composition": 5,
+      "clean": 4
+    },
+    "defects": [
+      {
+        "criterion": "coherence",
+        "severity": "major",
+        "what": "The arm reaching for the handlebar ends in a plain bar with no hand or glove, so Santa does not really grip the handlebar",
+        "where": "Santa's right arm at the handlebar",
+        "expected": "A visible gloved hand closes around the handlebar grip"
+      },
+      {
+        "criterion": "fidelity",
+        "severity": "major",
+        "what": "The other arm is only a short dark-red curve on the chest, with no forearm or hand",
+        "where": "Santa's left side, upper torso",
+        "expected": "Santa's second arm is fully drawn, with a hand doing something clear, such as holding a present or the handlebar"
+      },
+      {
+        "criterion": "coherence",
+        "severity": "minor",
+        "what": "The legs are thin, short stubs under a boxy torso, so the body looks like it is propped on sticks instead of standing",
+        "where": "Santa's legs between belt and boots",
+        "expected": "Legs in proportion to the body, clearly carrying Santa's weight on the deck"
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "The scooter stem is a thin dark line that barely stands out from the dark sky",
+        "where": "The scooter's upright stem on the right",
+        "expected": "The stem reads clearly as a solid part joining the deck to the handlebar"
+      }
+    ]
+  },
+  "not_applicable": []
+}

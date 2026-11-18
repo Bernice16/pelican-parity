@@ -1,0 +1,114 @@
+{
+  "prompt": "Generate an SVG of a monkey climbing an apple tree",
+  "parity": false,
+  "stop_reason": "attempt_exceeds_reference",
+  "rounds": 3,
+  "final_round": 3,
+  "final_svg": "out-final-monkey/rounds/03/attempt.svg",
+  "final_png": "out-final-monkey/rounds/03/attempt.png",
+  "reference_svg": "out-final-monkey/rounds/00/reference.svg",
+  "history": [
+    {
+      "round": 0,
+      "parity": false,
+      "rule_parity": false,
+      "attempt_total": 19,
+      "reference_total": 22,
+      "attempt_scores": {
+        "fidelity": 4,
+        "coherence": 3,
+        "readability": 4,
+        "composition": 4,
+        "craft": 4
+      },
+      "attempt_defects": {
+        "critical": 0,
+        "major": 2,
+        "minor": 2
+      },
+      "confirmation": null
+    },
+    {
+      "round": 1,
+      "parity": false,
+      "rule_parity": false,
+      "attempt_total": 19,
+      "reference_total": 22,
+      "attempt_scores": {
+        "fidelity": 4,
+        "coherence": 3,
+        "readability": 4,
+        "composition": 4,
+        "craft": 4
+      },
+      "attempt_defects": {
+        "critical": 0,
+        "major": 1,
+        "minor": 3
+      },
+      "confirmation": null
+    },
+    {
+      "round": 2,
+      "parity": false,
+      "rule_parity": false,
+      "attempt_total": 20,
+      "reference_total": 23,
+      "attempt_scores": {
+        "fidelity": 4,
+        "coherence": 4,
+        "readability": 4,
+        "composition": 4,
+        "craft": 4
+      },
+      "attempt_defects": {
+        "critical": 0,
+        "major": 1,
+        "minor": 3
+      },
+      "confirmation": null
+    },
+    {
+      "round": 3,
+      "parity": false,
+      "rule_parity": false,
+      "attempt_total": 22,
+      "reference_total": 19,
+      "attempt_scores": {
+        "fidelity": 5,
+        "coherence": 4,
+        "readability": 5,
+        "composition": 4,
+        "craft": 4
+      },
+      "attempt_defects": {
+        "critical": 0,
+        "major": 0,
+        "minor": 3
+      },
+      "confirmation": {
+        "parity": true,
+        "attempt_at_least_reference": true,
+        "attempt_total": 22,
+        "reference_total": 22
+      }
+    }
+  ],
+  "budget_usd": 20.0,
+  "cost_usd": {
+    "reference": 0.2189762,
+    "baseline": 0.0018316,
+    "judge": 0.2999158,
+    "refine": 0.0087421
+  },
+  "total_cost_usd": 0.5294657,
+  "reserved_unmeasured_usd": 0.0,
+  "models": {
+    "reference": "claude-fable-5-1 (high)",
+    "baseline": "claude-haiku-5-5 (low)",
+    "judge": "claude-opus-5-5 (high)",
+    "refine": "claude-haiku-5-5 (low)"
+  },
+  "judge_prompt": "prompts/judge_v1.txt",
+  "refine_prompt": "prompts/refine_v1.txt"
+}

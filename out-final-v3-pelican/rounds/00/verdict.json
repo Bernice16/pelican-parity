@@ -1,0 +1,104 @@
+{
+  "session_id": "b498fad9-817d-4517-83cf-23781ee45996",
+  "judge_prompt": "prompts/judge_v3.txt",
+  "blind": {
+    "A": "attempt",
+    "B": "reference"
+  },
+  "parity": false,
+  "parity_reason": "A totals 25 and B totals 30, so the totals differ by more than 1. Contact also differs by 2 (2 vs 4), so the images are not at parity, even though neither has a critical defect.",
+  "rule_parity": false,
+  "attempt_at_least_reference": false,
+  "reference": {
+    "summary": "A white pelican with an orange pouched beak rides a red bicycle along a grassy road under a sun and clouds, with its feet on the pedals and a wing on the handlebar; the drawing is clean and readable.",
+    "scores": {
+      "main": 4,
+      "background": 4,
+      "count": 5,
+      "shape": 4,
+      "contact": 4,
+      "clean": 4,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "contact",
+        "severity": "major",
+        "what": "There is no saddle, and the body floats just above the top tube",
+        "where": "under the pelican's body",
+        "expected": "The bike has a saddle and the pelican's body sits firmly on it"
+      },
+      {
+        "criterion": "shape",
+        "severity": "minor",
+        "what": "The neck is very long and thin, which makes the bird look more like a heron than a pelican",
+        "where": "the pelican's neck",
+        "expected": "A thicker, shorter neck that fits a pelican's build"
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "A cloud sits right behind the head and beak, so their outlines blend into it",
+        "where": "upper middle, around the pelican's head",
+        "expected": "The head and beak stand out against clear sky"
+      },
+      {
+        "criterion": "contact",
+        "severity": "minor",
+        "what": "The wing tip only just touches the end of the handlebar and does not look like it is holding it",
+        "where": "the pelican's wing at the handlebar",
+        "expected": "The wing tip clearly wraps around or rests on the handlebar grip"
+      }
+    ]
+  },
+  "attempt": {
+    "summary": "A white pelican with a big orange beak sits on a red bicycle in front of a sky with a sun and a strip of grass; it is clearly drawn, but the bike has no pedals or seat and the bird does not hold the handlebar.",
+    "scores": {
+      "main": 3,
+      "background": 4,
+      "count": 4,
+      "shape": 3,
+      "contact": 2,
+      "clean": 4,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "contact",
+        "severity": "major",
+        "what": "The bicycle has no cranks or pedals, and both legs end together at the bottom bracket hub, so the bird is not pedalling",
+        "where": "the pelican's legs and the bike's centre hub",
+        "expected": "Each foot rests on its own pedal, attached to cranks on the bottom bracket, so the bird is clearly riding"
+      },
+      {
+        "criterion": "main",
+        "severity": "major",
+        "what": "The pelican does not steer: no wing or other part reaches the handlebar",
+        "where": "the pelican's wing and the handlebar",
+        "expected": "A wing reaches forward and rests on the handlebar, showing the bird is riding the bike"
+      },
+      {
+        "criterion": "contact",
+        "severity": "major",
+        "what": "There is no saddle, and the body sits directly on the top tube",
+        "where": "under the pelican's body",
+        "expected": "The bike has a saddle and the pelican's body sits on it"
+      },
+      {
+        "criterion": "shape",
+        "severity": "minor",
+        "what": "The neck is a short stub, so the head looks stuck onto the front of the body, and the beak is almost as long as the body",
+        "where": "the pelican's head and neck",
+        "expected": "A visible neck joins the head to the body, and the beak is large but in proportion"
+      },
+      {
+        "criterion": "background",
+        "severity": "minor",
+        "what": "The setting is very bare, with only a plain sky, a sun and a flat green strip",
+        "where": "the whole background",
+        "expected": "A simple outdoor setting, such as a road or path, that shows where the bike is riding while still keeping the focus on the rider"
+      }
+    ]
+  },
+  "not_applicable": []
+}

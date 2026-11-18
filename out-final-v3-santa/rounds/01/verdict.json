@@ -1,0 +1,104 @@
+{
+  "session_id": "7d40c6e1-519c-41ba-a120-e7027556438d",
+  "judge_prompt": "prompts/judge_v3.txt",
+  "blind": {
+    "A": "reference",
+    "B": "attempt"
+  },
+  "parity": false,
+  "parity_reason": "A scores 30 and B scores 28, so the totals differ by 2, which is more than the allowed 1. No single criterion differs by more than 1 and neither image has a critical defect, but the total gap alone breaks parity.",
+  "rule_parity": false,
+  "attempt_at_least_reference": false,
+  "reference": {
+    "summary": "Santa rides a green kick scooter across a snowy hill at night with a stack of wrapped gifts beside him and a full moon above; the drawing is lively and polished, but the gift stack floats with nothing holding it up.",
+    "scores": {
+      "main": 4,
+      "background": 5,
+      "count": 5,
+      "shape": 4,
+      "contact": 3,
+      "clean": 4,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "contact",
+        "severity": "major",
+        "what": "The stack of three presents hangs in mid-air above the scooter deck, and Santa's gloved hand only crosses in front of it without holding it",
+        "where": "left side, the gift stack behind Santa",
+        "expected": "The presents should clearly rest on the scooter deck or be held firmly in Santa's arm or hand"
+      },
+      {
+        "criterion": "shape",
+        "severity": "minor",
+        "what": "The hat's tip is a very long, thin curling ribbon that rises well above the head and looks more like a streamer than part of a hat",
+        "where": "top of Santa's hat",
+        "expected": "The hat should end in a believable floppy tip with a pom-pom, close to the head"
+      },
+      {
+        "criterion": "shape",
+        "severity": "minor",
+        "what": "The torso is very large while the legs are short and stubby, so the body looks top-heavy",
+        "where": "Santa's body and legs",
+        "expected": "Santa should keep a round belly but have legs long enough to stand naturally on the deck"
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "Santa's red arm sleeve runs across the front of the gift stack, so the two shapes overlap awkwardly",
+        "where": "Santa's left arm over the presents",
+        "expected": "The arm should either clearly hold the gifts or sit apart from them without a messy overlap"
+      }
+    ]
+  },
+  "attempt": {
+    "summary": "Santa rides a grey kick scooter on snowy hills under a full moon, holding a small gift, with a brown gift sack nearby; the drawing is clear but simple, and the sack and gift look pasted on.",
+    "scores": {
+      "main": 4,
+      "background": 4,
+      "count": 5,
+      "shape": 3,
+      "contact": 4,
+      "clean": 3,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "clean",
+        "severity": "major",
+        "what": "The blue present is a flat square stuck onto the front of the sack, so it reads as a sticker rather than a gift inside or beside the sack",
+        "where": "the gift sack at left",
+        "expected": "The present should look like it is poking out of the sack's opening or sitting next to it as a separate object"
+      },
+      {
+        "criterion": "shape",
+        "severity": "major",
+        "what": "The sack is a stiff, blocky shape with a square red knot on top and does not look like a soft bag full of toys",
+        "where": "the brown sack at left",
+        "expected": "The sack should have a rounded, lumpy, cloth-like shape tied at the neck"
+      },
+      {
+        "criterion": "contact",
+        "severity": "minor",
+        "what": "The sack sits on the far hill, apart from the scooter, so it does not seem to travel with Santa",
+        "where": "the sack behind the scooter",
+        "expected": "The sack should ride on the scooter deck or be slung over Santa's shoulder"
+      },
+      {
+        "criterion": "shape",
+        "severity": "minor",
+        "what": "Santa's arms are thin sticks and his body is a plain rectangle, so the figure looks stiff",
+        "where": "Santa's arms and torso",
+        "expected": "Santa should have rounder, fuller arms and a belly that looks plump"
+      },
+      {
+        "criterion": "background",
+        "severity": "minor",
+        "what": "The hill line behind runs right through the sack, so the sack seems to be sinking into the background",
+        "where": "left middle, around the sack",
+        "expected": "The sack should sit clearly on the ground in front of the hills"
+      }
+    ]
+  },
+  "not_applicable": []
+}

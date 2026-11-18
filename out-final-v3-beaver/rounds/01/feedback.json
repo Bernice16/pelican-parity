@@ -1,0 +1,41 @@
+{
+  "source_round": 0,
+  "kept": [
+    {
+      "severity": "major",
+      "criterion": "contact",
+      "what": "The frying pan floats in front of the beaver's belly. No paw grips its handle and it is not resting on any cooking surface.",
+      "where": "the frying pan at the right of the beaver's body",
+      "expected": "The pan should clearly sit on a stove or be held by its handle in the beaver's paw, so the beaver is visibly cooking."
+    },
+    {
+      "severity": "major",
+      "criterion": "main",
+      "what": "There is no stove, heat source or kitchen setting, so the beaver looks like it is holding a pan rather than cooking eggs.",
+      "where": "the area around and below the pan",
+      "expected": "A stove or burner under the pan should show that the eggs are being cooked."
+    },
+    {
+      "severity": "major",
+      "criterion": "clean",
+      "what": "A see-through brownish rectangle overlaps the tail and looks like a leftover shape.",
+      "where": "the beaver's tail on the left",
+      "expected": "The tail should be one clean, solid flat tail with no stray overlapping panel."
+    },
+    {
+      "severity": "minor",
+      "criterion": "clean",
+      "what": "A small orange fragment pokes out near the beaver's left foot and has no clear meaning.",
+      "where": "bottom of the beaver's body, near the left foot",
+      "expected": "No stray fragments around the feet."
+    },
+    {
+      "severity": "minor",
+      "criterion": "shape",
+      "what": "The arms are vague blobs merged into the body, and the chef's hat floats slightly above the head.",
+      "where": "the beaver's arms and the top of the head",
+      "expected": "The arms should be clearly drawn reaching to the spatula and pan, and the hat should sit on the head."
+    }
+  ],
+  "dropped": []
+}

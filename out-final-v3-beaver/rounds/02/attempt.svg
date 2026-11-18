@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <!-- Background wall -->
+  <rect width="400" height="300" fill="#fdf6e3"/>
+  <rect x="0" y="0" width="400" height="60" fill="#f5e6c8"/>
+  <!-- Backsplash tiles -->
+  <line x1="0" y1="60" x2="400" y2="60" stroke="#e5d3ae" stroke-width="2"/>
+  <line x1="0" y1="30" x2="400" y2="30" stroke="#e5d3ae" stroke-width="1"/>
+
+  <!-- Open shelf with jars (left) -->
+  <rect x="18" y="128" width="78" height="6" fill="#b07a45"/>
+  <rect x="26" y="108" width="14" height="20" rx="2" fill="#e8b84a"/>
+  <rect x="46" y="112" width="12" height="16" rx="2" fill="#9ccf8a"/>
+  <rect x="64" y="104" width="14" height="24" rx="2" fill="#d98b6a"/>
+
+  <!-- Hanging pot rack (right) -->
+  <rect x="318" y="72" width="66" height="4" rx="2" fill="#888"/>
+  <line x1="332" y1="76" x2="332" y2="92" stroke="#777" stroke-width="2"/>
+  <ellipse cx="332" cy="98" rx="8" ry="6" fill="#666"/>
+  <line x1="352" y1="76" x2="352" y2="88" stroke="#777" stroke-width="2"/>
+  <path d="M344 88 L360 88 L358 100 L346 100 Z" fill="#555"/>
+
+  <!-- Beaver tail (behind body) -->
+  <ellipse cx="120" cy="185" rx="28" ry="45" fill="#4a2c1a" transform="rotate(-20 120 185)"/>
+
+  <!-- Beaver body -->
+  <ellipse cx="220" cy="175" rx="70" ry="75" fill="#8b5a2b"/>
+  <ellipse cx="225" cy="190" rx="42" ry="48" fill="#c9a06a"/>
+
+  <!-- Head -->
+  <circle cx="220" cy="95" r="52" fill="#8b5a2b"/>
+  <!-- Ears -->
+  <circle cx="180" cy="55" r="10" fill="#6b4220"/>
+  <circle cx="260" cy="55" r="10" fill="#6b4220"/>
+  <!-- Muzzle -->
+  <ellipse cx="220" cy="115" rx="26" ry="20" fill="#c9a06a"/>
+  <!-- Nose -->
+  <ellipse cx="220" cy="106" rx="7" ry="5" fill="#2a1a10"/>
+  <!-- Eyes -->
+  <circle cx="200" cy="88" r="5" fill="#1a1a1a"/>
+  <circle cx="240" cy="88" r="5" fill="#1a1a1a"/>
+  <circle cx="202" cy="86" r="1.5" fill="#ffffff"/>
+  <circle cx="242" cy="86" r="1.5" fill="#ffffff"/>
+  <!-- Smile -->
+  <path d="M208 120 Q220 130 232 120" stroke="#2a1a10" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Buck teeth -->
+  <rect x="215" y="124" width="5" height="11" rx="1" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+  <rect x="221" y="124" width="5" height="11" rx="1" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+
+  <!-- Chef hat: puffs sit on a band that follows the top of the head -->
+  <ellipse cx="200" cy="30" rx="14" ry="12" fill="#ffffff" stroke="#ccc" stroke-width="1"/>
+  <ellipse cx="220" cy="26" rx="16" ry="14" fill="#ffffff" stroke="#ccc" stroke-width="1"/>
+  <ellipse cx="240" cy="30" rx="14" ry="12" fill="#ffffff" stroke="#ccc" stroke-width="1"/>
+  <path d="M192 54 Q194 42 220 42 Q246 42 248 54 Q220 48 192 54 Z" fill="#ffffff" stroke="#ccc" stroke-width="1"/>
+
+  <!-- Left arm reaching to the pan rim, paw gripping it -->
+  <path d="M162 165 Q140 200 214 222" stroke="#8b5a2b" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <ellipse cx="222" cy="221" rx="9" ry="8" fill="#6b4220"/>
+
+  <!-- Stove counter top -->
+  <rect x="0" y="232" width="400" height="10" fill="#b98a5a"/>
+  <!-- Stove front -->
+  <rect x="0" y="242" width="400" height="58" fill="#6e6e6e"/>
+  <rect x="0" y="242" width="400" height="8" fill="#4a4a4a"/>
+  <!-- Knobs -->
+  <circle cx="30" cy="252" r="4" fill="#ddd"/>
+  <circle cx="55" cy="252" r="4" fill="#ddd"/>
+  <circle cx="345" cy="252" r="4" fill="#ddd"/>
+  <circle cx="370" cy="252" r="4" fill="#ddd"/>
+  <!-- Oven door -->
+  <rect x="90" y="256" width="220" height="26" rx="3" fill="#333"/>
+  <rect x="110" y="260" width="180" height="14" rx="2" fill="#555"/>
+
+  <!-- Burner under pan -->
+  <ellipse cx="290" cy="238" rx="46" ry="6" fill="#3a3a3a"/>
+  <ellipse cx="290" cy="236" rx="38" ry="4" fill="#ff5a1a" opacity="0.8"/>
+
+  <!-- Frying pan resting on burner -->
+  <ellipse cx="290" cy="226" rx="62" ry="14" fill="#2b2b2b"/>
+  <ellipse cx="290" cy="222" rx="56" ry="11" fill="#444"/>
+  <rect x="345" y="218" width="45" height="9" rx="4" fill="#1a1a1a"/>
+
+  <!-- Egg 1 -->
+  <ellipse cx="262" cy="220" rx="24" ry="11" fill="#ffffff"/>
+  <circle cx="262" cy="219" r="8" fill="#ffb300"/>
+  <circle cx="259" cy="216" r="2.5" fill="#ffe082"/>
+
+  <!-- Egg 2 -->
+  <ellipse cx="312" cy="216" rx="20" ry="10" fill="#ffffff"/>
+  <circle cx="312" cy="215" r="7" fill="#ffb300"/>
+  <circle cx="310" cy="212" r="2" fill="#ffe082"/>
+
+  <!-- Right arm holding spatula by its handle -->
+  <path d="M276 165 Q300 175 318 192" stroke="#8b5a2b" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <ellipse cx="318" cy="192" rx="9" ry="8" fill="#6b4220"/>
+  <!-- Spatula: handle in paw, blade on the pan -->
+  <line x1="340" y1="170" x2="318" y2="192" stroke="#777" stroke-width="6" stroke-linecap="round"/>
+  <line x1="318" y1="192" x2="302" y2="210" stroke="#999" stroke-width="12" stroke-linecap="round"/>
+
+  <!-- Sizzle marks -->
+  <path d="M245 200 L240 193" stroke="#e0a030" stroke-width="2" stroke-linecap="round"/>
+  <path d="M335 200 L340 193" stroke="#e0a030" stroke-width="2" stroke-linecap="round"/>
+  <path d="M290 192 L290 184" stroke="#e0a030" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Title -->
+  <text x="200" y="296" font-family="Arial, sans-serif" font-size="12" fill="#fdf6e3" text-anchor="middle">Beaver cooking sunshine eggs</text>
+</svg>

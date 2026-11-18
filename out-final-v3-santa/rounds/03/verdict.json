@@ -1,0 +1,90 @@
+{
+  "session_id": "45117ef0-aeca-42af-a5dd-69dfc6152267",
+  "judge_prompt": "prompts/judge_v3.txt",
+  "blind": {
+    "A": "attempt",
+    "B": "reference"
+  },
+  "parity": true,
+  "parity_reason": "No criterion differs by more than 1 point, the totals are 31 and 30 (a difference of 1), and neither image has a critical defect, so parity holds.",
+  "rule_parity": true,
+  "attempt_at_least_reference": true,
+  "reference": {
+    "summary": "Santa rides a kick scooter fast across a snowy hill at night under a full moon, with a stack of wrapped presents beside him and speed lines behind him; the drawing is lively and clear, but the presents are not supported.",
+    "scores": {
+      "main": 4,
+      "background": 5,
+      "count": 5,
+      "shape": 4,
+      "contact": 3,
+      "clean": 4,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "contact",
+        "severity": "major",
+        "what": "The stack of presents floats in the air next to Santa; it is not held and does not rest on the deck",
+        "where": "the gift stack on the left of Santa",
+        "expected": "The presents are clearly carried by Santa or sit firmly on the scooter deck"
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "Santa's outstretched arm cuts across the bottom present, so the shapes overlap untidily",
+        "where": "Santa's left arm and the green present",
+        "expected": "The arm and the presents are layered so that it is clear which is in front"
+      },
+      {
+        "criterion": "shape",
+        "severity": "minor",
+        "what": "The hat's tail is very long and rigid and sticks up and back like a horn",
+        "where": "the top of Santa's hat",
+        "expected": "The hat tail flops or flutters naturally behind Santa's head"
+      }
+    ]
+  },
+  "attempt": {
+    "summary": "Santa rides a kick scooter on a snowy hill at night under a full moon, holding a wrapped present, with a gift sack on the deck; the drawing is clean and readable, with a few stiff proportions.",
+    "scores": {
+      "main": 4,
+      "background": 5,
+      "count": 5,
+      "shape": 4,
+      "contact": 4,
+      "clean": 4,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "shape",
+        "severity": "minor",
+        "what": "The scooter deck is very long and wide, so it looks more like a flat cart than a kick scooter",
+        "where": "the scooter deck",
+        "expected": "The deck is sized like a scooter deck, just long enough for the rider and his sack"
+      },
+      {
+        "criterion": "contact",
+        "severity": "minor",
+        "what": "Santa's body faces the viewer instead of the direction he is riding",
+        "where": "Santa's torso and legs",
+        "expected": "Santa's body is turned toward the handlebar and the direction of travel"
+      },
+      {
+        "criterion": "shape",
+        "severity": "minor",
+        "what": "Santa's head and hat are big compared with his short torso and stubby legs",
+        "where": "Santa's figure",
+        "expected": "Santa's head, body and legs look balanced for a cartoon figure"
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "The present in Santa's hand sits at an awkward angle and overlaps his arm, so it is hard to see how he grips it",
+        "where": "Santa's left hand and the present",
+        "expected": "The present is clearly held in Santa's hand"
+      }
+    ]
+  },
+  "not_applicable": []
+}

@@ -1,0 +1,40 @@
+{
+  "source_round": 0,
+  "kept": [
+    {
+      "severity": "major",
+      "criterion": "fidelity",
+      "what": "The monkey dangles from branches with its legs hanging free, so it looks like it is hanging or swinging rather than climbing",
+      "where": "the monkey's body and legs",
+      "expected": "A climbing pose, with the feet or legs pushing against or gripping the trunk or a branch while the body moves upward"
+    },
+    {
+      "severity": "major",
+      "criterion": "coherence",
+      "what": "The monkey's hands grip dark knobs at the ends of thin branches that barely connect to the canopy, and its feet touch nothing",
+      "where": "the monkey's hands and feet, and the branches beneath the canopy",
+      "expected": "Hands holding clearly attached branches and feet making contact with the tree"
+    },
+    {
+      "severity": "minor",
+      "criterion": "craft",
+      "what": "Some apples have stems and highlights while others are flat red dots with no stem, so the fruit looks inconsistent",
+      "where": "the apples across the canopy",
+      "expected": "All apples drawn in one consistent style"
+    }
+  ],
+  "dropped": [
+    {
+      "defect": {
+        "criterion": "composition",
+        "severity": "minor",
+        "what": "A large empty band of sky below the monkey leaves the lower part of the frame unused while the tree crowds the top",
+        "where": "the lower third of the image",
+        "expected": "A balanced framing where the tree and monkey fill the frame more evenly"
+      },
+      "leaks": [
+        "other-image"
+      ]
+    }
+  ]
+}

@@ -28,7 +28,9 @@ LEAK_PATTERNS = [
     ("model-name", r"\b(fable|opus|haiku|claude)\b"),
     ("number", r"\d"),
     ("colour-value", r"#[0-9a-f]{3,8}\b|\brgba?\s*\(|\bhsla?\s*\("),
-    ("code", r"[<>={}]|\b(svg|xml|viewbox|stroke-width|attribute|element|transform|xmlns)\b"),
+    # Not "element" / "attribute": plain English too ("a background element") and
+    # dropped valid defects in a real run. Real code still trips < > = { }.
+    ("code", r"[<>={}]|\b(svg|xml|viewbox|stroke-width|transform|xmlns)\b"),
 ]
 _COMPILED = [(name, re.compile(p, re.I)) for name, p in LEAK_PATTERNS]
 

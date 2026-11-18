@@ -1,0 +1,41 @@
+{
+  "source_round": 1,
+  "kept": [
+    {
+      "severity": "major",
+      "criterion": "coherence",
+      "what": "Both arms are drawn as one thick red band coming out of the chest, so there are no separate arms and no shoulders.",
+      "where": "Santa's arms reaching to the handlebar",
+      "expected": "Two distinct arms, each attached at a shoulder, each ending in a hand gripping one side of the handlebar."
+    },
+    {
+      "severity": "minor",
+      "criterion": "fidelity",
+      "what": "The face is very small and plain, with a tiny beard and hardly any features, so it reads less clearly as Santa than the rest of the costume.",
+      "where": "Santa's head",
+      "expected": "A clearly drawn Santa face with a full white beard and readable features."
+    },
+    {
+      "severity": "minor",
+      "criterion": "coherence",
+      "what": "The sack's flat bottom overlaps the end of the deck, so it looks pasted on instead of sitting on the deck.",
+      "where": "the sack at the back of the scooter",
+      "expected": "The sack rests firmly on the deck or is clearly tied to the scooter."
+    },
+    {
+      "severity": "minor",
+      "criterion": "composition",
+      "what": "Santa and the scooter fill only a modest part of the frame, and the caption box at the bottom pulls attention from the scene.",
+      "where": "overall framing and the bottom caption",
+      "expected": "The rider and scooter are larger and centred so they clearly dominate the picture."
+    },
+    {
+      "severity": "minor",
+      "criterion": "clean",
+      "what": "The hat's white brim looks slightly separate from the hat and head, like a floating strip.",
+      "where": "Santa's hat brim",
+      "expected": "The brim fits snugly where the hat meets the head."
+    }
+  ],
+  "dropped": []
+}

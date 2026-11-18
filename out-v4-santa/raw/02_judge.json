@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 20232,
+  "stop_reason": "end_turn",
+  "session_id": "0bb63377-dd0b-44a0-85e1-f96c256520df",
+  "total_cost_usd": 0.055498799999999994,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 1830,
+    "cache_read_input_tokens": 12714,
+    "output_tokens": 1915,
+    "output_tokens_details": {
+      "thinking_tokens": 708
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1830,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1748,
+        "cache_read_input_tokens": 6561,
+        "cache_creation_input_tokens": 1422,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1422
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1915,
+      "cacheReadInputTokens": 12714,
+      "cacheCreationInputTokens": 1830,
+      "webSearchRequests": 0,
+      "costUSD": 0.055498799999999994,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 708,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1830,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"images\":{\"A\":{\"summary\":\"Santa rides a grey kick scooter across snowy ground at night under a full moon, holding a stack of wrapped presents. The drawing is cheerful and clear, but the hand holding the presents and the face are not well constructed.\",\"scores\":{\"fidelity\":4,\"coherence\":3,\"readability\":5,\"composition\":5,\"clean\":4},\"defects\":[{\"criterion\":\"coherence\",\"severity\":\"major\",\"what\":\"The hand under the stack of presents looks like it is floating, and the arm that should hold it up is hidden, so the presents don't look truly held\",\"where\":\"Santa's right side, at the stack of presents\",\"expected\":\"A visible arm reaches from Santa's shoulder to a hand that clearly holds or supports the stack of presents\"},{\"criterion\":\"coherence\",\"severity\":\"minor\",\"what\":\"A black knob on the handlebar overlaps the gloved hand, so it is unclear whether the hand grips the bar\",\"where\":\"The top of the handlebar on the left\",\"expected\":\"Santa's glove clearly wraps around the handlebar grip\"},{\"criterion\":\"clean\",\"severity\":\"minor\",\"what\":\"The face is crowded: the eyes are squeezed under the hat brim and the nose and cheeks run together\",\"where\":\"Santa's face\",\"expected\":\"Santa has a readable face, with the eyes visible below the hat trim and a distinct nose\"},{\"criterion\":\"clean\",\"severity\":\"minor\",\"what\":\"A loose curved arc floats behind the back wheel. It does not clearly attach to the scooter deck\",\"where\":\"Above the right-hand wheel\",\"expected\":\"Any fender is visibly joined to the scooter frame or left out\"}]},\"B\":{\"summary\":\"Santa stands on a red scooter deck with both hands on the handlebar, next to a brown sack holding presents, on a snowy night with a moon and a caption. The drawing is clean and easy to read, with small construction issues.\",\"scores\":{\"fidelity\":5,\"coherence\":4,\"readability\":5,\"composition\":4,\"clean\":4},\"defects\":[{\"criterion\":\"coherence\",\"severity\":\"minor\",\"what\":\"Santa's near arm bends across his chest in an awkward way to reach the handlebar\",\"where\":\"Santa's arms and torso\",\"expected\":\"Both arms reach naturally from the shoulders to the handlebar grips\"},{\"criterion\":\"clean\",\"severity\":\"minor\",\"what\":\"The presents look like flat stickers pasted onto the sack rather than objects sitting in it\",\"where\":\"The brown sack on the left\",\"expected\":\"The presents look like they are sticking out of the sack opening or sitting inside it\"},{\"criterion\":\"composition\",\"severity\":\"minor\",\"what\":\"The caption bar and the wide snow strip leave a lot of empty space at the bottom, which makes the scooter and Santa sit a little small and high\",\"where\":\"The bottom of the image\",\"expected\":\"Santa and the scooter fill more of the frame, with less empty foreground\"}]}},\"not_applicable\":[],\"parity\":true,\"parity_reason\":\"Every criterion differs by at most 1. The totals are 21 for A and 22 for B, a difference of 1, and neither image has a critical defect, so parity holds.\"}",
+  "ttft_ms": 2071,
+  "type": "result",
+  "duration_ms": 20792,
+  "uuid": "fe0a2a90-8d9f-42cf-9a74-8e0a418ee140",
+  "ttft_stream_ms": 2068,
+  "time_to_request_ms": 267,
+  "first_content_frame_ms": 2069,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:48.999Z"
+}

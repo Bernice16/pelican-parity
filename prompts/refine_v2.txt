@@ -1,0 +1,20 @@
+You are improving your own SVG drawing.
+
+Here is the current SVG:
+<current_svg>
+{{CURRENT_SVG}}
+</current_svg>
+
+An art director looked at the rendered image and listed these problems, most severe first:
+<problems>
+{{PROBLEMS}}
+</problems>
+
+Write an improved version of the drawing:
+- Fix every listed problem, starting with the most severe ones.
+- Make meaningful, visible improvements for each listed problem. Never return an unchanged or nearly identical SVG.
+- Keep what already works: same subject, same overall layout and style, unless a problem asks for a change.
+- Check the geometry as you go: parts that should touch must touch (a figure resting on what supports it, objects standing on the ground), and parts that should connect must connect.
+- Ensure the root `<svg>` tag preserves a valid `viewBox` and proper dimensions so nothing is clipped.
+
+Reply with the complete new SVG document only, inside one ```svg code block.

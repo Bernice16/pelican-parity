@@ -1,0 +1,34 @@
+{
+  "source_round": 3,
+  "kept": [
+    {
+      "severity": "minor",
+      "criterion": "shape",
+      "what": "The scooter deck is very long and wide, so it looks more like a flat cart than a kick scooter",
+      "where": "the scooter deck",
+      "expected": "The deck is sized like a scooter deck, just long enough for the rider and his sack"
+    },
+    {
+      "severity": "minor",
+      "criterion": "contact",
+      "what": "Santa's body faces the viewer instead of the direction he is riding",
+      "where": "Santa's torso and legs",
+      "expected": "Santa's body is turned toward the handlebar and the direction of travel"
+    },
+    {
+      "severity": "minor",
+      "criterion": "shape",
+      "what": "Santa's head and hat are big compared with his short torso and stubby legs",
+      "where": "Santa's figure",
+      "expected": "Santa's head, body and legs look balanced for a cartoon figure"
+    },
+    {
+      "severity": "minor",
+      "criterion": "clean",
+      "what": "The present in Santa's hand sits at an awkward angle and overlaps his arm, so it is hard to see how he grips it",
+      "where": "Santa's left hand and the present",
+      "expected": "The present is clearly held in Santa's hand"
+    }
+  ],
+  "dropped": []
+}

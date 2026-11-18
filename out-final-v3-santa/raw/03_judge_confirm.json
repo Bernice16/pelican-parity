@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 20564,
+  "stop_reason": "end_turn",
+  "session_id": "6fe4a942-b7fb-42f5-a27e-fdc4fde76be4",
+  "total_cost_usd": 0.0571504,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 1964,
+    "cache_read_input_tokens": 12512,
+    "output_tokens": 1946,
+    "output_tokens_details": {
+      "thinking_tokens": 621
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1964,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1767,
+        "cache_read_input_tokens": 6463,
+        "cache_creation_input_tokens": 1550,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1550
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1946,
+      "cacheReadInputTokens": 12512,
+      "cacheCreationInputTokens": 1964,
+      "webSearchRequests": 0,
+      "costUSD": 0.0571504,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 621,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1964,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"images\":{\"A\":{\"summary\":\"Santa rides a kick scooter across a snowy hill at night under a full moon, holding a stack of wrapped presents, with speed lines behind him; the drawing is clean and easy to read.\",\"scores\":{\"main\":5,\"background\":5,\"count\":5,\"shape\":4,\"contact\":4,\"clean\":4,\"color\":5},\"defects\":[{\"criterion\":\"contact\",\"severity\":\"minor\",\"what\":\"The stack of presents seems to float beside Santa. His hand only touches the bottom corner of the lowest box.\",\"where\":\"the present stack and Santa's left hand\",\"expected\":\"The presents should clearly rest in Santa's arm or hand, or sit on the scooter deck.\"},{\"criterion\":\"clean\",\"severity\":\"minor\",\"what\":\"A small dark green curved shape sticks up from the back of the deck and looks like a stray piece.\",\"where\":\"rear end of the scooter deck, above the back wheel\",\"expected\":\"The back of the scooter should end neatly, with a clearly drawn rear fender or no extra shape.\"},{\"criterion\":\"shape\",\"severity\":\"minor\",\"what\":\"Santa's arms are stretched very long and rubbery to reach both the handlebar and the presents.\",\"where\":\"Santa's arms\",\"expected\":\"The arms should have believable length and bend while he holds the handlebar and the presents.\"}]},\"B\":{\"summary\":\"Santa stands on a kick scooter on snowy hills at night under a full moon, with a gift sack and a present on the deck and another present in his hand; it is readable, but the scooter and the gift-holding are clumsy.\",\"scores\":{\"main\":4,\"background\":5,\"count\":5,\"shape\":3,\"contact\":3,\"clean\":3,\"color\":5},\"defects\":[{\"criterion\":\"shape\",\"severity\":\"major\",\"what\":\"Both wheels are tucked far under the middle of a long deck, so the deck sticks out past them and the scooter looks like a flat cart.\",\"where\":\"the scooter deck and wheels\",\"expected\":\"The scooter should look like a kick scooter, with the wheels near each end of the deck and the front wheel under the steering post.\"},{\"criterion\":\"contact\",\"severity\":\"major\",\"what\":\"The yellow present floats over Santa's forearm while his hand hangs below it, so he does not really hold it.\",\"where\":\"Santa's left hand and the yellow present\",\"expected\":\"Santa's hand should clearly grip or support the present.\"},{\"criterion\":\"clean\",\"severity\":\"minor\",\"what\":\"The arm, the present and the hand stack on top of each other in a confusing way.\",\"where\":\"Santa's left arm area\",\"expected\":\"The arm, hand and present should read as separate parts with a clear outline.\"},{\"criterion\":\"contact\",\"severity\":\"minor\",\"what\":\"Santa's hand sits beside the handlebar grip instead of wrapping around it.\",\"where\":\"Santa's right hand at the handlebar\",\"expected\":\"The hand should clearly grasp the handlebar grip.\"},{\"criterion\":\"main\",\"severity\":\"minor\",\"what\":\"Santa's arm on the present side comes out of his body at an odd angle and has no clear shoulder, so his pose is hard to read.\",\"where\":\"Santa's left arm\",\"expected\":\"Santa's arms should attach naturally at the shoulders and show what he is doing.\"}]}},\"not_applicable\":[],\"parity\":false,\"parity_reason\":\"A totals 32 and B totals 28, a gap of 4, which breaks the rule that totals may differ by at most 1. Contact and clean also differ by only 1 each, but the total alone rules out parity.\"}",
+  "ttft_ms": 1860,
+  "type": "result",
+  "duration_ms": 20865,
+  "uuid": "d18b1896-0be3-4af1-97fc-12e5e3546039",
+  "ttft_stream_ms": 1853,
+  "time_to_request_ms": 154,
+  "first_content_frame_ms": 1854,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:48.999Z"
+}

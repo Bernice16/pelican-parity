@@ -1,0 +1,34 @@
+{
+  "source_round": 3,
+  "kept": [
+    {
+      "severity": "major",
+      "criterion": "coherence",
+      "what": "The steering stem stops on top of the deck and never reaches the front wheel, so the front wheel just sits under the deck end with nothing connecting it to the steering.",
+      "where": "the scooter's front stem and front wheel",
+      "expected": "The steering column runs down to the front wheel's axle so the scooter reads as one working machine."
+    },
+    {
+      "severity": "minor",
+      "criterion": "coherence",
+      "what": "The arms are thin tubes that start at odd points on the torso. One comes from a dark patch under the beard, so the hands look stuck onto the bar rather than coming from the shoulders.",
+      "where": "Santa's arms and shoulders",
+      "expected": "Both arms clearly start at Santa's shoulders and end in mittens gripping the handlebar."
+    },
+    {
+      "severity": "minor",
+      "criterion": "fidelity",
+      "what": "The legs are very short, blocky stumps with no knees or trouser cuffs, so the lower body looks unfinished next to the detailed head.",
+      "where": "Santa's legs",
+      "expected": "Santa's legs look like finished trouser legs that tuck into his boots on the deck."
+    },
+    {
+      "severity": "minor",
+      "criterion": "clean",
+      "what": "The sack is a flat brown shape with a dark band at its mouth, and the presents float at its opening without looking like they sit inside it.",
+      "where": "the sack at the back of the deck",
+      "expected": "The presents clearly poke out of the sack's open top, with the sack tied or gathered at the neck."
+    }
+  ],
+  "dropped": []
+}

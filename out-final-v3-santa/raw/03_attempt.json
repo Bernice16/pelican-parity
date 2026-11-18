@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 45837,
+  "stop_reason": "end_turn",
+  "session_id": "14eec8f8-51fa-4339-8925-1669342afd50",
+  "total_cost_usd": 0.00637684,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 5806,
+    "cache_read_input_tokens": 3194,
+    "output_tokens": 10367,
+    "output_tokens_details": {
+      "thinking_tokens": 6838
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 5806,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 10367,
+        "cache_read_input_tokens": 3194,
+        "cache_creation_input_tokens": 5806,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 5806
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-haiku-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 10367,
+      "cacheReadInputTokens": 3194,
+      "cacheCreationInputTokens": 5806,
+      "webSearchRequests": 0,
+      "costUSD": 0.00637684,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 6838,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 5806,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```svg\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 600\" width=\"800\" height=\"600\">\n  <defs>\n    <linearGradient id=\"sky\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"0\" stop-color=\"#0b1d3a\"/>\n      <stop offset=\"1\" stop-color=\"#3a6ea5\"/>\n    </linearGradient>\n    <linearGradient id=\"coat\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\">\n      <stop offset=\"0\" stop-color=\"#e53935\"/>\n      <stop offset=\"1\" stop-color=\"#b71c1c\"/>\n    </linearGradient>\n    <linearGradient id=\"sackGrad\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\">\n      <stop offset=\"0\" stop-color=\"#a1887f\"/>\n      <stop offset=\"1\" stop-color=\"#6d4c41\"/>\n    </linearGradient>\n  </defs>\n\n  <!-- Sky and moon -->\n  <rect width=\"800\" height=\"600\" fill=\"url(#sky)\"/>\n  <circle cx=\"680\" cy=\"110\" r=\"45\" fill=\"#fff8dc\"/>\n  <circle cx=\"665\" cy=\"98\" r=\"8\" fill=\"#e8dcb5\" opacity=\"0.6\"/>\n  <circle cx=\"695\" cy=\"125\" r=\"5\" fill=\"#e8dcb5\" opacity=\"0.6\"/>\n\n  <!-- Stars -->\n  <g fill=\"#ffffff\">\n    <circle cx=\"80\" cy=\"60\" r=\"2\"/>\n    <circle cx=\"160\" cy=\"130\" r=\"1.5\"/>\n    <circle cx=\"260\" cy=\"50\" r=\"2\"/>\n    <circle cx=\"420\" cy=\"90\" r=\"1.5\"/>\n    <circle cx=\"520\" cy=\"40\" r=\"2\"/>\n    <circle cx=\"590\" cy=\"200\" r=\"1.5\"/>\n    <circle cx=\"120\" cy=\"230\" r=\"1.5\"/>\n    <circle cx=\"330\" cy=\"180\" r=\"1.5\"/>\n  </g>\n\n  <!-- Distant hills -->\n  <path d=\"M0 420 Q120 340 260 410 T520 400 T800 380 L800 600 L0 600 Z\" fill=\"#e8f1f8\"/>\n\n  <!-- Snow ground -->\n  <rect x=\"0\" y=\"490\" width=\"800\" height=\"110\" fill=\"#ffffff\"/>\n  <path d=\"M0 490 Q200 478 400 490 T800 490\" stroke=\"#cfe3f0\" stroke-width=\"4\" fill=\"none\"/>\n\n  <!-- Falling snow -->\n  <g fill=\"#ffffff\" opacity=\"0.85\">\n    <circle cx=\"150\" cy=\"300\" r=\"3\"/>\n    <circle cx=\"220\" cy=\"250\" r=\"2.5\"/>\n    <circle cx=\"610\" cy=\"300\" r=\"3\"/>\n    <circle cx=\"700\" cy=\"240\" r=\"2.5\"/>\n    <circle cx=\"560\" cy=\"360\" r=\"2\"/>\n    <circle cx=\"100\" cy=\"380\" r=\"2.5\"/>\n    <circle cx=\"740\" cy=\"420\" r=\"3\"/>\n  </g>\n\n  <!-- Scooter, Santa and gifts, scaled 1.3x around the wheel base so Santa fills more of the frame -->\n  <g transform=\"translate(330 524) scale(1.3) translate(-330 -524)\">\n\n    <!-- Handlebar stem and bar -->\n    <line x1=\"462\" y1=\"470\" x2=\"470\" y2=\"330\" stroke=\"#37474f\" stroke-width=\"8\" stroke-linecap=\"round\"/>\n    <line x1=\"432\" y1=\"330\" x2=\"496\" y2=\"330\" stroke=\"#37474f\" stroke-width=\"8\" stroke-linecap=\"round\"/>\n    <rect x=\"488\" y=\"322\" width=\"14\" height=\"16\" rx=\"4\" fill=\"#212121\"/>\n\n    <!-- Deck, extended left so every present sits on it -->\n    <rect x=\"186\" y=\"462\" width=\"284\" height=\"12\" rx=\"6\" fill=\"#455a64\"/>\n    <line x1=\"310\" y1=\"470\" x2=\"310\" y2=\"490\" stroke=\"#37474f\" stroke-width=\"8\"/>\n    <line x1=\"455\" y1=\"470\" x2=\"455\" y2=\"490\" stroke=\"#37474f\" stroke-width=\"8\"/>\n    <circle cx=\"310\" cy=\"500\" r=\"24\" fill=\"#212121\"/>\n    <circle cx=\"310\" cy=\"500\" r=\"9\" fill=\"#90a4ae\"/>\n    <circle cx=\"455\" cy=\"500\" r=\"24\" fill=\"#212121\"/>\n    <circle cx=\"455\" cy=\"500\" r=\"9\" fill=\"#90a4ae\"/>\n\n    <!-- Gift sack, resting on the deck at the left, clear of Santa's arm -->\n    <path d=\"M200 462 Q186 430 192 404 Q198 382 214 378 Q226 370 240 378 Q256 368 270 380 Q286 394 282 424 Q280 448 276 462 Z\" fill=\"url(#sackGrad)\"/>\n    <ellipse cx=\"224\" cy=\"438\" rx=\"10\" ry=\"8\" fill=\"#8d6e63\" opacity=\"0.6\"/>\n    <ellipse cx=\"258\" cy=\"428\" rx=\"9\" ry=\"7\" fill=\"#8d6e63\" opacity=\"0.6\"/>\n    <path d=\"M218 384 Q238 396 258 384\" stroke=\"#4e342e\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\"/>\n    <path d=\"M232 388 Q226 376 230 370 Q236 378 238 388 Q244 376 248 370 Q244 380 238 388 Z\" fill=\"#c62828\"/>\n    <circle cx=\"238\" cy=\"389\" r=\"4\" fill=\"#b71c1c\"/>\n\n    <!-- Blue present resting on the deck in front of the sack -->\n    <rect x=\"192\" y=\"420\" width=\"40\" height=\"42\" fill=\"#1e88e5\"/>\n    <rect x=\"210\" y=\"420\" width=\"6\" height=\"42\" fill=\"#ffd54f\"/>\n    <rect x=\"192\" y=\"438\" width=\"40\" height=\"6\" fill=\"#ffd54f\"/>\n\n    <!-- Santa legs, long enough to stand on the deck -->\n    <rect x=\"344\" y=\"414\" width=\"18\" height=\"40\" fill=\"#212121\"/>\n    <rect x=\"376\" y=\"414\" width=\"18\" height=\"40\" fill=\"#212121\"/>\n    <rect x=\"338\" y=\"450\" width=\"30\" height=\"14\" rx=\"4\" fill=\"#000000\"/>\n    <rect x=\"372\" y=\"450\" width=\"30\" height=\"14\" rx=\"4\" fill=\"#000000\"/>\n\n    <!-- Santa body, narrower and taller -->\n    <path d=\"M330 420 Q322 350 352 334 L398 334 Q428 350 422 420 Z\" fill=\"url(#coat)\"/>\n    <!-- Belt -->\n    <rect x=\"330\" y=\"400\" width=\"92\" height=\"14\" fill=\"#212121\"/>\n    <rect x=\"368\" y=\"398\" width=\"16\" height=\"18\" fill=\"#ffd54f\" stroke=\"#8d6e63\" stroke-width=\"2\"/>\n    <!-- White trim -->\n    <rect x=\"330\" y=\"416\" width=\"92\" height=\"5\" fill=\"#ffffff\"/>\n    <circle cx=\"352\" cy=\"370\" r=\"4\" fill=\"#ffffff\"/>\n    <circle cx=\"384\" cy=\"368\" r=\"4\" fill=\"#ffffff\"/>\n\n    <!-- Right arm reaching the handlebar -->\n    <path d=\"M412 366 Q434 350 446 330\" stroke=\"url(#coat)\" stroke-width=\"22\" stroke-linecap=\"round\" fill=\"none\"/>\n    <!-- Right hand wrapped around the grip -->\n    <circle cx=\"446\" cy=\"326\" r=\"9\" fill=\"#ffe0b2\"/>\n    <rect x=\"430\" y=\"326\" width=\"16\" height=\"8\" rx=\"3\" fill=\"#212121\"/>\n\n    <!-- Left arm holding a single gift -->\n    <path d=\"M342 366 Q322 380 302 404\" stroke=\"#b71c1c\" stroke-width=\"22\" stroke-linecap=\"round\" fill=\"none\"/>\n    <circle cx=\"300\" cy=\"410\" r=\"9\" fill=\"#ffe0b2\"/>\n    <rect x=\"288\" y=\"378\" width=\"34\" height=\"30\" fill=\"#fdd835\" stroke=\"#f9a825\" stroke-width=\"2\"/>\n    <rect x=\"302\" y=\"378\" width=\"5\" height=\"30\" fill=\"#e53935\"/>\n\n    <!-- Head -->\n    <circle cx=\"370\" cy=\"312\" r=\"26\" fill=\"#ffe0b2\"/>\n    <!-- Beard -->\n    <path d=\"M346 318 Q352 352 370 350 Q390 352 396 318 Q384 334 370 332 Q356 334 346 318 Z\" fill=\"#ffffff\"/>\n    <!-- Mustache -->\n    <ellipse cx=\"370\" cy=\"324\" rx=\"11\" ry=\"4\" fill=\"#ffffff\"/>\n    <!-- Cheeks and nose -->\n    <circle cx=\"356\" cy=\"314\" r=\"4\" fill=\"#ff8a80\" opacity=\"0.7\"/>\n    <circle cx=\"384\" cy=\"314\" r=\"4\" fill=\"#ff8a80\" opacity=\"0.7\"/>\n    <circle cx=\"370\" cy=\"316\" r=\"3\" fill=\"#ef9a9a\"/>\n    <!-- Eyes -->\n    <circle cx=\"362\" cy=\"306\" r=\"2.5\" fill=\"#212121\"/>\n    <circle cx=\"378\" cy=\"306\" r=\"2.5\" fill=\"#212121\"/>\n\n    <!-- Hat -->\n    <path d=\"M344 296 Q350 252 372 246 Q400 250 396 296 Z\" fill=\"url(#coat)\"/>\n    <rect x=\"340\" y=\"288\" width=\"60\" height=\"12\" rx=\"6\" fill=\"#ffffff\"/>\n    <circle cx=\"374\" cy=\"244\" r=\"9\" fill=\"#ffffff\"/>\n  </g>\n\n  <!-- Sparkles -->\n  <g fill=\"#fff59d\">\n    <path d=\"M520 220 L523 228 L531 231 L523 234 L520 242 L517 234 L509 231 L517 228 Z\"/>\n    <path d=\"M150 180 L152 185 L157 187 L152 189 L150 194 L148 189 L143 187 L148 185 Z\"/>\n  </g>\n\n  <!-- Title -->\n  <text x=\"400\" y=\"560\" font-family=\"Arial, sans-serif\" font-size=\"28\" font-weight=\"bold\" fill=\"#ffffff\" text-anchor=\"middle\">Merry Christmas from Santa!</text>\n</svg>\n```",
+  "ttft_ms": 36452,
+  "type": "result",
+  "duration_ms": 45980,
+  "uuid": "457bcd0a-ad1f-431a-b187-220931f586f3",
+  "ttft_stream_ms": 1744,
+  "time_to_request_ms": 138,
+  "first_content_frame_ms": 1745,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:48.999Z"
+}

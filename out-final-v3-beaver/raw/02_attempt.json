@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 28231,
+  "stop_reason": "end_turn",
+  "session_id": "a20c9127-660d-4deb-a6f5-1f0a1b0d5994",
+  "total_cost_usd": 0.00416574,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 4628,
+    "cache_read_input_tokens": 3194,
+    "output_tokens": 6416,
+    "output_tokens_details": {
+      "thinking_tokens": 3431
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 4628,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 6416,
+        "cache_read_input_tokens": 3194,
+        "cache_creation_input_tokens": 4628,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 4628
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-haiku-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6416,
+      "cacheReadInputTokens": 3194,
+      "cacheCreationInputTokens": 4628,
+      "webSearchRequests": 0,
+      "costUSD": 0.00416574,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3431,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 4628,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```svg\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 300\" width=\"400\" height=\"300\">\n  <!-- Background wall -->\n  <rect width=\"400\" height=\"300\" fill=\"#fdf6e3\"/>\n  <rect x=\"0\" y=\"0\" width=\"400\" height=\"60\" fill=\"#f5e6c8\"/>\n  <!-- Backsplash tiles -->\n  <line x1=\"0\" y1=\"60\" x2=\"400\" y2=\"60\" stroke=\"#e5d3ae\" stroke-width=\"2\"/>\n  <line x1=\"0\" y1=\"30\" x2=\"400\" y2=\"30\" stroke=\"#e5d3ae\" stroke-width=\"1\"/>\n\n  <!-- Open shelf with jars (left) -->\n  <rect x=\"18\" y=\"128\" width=\"78\" height=\"6\" fill=\"#b07a45\"/>\n  <rect x=\"26\" y=\"108\" width=\"14\" height=\"20\" rx=\"2\" fill=\"#e8b84a\"/>\n  <rect x=\"46\" y=\"112\" width=\"12\" height=\"16\" rx=\"2\" fill=\"#9ccf8a\"/>\n  <rect x=\"64\" y=\"104\" width=\"14\" height=\"24\" rx=\"2\" fill=\"#d98b6a\"/>\n\n  <!-- Hanging pot rack (right) -->\n  <rect x=\"318\" y=\"72\" width=\"66\" height=\"4\" rx=\"2\" fill=\"#888\"/>\n  <line x1=\"332\" y1=\"76\" x2=\"332\" y2=\"92\" stroke=\"#777\" stroke-width=\"2\"/>\n  <ellipse cx=\"332\" cy=\"98\" rx=\"8\" ry=\"6\" fill=\"#666\"/>\n  <line x1=\"352\" y1=\"76\" x2=\"352\" y2=\"88\" stroke=\"#777\" stroke-width=\"2\"/>\n  <path d=\"M344 88 L360 88 L358 100 L346 100 Z\" fill=\"#555\"/>\n\n  <!-- Beaver tail (behind body) -->\n  <ellipse cx=\"120\" cy=\"185\" rx=\"28\" ry=\"45\" fill=\"#4a2c1a\" transform=\"rotate(-20 120 185)\"/>\n\n  <!-- Beaver body -->\n  <ellipse cx=\"220\" cy=\"175\" rx=\"70\" ry=\"75\" fill=\"#8b5a2b\"/>\n  <ellipse cx=\"225\" cy=\"190\" rx=\"42\" ry=\"48\" fill=\"#c9a06a\"/>\n\n  <!-- Head -->\n  <circle cx=\"220\" cy=\"95\" r=\"52\" fill=\"#8b5a2b\"/>\n  <!-- Ears -->\n  <circle cx=\"180\" cy=\"55\" r=\"10\" fill=\"#6b4220\"/>\n  <circle cx=\"260\" cy=\"55\" r=\"10\" fill=\"#6b4220\"/>\n  <!-- Muzzle -->\n  <ellipse cx=\"220\" cy=\"115\" rx=\"26\" ry=\"20\" fill=\"#c9a06a\"/>\n  <!-- Nose -->\n  <ellipse cx=\"220\" cy=\"106\" rx=\"7\" ry=\"5\" fill=\"#2a1a10\"/>\n  <!-- Eyes -->\n  <circle cx=\"200\" cy=\"88\" r=\"5\" fill=\"#1a1a1a\"/>\n  <circle cx=\"240\" cy=\"88\" r=\"5\" fill=\"#1a1a1a\"/>\n  <circle cx=\"202\" cy=\"86\" r=\"1.5\" fill=\"#ffffff\"/>\n  <circle cx=\"242\" cy=\"86\" r=\"1.5\" fill=\"#ffffff\"/>\n  <!-- Smile -->\n  <path d=\"M208 120 Q220 130 232 120\" stroke=\"#2a1a10\" stroke-width=\"2.5\" fill=\"none\" stroke-linecap=\"round\"/>\n  <!-- Buck teeth -->\n  <rect x=\"215\" y=\"124\" width=\"5\" height=\"11\" rx=\"1\" fill=\"#ffffff\" stroke=\"#999\" stroke-width=\"0.8\"/>\n  <rect x=\"221\" y=\"124\" width=\"5\" height=\"11\" rx=\"1\" fill=\"#ffffff\" stroke=\"#999\" stroke-width=\"0.8\"/>\n\n  <!-- Chef hat: puffs sit on a band that follows the top of the head -->\n  <ellipse cx=\"200\" cy=\"30\" rx=\"14\" ry=\"12\" fill=\"#ffffff\" stroke=\"#ccc\" stroke-width=\"1\"/>\n  <ellipse cx=\"220\" cy=\"26\" rx=\"16\" ry=\"14\" fill=\"#ffffff\" stroke=\"#ccc\" stroke-width=\"1\"/>\n  <ellipse cx=\"240\" cy=\"30\" rx=\"14\" ry=\"12\" fill=\"#ffffff\" stroke=\"#ccc\" stroke-width=\"1\"/>\n  <path d=\"M192 54 Q194 42 220 42 Q246 42 248 54 Q220 48 192 54 Z\" fill=\"#ffffff\" stroke=\"#ccc\" stroke-width=\"1\"/>\n\n  <!-- Left arm reaching to the pan rim, paw gripping it -->\n  <path d=\"M162 165 Q140 200 214 222\" stroke=\"#8b5a2b\" stroke-width=\"16\" fill=\"none\" stroke-linecap=\"round\"/>\n  <ellipse cx=\"222\" cy=\"221\" rx=\"9\" ry=\"8\" fill=\"#6b4220\"/>\n\n  <!-- Stove counter top -->\n  <rect x=\"0\" y=\"232\" width=\"400\" height=\"10\" fill=\"#b98a5a\"/>\n  <!-- Stove front -->\n  <rect x=\"0\" y=\"242\" width=\"400\" height=\"58\" fill=\"#6e6e6e\"/>\n  <rect x=\"0\" y=\"242\" width=\"400\" height=\"8\" fill=\"#4a4a4a\"/>\n  <!-- Knobs -->\n  <circle cx=\"30\" cy=\"252\" r=\"4\" fill=\"#ddd\"/>\n  <circle cx=\"55\" cy=\"252\" r=\"4\" fill=\"#ddd\"/>\n  <circle cx=\"345\" cy=\"252\" r=\"4\" fill=\"#ddd\"/>\n  <circle cx=\"370\" cy=\"252\" r=\"4\" fill=\"#ddd\"/>\n  <!-- Oven door -->\n  <rect x=\"90\" y=\"256\" width=\"220\" height=\"26\" rx=\"3\" fill=\"#333\"/>\n  <rect x=\"110\" y=\"260\" width=\"180\" height=\"14\" rx=\"2\" fill=\"#555\"/>\n\n  <!-- Burner under pan -->\n  <ellipse cx=\"290\" cy=\"238\" rx=\"46\" ry=\"6\" fill=\"#3a3a3a\"/>\n  <ellipse cx=\"290\" cy=\"236\" rx=\"38\" ry=\"4\" fill=\"#ff5a1a\" opacity=\"0.8\"/>\n\n  <!-- Frying pan resting on burner -->\n  <ellipse cx=\"290\" cy=\"226\" rx=\"62\" ry=\"14\" fill=\"#2b2b2b\"/>\n  <ellipse cx=\"290\" cy=\"222\" rx=\"56\" ry=\"11\" fill=\"#444\"/>\n  <rect x=\"345\" y=\"218\" width=\"45\" height=\"9\" rx=\"4\" fill=\"#1a1a1a\"/>\n\n  <!-- Egg 1 -->\n  <ellipse cx=\"262\" cy=\"220\" rx=\"24\" ry=\"11\" fill=\"#ffffff\"/>\n  <circle cx=\"262\" cy=\"219\" r=\"8\" fill=\"#ffb300\"/>\n  <circle cx=\"259\" cy=\"216\" r=\"2.5\" fill=\"#ffe082\"/>\n\n  <!-- Egg 2 -->\n  <ellipse cx=\"312\" cy=\"216\" rx=\"20\" ry=\"10\" fill=\"#ffffff\"/>\n  <circle cx=\"312\" cy=\"215\" r=\"7\" fill=\"#ffb300\"/>\n  <circle cx=\"310\" cy=\"212\" r=\"2\" fill=\"#ffe082\"/>\n\n  <!-- Right arm holding spatula by its handle -->\n  <path d=\"M276 165 Q300 175 318 192\" stroke=\"#8b5a2b\" stroke-width=\"16\" fill=\"none\" stroke-linecap=\"round\"/>\n  <ellipse cx=\"318\" cy=\"192\" rx=\"9\" ry=\"8\" fill=\"#6b4220\"/>\n  <!-- Spatula: handle in paw, blade on the pan -->\n  <line x1=\"340\" y1=\"170\" x2=\"318\" y2=\"192\" stroke=\"#777\" stroke-width=\"6\" stroke-linecap=\"round\"/>\n  <line x1=\"318\" y1=\"192\" x2=\"302\" y2=\"210\" stroke=\"#999\" stroke-width=\"12\" stroke-linecap=\"round\"/>\n\n  <!-- Sizzle marks -->\n  <path d=\"M245 200 L240 193\" stroke=\"#e0a030\" stroke-width=\"2\" stroke-linecap=\"round\"/>\n  <path d=\"M335 200 L340 193\" stroke=\"#e0a030\" stroke-width=\"2\" stroke-linecap=\"round\"/>\n  <path d=\"M290 192 L290 184\" stroke=\"#e0a030\" stroke-width=\"2\" stroke-linecap=\"round\"/>\n\n  <!-- Title -->\n  <text x=\"200\" y=\"296\" font-family=\"Arial, sans-serif\" font-size=\"12\" fill=\"#fdf6e3\" text-anchor=\"middle\">Beaver cooking sunshine eggs</text>\n</svg>\n```",
+  "ttft_ms": 19798,
+  "type": "result",
+  "duration_ms": 28415,
+  "uuid": "507c6232-7476-4b0b-adc8-bf436daebb99",
+  "ttft_stream_ms": 1662,
+  "time_to_request_ms": 173,
+  "first_content_frame_ms": 1663,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:48.999Z"
+}

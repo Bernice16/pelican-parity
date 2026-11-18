@@ -1,0 +1,41 @@
+{
+  "source_round": 1,
+  "kept": [
+    {
+      "severity": "major",
+      "criterion": "contact",
+      "what": "Both raised arms end in curled hooks in the open air beside the trunk, and neither one grips the tree.",
+      "where": "the monkey's arms and hands",
+      "expected": "The monkey's hands should wrap around the trunk or a branch so it clearly looks like it is climbing."
+    },
+    {
+      "severity": "major",
+      "criterion": "clean",
+      "what": "The feet are separate dark dashes with nothing joining them to the legs, and there are extra curved limb shapes, so it is unclear which shapes are legs and which is the tail.",
+      "where": "the monkey's lower body and both sides of its torso",
+      "expected": "Two legs should be clearly joined to the body and end in feet, with one tail that is easy to tell apart from them."
+    },
+    {
+      "severity": "major",
+      "criterion": "count",
+      "what": "The monkey seems to have extra limbs: two hooked arms, a long curve on the left and a hanging curve below, which do not add up to a clear two arms, two legs and a tail.",
+      "where": "around the monkey's body",
+      "expected": "The monkey should have two arms, two legs and one tail, each easy to recognise."
+    },
+    {
+      "severity": "minor",
+      "criterion": "main",
+      "what": "Several apples have no stems, and one apple is a paler pink than the others, so it looks out of place.",
+      "where": "the apples in the tree canopy",
+      "expected": "All the apples should look alike and clearly read as apples hanging in the tree."
+    },
+    {
+      "severity": "minor",
+      "criterion": "color",
+      "what": "The sun is a washed-out cream colour that almost disappears into the pale sky.",
+      "where": "upper right",
+      "expected": "The sun should be clearly visible against the sky."
+    }
+  ],
+  "dropped": []
+}

@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 15489,
+  "stop_reason": "end_turn",
+  "session_id": "89232028-2064-4b05-86e8-7355afbb12a9",
+  "total_cost_usd": 0.00197431,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 436,
+    "cache_read_input_tokens": 4091,
+    "output_tokens": 3692,
+    "output_tokens_details": {
+      "thinking_tokens": 520
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 436,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 3692,
+        "cache_read_input_tokens": 4091,
+        "cache_creation_input_tokens": 436,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 436
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-haiku-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3692,
+      "cacheReadInputTokens": 4091,
+      "cacheCreationInputTokens": 436,
+      "webSearchRequests": 0,
+      "costUSD": 0.00197431,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 520,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 436,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```svg\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 600\" width=\"800\" height=\"600\">\n  <defs>\n    <linearGradient id=\"sky\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"0\" stop-color=\"#0b1d3a\"/>\n      <stop offset=\"1\" stop-color=\"#3a6ea5\"/>\n    </linearGradient>\n    <linearGradient id=\"coat\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\">\n      <stop offset=\"0\" stop-color=\"#e53935\"/>\n      <stop offset=\"1\" stop-color=\"#b71c1c\"/>\n    </linearGradient>\n  </defs>\n\n  <!-- Sky and moon -->\n  <rect width=\"800\" height=\"600\" fill=\"url(#sky)\"/>\n  <circle cx=\"680\" cy=\"110\" r=\"45\" fill=\"#fff8dc\"/>\n  <circle cx=\"665\" cy=\"98\" r=\"8\" fill=\"#e8dcb5\" opacity=\"0.6\"/>\n  <circle cx=\"695\" cy=\"125\" r=\"5\" fill=\"#e8dcb5\" opacity=\"0.6\"/>\n\n  <!-- Stars -->\n  <g fill=\"#ffffff\">\n    <circle cx=\"80\" cy=\"60\" r=\"2\"/>\n    <circle cx=\"160\" cy=\"130\" r=\"1.5\"/>\n    <circle cx=\"260\" cy=\"50\" r=\"2\"/>\n    <circle cx=\"420\" cy=\"90\" r=\"1.5\"/>\n    <circle cx=\"520\" cy=\"40\" r=\"2\"/>\n    <circle cx=\"590\" cy=\"200\" r=\"1.5\"/>\n    <circle cx=\"120\" cy=\"230\" r=\"1.5\"/>\n    <circle cx=\"330\" cy=\"180\" r=\"1.5\"/>\n  </g>\n\n  <!-- Distant hills -->\n  <path d=\"M0 420 Q120 340 260 410 T520 400 T800 380 L800 600 L0 600 Z\" fill=\"#e8f1f8\"/>\n\n  <!-- Snow ground -->\n  <rect x=\"0\" y=\"490\" width=\"800\" height=\"110\" fill=\"#ffffff\"/>\n  <path d=\"M0 490 Q200 478 400 490 T800 490\" stroke=\"#cfe3f0\" stroke-width=\"4\" fill=\"none\"/>\n\n  <!-- Falling snow -->\n  <g fill=\"#ffffff\" opacity=\"0.85\">\n    <circle cx=\"150\" cy=\"300\" r=\"3\"/>\n    <circle cx=\"220\" cy=\"250\" r=\"2.5\"/>\n    <circle cx=\"610\" cy=\"300\" r=\"3\"/>\n    <circle cx=\"700\" cy=\"240\" r=\"2.5\"/>\n    <circle cx=\"560\" cy=\"360\" r=\"2\"/>\n    <circle cx=\"100\" cy=\"380\" r=\"2.5\"/>\n    <circle cx=\"740\" cy=\"420\" r=\"3\"/>\n  </g>\n\n  <!-- Gift sack on the back -->\n  <path d=\"M180 400 Q175 330 230 325 Q290 330 285 400 Z\" fill=\"#8d6e63\"/>\n  <path d=\"M220 325 L230 300 L245 325\" fill=\"#8d6e63\"/>\n  <rect x=\"200\" y=\"290\" width=\"16\" height=\"20\" fill=\"#c62828\"/>\n\n  <!-- Presents on the deck and in the sack -->\n  <rect x=\"200\" y=\"380\" width=\"60\" height=\"50\" fill=\"#1e88e5\"/>\n  <rect x=\"226\" y=\"380\" width=\"8\" height=\"50\" fill=\"#ffd54f\"/>\n  <rect x=\"200\" y=\"402\" width=\"60\" height=\"8\" fill=\"#ffd54f\"/>\n\n  <rect x=\"240\" y=\"340\" width=\"48\" height=\"42\" fill=\"#43a047\"/>\n  <rect x=\"262\" y=\"340\" width=\"6\" height=\"42\" fill=\"#ff5252\"/>\n  <rect x=\"240\" y=\"358\" width=\"48\" height=\"6\" fill=\"#ff5252\"/>\n\n  <!-- Scooter -->\n  <!-- Handlebar post and grip -->\n  <line x1=\"462\" y1=\"470\" x2=\"470\" y2=\"330\" stroke=\"#37474f\" stroke-width=\"8\" stroke-linecap=\"round\"/>\n  <line x1=\"440\" y1=\"330\" x2=\"496\" y2=\"330\" stroke=\"#37474f\" stroke-width=\"8\" stroke-linecap=\"round\"/>\n  <rect x=\"432\" y=\"322\" width=\"14\" height=\"16\" rx=\"4\" fill=\"#212121\"/>\n  <rect x=\"490\" y=\"322\" width=\"14\" height=\"16\" rx=\"4\" fill=\"#212121\"/>\n  <!-- Deck -->\n  <rect x=\"300\" y=\"462\" width=\"170\" height=\"12\" rx=\"6\" fill=\"#455a64\"/>\n  <!-- Front and rear forks -->\n  <line x1=\"310\" y1=\"470\" x2=\"310\" y2=\"490\" stroke=\"#37474f\" stroke-width=\"8\"/>\n  <line x1=\"455\" y1=\"470\" x2=\"455\" y2=\"490\" stroke=\"#37474f\" stroke-width=\"8\"/>\n  <!-- Wheels -->\n  <circle cx=\"310\" cy=\"500\" r=\"24\" fill=\"#212121\"/>\n  <circle cx=\"310\" cy=\"500\" r=\"9\" fill=\"#90a4ae\"/>\n  <circle cx=\"455\" cy=\"500\" r=\"24\" fill=\"#212121\"/>\n  <circle cx=\"455\" cy=\"500\" r=\"9\" fill=\"#90a4ae\"/>\n\n  <!-- Santa legs and boots -->\n  <rect x=\"340\" y=\"420\" width=\"16\" height=\"44\" fill=\"#212121\"/>\n  <rect x=\"380\" y=\"420\" width=\"16\" height=\"44\" fill=\"#212121\"/>\n  <rect x=\"334\" y=\"458\" width=\"28\" height=\"12\" rx=\"4\" fill=\"#000000\"/>\n  <rect x=\"374\" y=\"458\" width=\"28\" height=\"12\" rx=\"4\" fill=\"#000000\"/>\n\n  <!-- Santa body -->\n  <path d=\"M328 440 Q325 350 360 340 L400 340 Q430 350 425 440 Z\" fill=\"url(#coat)\"/>\n  <!-- Belt -->\n  <rect x=\"326\" y=\"400\" width=\"100\" height=\"14\" fill=\"#212121\"/>\n  <rect x=\"368\" y=\"398\" width=\"16\" height=\"18\" fill=\"#ffd54f\" stroke=\"#8d6e63\" stroke-width=\"2\"/>\n  <!-- White trim -->\n  <rect x=\"326\" y=\"436\" width=\"100\" height=\"6\" fill=\"#ffffff\"/>\n  <circle cx=\"340\" cy=\"372\" r=\"4\" fill=\"#ffffff\"/>\n  <circle cx=\"372\" cy=\"368\" r=\"4\" fill=\"#ffffff\"/>\n\n  <!-- Arm holding handlebar -->\n  <path d=\"M410 362 L440 335\" stroke=\"url(#coat)\" stroke-width=\"18\" stroke-linecap=\"round\"/>\n  <circle cx=\"442\" cy=\"332\" r=\"9\" fill=\"#ffe0b2\"/>\n  <!-- Arm holding a gift -->\n  <path d=\"M338 364 L300 380\" stroke=\"#b71c1c\" stroke-width=\"18\" stroke-linecap=\"round\"/>\n  <circle cx=\"296\" cy=\"382\" r=\"9\" fill=\"#ffe0b2\"/>\n  <rect x=\"268\" y=\"356\" width=\"34\" height=\"30\" fill=\"#fdd835\" stroke=\"#f9a825\" stroke-width=\"2\"/>\n  <rect x=\"282\" y=\"356\" width=\"5\" height=\"30\" fill=\"#e53935\"/>\n\n  <!-- Head -->\n  <circle cx=\"370\" cy=\"312\" r=\"26\" fill=\"#ffe0b2\"/>\n  <!-- Beard -->\n  <path d=\"M346 318 Q352 352 370 350 Q390 352 396 318 Q384 334 370 332 Q356 334 346 318 Z\" fill=\"#ffffff\"/>\n  <!-- Mustache -->\n  <ellipse cx=\"370\" cy=\"324\" rx=\"11\" ry=\"4\" fill=\"#ffffff\"/>\n  <!-- Cheeks and nose -->\n  <circle cx=\"356\" cy=\"314\" r=\"4\" fill=\"#ff8a80\" opacity=\"0.7\"/>\n  <circle cx=\"384\" cy=\"314\" r=\"4\" fill=\"#ff8a80\" opacity=\"0.7\"/>\n  <circle cx=\"370\" cy=\"316\" r=\"3\" fill=\"#ef9a9a\"/>\n  <!-- Eyes -->\n  <circle cx=\"362\" cy=\"306\" r=\"2.5\" fill=\"#212121\"/>\n  <circle cx=\"378\" cy=\"306\" r=\"2.5\" fill=\"#212121\"/>\n\n  <!-- Hat -->\n  <path d=\"M344 296 Q350 252 372 246 Q400 250 396 296 Z\" fill=\"url(#coat)\"/>\n  <rect x=\"340\" y=\"288\" width=\"60\" height=\"12\" rx=\"6\" fill=\"#ffffff\"/>\n  <circle cx=\"374\" cy=\"244\" r=\"9\" fill=\"#ffffff\"/>\n\n  <!-- Sparkles -->\n  <g fill=\"#fff59d\">\n    <path d=\"M520 220 L523 228 L531 231 L523 234 L520 242 L517 234 L509 231 L517 228 Z\"/>\n    <path d=\"M150 180 L152 185 L157 187 L152 189 L150 194 L148 189 L143 187 L148 185 Z\"/>\n  </g>\n\n  <!-- Title -->\n  <text x=\"400\" y=\"560\" font-family=\"Arial, sans-serif\" font-size=\"28\" font-weight=\"bold\" fill=\"#ffffff\" text-anchor=\"middle\">Merry Christmas from Santa!</text>\n</svg>\n```",
+  "ttft_ms": 3878,
+  "type": "result",
+  "duration_ms": 15665,
+  "uuid": "831b1905-80f7-455b-b90b-144f7b1bff82",
+  "ttft_stream_ms": 1880,
+  "time_to_request_ms": 173,
+  "first_content_frame_ms": 1880,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:48.999Z"
+}

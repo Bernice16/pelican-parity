@@ -1,0 +1,100 @@
+{
+  "session_id": "dd2ee876-0a4e-4b21-a32c-cb6b6fdf53d2",
+  "judge_prompt": "prompts/judge_v4.txt",
+  "blind": {
+    "A": "attempt",
+    "B": "reference"
+  },
+  "parity": false,
+  "parity_reason": "B's total is 22 and A's is 17, a gap far above 1. Several criteria also differ by up to 2 points, so parity fails even though neither image has a critical defect.",
+  "rule_parity": false,
+  "attempt_at_least_reference": false,
+  "reference": {
+    "summary": "Santa rides a grey kick scooter through a snowy night, with one hand on the handlebar and a stack of wrapped presents in the other arm, and speed lines showing motion; it is well drawn, with small joining issues.",
+    "scores": {
+      "fidelity": 4,
+      "coherence": 4,
+      "readability": 5,
+      "composition": 5,
+      "clean": 4
+    },
+    "defects": [
+      {
+        "criterion": "coherence",
+        "severity": "minor",
+        "what": "The white glove sits slightly below and beside the grip, and a black knob takes the place where the hand should be, so the hand does not clearly hold the handlebar",
+        "where": "the handlebar at upper left",
+        "expected": "Santa's gloved hand clearly wraps around the handlebar grip"
+      },
+      {
+        "criterion": "coherence",
+        "severity": "minor",
+        "what": "The hand under the stack of presents shows only as a white ball under the boxes, so the hold looks weak",
+        "where": "the presents on Santa's left",
+        "expected": "Santa's arm and hand visibly cradle or hold the stack of gifts"
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "The hat brim covers the top of the eyes and the cheek blush overlaps the nose, which muddies the face",
+        "where": "Santa's face",
+        "expected": "Eyes, nose and cheeks are clearly separated and readable"
+      },
+      {
+        "criterion": "fidelity",
+        "severity": "minor",
+        "what": "Santa carries no sack of presents, only a stack of boxes",
+        "where": "around Santa on the scooter",
+        "expected": "Santa has a sack of presents with him on the scooter"
+      }
+    ]
+  },
+  "attempt": {
+    "summary": "Santa stands on a red kick scooter at night in the snow, with a brown sack of presents on the deck behind him; the drawing is simple and readable, but one arm is missing and the sack and gifts look pasted on.",
+    "scores": {
+      "fidelity": 3,
+      "coherence": 3,
+      "readability": 4,
+      "composition": 4,
+      "clean": 3
+    },
+    "defects": [
+      {
+        "criterion": "fidelity",
+        "severity": "major",
+        "what": "Only one arm is drawn; the second hand sits on the handlebar with no arm attached to it",
+        "where": "Santa's left side and the handlebar",
+        "expected": "Both of Santa's arms are drawn, each running from a shoulder to a hand gripping the handlebar"
+      },
+      {
+        "criterion": "coherence",
+        "severity": "major",
+        "what": "The visible arm comes out of the beard and chest area instead of a shoulder",
+        "where": "Santa's right arm",
+        "expected": "The arm is attached at the shoulder at the side of the body"
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "The gift boxes look flatly stuck onto the front of the sack rather than sitting in it or poking out of it",
+        "where": "the sack at the back of the scooter",
+        "expected": "The presents clearly sit inside the sack or stick out of its open top"
+      },
+      {
+        "criterion": "coherence",
+        "severity": "minor",
+        "what": "The sack is a stiff, slab-like shape with a flat back edge, so it reads more like a board than a soft bag",
+        "where": "the brown sack on the left",
+        "expected": "The sack has a rounded, soft bag shape with a tied or gathered top"
+      },
+      {
+        "criterion": "composition",
+        "severity": "minor",
+        "what": "The big caption box at the bottom adds nothing and pulls attention from the snowy ground",
+        "where": "bottom center",
+        "expected": "The scene speaks for itself with no label taking up the foreground"
+      }
+    ]
+  },
+  "not_applicable": []
+}

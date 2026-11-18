@@ -1,0 +1,111 @@
+{
+  "session_id": "c7de1dfc-8fa4-44c6-8293-637d1694510e",
+  "judge_prompt": "prompts/judge_v3.txt",
+  "blind": {
+    "A": "reference",
+    "B": "attempt"
+  },
+  "parity": false,
+  "parity_reason": "Each criterion differs by at most 1 and neither image has a critical defect, but the totals are 31 for A and 29 for B, which is a gap of 2. That breaks condition 2.",
+  "rule_parity": false,
+  "attempt_at_least_reference": false,
+  "reference": {
+    "summary": "A beaver chef in a white hat and sun-decorated apron fries two sunny-side-up eggs in a pan on a stove with a spatula, in a bright kitchen with a smiling sun in the window; it is clean and well drawn, with a few small oddities.",
+    "scores": {
+      "main": 5,
+      "background": 4,
+      "count": 5,
+      "shape": 4,
+      "contact": 4,
+      "clean": 4,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "A small pink heart floats in mid-air above the pan for no clear reason",
+        "where": "above the frying pan, right of the spatula",
+        "expected": "Only the scene's own elements appear above the pan, such as steam or sizzle marks if needed"
+      },
+      {
+        "criterion": "shape",
+        "severity": "minor",
+        "what": "The beaver's spatula arm is a long, thin tube that comes out from behind the apron and looks stretched",
+        "where": "the beaver's right arm reaching toward the pan",
+        "expected": "The arm has the same chunky thickness as the rest of the beaver's body and reaches the pan in a natural way"
+      },
+      {
+        "criterion": "contact",
+        "severity": "minor",
+        "what": "The spatula blade hovers above the eggs and does not touch the pan or the food",
+        "where": "the spatula over the pan",
+        "expected": "The spatula blade rests in the pan or under an egg, so the beaver is clearly cooking"
+      },
+      {
+        "criterion": "background",
+        "severity": "minor",
+        "what": "A plate with an egg sits on the very corner edge of the stove and looks about to fall off",
+        "where": "lower right corner of the stove",
+        "expected": "The plate sits steadily on a counter or flat surface next to the stove"
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "A small stray cross mark appears on the chef hat's band",
+        "where": "front of the chef hat",
+        "expected": "The hat band is plain and clean"
+      }
+    ]
+  },
+  "attempt": {
+    "summary": "A large beaver chef with a white hat cooks two sunny-side-up eggs in a pan on a stove counter in a warm kitchen; the main idea reads clearly, but the tail floats away from the body and the spatula is just a plain bar.",
+    "scores": {
+      "main": 4,
+      "background": 5,
+      "count": 5,
+      "shape": 3,
+      "contact": 3,
+      "clean": 4,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "contact",
+        "severity": "major",
+        "what": "The beaver's flat tail floats in the air beside the body and is not joined to it",
+        "where": "left side, the dark oval tail",
+        "expected": "The tail clearly attaches to the beaver's lower back or rump and comes out from behind the body"
+      },
+      {
+        "criterion": "shape",
+        "severity": "major",
+        "what": "The spatula is just a plain grey rod with a rounded end and has no flat turner blade, so it is hard to recognise",
+        "where": "the utensil in the pan on the right",
+        "expected": "The utensil reads clearly as a spatula, with a handle and a flat, wide blade resting under or beside an egg"
+      },
+      {
+        "criterion": "contact",
+        "severity": "minor",
+        "what": "The beaver's paw only touches the middle of the spatula rod loosely, so it is unclear whether the beaver is gripping it",
+        "where": "the beaver's right paw at the spatula",
+        "expected": "The paw clearly wraps around the spatula's handle"
+      },
+      {
+        "criterion": "contact",
+        "severity": "minor",
+        "what": "The chef hat seems to sit on top of the head instead of fitting around it",
+        "where": "top of the beaver's head",
+        "expected": "The hat band fits snugly around the top of the head"
+      },
+      {
+        "criterion": "main",
+        "severity": "minor",
+        "what": "The beaver's body is cut off by the counter, and the left arm seems to rest on the counter without doing anything",
+        "where": "the beaver's lower body and left arm",
+        "expected": "The beaver's pose clearly shows both paws taking part in the cooking or resting naturally"
+      }
+    ]
+  },
+  "not_applicable": []
+}

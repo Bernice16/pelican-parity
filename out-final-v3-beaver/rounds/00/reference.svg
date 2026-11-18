@@ -1,0 +1,237 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fdf3d8"/>
+      <stop offset="1" stop-color="#f3dfae"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b57a45"/>
+      <stop offset="1" stop-color="#8a5a30"/>
+    </linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7cc4f5"/>
+      <stop offset="1" stop-color="#cfeeff"/>
+    </linearGradient>
+    <radialGradient id="sunglow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fff3a0"/>
+      <stop offset="0.6" stop-color="#ffd54a"/>
+      <stop offset="1" stop-color="#ffb300"/>
+    </radialGradient>
+    <radialGradient id="yolk" cx="0.4" cy="0.35" r="0.6">
+      <stop offset="0" stop-color="#ffe566"/>
+      <stop offset="0.7" stop-color="#ffb81c"/>
+      <stop offset="1" stop-color="#e68a00"/>
+    </radialGradient>
+    <radialGradient id="pan" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#4a4a4a"/>
+      <stop offset="0.85" stop-color="#2a2a2a"/>
+      <stop offset="1" stop-color="#151515"/>
+    </radialGradient>
+    <linearGradient id="fur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9a6336"/>
+      <stop offset="1" stop-color="#6e4322"/>
+    </linearGradient>
+    <linearGradient id="stove" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4f4f4"/>
+      <stop offset="1" stop-color="#cfd3d8"/>
+    </linearGradient>
+    <pattern id="tailhatch" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="14" height="14" fill="#4a3220"/>
+      <path d="M0 0H14M0 7H14" stroke="#3a2616" stroke-width="2"/>
+      <path d="M0 0V14M7 0V14" stroke="#3a2616" stroke-width="2"/>
+    </pattern>
+  </defs>
+
+  <!-- Kitchen wall and floor -->
+  <rect width="800" height="600" fill="url(#wall)"/>
+  <rect y="400" width="800" height="200" fill="url(#floor)"/>
+  <g stroke="#6f4525" stroke-width="2" opacity="0.6">
+    <path d="M0 440H800M0 480H800M0 520H800M0 560H800"/>
+    <path d="M100 400V440M300 400V440M500 400V440M700 400V440M200 440V480M400 440V480M600 440V480M100 480V520M300 480V520M500 480V520M700 480V520M200 520V560M400 520V560M600 520V560M100 560V600M300 560V600M500 560V600M700 560V600"/>
+  </g>
+  <!-- Baseboard -->
+  <rect y="392" width="800" height="12" fill="#d7b98a"/>
+
+  <!-- Window with the sun -->
+  <rect x="60" y="60" width="240" height="200" rx="8" fill="#8b5e3c"/>
+  <rect x="74" y="74" width="212" height="172" fill="url(#sky)"/>
+  <!-- Sunshine -->
+  <g transform="translate(180,160)">
+    <g stroke="#ffcc33" stroke-width="6" stroke-linecap="round">
+      <path d="M0 -62V-84M0 62V84M-62 0H-84M62 0H84"/>
+      <path d="M-44 -44L-60 -60M44 44L60 60M-44 44L-60 60M44 -44L60 -60"/>
+    </g>
+    <circle r="48" fill="url(#sunglow)"/>
+    <circle cx="-14" cy="-6" r="5" fill="#5a3a00"/>
+    <circle cx="14" cy="-6" r="5" fill="#5a3a00"/>
+    <path d="M-16 12Q0 26 16 12" fill="none" stroke="#5a3a00" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="-24" cy="10" r="6" fill="#ff9e80" opacity="0.6"/>
+    <circle cx="24" cy="10" r="6" fill="#ff9e80" opacity="0.6"/>
+  </g>
+  <!-- Window cross bars -->
+  <rect x="176" y="74" width="8" height="172" fill="#8b5e3c"/>
+  <rect x="74" y="156" width="212" height="8" fill="#8b5e3c"/>
+  <!-- Little clouds -->
+  <g fill="#ffffff" opacity="0.9">
+    <ellipse cx="110" cy="100" rx="22" ry="11"/>
+    <ellipse cx="124" cy="94" rx="16" ry="12"/>
+    <ellipse cx="250" cy="220" rx="20" ry="10"/>
+    <ellipse cx="262" cy="214" rx="14" ry="10"/>
+  </g>
+  <!-- Curtains -->
+  <path d="M60 60Q70 160 56 262L40 262Q50 160 40 60Z" fill="#e8734a"/>
+  <path d="M300 60Q290 160 304 262L320 262Q310 160 320 60Z" fill="#e8734a"/>
+
+  <!-- Shelf with items -->
+  <rect x="520" y="110" width="220" height="12" fill="#8b5e3c"/>
+  <rect x="540" y="70" width="34" height="40" rx="4" fill="#d9534f"/>
+  <rect x="546" y="62" width="22" height="10" rx="3" fill="#a33"/>
+  <rect x="590" y="78" width="30" height="32" rx="4" fill="#5b9bd5"/>
+  <ellipse cx="660" cy="98" rx="22" ry="12" fill="#f5deb3"/>
+  <ellipse cx="652" cy="90" rx="8" ry="10" fill="#fff8e7"/>
+  <ellipse cx="668" cy="90" rx="8" ry="10" fill="#fff8e7"/>
+  <ellipse cx="660" cy="86" rx="8" ry="10" fill="#fff8e7"/>
+
+  <!-- Stove -->
+  <rect x="430" y="300" width="330" height="100" rx="6" fill="url(#stove)" stroke="#9aa0a6" stroke-width="3"/>
+  <rect x="430" y="300" width="330" height="18" rx="4" fill="#b0b6bc"/>
+  <!-- Oven door -->
+  <rect x="455" y="335" width="280" height="50" rx="5" fill="#9aa0a6" stroke="#6f767d" stroke-width="2"/>
+  <rect x="470" y="347" width="250" height="26" rx="3" fill="#4a4e52"/>
+  <rect x="475" y="351" width="240" height="18" rx="2" fill="#2c2f33" opacity="0.8"/>
+  <!-- Knobs -->
+  <g fill="#333">
+    <circle cx="470" cy="309" r="6"/>
+    <circle cx="500" cy="309" r="6"/>
+    <circle cx="690" cy="309" r="6"/>
+    <circle cx="720" cy="309" r="6"/>
+  </g>
+  <!-- Burners -->
+  <circle cx="520" cy="300" r="34" fill="#2b2b2b"/>
+  <circle cx="520" cy="300" r="26" fill="none" stroke="#555" stroke-width="3"/>
+  <circle cx="680" cy="300" r="30" fill="#2b2b2b"/>
+  <circle cx="680" cy="300" r="22" fill="none" stroke="#555" stroke-width="3"/>
+  <!-- Flames under the pan -->
+  <g fill="#ff8c1a" opacity="0.9">
+    <path d="M500 292Q504 276 510 286Q514 274 520 288Q526 276 532 286Q538 276 542 292Z"/>
+  </g>
+  <g fill="#ffd54a" opacity="0.9">
+    <path d="M508 292Q511 282 516 288Q520 280 524 288Q528 282 532 292Z"/>
+  </g>
+
+  <!-- Frying pan -->
+  <g transform="translate(520,282)">
+    <!-- handle -->
+    <path d="M58 -4L140 -36" stroke="#1a1a1a" stroke-width="12" stroke-linecap="round"/>
+    <path d="M60 -4L138 -34" stroke="#444" stroke-width="5" stroke-linecap="round"/>
+    <ellipse rx="70" ry="22" fill="url(#pan)"/>
+    <ellipse rx="58" ry="15" fill="#3a3a3a"/>
+    <!-- Sunshine eggs -->
+    <g>
+      <path d="M-44 -2Q-48 -14 -30 -14Q-18 -18 -10 -8Q-2 -4 -6 6Q-14 14 -30 12Q-46 10 -44 -2Z" fill="#fffdf4"/>
+      <circle cx="-26" cy="-2" r="10" fill="url(#yolk)"/>
+      <ellipse cx="-30" cy="-6" rx="3" ry="2" fill="#fff3b0" opacity="0.8"/>
+    </g>
+    <g>
+      <path d="M8 -4Q6 -16 24 -16Q40 -18 46 -6Q52 4 42 10Q30 16 14 12Q2 6 8 -4Z" fill="#fffdf4"/>
+      <circle cx="26" cy="-2" r="10" fill="url(#yolk)"/>
+      <ellipse cx="22" cy="-6" rx="3" ry="2" fill="#fff3b0" opacity="0.8"/>
+    </g>
+    <!-- Sizzle -->
+    <g stroke="#ffffff" stroke-width="2" fill="none" opacity="0.7" stroke-linecap="round">
+      <path d="M-10 -30Q-6 -40 -10 -50"/>
+      <path d="M4 -34Q8 -44 4 -54"/>
+      <path d="M20 -30Q24 -40 20 -50"/>
+    </g>
+  </g>
+
+  <!-- Beaver -->
+  <g transform="translate(300,400)">
+    <!-- Tail -->
+    <path d="M40 -30Q110 -40 150 -10Q170 15 140 35Q90 48 50 20Q30 0 40 -30Z" fill="url(#tailhatch)" stroke="#2e1d10" stroke-width="3"/>
+    <!-- Feet -->
+    <ellipse cx="-40" cy="-6" rx="30" ry="12" fill="#3a2616"/>
+    <ellipse cx="30" cy="-6" rx="30" ry="12" fill="#3a2616"/>
+    <g stroke="#2a1a0e" stroke-width="2" fill="none">
+      <path d="M-62 -6L-68 -8M-56 -14L-60 -18M-46 -16L-48 -22"/>
+      <path d="M8 -6L2 -8M14 -14L10 -18M24 -16L22 -22"/>
+    </g>
+    <!-- Body -->
+    <ellipse cx="0" cy="-110" rx="78" ry="98" fill="url(#fur)" stroke="#4a2e16" stroke-width="3"/>
+    <ellipse cx="0" cy="-100" rx="50" ry="70" fill="#c89a6a"/>
+    <!-- Apron -->
+    <path d="M-44 -140Q0 -130 44 -140L52 -30Q0 -16 -52 -30Z" fill="#ffffff" stroke="#ddd" stroke-width="2"/>
+    <path d="M-30 -140L-24 -175L24 -175L30 -140" fill="#ffffff" stroke="#ddd" stroke-width="2"/>
+    <path d="M-24 -175Q-60 -200 -80 -150" fill="none" stroke="#ffffff" stroke-width="4"/>
+    <path d="M24 -175Q60 -200 80 -150" fill="none" stroke="#ffffff" stroke-width="4"/>
+    <!-- Apron sun motif -->
+    <circle cx="0" cy="-85" r="12" fill="#ffd54a"/>
+    <g stroke="#ffb300" stroke-width="3" stroke-linecap="round">
+      <path d="M0 -103V-109M0 -67V-61M-18 -85H-24M18 -85H24M-13 -98L-17 -102M13 -72L17 -68M-13 -72L-17 -68M13 -98L17 -102"/>
+    </g>
+    <path d="M-36 -40Q0 -30 36 -40" fill="none" stroke="#e8734a" stroke-width="3"/>
+    <!-- Head -->
+    <ellipse cx="0" cy="-230" rx="68" ry="60" fill="url(#fur)" stroke="#4a2e16" stroke-width="3"/>
+    <!-- Ears -->
+    <circle cx="-54" cy="-272" r="16" fill="#7a4a26" stroke="#4a2e16" stroke-width="3"/>
+    <circle cx="-54" cy="-272" r="8" fill="#c89a6a"/>
+    <circle cx="54" cy="-272" r="16" fill="#7a4a26" stroke="#4a2e16" stroke-width="3"/>
+    <circle cx="54" cy="-272" r="8" fill="#c89a6a"/>
+    <!-- Muzzle -->
+    <ellipse cx="0" cy="-205" rx="40" ry="28" fill="#c89a6a"/>
+    <!-- Eyes -->
+    <ellipse cx="-24" cy="-240" rx="10" ry="12" fill="#ffffff"/>
+    <ellipse cx="24" cy="-240" rx="10" ry="12" fill="#ffffff"/>
+    <circle cx="-22" cy="-238" r="6" fill="#1a1a1a"/>
+    <circle cx="26" cy="-238" r="6" fill="#1a1a1a"/>
+    <circle cx="-20" cy="-241" r="2" fill="#fff"/>
+    <circle cx="28" cy="-241" r="2" fill="#fff"/>
+    <!-- Eyebrows -->
+    <path d="M-34 -256Q-24 -262 -14 -256" fill="none" stroke="#4a2e16" stroke-width="3" stroke-linecap="round"/>
+    <path d="M14 -256Q24 -262 34 -256" fill="none" stroke="#4a2e16" stroke-width="3" stroke-linecap="round"/>
+    <!-- Nose -->
+    <ellipse cx="0" cy="-218" rx="12" ry="8" fill="#2a1a0e"/>
+    <ellipse cx="-4" cy="-221" rx="4" ry="2" fill="#5a4030"/>
+    <!-- Mouth and teeth -->
+    <path d="M-16 -200Q0 -188 16 -200" fill="none" stroke="#4a2e16" stroke-width="3" stroke-linecap="round"/>
+    <rect x="-10" y="-200" width="9" height="14" rx="2" fill="#fffdf0" stroke="#d9c9a0" stroke-width="1.5"/>
+    <rect x="1" y="-200" width="9" height="14" rx="2" fill="#fffdf0" stroke="#d9c9a0" stroke-width="1.5"/>
+    <!-- Whiskers -->
+    <g stroke="#4a2e16" stroke-width="2" stroke-linecap="round">
+      <path d="M-36 -212L-62 -216M-36 -206L-62 -204"/>
+      <path d="M36 -212L62 -216M36 -206L62 -204"/>
+    </g>
+    <!-- Chef hat -->
+    <rect x="-40" y="-300" width="80" height="22" rx="6" fill="#ffffff" stroke="#dcdcdc" stroke-width="2"/>
+    <ellipse cx="-22" cy="-310" rx="24" ry="20" fill="#ffffff" stroke="#dcdcdc" stroke-width="2"/>
+    <ellipse cx="22" cy="-312" rx="26" ry="22" fill="#ffffff" stroke="#dcdcdc" stroke-width="2"/>
+    <ellipse cx="0" cy="-322" rx="30" ry="22" fill="#ffffff" stroke="#dcdcdc" stroke-width="2"/>
+    <rect x="-40" y="-296" width="80" height="18" fill="#ffffff"/>
+    <!-- Left arm resting on hip -->
+    <path d="M-66 -140Q-100 -120 -80 -80Q-66 -70 -52 -84" fill="url(#fur)" stroke="#4a2e16" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="-56" cy="-86" r="13" fill="#7a4a26" stroke="#4a2e16" stroke-width="3"/>
+    <!-- Right arm holding spatula -->
+    <path d="M60 -150Q120 -150 150 -120Q156 -112 146 -106" fill="url(#fur)" stroke="#4a2e16" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="150" cy="-114" r="14" fill="#7a4a26" stroke="#4a2e16" stroke-width="3"/>
+    <!-- Spatula -->
+    <g transform="translate(150,-114) rotate(-35)">
+      <rect x="0" y="-5" width="70" height="10" rx="4" fill="#8b5e3c" stroke="#5a3a20" stroke-width="2"/>
+      <rect x="66" y="-18" width="40" height="36" rx="5" fill="#c0c4c8" stroke="#7a7f84" stroke-width="2"/>
+      <path d="M76 -12V12M88 -12V12M100 -12V12" stroke="#7a7f84" stroke-width="2"/>
+    </g>
+  </g>
+
+  <!-- Plate waiting on counter with an egg already done -->
+  <g transform="translate(720,392)">
+    <ellipse rx="42" ry="12" fill="#ffffff" stroke="#c9ced3" stroke-width="2"/>
+    <ellipse rx="32" ry="8" fill="#f3f3f3"/>
+    <path d="M-22 0Q-24 -10 -8 -10Q10 -12 18 -4Q24 4 12 8Q-4 10 -18 6Q-26 4 -22 0Z" fill="#fffdf4"/>
+    <circle cx="-4" cy="-2" r="7" fill="url(#yolk)"/>
+  </g>
+
+  <!-- Steam heart from the eggs -->
+  <path d="M596 236c-6-10-22-6-18 6 2 6 10 10 18 18 8-8 16-12 18-18 4-12-12-16-18-6z" fill="#ffb6b6" opacity="0.55"/>
+
+  <!-- Title -->
+  <text x="400" y="580" font-family="Georgia, serif" font-size="24" fill="#5a3a20" text-anchor="middle" font-style="italic">Sunshine eggs, beaver style</text>
+</svg>

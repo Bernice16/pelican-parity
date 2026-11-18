@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 17347,
+  "stop_reason": "end_turn",
+  "session_id": "c1aee4d1-9d82-4e61-a9ff-aa0a50fa83ae",
+  "total_cost_usd": 0.0590178,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 2770,
+    "cache_read_input_tokens": 12509,
+    "output_tokens": 1717,
+    "output_tokens_details": {
+      "thinking_tokens": 413
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 2770,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1544,
+        "cache_read_input_tokens": 6460,
+        "cache_creation_input_tokens": 2359,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2359
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1717,
+      "cacheReadInputTokens": 12509,
+      "cacheCreationInputTokens": 2770,
+      "webSearchRequests": 0,
+      "costUSD": 0.0590178,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 413,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 2770,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"images\":{\"A\":{\"summary\":\"A cheerful brown monkey clings to the trunk of a full apple tree under a sunny sky with an apple on the grass; it is cleanly drawn, though the monkey's limbs are a little hard to read.\",\"scores\":{\"main\":4,\"background\":5,\"count\":4,\"shape\":4,\"contact\":4,\"clean\":4,\"color\":4},\"defects\":[{\"criterion\":\"shape\",\"severity\":\"minor\",\"what\":\"The arms are hard to read: one is a brown blob behind the head with a hand poking out at the top, and the other is only a short stub ending in a round hand\",\"where\":\"the monkey's arms and upper body\",\"expected\":\"Both arms are clearly visible as limbs reaching up and gripping the trunk\"},{\"criterion\":\"contact\",\"severity\":\"minor\",\"what\":\"The leg loops and the round feet sit around the trunk without clearly gripping it, so the monkey looks pasted on more than climbing\",\"where\":\"the monkey's legs and feet at the base of the trunk\",\"expected\":\"The legs visibly wrap around the trunk and the feet press against the bark\"},{\"criterion\":\"clean\",\"severity\":\"minor\",\"what\":\"A short branch sticks out from behind the foliage on the left and ends abruptly\",\"where\":\"left side of the tree, just below the leaves\",\"expected\":\"Any visible branch either joins the trunk naturally or is fully hidden by the leaves\"}]},\"B\":{\"summary\":\"A small brown monkey on the trunk of an apple tree, with a sun, grass and the caption 'A monkey climbing an apple tree'; the monkey is poorly built, with floating hands and feet, and blends into the trunk.\",\"scores\":{\"main\":3,\"background\":4,\"count\":3,\"shape\":3,\"contact\":2,\"clean\":3,\"color\":3},\"defects\":[{\"criterion\":\"contact\",\"severity\":\"major\",\"what\":\"The hands and feet are dark ovals floating on the trunk, not attached to any arm or leg\",\"where\":\"the monkey's left hand and both feet\",\"expected\":\"Each hand and foot is clearly joined to its limb and grips the trunk\"},{\"criterion\":\"count\",\"severity\":\"major\",\"what\":\"Only one leg is drawn; the other foot sits alone with no leg leading to it\",\"where\":\"the monkey's lower body\",\"expected\":\"The monkey has two visible legs, each ending in a foot on the trunk\"},{\"criterion\":\"color\",\"severity\":\"major\",\"what\":\"The monkey's brown fur is almost the same shade as the trunk, so its outline disappears into the tree\",\"where\":\"the monkey against the trunk\",\"expected\":\"The monkey stands out clearly from the trunk it is climbing\"},{\"criterion\":\"shape\",\"severity\":\"minor\",\"what\":\"The monkey is small next to the tree, and its head and body merge into one shapeless blob\",\"where\":\"the monkey's head and torso\",\"expected\":\"The monkey has a clearly separate head and body and is big enough to be the clear focus\"},{\"criterion\":\"background\",\"severity\":\"minor\",\"what\":\"A large caption band takes up the bottom of the picture and draws the eye away from the scene\",\"where\":\"bottom strip of grass\",\"expected\":\"The ground stays a simple setting that does not compete with the monkey and tree\"}]}},\"not_applicable\":[],\"parity\":false,\"parity_reason\":\"Contact differs by 2 (4 vs 2) and the totals differ by 8 (29 vs 21), so rules 1 and 2 both fail, although neither image has a critical defect.\"}",
+  "ttft_ms": 1799,
+  "type": "result",
+  "duration_ms": 17585,
+  "uuid": "1647358b-94df-4c70-b930-1af2e721176f",
+  "ttft_stream_ms": 1798,
+  "time_to_request_ms": 149,
+  "first_content_frame_ms": 1798,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:48.999Z"
+}

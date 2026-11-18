@@ -1,0 +1,41 @@
+{
+  "source_round": 2,
+  "kept": [
+    {
+      "severity": "major",
+      "criterion": "shape",
+      "what": "Santa's legs are tiny stubs under a large, boxy torso, so he looks squat and is hard to read as standing on the scooter",
+      "where": "Santa's legs and lower body",
+      "expected": "Santa has legs long enough to look like he is standing upright on the scooter deck, with believable body proportions"
+    },
+    {
+      "severity": "major",
+      "criterion": "contact",
+      "what": "Santa's raised hand stops short of the handlebar grip and seems to float near the stem instead of steering",
+      "where": "Santa's right hand and the top of the scooter handlebar",
+      "expected": "Santa's hand clearly grips the handlebar so he is visibly steering the scooter"
+    },
+    {
+      "severity": "minor",
+      "criterion": "contact",
+      "what": "The blue present on the left floats beside the sack with nothing holding it, and the small gifts on top of the sack sit loosely",
+      "where": "left side of the scooter deck, around the sack",
+      "expected": "All presents rest on the deck, inside the sack or in Santa's grip so none appear to float"
+    },
+    {
+      "severity": "minor",
+      "criterion": "clean",
+      "what": "Santa's left arm overlaps the sack and the gifts in a cluttered pile, so it is unclear what he is holding",
+      "where": "Santa's left arm and the sack",
+      "expected": "Santa's arm, the sack and the presents read as separate, clearly arranged shapes"
+    },
+    {
+      "severity": "minor",
+      "criterion": "main",
+      "what": "Santa and the scooter are small in the frame, leaving the main action less prominent than the empty sky",
+      "where": "lower middle of the picture",
+      "expected": "Santa on the scooter fills more of the picture as the clear focus"
+    }
+  ],
+  "dropped": []
+}

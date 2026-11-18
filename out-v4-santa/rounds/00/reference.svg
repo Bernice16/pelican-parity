@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b1e3f"/>
+      <stop offset="1" stop-color="#2c4a7a"/>
+    </linearGradient>
+    <radialGradient id="moon" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fff8d6"/>
+      <stop offset="1" stop-color="#f3e4a0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- background -->
+  <rect width="800" height="600" fill="url(#sky)"/>
+  <circle cx="660" cy="110" r="55" fill="url(#moon)"/>
+  <g fill="#ffffff" opacity="0.9">
+    <circle cx="80" cy="70" r="3"/><circle cx="150" cy="140" r="2"/><circle cx="260" cy="60" r="2.5"/>
+    <circle cx="420" cy="100" r="3"/><circle cx="520" cy="40" r="2"/><circle cx="740" cy="200" r="2.5"/>
+    <circle cx="60" cy="260" r="2"/><circle cx="600" cy="250" r="2"/><circle cx="720" cy="330" r="3"/>
+    <circle cx="340" cy="30" r="2"/><circle cx="470" cy="190" r="2"/><circle cx="120" cy="360" r="2.5"/>
+  </g>
+  <!-- snowy ground -->
+  <path d="M0 520 Q 200 500 400 520 T 800 520 L 800 600 L 0 600 Z" fill="#eaf2fb"/>
+  <path d="M0 540 Q 250 525 500 545 T 800 540 L 800 600 L 0 600 Z" fill="#d6e4f3"/>
+
+  <!-- speed lines -->
+  <g stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity="0.6">
+    <line x1="620" y1="420" x2="700" y2="420"/>
+    <line x1="640" y1="450" x2="740" y2="450"/>
+    <line x1="610" y1="480" x2="680" y2="480"/>
+  </g>
+
+  <!-- scooter -->
+  <g>
+    <!-- rear fender -->
+    <path d="M520 470 A 42 42 0 0 1 600 495" fill="none" stroke="#3a3f47" stroke-width="12" stroke-linecap="round"/>
+    <!-- deck -->
+    <rect x="265" y="462" width="285" height="18" rx="9" fill="#444a55"/>
+    <rect x="280" y="466" width="255" height="6" rx="3" fill="#6b7280"/>
+    <!-- stem -->
+    <line x1="265" y1="470" x2="205" y2="215" stroke="#3a3f47" stroke-width="16" stroke-linecap="round"/>
+    <line x1="265" y1="470" x2="205" y2="215" stroke="#8c94a3" stroke-width="5" stroke-linecap="round"/>
+    <!-- fork to front wheel -->
+    <line x1="258" y1="455" x2="240" y2="500" stroke="#3a3f47" stroke-width="12" stroke-linecap="round"/>
+    <!-- handlebar -->
+    <line x1="160" y1="205" x2="250" y2="205" stroke="#3a3f47" stroke-width="12" stroke-linecap="round"/>
+    <rect x="150" y="196" width="34" height="18" rx="9" fill="#c0392b"/>
+    <rect x="230" y="196" width="30" height="18" rx="9" fill="#c0392b"/>
+    <!-- bell -->
+    <circle cx="200" cy="190" r="8" fill="#f1c40f" stroke="#b7950b" stroke-width="2"/>
+    <!-- wheels -->
+    <g>
+      <circle cx="240" cy="500" r="32" fill="#1f2328"/>
+      <circle cx="240" cy="500" r="17" fill="#9aa3b2"/>
+      <circle cx="240" cy="500" r="6" fill="#3a3f47"/>
+      <circle cx="565" cy="500" r="32" fill="#1f2328"/>
+      <circle cx="565" cy="500" r="17" fill="#9aa3b2"/>
+      <circle cx="565" cy="500" r="6" fill="#3a3f47"/>
+    </g>
+  </g>
+
+  <!-- Santa -->
+  <g>
+    <!-- legs -->
+    <path d="M330 370 L322 450" stroke="#c0392b" stroke-width="30" stroke-linecap="round"/>
+    <path d="M372 370 L380 450" stroke="#c0392b" stroke-width="30" stroke-linecap="round"/>
+    <!-- boots -->
+    <path d="M300 445 L340 445 Q346 458 340 466 L300 466 Q292 456 300 445 Z" fill="#1f2328"/>
+    <path d="M362 445 L402 445 Q410 458 402 466 L362 466 Q355 456 362 445 Z" fill="#1f2328"/>
+    <rect x="298" y="436" width="46" height="12" rx="6" fill="#ffffff"/>
+    <rect x="358" y="436" width="46" height="12" rx="6" fill="#ffffff"/>
+
+    <!-- back arm (holding presents) -->
+    <path d="M400 285 Q450 330 450 395" fill="none" stroke="#c0392b" stroke-width="28" stroke-linecap="round"/>
+    <circle cx="450" cy="397" r="15" fill="#ffffff"/>
+
+    <!-- coat -->
+    <path d="M310 260 Q355 235 400 260 L418 385 Q355 405 292 385 Z" fill="#d63a2f"/>
+    <path d="M292 385 Q355 405 418 385 L420 398 Q355 420 290 398 Z" fill="#ffffff"/>
+    <!-- belt -->
+    <rect x="296" y="335" width="118" height="18" fill="#1f2328"/>
+    <rect x="345" y="331" width="26" height="26" rx="4" fill="#f1c40f" stroke="#b7950b" stroke-width="2"/>
+    <rect x="352" y="338" width="12" height="12" fill="#1f2328"/>
+    <!-- coat front trim -->
+    <rect x="348" y="260" width="12" height="74" fill="#ffffff"/>
+
+    <!-- front arm to handlebar -->
+    <path d="M315 275 Q260 240 220 212" fill="none" stroke="#d63a2f" stroke-width="28" stroke-linecap="round"/>
+    <circle cx="236" cy="222" r="12" fill="#ffffff"/>
+    <circle cx="214" cy="208" r="13" fill="#1f2328"/>
+
+    <!-- head -->
+    <circle cx="350" cy="200" r="40" fill="#f5cba7"/>
+    <!-- beard -->
+    <path d="M312 205 Q320 280 350 290 Q380 280 388 205 Q368 230 350 225 Q332 230 312 205 Z" fill="#ffffff"/>
+    <ellipse cx="350" cy="222" rx="18" ry="8" fill="#ffffff"/>
+    <!-- nose -->
+    <circle cx="334" cy="208" r="7" fill="#e8a085"/>
+    <!-- eyes -->
+    <circle cx="338" cy="192" r="3.5" fill="#1f2328"/>
+    <circle cx="360" cy="192" r="3.5" fill="#1f2328"/>
+    <!-- cheeks -->
+    <circle cx="326" cy="204" r="6" fill="#f3a39c" opacity="0.6"/>
+    <circle cx="372" cy="204" r="6" fill="#f3a39c" opacity="0.6"/>
+    <!-- hat -->
+    <path d="M308 182 Q350 130 392 182 L400 175 Q370 120 340 128 Q320 134 308 182 Z" fill="#d63a2f"/>
+    <path d="M340 128 Q380 110 420 135 Q405 150 400 175 Q395 145 340 128 Z" fill="#d63a2f"/>
+    <rect x="304" y="172" width="92" height="20" rx="10" fill="#ffffff"/>
+    <circle cx="420" cy="138" r="13" fill="#ffffff"/>
+  </g>
+
+  <!-- presents stack -->
+  <g>
+    <!-- big gift -->
+    <rect x="420" y="330" width="85" height="60" rx="4" fill="#2e86de"/>
+    <rect x="455" y="330" width="14" height="60" fill="#f1c40f"/>
+    <rect x="420" y="355" width="85" height="12" fill="#f1c40f"/>
+    <!-- medium gift -->
+    <rect x="430" y="285" width="68" height="45" rx="4" fill="#27ae60"/>
+    <rect x="458" y="285" width="12" height="45" fill="#ffffff"/>
+    <rect x="430" y="303" width="68" height="10" fill="#ffffff"/>
+    <!-- small gift -->
+    <rect x="442" y="250" width="44" height="35" rx="4" fill="#e84393"/>
+    <rect x="459" y="250" width="10" height="35" fill="#f1c40f"/>
+    <rect x="442" y="263" width="44" height="8" fill="#f1c40f"/>
+    <!-- bow -->
+    <path d="M464 250 Q452 232 460 232 Q468 234 464 250 Q476 232 468 232 Q462 234 464 250 Z" fill="#f1c40f" stroke="#b7950b" stroke-width="1.5"/>
+  </g>
+</svg>

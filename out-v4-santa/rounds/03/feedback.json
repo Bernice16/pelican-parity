@@ -1,0 +1,27 @@
+{
+  "source_round": 2,
+  "kept": [
+    {
+      "severity": "minor",
+      "criterion": "coherence",
+      "what": "Santa's near arm bends across his chest in an awkward way to reach the handlebar",
+      "where": "Santa's arms and torso",
+      "expected": "Both arms reach naturally from the shoulders to the handlebar grips"
+    },
+    {
+      "severity": "minor",
+      "criterion": "clean",
+      "what": "The presents look like flat stickers pasted onto the sack rather than objects sitting in it",
+      "where": "The brown sack on the left",
+      "expected": "The presents look like they are sticking out of the sack opening or sitting inside it"
+    },
+    {
+      "severity": "minor",
+      "criterion": "composition",
+      "what": "The caption bar and the wide snow strip leave a lot of empty space at the bottom, which makes the scooter and Santa sit a little small and high",
+      "where": "The bottom of the image",
+      "expected": "Santa and the scooter fill more of the frame, with less empty foreground"
+    }
+  ],
+  "dropped": []
+}

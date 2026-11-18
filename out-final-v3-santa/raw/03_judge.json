@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 19666,
+  "stop_reason": "end_turn",
+  "session_id": "45117ef0-aeca-42af-a5dd-69dfc6152267",
+  "total_cost_usd": 0.05563760000000001,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 1955,
+    "cache_read_input_tokens": 12508,
+    "output_tokens": 1874,
+    "output_tokens_details": {
+      "thinking_tokens": 736
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1955,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1703,
+        "cache_read_input_tokens": 6459,
+        "cache_creation_input_tokens": 1545,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1545
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1874,
+      "cacheReadInputTokens": 12508,
+      "cacheCreationInputTokens": 1955,
+      "webSearchRequests": 0,
+      "costUSD": 0.05563760000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 736,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1955,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"images\":{\"A\":{\"summary\":\"Santa rides a kick scooter on a snowy hill at night under a full moon, holding a wrapped present, with a gift sack on the deck; the drawing is clean and readable, with a few stiff proportions.\",\"scores\":{\"main\":4,\"background\":5,\"count\":5,\"shape\":4,\"contact\":4,\"clean\":4,\"color\":5},\"defects\":[{\"criterion\":\"shape\",\"severity\":\"minor\",\"what\":\"The scooter deck is very long and wide, so it looks more like a flat cart than a kick scooter\",\"where\":\"the scooter deck\",\"expected\":\"The deck is sized like a scooter deck, just long enough for the rider and his sack\"},{\"criterion\":\"contact\",\"severity\":\"minor\",\"what\":\"Santa's body faces the viewer instead of the direction he is riding\",\"where\":\"Santa's torso and legs\",\"expected\":\"Santa's body is turned toward the handlebar and the direction of travel\"},{\"criterion\":\"shape\",\"severity\":\"minor\",\"what\":\"Santa's head and hat are big compared with his short torso and stubby legs\",\"where\":\"Santa's figure\",\"expected\":\"Santa's head, body and legs look balanced for a cartoon figure\"},{\"criterion\":\"clean\",\"severity\":\"minor\",\"what\":\"The present in Santa's hand sits at an awkward angle and overlaps his arm, so it is hard to see how he grips it\",\"where\":\"Santa's left hand and the present\",\"expected\":\"The present is clearly held in Santa's hand\"}]},\"B\":{\"summary\":\"Santa rides a kick scooter fast across a snowy hill at night under a full moon, with a stack of wrapped presents beside him and speed lines behind him; the drawing is lively and clear, but the presents are not supported.\",\"scores\":{\"main\":4,\"background\":5,\"count\":5,\"shape\":4,\"contact\":3,\"clean\":4,\"color\":5},\"defects\":[{\"criterion\":\"contact\",\"severity\":\"major\",\"what\":\"The stack of presents floats in the air next to Santa; it is not held and does not rest on the deck\",\"where\":\"the gift stack on the left of Santa\",\"expected\":\"The presents are clearly carried by Santa or sit firmly on the scooter deck\"},{\"criterion\":\"clean\",\"severity\":\"minor\",\"what\":\"Santa's outstretched arm cuts across the bottom present, so the shapes overlap untidily\",\"where\":\"Santa's left arm and the green present\",\"expected\":\"The arm and the presents are layered so that it is clear which is in front\"},{\"criterion\":\"shape\",\"severity\":\"minor\",\"what\":\"The hat's tail is very long and rigid and sticks up and back like a horn\",\"where\":\"the top of Santa's hat\",\"expected\":\"The hat tail flops or flutters naturally behind Santa's head\"}]}},\"not_applicable\":[],\"parity\":true,\"parity_reason\":\"No criterion differs by more than 1 point, the totals are 31 and 30 (a difference of 1), and neither image has a critical defect, so parity holds.\"}",
+  "ttft_ms": 1728,
+  "type": "result",
+  "duration_ms": 19916,
+  "uuid": "a8bc0ba8-166e-4fc7-b040-780d90d2f3a5",
+  "ttft_stream_ms": 1479,
+  "time_to_request_ms": 226,
+  "first_content_frame_ms": 1479,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:48.999Z"
+}

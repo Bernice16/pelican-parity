@@ -1,0 +1,104 @@
+{
+  "session_id": "0a219795-ad11-4285-9882-82fae9dc3acd",
+  "judge_prompt": "prompts/judge_v3.txt",
+  "blind": {
+    "A": "reference",
+    "B": "attempt"
+  },
+  "parity": true,
+  "parity_reason": "No criterion differs by more than 1 (background and shape each differ by 1), the totals are 30 and 28 (a difference of 2), and neither image has a critical defect, so all three parity conditions hold.",
+  "rule_parity": true,
+  "attempt_at_least_reference": false,
+  "reference": {
+    "summary": "Santa rides a green kick scooter across a snowy moonlit hill, carrying a stack of presents; the drawing is neat and well made, apart from a few stray shapes.",
+    "scores": {
+      "main": 4,
+      "background": 5,
+      "count": 5,
+      "shape": 4,
+      "contact": 4,
+      "clean": 3,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "clean",
+        "severity": "major",
+        "what": "A loose teal curved stroke floats across the presents and Santa's back arm, attached to nothing",
+        "where": "left side of Santa, over the stack of presents",
+        "expected": "Every shape around the presents has a clear purpose, such as a visible strap or sack, or it is removed"
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "Odd green curved pieces poke out on both sides of the rear wheel and don't read as any part of the scooter",
+        "where": "around the rear wheel",
+        "expected": "The rear wheel area shows only clear scooter parts, such as a tidy fender, or nothing extra"
+      },
+      {
+        "criterion": "contact",
+        "severity": "minor",
+        "what": "The presents float beside Santa's hip and his rear hand doesn't clearly hold them or support them",
+        "where": "Santa's left hand and the present stack",
+        "expected": "Santa is clearly holding or carrying the presents, or they rest on the scooter"
+      },
+      {
+        "criterion": "shape",
+        "severity": "minor",
+        "what": "The arm reaching to the handlebar is very long and stiff compared with the rest of the body",
+        "where": "Santa's right arm",
+        "expected": "The arm reaching the handlebar has natural proportions for Santa's body"
+      }
+    ]
+  },
+  "attempt": {
+    "summary": "Santa rides a blue kick scooter on a snowy night hill with stacked presents behind him, under a 'Merry Christmas!' greeting; it reads clearly, but the figure's build is simplified and a bit awkward.",
+    "scores": {
+      "main": 4,
+      "background": 4,
+      "count": 5,
+      "shape": 3,
+      "contact": 4,
+      "clean": 3,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "shape",
+        "severity": "major",
+        "what": "Santa's body is a shapeless red blob with thin stick legs, and a separate red arm shape is pasted over one side of his torso",
+        "where": "Santa's torso, back arm and legs",
+        "expected": "Santa has a clear, rounded body with an arm and legs that join it naturally"
+      },
+      {
+        "criterion": "clean",
+        "severity": "major",
+        "what": "The present stack overlaps Santa's back arm and glove, and the upper boxes are jumbled and partly hidden",
+        "where": "present stack on the back of the deck",
+        "expected": "The presents form a tidy stack that sits clearly behind or beside Santa without tangling with his arm"
+      },
+      {
+        "criterion": "main",
+        "severity": "minor",
+        "what": "Santa faces the viewer while riding to the right, so he looks like he is posing rather than steering",
+        "where": "Santa's head and body",
+        "expected": "Santa is turned toward the direction he rides, steering the scooter"
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "The yellow belt buckle hangs below the belt instead of sitting on it",
+        "where": "Santa's waist",
+        "expected": "The buckle sits centred on the belt"
+      },
+      {
+        "criterion": "background",
+        "severity": "minor",
+        "what": "The big greeting text in the upper left draws the eye away from Santa",
+        "where": "upper left sky",
+        "expected": "Any text is smaller or placed so Santa stays the main focus"
+      }
+    ]
+  },
+  "not_applicable": []
+}

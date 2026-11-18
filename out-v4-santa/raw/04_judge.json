@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 22972,
+  "stop_reason": "end_turn",
+  "session_id": "fb206c00-8f79-4084-a79b-906833f0f41e",
+  "total_cost_usd": 0.06003880000000001,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 1830,
+    "cache_read_input_tokens": 12714,
+    "output_tokens": 2142,
+    "output_tokens_details": {
+      "thinking_tokens": 931
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1830,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1975,
+        "cache_read_input_tokens": 6561,
+        "cache_creation_input_tokens": 1422,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1422
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 2142,
+      "cacheReadInputTokens": 12714,
+      "cacheCreationInputTokens": 1830,
+      "webSearchRequests": 0,
+      "costUSD": 0.06003880000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 931,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1830,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"images\":{\"A\":{\"summary\":\"Santa in a red suit stands on a long red kick scooter with a brown sack of presents on the deck, under a night sky with a moon and snow; the picture is clean and easy to read, but the arms and hands are weak.\",\"scores\":{\"fidelity\":4,\"coherence\":3,\"readability\":5,\"composition\":5,\"clean\":4},\"defects\":[{\"criterion\":\"coherence\",\"severity\":\"major\",\"what\":\"The arm reaching for the handlebar ends in a plain bar with no hand or glove, so Santa does not really grip the handlebar\",\"where\":\"Santa's right arm at the handlebar\",\"expected\":\"A visible gloved hand closes around the handlebar grip\"},{\"criterion\":\"fidelity\",\"severity\":\"major\",\"what\":\"The other arm is only a short dark-red curve on the chest, with no forearm or hand\",\"where\":\"Santa's left side, upper torso\",\"expected\":\"Santa's second arm is fully drawn, with a hand doing something clear, such as holding a present or the handlebar\"},{\"criterion\":\"coherence\",\"severity\":\"minor\",\"what\":\"The legs are thin, short stubs under a boxy torso, so the body looks like it is propped on sticks instead of standing\",\"where\":\"Santa's legs between belt and boots\",\"expected\":\"Legs in proportion to the body, clearly carrying Santa's weight on the deck\"},{\"criterion\":\"clean\",\"severity\":\"minor\",\"what\":\"The scooter stem is a thin dark line that barely stands out from the dark sky\",\"where\":\"The scooter's upright stem on the right\",\"expected\":\"The stem reads clearly as a solid part joining the deck to the handlebar\"}]},\"B\":{\"summary\":\"Santa rides a grey kick scooter over snow at night, one hand on the handlebar and the other carrying a stack of wrapped presents, with speed lines and a big moon; the scene is lively and well drawn, with small face and overlap issues.\",\"scores\":{\"fidelity\":5,\"coherence\":4,\"readability\":5,\"composition\":5,\"clean\":4},\"defects\":[{\"criterion\":\"clean\",\"severity\":\"minor\",\"what\":\"The nose and one cheek blush overlap into a muddy blob, and the eyes are partly hidden under the hat brim\",\"where\":\"Santa's face\",\"expected\":\"A clear nose, rosy cheeks and visible eyes that read as separate features\"},{\"criterion\":\"coherence\",\"severity\":\"minor\",\"what\":\"The stack of presents seems to hover beside the body, held only by a small glove under its corner, and the arm holding it is mostly hidden\",\"where\":\"The presents on Santa's left side\",\"expected\":\"The presents sit firmly in Santa's arm or hand, so the holding is obvious\"},{\"criterion\":\"coherence\",\"severity\":\"minor\",\"what\":\"The glove at the handlebar sits below the grip rather than wrapping around it\",\"where\":\"Santa's hand at the handlebar, upper left\",\"expected\":\"The hand clearly grips the handlebar\"}]}},\"not_applicable\":[],\"parity\":false,\"parity_reason\":\"No criterion differs by more than 1 and there are no critical defects, but the totals are A 21 and B 23. They differ by 2, so rule 2 fails.\"}",
+  "ttft_ms": 2053,
+  "type": "result",
+  "duration_ms": 23565,
+  "uuid": "23416528-980e-4ffe-a8c2-1702917f45d6",
+  "ttft_stream_ms": 2048,
+  "time_to_request_ms": 283,
+  "first_content_frame_ms": 2049,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:48.999Z"
+}

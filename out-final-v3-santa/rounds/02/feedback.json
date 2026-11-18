@@ -1,0 +1,41 @@
+{
+  "source_round": 1,
+  "kept": [
+    {
+      "severity": "major",
+      "criterion": "clean",
+      "what": "The blue present is a flat square stuck onto the front of the sack, so it reads as a sticker rather than a gift inside or beside the sack",
+      "where": "the gift sack at left",
+      "expected": "The present should look like it is poking out of the sack's opening or sitting next to it as a separate object"
+    },
+    {
+      "severity": "major",
+      "criterion": "shape",
+      "what": "The sack is a stiff, blocky shape with a square red knot on top and does not look like a soft bag full of toys",
+      "where": "the brown sack at left",
+      "expected": "The sack should have a rounded, lumpy, cloth-like shape tied at the neck"
+    },
+    {
+      "severity": "minor",
+      "criterion": "contact",
+      "what": "The sack sits on the far hill, apart from the scooter, so it does not seem to travel with Santa",
+      "where": "the sack behind the scooter",
+      "expected": "The sack should ride on the scooter deck or be slung over Santa's shoulder"
+    },
+    {
+      "severity": "minor",
+      "criterion": "shape",
+      "what": "Santa's arms are thin sticks and his body is a plain rectangle, so the figure looks stiff",
+      "where": "Santa's arms and torso",
+      "expected": "Santa should have rounder, fuller arms and a belly that looks plump"
+    },
+    {
+      "severity": "minor",
+      "criterion": "background",
+      "what": "The hill line behind runs right through the sack, so the sack seems to be sinking into the background",
+      "where": "left middle, around the sack",
+      "expected": "The sack should sit clearly on the ground in front of the hills"
+    }
+  ],
+  "dropped": []
+}

@@ -1,0 +1,41 @@
+{
+  "source_round": 3,
+  "kept": [
+    {
+      "severity": "major",
+      "criterion": "shape",
+      "what": "The chef hat looks like a white crescent headband with puffs, not a tall chef's toque",
+      "where": "the top of the beaver's head",
+      "expected": "The beaver wears a recognisable tall white chef's hat"
+    },
+    {
+      "severity": "major",
+      "criterion": "clean",
+      "what": "The spatula blade is drawn on top of the second egg and covers most of it, so the egg looks cut off",
+      "where": "the spatula and the right egg in the pan",
+      "expected": "Both eggs are clearly visible, and the spatula sits beside or slides under an egg"
+    },
+    {
+      "severity": "minor",
+      "criterion": "clean",
+      "what": "Stray crossed dark lines lie over the paw that holds the spatula, which makes the grip look scribbled",
+      "where": "the beaver's right paw on the spatula handle",
+      "expected": "The paw wraps cleanly around the handle with no stray marks"
+    },
+    {
+      "severity": "minor",
+      "criterion": "shape",
+      "what": "The body is a huge round blob that fills much of the scene, and the head sits on it with almost no neck or shoulders",
+      "where": "the beaver's torso",
+      "expected": "The beaver's body has readable shoulders and proportions that suit its head and arms"
+    },
+    {
+      "severity": "minor",
+      "criterion": "main",
+      "what": "The beaver has no apron or other cooking outfit apart from the hat, so it reads less clearly as a chef",
+      "where": "the beaver's chest and belly",
+      "expected": "The beaver clearly looks dressed as a cook"
+    }
+  ],
+  "dropped": []
+}

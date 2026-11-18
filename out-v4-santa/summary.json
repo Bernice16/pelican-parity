@@ -1,0 +1,134 @@
+{
+  "prompt": "Generate an SVG of Santa claus holding presents on a scooter",
+  "parity": false,
+  "stop_reason": "stagnation",
+  "rounds": 4,
+  "final_round": 2,
+  "final_svg": "out-v4-santa/rounds/02/attempt.svg",
+  "final_png": "out-v4-santa/rounds/02/attempt.png",
+  "reference_svg": "out-v4-santa/rounds/00/reference.svg",
+  "history": [
+    {
+      "round": 0,
+      "parity": false,
+      "rule_parity": false,
+      "attempt_total": 17,
+      "reference_total": 24,
+      "attempt_scores": {
+        "fidelity": 4,
+        "coherence": 3,
+        "readability": 4,
+        "composition": 3,
+        "clean": 3
+      },
+      "attempt_defects": {
+        "critical": 0,
+        "major": 3,
+        "minor": 2
+      },
+      "confirmation": null
+    },
+    {
+      "round": 1,
+      "parity": false,
+      "rule_parity": false,
+      "attempt_total": 20,
+      "reference_total": 23,
+      "attempt_scores": {
+        "fidelity": 4,
+        "coherence": 3,
+        "readability": 5,
+        "composition": 4,
+        "clean": 4
+      },
+      "attempt_defects": {
+        "critical": 0,
+        "major": 1,
+        "minor": 4
+      },
+      "confirmation": null
+    },
+    {
+      "round": 2,
+      "parity": true,
+      "rule_parity": true,
+      "attempt_total": 22,
+      "reference_total": 21,
+      "attempt_scores": {
+        "fidelity": 5,
+        "coherence": 4,
+        "readability": 5,
+        "composition": 4,
+        "clean": 4
+      },
+      "attempt_defects": {
+        "critical": 0,
+        "major": 0,
+        "minor": 3
+      },
+      "confirmation": {
+        "parity": false,
+        "attempt_at_least_reference": false,
+        "attempt_total": 17,
+        "reference_total": 22
+      }
+    },
+    {
+      "round": 3,
+      "parity": false,
+      "rule_parity": false,
+      "attempt_total": 21,
+      "reference_total": 23,
+      "attempt_scores": {
+        "fidelity": 4,
+        "coherence": 3,
+        "readability": 5,
+        "composition": 5,
+        "clean": 4
+      },
+      "attempt_defects": {
+        "critical": 0,
+        "major": 1,
+        "minor": 3
+      },
+      "confirmation": null
+    },
+    {
+      "round": 4,
+      "parity": false,
+      "rule_parity": false,
+      "attempt_total": 21,
+      "reference_total": 23,
+      "attempt_scores": {
+        "fidelity": 4,
+        "coherence": 3,
+        "readability": 5,
+        "composition": 5,
+        "clean": 4
+      },
+      "attempt_defects": {
+        "critical": 0,
+        "major": 2,
+        "minor": 2
+      },
+      "confirmation": null
+    }
+  ],
+  "budget_usd": 20.0,
+  "cost_usd": {
+    "reference": 0.3312845,
+    "baseline": 0.0019342,
+    "judge": 0.3788708,
+    "refine": 0.0132612
+  },
+  "total_cost_usd": 0.7253507,
+  "reserved_unmeasured_usd": 0.0,
+  "models": {
+    "reference": "claude-fable-5-1 (high)",
+    "baseline": "claude-haiku-5-5 (low)",
+    "judge": "claude-opus-5-5 (high)",
+    "refine": "claude-haiku-5-5 (low)"
+  },
+  "judge_prompt": "prompts/judge_v4.txt",
+  "refine_prompt": "prompts/refine_v2.txt"
+}

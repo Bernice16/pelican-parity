@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b1d3a"/>
+      <stop offset="1" stop-color="#2a4d7a"/>
+    </linearGradient>
+    <linearGradient id="snow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#dfe9f5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky and ground -->
+  <rect width="600" height="400" fill="url(#sky)"/>
+  <circle cx="500" cy="70" r="28" fill="#fff7d6"/>
+  <path d="M0 330 Q150 300 300 325 T600 320 L600 400 L0 400 Z" fill="url(#snow)"/>
+
+  <!-- Snowflakes -->
+  <g fill="#ffffff" opacity="0.8">
+    <circle cx="60" cy="50" r="3"/>
+    <circle cx="120" cy="110" r="2"/>
+    <circle cx="220" cy="40" r="2.5"/>
+    <circle cx="340" cy="90" r="3"/>
+    <circle cx="430" cy="150" r="2"/>
+    <circle cx="560" cy="200" r="2.5"/>
+    <circle cx="90" cy="200" r="2"/>
+    <circle cx="260" cy="160" r="2"/>
+    <circle cx="520" cy="30" r="2"/>
+  </g>
+
+  <!-- Scooter wheels -->
+  <g>
+    <circle cx="180" cy="318" r="26" fill="#222"/>
+    <circle cx="180" cy="318" r="10" fill="#888"/>
+    <circle cx="410" cy="318" r="26" fill="#222"/>
+    <circle cx="410" cy="318" r="10" fill="#888"/>
+  </g>
+
+  <!-- Scooter deck and stem -->
+  <rect x="170" y="300" width="260" height="12" rx="5" fill="#2f6fd6"/>
+  <line x1="405" y1="300" x2="420" y2="170" stroke="#2f6fd6" stroke-width="10" stroke-linecap="round"/>
+  <line x1="405" y1="175" x2="450" y2="170" stroke="#1d4fa0" stroke-width="9" stroke-linecap="round"/>
+
+  <!-- Presents on the back of the scooter -->
+  <g>
+    <rect x="140" y="262" width="62" height="40" fill="#c62828"/>
+    <rect x="167" y="262" width="8" height="40" fill="#ffd54f"/>
+    <rect x="140" y="278" width="62" height="8" fill="#ffd54f"/>
+    <rect x="160" y="228" width="46" height="34" fill="#2e7d32"/>
+    <rect x="181" y="228" width="6" height="34" fill="#ffffff"/>
+    <rect x="160" y="242" width="46" height="6" fill="#ffffff"/>
+    <rect x="178" y="200" width="30" height="28" fill="#ffb300"/>
+    <rect x="191" y="200" width="4" height="28" fill="#c62828"/>
+  </g>
+
+  <!-- Santa's boots -->
+  <rect x="245" y="288" width="24" height="22" rx="4" fill="#111"/>
+  <rect x="292" y="288" width="24" height="22" rx="4" fill="#111"/>
+
+  <!-- Santa's body -->
+  <ellipse cx="270" cy="232" rx="50" ry="62" fill="#d32f2f"/>
+  <rect x="222" y="250" width="100" height="12" fill="#111"/>
+  <rect x="263" y="247" width="16" height="18" rx="2" fill="#ffd54f"/>
+
+  <!-- Arm reaching to handlebar -->
+  <line x1="300" y1="215" x2="400" y2="180" stroke="#d32f2f" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="404" cy="178" r="10" fill="#ffffff"/>
+
+  <!-- Santa's head -->
+  <circle cx="275" cy="168" r="30" fill="#f6c9a0"/>
+
+  <!-- Hat -->
+  <path d="M243 150 Q262 62 312 112 L306 150 Z" fill="#d32f2f"/>
+  <circle cx="314" cy="110" r="10" fill="#ffffff"/>
+  <rect x="236" y="138" width="78" height="18" rx="8" fill="#ffffff"/>
+
+  <!-- Beard and face -->
+  <ellipse cx="275" cy="190" rx="30" ry="22" fill="#ffffff"/>
+  <circle cx="263" cy="166" r="3" fill="#222"/>
+  <circle cx="288" cy="166" r="3" fill="#222"/>
+  <circle cx="275" cy="178" r="4" fill="#e57373"/>
+  <path d="M262 186 Q275 196 288 186" stroke="#c9c9c9" stroke-width="2" fill="none"/>
+
+  <!-- Cheer -->
+  <text x="40" y="60" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#ffffff">Merry Christmas!</text>
+</svg>

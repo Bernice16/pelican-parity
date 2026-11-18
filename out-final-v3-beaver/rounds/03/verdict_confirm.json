@@ -1,0 +1,104 @@
+{
+  "session_id": "307c8b7a-6436-4605-85d3-326ba24a4ed8",
+  "judge_prompt": "prompts/judge_v3.txt",
+  "blind": {
+    "A": "attempt",
+    "B": "reference"
+  },
+  "parity": false,
+  "parity_reason": "No criterion differs by more than 1 and neither image has a critical defect, but the totals are A 26 and B 29. That difference of 3 breaks the rule that totals may differ by at most 1.",
+  "rule_parity": false,
+  "attempt_at_least_reference": false,
+  "reference": {
+    "summary": "A brown beaver in a chef's hat and an apron with a sun on it holds a spatula over a pan of two sunny-side-up eggs on a stove, with a smiling sun in the window. It is clear and charming but has small contact and proportion problems.",
+    "scores": {
+      "main": 4,
+      "background": 4,
+      "count": 5,
+      "shape": 4,
+      "contact": 3,
+      "clean": 4,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "contact",
+        "severity": "major",
+        "what": "The pan floats above the stove top instead of resting on a burner, and the spatula hovers above the eggs without touching them.",
+        "where": "the frying pan and spatula above the stove",
+        "expected": "The pan should sit firmly on a burner and the spatula should touch or lift an egg."
+      },
+      {
+        "criterion": "shape",
+        "severity": "minor",
+        "what": "The arm holding the spatula is a long thin stick that stretches unnaturally far from the body.",
+        "where": "the beaver's right arm",
+        "expected": "The arm should be thick enough for the beaver's body and in proportion with it while still reaching the pan."
+      },
+      {
+        "criterion": "contact",
+        "severity": "minor",
+        "what": "The plate with an egg sits on the floor at the foot of the stove, as if dropped.",
+        "where": "lower right, in front of the stove",
+        "expected": "The plate should rest on a counter or the stove side where a served egg would sensibly go."
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "A pink heart floats in the air above the pan with no clear meaning and adds clutter near the main action.",
+        "where": "above the pan's handle",
+        "expected": "The area around the pan should stay clear so the cooking action reads at once."
+      }
+    ]
+  },
+  "attempt": {
+    "summary": "A big brown beaver in a chef's hat fries two sunny-side-up eggs in a pan with a spatula at a kitchen counter. It reads clearly, but the hat is oddly shaped and the spatula awkwardly covers one of the eggs.",
+    "scores": {
+      "main": 4,
+      "background": 4,
+      "count": 4,
+      "shape": 3,
+      "contact": 3,
+      "clean": 3,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "clean",
+        "severity": "major",
+        "what": "The grey spatula blade sits on top of the second egg and hides most of it, so the two shapes become a muddle.",
+        "where": "right side of the frying pan",
+        "expected": "The spatula should slide under or rest beside an egg, with both eggs clearly visible."
+      },
+      {
+        "criterion": "shape",
+        "severity": "major",
+        "what": "The chef's hat is a flat white arc band with puffs on top, so it looks more like a headband than a chef's toque.",
+        "where": "top of the beaver's head",
+        "expected": "A recognisable chef's hat: a band around the head with a tall puffy top."
+      },
+      {
+        "criterion": "contact",
+        "severity": "minor",
+        "what": "The spatula is held up in the air at a steep slant and is not working on the egg. The other paw just rests on the pan's rim.",
+        "where": "the beaver's paws and the spatula",
+        "expected": "One paw should hold the pan handle or the pan steadily while the spatula clearly works on the eggs in the pan."
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "The beaver's tail is cut off sharply by the counter edge and looks like a separate dark blob next to the body.",
+        "where": "lower left, the tail",
+        "expected": "The tail should clearly join the beaver's body and read as its flat paddle tail."
+      },
+      {
+        "criterion": "shape",
+        "severity": "minor",
+        "what": "The beaver is very large compared with the pan and the kitchen, and its body fills most of the scene.",
+        "where": "centre, the beaver's body",
+        "expected": "The beaver should be sized so that the cooking action and the pan stand out as clearly as the cook."
+      }
+    ]
+  },
+  "not_applicable": []
+}

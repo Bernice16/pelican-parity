@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 58423,
+  "stop_reason": "end_turn",
+  "session_id": "53132a20-9d7c-4b6e-8ba1-f3cac384e7f8",
+  "total_cost_usd": 0.25262049999999997,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 433,
+    "cache_read_input_tokens": 5162,
+    "output_tokens": 4853,
+    "output_tokens_details": {
+      "thinking_tokens": 696
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 433,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 4853,
+        "cache_read_input_tokens": 5162,
+        "cache_creation_input_tokens": 433,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 433
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-fable-5-1": {
+      "inputTokens": 2,
+      "outputTokens": 4853,
+      "cacheReadInputTokens": 5162,
+      "cacheCreationInputTokens": 433,
+      "webSearchRequests": 0,
+      "costUSD": 0.25262049999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 696,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 433,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Voici le SVG du P\u00e8re No\u00ebl sur sa trottinette, les bras charg\u00e9s de cadeaux :\n\n```svg\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 600\" width=\"800\" height=\"600\">\n  <defs>\n    <linearGradient id=\"sky\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"0\" stop-color=\"#0b1d4a\"/>\n      <stop offset=\"1\" stop-color=\"#2d4f9a\"/>\n    </linearGradient>\n    <radialGradient id=\"wheel\" cx=\"0.5\" cy=\"0.5\" r=\"0.5\">\n      <stop offset=\"0.55\" stop-color=\"#555\"/>\n      <stop offset=\"0.6\" stop-color=\"#222\"/>\n      <stop offset=\"1\" stop-color=\"#111\"/>\n    </radialGradient>\n  </defs>\n\n  <!-- Sky and ground -->\n  <rect width=\"800\" height=\"600\" fill=\"url(#sky)\"/>\n  <circle cx=\"680\" cy=\"110\" r=\"48\" fill=\"#fff6c8\" opacity=\"0.95\"/>\n  <ellipse cx=\"400\" cy=\"560\" rx=\"520\" ry=\"110\" fill=\"#eef4ff\"/>\n  <rect x=\"0\" y=\"500\" width=\"800\" height=\"100\" fill=\"#eef4ff\"/>\n\n  <!-- Snowflakes -->\n  <g fill=\"#ffffff\" opacity=\"0.85\">\n    <circle cx=\"60\" cy=\"80\" r=\"4\"/><circle cx=\"140\" cy=\"160\" r=\"3\"/><circle cx=\"90\" cy=\"300\" r=\"5\"/>\n    <circle cx=\"230\" cy=\"60\" r=\"3\"/><circle cx=\"320\" cy=\"130\" r=\"4\"/><circle cx=\"450\" cy=\"60\" r=\"3\"/>\n    <circle cx=\"560\" cy=\"150\" r=\"4\"/><circle cx=\"740\" cy=\"240\" r=\"5\"/><circle cx=\"640\" cy=\"330\" r=\"3\"/>\n    <circle cx=\"760\" cy=\"420\" r=\"4\"/><circle cx=\"40\" cy=\"430\" r=\"3\"/><circle cx=\"500\" cy=\"200\" r=\"3\"/>\n    <circle cx=\"180\" cy=\"380\" r=\"4\"/><circle cx=\"720\" cy=\"40\" r=\"3\"/><circle cx=\"380\" cy=\"40\" r=\"2.5\"/>\n  </g>\n\n  <!-- Motion lines -->\n  <g stroke=\"#cfe0ff\" stroke-width=\"5\" stroke-linecap=\"round\" opacity=\"0.8\">\n    <line x1=\"60\" y1=\"300\" x2=\"150\" y2=\"300\"/>\n    <line x1=\"30\" y1=\"340\" x2=\"130\" y2=\"340\"/>\n    <line x1=\"80\" y1=\"380\" x2=\"160\" y2=\"380\"/>\n    <line x1=\"50\" y1=\"450\" x2=\"140\" y2=\"450\"/>\n  </g>\n\n  <!-- Scooter -->\n  <g>\n    <!-- deck -->\n    <rect x=\"235\" y=\"438\" width=\"300\" height=\"18\" rx=\"6\" fill=\"#2f6f3e\" stroke=\"#1d4a28\" stroke-width=\"3\"/>\n    <rect x=\"245\" y=\"441\" width=\"280\" height=\"5\" rx=\"2\" fill=\"#4c9a5f\"/>\n    <!-- rear fender -->\n    <path d=\"M205 450 A32 32 0 0 1 250 435\" fill=\"none\" stroke=\"#1d4a28\" stroke-width=\"8\" stroke-linecap=\"round\"/>\n    <!-- stem -->\n    <line x1=\"528\" y1=\"446\" x2=\"588\" y2=\"252\" stroke=\"#c9ced6\" stroke-width=\"12\" stroke-linecap=\"round\"/>\n    <line x1=\"528\" y1=\"446\" x2=\"588\" y2=\"252\" stroke=\"#f0f3f7\" stroke-width=\"4\" stroke-linecap=\"round\"/>\n    <!-- front fork -->\n    <line x1=\"528\" y1=\"446\" x2=\"545\" y2=\"470\" stroke=\"#c9ced6\" stroke-width=\"10\" stroke-linecap=\"round\"/>\n    <!-- handlebar -->\n    <line x1=\"548\" y1=\"252\" x2=\"632\" y2=\"252\" stroke=\"#c9ced6\" stroke-width=\"10\" stroke-linecap=\"round\"/>\n    <rect x=\"534\" y=\"244\" width=\"26\" height=\"16\" rx=\"6\" fill=\"#b3261e\"/>\n    <rect x=\"620\" y=\"244\" width=\"26\" height=\"16\" rx=\"6\" fill=\"#b3261e\"/>\n    <!-- bell -->\n    <circle cx=\"610\" cy=\"240\" r=\"7\" fill=\"#f5c542\" stroke=\"#9a7a1a\" stroke-width=\"2\"/>\n    <!-- wheels -->\n    <circle cx=\"222\" cy=\"470\" r=\"30\" fill=\"url(#wheel)\"/>\n    <circle cx=\"222\" cy=\"470\" r=\"9\" fill=\"#d9d9d9\"/>\n    <circle cx=\"545\" cy=\"470\" r=\"30\" fill=\"url(#wheel)\"/>\n    <circle cx=\"545\" cy=\"470\" r=\"9\" fill=\"#d9d9d9\"/>\n    <!-- snow kicked up -->\n    <circle cx=\"190\" cy=\"492\" r=\"5\" fill=\"#fff\"/>\n    <circle cx=\"178\" cy=\"480\" r=\"3.5\" fill=\"#fff\"/>\n    <circle cx=\"170\" cy=\"497\" r=\"3\" fill=\"#fff\"/>\n  </g>\n\n  <!-- Santa -->\n  <g>\n    <!-- boots -->\n    <path d=\"M345 440 L345 412 L380 412 L380 428 Q392 428 392 440 Z\" fill=\"#1a1a1a\"/>\n    <path d=\"M400 440 L400 412 L435 412 L435 428 Q447 428 447 440 Z\" fill=\"#1a1a1a\"/>\n    <!-- legs -->\n    <rect x=\"348\" y=\"355\" width=\"32\" height=\"62\" rx=\"8\" fill=\"#c21d1d\"/>\n    <rect x=\"403\" y=\"355\" width=\"32\" height=\"62\" rx=\"8\" fill=\"#c21d1d\"/>\n    <!-- fur trim on boots -->\n    <rect x=\"344\" y=\"406\" width=\"40\" height=\"10\" rx=\"5\" fill=\"#fff\"/>\n    <rect x=\"399\" y=\"406\" width=\"40\" height=\"10\" rx=\"5\" fill=\"#fff\"/>\n    <!-- body / coat -->\n    <ellipse cx=\"392\" cy=\"312\" rx=\"72\" ry=\"66\" fill=\"#d42020\"/>\n    <path d=\"M330 345 Q392 375 454 345 L454 365 Q392 390 330 365 Z\" fill=\"#d42020\"/>\n    <!-- coat fur bottom -->\n    <path d=\"M326 352 Q392 384 458 352\" fill=\"none\" stroke=\"#fff\" stroke-width=\"12\" stroke-linecap=\"round\"/>\n    <!-- belt -->\n    <rect x=\"322\" y=\"316\" width=\"140\" height=\"16\" fill=\"#1a1a1a\"/>\n    <rect x=\"382\" y=\"311\" width=\"22\" height=\"26\" rx=\"4\" fill=\"#f5c542\" stroke=\"#9a7a1a\" stroke-width=\"2\"/>\n    <rect x=\"388\" y=\"317\" width=\"10\" height=\"14\" fill=\"#1a1a1a\"/>\n    <!-- coat buttons / front fur -->\n    <rect x=\"386\" y=\"262\" width=\"12\" height=\"50\" rx=\"6\" fill=\"#fff\"/>\n\n    <!-- right arm reaching the handlebar -->\n    <path d=\"M440 275 Q500 240 545 258\" fill=\"none\" stroke=\"#d42020\" stroke-width=\"26\" stroke-linecap=\"round\"/>\n    <path d=\"M440 275 Q500 240 545 258\" fill=\"none\" stroke=\"#fff\" stroke-width=\"0\"/>\n    <circle cx=\"536\" cy=\"258\" r=\"12\" fill=\"#fff\"/>\n    <circle cx=\"552\" cy=\"256\" r=\"12\" fill=\"#1a1a1a\"/>\n\n    <!-- Presents stack -->\n    <g>\n      <!-- bottom box -->\n      <rect x=\"248\" y=\"300\" width=\"88\" height=\"62\" rx=\"4\" fill=\"#2a9d4a\" stroke=\"#1b6b32\" stroke-width=\"2\"/>\n      <rect x=\"248\" y=\"326\" width=\"88\" height=\"10\" fill=\"#f5c542\"/>\n      <rect x=\"287\" y=\"300\" width=\"10\" height=\"62\" fill=\"#f5c542\"/>\n      <!-- middle box -->\n      <rect x=\"258\" y=\"250\" width=\"70\" height=\"52\" rx=\"4\" fill=\"#3b6fd6\" stroke=\"#214a9a\" stroke-width=\"2\"/>\n      <rect x=\"258\" y=\"272\" width=\"70\" height=\"9\" fill=\"#fff\"/>\n      <rect x=\"289\" y=\"250\" width=\"9\" height=\"52\" fill=\"#fff\"/>\n      <!-- top box -->\n      <rect x=\"266\" y=\"208\" width=\"54\" height=\"44\" rx=\"4\" fill=\"#e04a8a\" stroke=\"#9c2a5c\" stroke-width=\"2\"/>\n      <rect x=\"266\" y=\"226\" width=\"54\" height=\"8\" fill=\"#f5c542\"/>\n      <rect x=\"289\" y=\"208\" width=\"8\" height=\"44\" fill=\"#f5c542\"/>\n      <!-- bow -->\n      <path d=\"M293 208 C280 190 268 194 280 206 C268 208 282 214 293 208 C304 214 318 208 306 206 C318 194 306 190 293 208 Z\" fill=\"#f5c542\" stroke=\"#9a7a1a\" stroke-width=\"1.5\"/>\n    </g>\n\n    <!-- left arm wrapping presents -->\n    <path d=\"M345 285 Q300 300 272 345\" fill=\"none\" stroke=\"#d42020\" stroke-width=\"26\" stroke-linecap=\"round\"/>\n    <circle cx=\"275\" cy=\"350\" r=\"12\" fill=\"#fff\"/>\n    <circle cx=\"262\" cy=\"362\" r=\"12\" fill=\"#1a1a1a\"/>\n\n    <!-- head -->\n    <circle cx=\"392\" cy=\"205\" r=\"46\" fill=\"#f7cfae\"/>\n    <!-- beard -->\n    <path d=\"M350 215 Q345 290 392 295 Q439 290 434 215 Q420 240 392 236 Q364 240 350 215 Z\" fill=\"#fff\"/>\n    <path d=\"M362 222 Q392 250 422 222\" fill=\"none\" stroke=\"#e6e6e6\" stroke-width=\"3\"/>\n    <!-- mustache -->\n    <path d=\"M392 222 Q370 212 358 226 Q375 236 392 224 Q409 236 426 226 Q414 212 392 222 Z\" fill=\"#fff\"/>\n    <!-- nose -->\n    <circle cx=\"392\" cy=\"216\" r=\"8\" fill=\"#e8a088\"/>\n    <!-- cheeks -->\n    <circle cx=\"366\" cy=\"212\" r=\"7\" fill=\"#f2a5a0\" opacity=\"0.7\"/>\n    <circle cx=\"418\" cy=\"212\" r=\"7\" fill=\"#f2a5a0\" opacity=\"0.7\"/>\n    <!-- eyes -->\n    <circle cx=\"376\" cy=\"198\" r=\"4\" fill=\"#1a1a1a\"/>\n    <circle cx=\"408\" cy=\"198\" r=\"4\" fill=\"#1a1a1a\"/>\n    <!-- eyebrows -->\n    <path d=\"M368 189 Q376 184 384 189\" fill=\"none\" stroke=\"#fff\" stroke-width=\"4\" stroke-linecap=\"round\"/>\n    <path d=\"M400 189 Q408 184 416 189\" fill=\"none\" stroke=\"#fff\" stroke-width=\"4\" stroke-linecap=\"round\"/>\n    <!-- hat -->\n    <path d=\"M346 182 Q392 120 440 182 Z\" fill=\"#d42020\"/>\n    <path d=\"M440 182 Q470 150 480 120 Q462 150 438 168 Z\" fill=\"#d42020\"/>\n    <path d=\"M392 125 Q440 110 470 125 Q476 150 455 165\" fill=\"none\" stroke=\"#d42020\" stroke-width=\"0\"/>\n    <path d=\"M410 128 Q450 110 478 118\" fill=\"none\" stroke=\"#d42020\" stroke-width=\"24\" stroke-linecap=\"round\"/>\n    <circle cx=\"482\" cy=\"118\" r=\"13\" fill=\"#fff\"/>\n    <rect x=\"342\" y=\"172\" width=\"100\" height=\"18\" rx=\"9\" fill=\"#fff\"/>\n  </g>\n\n  <!-- Ground shadow -->\n  <ellipse cx=\"385\" cy=\"505\" rx=\"200\" ry=\"10\" fill=\"#c9d6ec\" opacity=\"0.6\"/>\n</svg>\n```",
+  "ttft_ms": 12354,
+  "type": "result",
+  "duration_ms": 58556,
+  "uuid": "13332ef3-efe0-4bed-93fc-b94c443c437b",
+  "ttft_stream_ms": 1528,
+  "time_to_request_ms": 123,
+  "first_content_frame_ms": 1528,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:48.999Z"
+}

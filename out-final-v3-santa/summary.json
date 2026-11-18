@@ -1,0 +1,167 @@
+{
+  "prompt": "Generate an SVG of Santa claus holding presents on a scooter",
+  "success": false,
+  "parity": false,
+  "stop_reason": "round_cap",
+  "rounds": 5,
+  "final_round": 3,
+  "final_svg": "out-final-v3-santa/rounds/03/attempt.svg",
+  "final_png": "out-final-v3-santa/rounds/03/attempt.png",
+  "reference_svg": "out-final-v3-santa/rounds/00/reference.svg",
+  "history": [
+    {
+      "round": 0,
+      "parity": false,
+      "rule_parity": false,
+      "attempt_total": 28,
+      "reference_total": 32,
+      "attempt_scores": {
+        "main": 4,
+        "background": 5,
+        "count": 5,
+        "shape": 3,
+        "contact": 3,
+        "clean": 3,
+        "color": 5
+      },
+      "attempt_defects": {
+        "critical": 0,
+        "major": 2,
+        "minor": 3
+      },
+      "confirmation": null
+    },
+    {
+      "round": 1,
+      "parity": false,
+      "rule_parity": false,
+      "attempt_total": 28,
+      "reference_total": 30,
+      "attempt_scores": {
+        "main": 4,
+        "background": 4,
+        "count": 5,
+        "shape": 3,
+        "contact": 4,
+        "clean": 3,
+        "color": 5
+      },
+      "attempt_defects": {
+        "critical": 0,
+        "major": 2,
+        "minor": 3
+      },
+      "confirmation": null
+    },
+    {
+      "round": 2,
+      "parity": false,
+      "rule_parity": false,
+      "attempt_total": 28,
+      "reference_total": 30,
+      "attempt_scores": {
+        "main": 4,
+        "background": 5,
+        "count": 4,
+        "shape": 3,
+        "contact": 3,
+        "clean": 4,
+        "color": 5
+      },
+      "attempt_defects": {
+        "critical": 0,
+        "major": 2,
+        "minor": 3
+      },
+      "confirmation": null
+    },
+    {
+      "round": 3,
+      "parity": true,
+      "rule_parity": true,
+      "attempt_total": 31,
+      "reference_total": 30,
+      "attempt_scores": {
+        "main": 4,
+        "background": 5,
+        "count": 5,
+        "shape": 4,
+        "contact": 4,
+        "clean": 4,
+        "color": 5
+      },
+      "attempt_defects": {
+        "critical": 0,
+        "major": 0,
+        "minor": 4
+      },
+      "confirmation": {
+        "parity": false,
+        "attempt_at_least_reference": false,
+        "attempt_total": 28,
+        "reference_total": 32
+      }
+    },
+    {
+      "round": 4,
+      "parity": false,
+      "rule_parity": false,
+      "attempt_total": 28,
+      "reference_total": 32,
+      "attempt_scores": {
+        "main": 4,
+        "background": 5,
+        "count": 5,
+        "shape": 3,
+        "contact": 3,
+        "clean": 3,
+        "color": 5
+      },
+      "attempt_defects": {
+        "critical": 0,
+        "major": 2,
+        "minor": 3
+      },
+      "confirmation": null
+    },
+    {
+      "round": 5,
+      "parity": false,
+      "rule_parity": false,
+      "attempt_total": 30,
+      "reference_total": 32,
+      "attempt_scores": {
+        "main": 4,
+        "background": 5,
+        "count": 5,
+        "shape": 3,
+        "contact": 4,
+        "clean": 4,
+        "color": 5
+      },
+      "attempt_defects": {
+        "critical": 0,
+        "major": 1,
+        "minor": 3
+      },
+      "confirmation": null
+    }
+  ],
+  "budget_usd": 20.0,
+  "cost_usd": {
+    "reference": 0.2526205,
+    "baseline": 0.0019743,
+    "judge": 0.4143402,
+    "refine": 0.0207647
+  },
+  "total_cost_usd": 0.6896997,
+  "reserved_unmeasured_usd": 0.0,
+  "models": {
+    "reference": "claude-fable-5-1 (high)",
+    "baseline": "claude-haiku-5-5 (low)",
+    "judge": "claude-opus-5-5 (high)",
+    "refine": "claude-haiku-5-5 (low)"
+  },
+  "judge_prompt": "prompts/judge_v3.txt",
+  "refine_prompt": "prompts/refine_v2.txt"
+}

@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 22163,
+  "stop_reason": "end_turn",
+  "session_id": "0a219795-ad11-4285-9882-82fae9dc3acd",
+  "total_cost_usd": 0.06166080000000001,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 1912,
+    "cache_read_input_tokens": 12444,
+    "output_tokens": 2193,
+    "output_tokens_details": {
+      "thinking_tokens": 812
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1912,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 2014,
+        "cache_read_input_tokens": 6429,
+        "cache_creation_input_tokens": 1498,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1498
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 2193,
+      "cacheReadInputTokens": 12444,
+      "cacheCreationInputTokens": 1912,
+      "webSearchRequests": 0,
+      "costUSD": 0.06166080000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 812,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1912,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"images\":{\"A\":{\"summary\":\"Santa rides a green kick scooter across a snowy moonlit hill, carrying a stack of presents; the drawing is neat and well made, apart from a few stray shapes.\",\"scores\":{\"main\":4,\"background\":5,\"count\":5,\"shape\":4,\"contact\":4,\"clean\":3,\"color\":5},\"defects\":[{\"criterion\":\"clean\",\"severity\":\"major\",\"what\":\"A loose teal curved stroke floats across the presents and Santa's back arm, attached to nothing\",\"where\":\"left side of Santa, over the stack of presents\",\"expected\":\"Every shape around the presents has a clear purpose, such as a visible strap or sack, or it is removed\"},{\"criterion\":\"clean\",\"severity\":\"minor\",\"what\":\"Odd green curved pieces poke out on both sides of the rear wheel and don't read as any part of the scooter\",\"where\":\"around the rear wheel\",\"expected\":\"The rear wheel area shows only clear scooter parts, such as a tidy fender, or nothing extra\"},{\"criterion\":\"contact\",\"severity\":\"minor\",\"what\":\"The presents float beside Santa's hip and his rear hand doesn't clearly hold them or support them\",\"where\":\"Santa's left hand and the present stack\",\"expected\":\"Santa is clearly holding or carrying the presents, or they rest on the scooter\"},{\"criterion\":\"shape\",\"severity\":\"minor\",\"what\":\"The arm reaching to the handlebar is very long and stiff compared with the rest of the body\",\"where\":\"Santa's right arm\",\"expected\":\"The arm reaching the handlebar has natural proportions for Santa's body\"}]},\"B\":{\"summary\":\"Santa rides a blue kick scooter on a snowy night hill with stacked presents behind him, under a 'Merry Christmas!' greeting; it reads clearly, but the figure's build is simplified and a bit awkward.\",\"scores\":{\"main\":4,\"background\":4,\"count\":5,\"shape\":3,\"contact\":4,\"clean\":3,\"color\":5},\"defects\":[{\"criterion\":\"shape\",\"severity\":\"major\",\"what\":\"Santa's body is a shapeless red blob with thin stick legs, and a separate red arm shape is pasted over one side of his torso\",\"where\":\"Santa's torso, back arm and legs\",\"expected\":\"Santa has a clear, rounded body with an arm and legs that join it naturally\"},{\"criterion\":\"clean\",\"severity\":\"major\",\"what\":\"The present stack overlaps Santa's back arm and glove, and the upper boxes are jumbled and partly hidden\",\"where\":\"present stack on the back of the deck\",\"expected\":\"The presents form a tidy stack that sits clearly behind or beside Santa without tangling with his arm\"},{\"criterion\":\"main\",\"severity\":\"minor\",\"what\":\"Santa faces the viewer while riding to the right, so he looks like he is posing rather than steering\",\"where\":\"Santa's head and body\",\"expected\":\"Santa is turned toward the direction he rides, steering the scooter\"},{\"criterion\":\"clean\",\"severity\":\"minor\",\"what\":\"The yellow belt buckle hangs below the belt instead of sitting on it\",\"where\":\"Santa's waist\",\"expected\":\"The buckle sits centred on the belt\"},{\"criterion\":\"background\",\"severity\":\"minor\",\"what\":\"The big greeting text in the upper left draws the eye away from Santa\",\"where\":\"upper left sky\",\"expected\":\"Any text is smaller or placed so Santa stays the main focus\"}]}},\"not_applicable\":[],\"parity\":true,\"parity_reason\":\"No criterion differs by more than 1 (background and shape each differ by 1), the totals are 30 and 28 (a difference of 2), and neither image has a critical defect, so all three parity conditions hold.\"}",
+  "ttft_ms": 1842,
+  "type": "result",
+  "duration_ms": 22382,
+  "uuid": "282645fe-1fae-42ce-bd1f-c114aa78d68a",
+  "ttft_stream_ms": 1840,
+  "time_to_request_ms": 187,
+  "first_content_frame_ms": 1840,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:48.999Z"
+}

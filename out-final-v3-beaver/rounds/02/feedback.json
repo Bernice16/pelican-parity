@@ -1,0 +1,41 @@
+{
+  "source_round": 1,
+  "kept": [
+    {
+      "severity": "major",
+      "criterion": "contact",
+      "what": "The frying pan floats in mid-air in front of the beaver's belly, above a flat red burner shape, with no stove under it and no paw holding its handle.",
+      "where": "the frying pan and the red burner, lower right",
+      "expected": "The pan clearly rests on a visible stove or burner, or the beaver clearly holds its handle."
+    },
+    {
+      "severity": "major",
+      "criterion": "main",
+      "what": "The beaver has no clear arms. A small bump on each side stands in for a paw, so it does not clearly look like it is cooking with the spatula.",
+      "where": "the beaver's arms and paws",
+      "expected": "Visible arms reaching to the pan, with one paw clearly gripping the spatula."
+    },
+    {
+      "severity": "major",
+      "criterion": "background",
+      "what": "The setting is only a plain two-tone wall and a grey counter. It has no stove, shelf or window, so it barely reads as a kitchen.",
+      "where": "the whole background",
+      "expected": "A recognisable kitchen setting, such as a stove and some kitchen details, that supports the cooking scene without distracting from it."
+    },
+    {
+      "severity": "minor",
+      "criterion": "clean",
+      "what": "A stray orange sliver sticks out from behind the beaver's left foot and is not part of anything.",
+      "where": "bottom, near the beaver's left foot",
+      "expected": "No stray fragments around the beaver's feet."
+    },
+    {
+      "severity": "minor",
+      "criterion": "shape",
+      "what": "The chef's hat sits on top of the head like a separate cut-out, and its band is not shaped to fit the head.",
+      "where": "the chef's hat",
+      "expected": "The hat sits snugly on the beaver's head, between or over the ears."
+    }
+  ],
+  "dropped": []
+}

@@ -1,0 +1,111 @@
+{
+  "session_id": "c463daa4-8416-44fa-bb82-82b27e9a4e02",
+  "judge_prompt": "prompts/judge_v3.txt",
+  "blind": {
+    "A": "reference",
+    "B": "attempt"
+  },
+  "parity": true,
+  "parity_reason": "No criterion differs by more than 1 (only shape differs, 4 vs 3), the totals are 27 and 26 (a difference of 1), and neither image has a critical defect, so parity holds.",
+  "rule_parity": true,
+  "attempt_at_least_reference": false,
+  "reference": {
+    "summary": "A cartoon beaver chef in a white hat and sun apron fries two sunny-side-up eggs in a pan on a stove with a spatula, in a bright kitchen with a smiling sun in the window; it is drawn cleanly overall, with a few contact and overlap flaws.",
+    "scores": {
+      "main": 4,
+      "background": 4,
+      "count": 4,
+      "shape": 4,
+      "contact": 3,
+      "clean": 3,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "contact",
+        "severity": "major",
+        "what": "The frying pan floats above the stove top instead of resting on a burner",
+        "where": "the pan over the stove",
+        "expected": "The pan sits directly on a burner of the stove"
+      },
+      {
+        "criterion": "contact",
+        "severity": "minor",
+        "what": "The spatula blade hovers above the pan and does not touch the eggs or the pan surface",
+        "where": "the spatula head near the pan",
+        "expected": "The spatula blade is in the pan, touching or sliding under an egg"
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "The tail is drawn over one of the feet, so the foot and tail shapes overlap awkwardly",
+        "where": "the beaver's feet and tail at the bottom",
+        "expected": "The tail sits clearly behind the beaver with both feet fully visible"
+      },
+      {
+        "criterion": "shape",
+        "severity": "minor",
+        "what": "The arm holding the spatula is very long and thin compared with the stubby other arm",
+        "where": "the beaver's spatula arm",
+        "expected": "Both arms have similar, believable thickness and length for a beaver"
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "A pink heart floats above the pan with no clear purpose",
+        "where": "above the pan, right of the spatula",
+        "expected": "Decorative elements are clearly tied to the scene or are left out"
+      }
+    ]
+  },
+  "attempt": {
+    "summary": "A large cartoon beaver chef in a white hat and apron stands behind a stove frying two sunny-side-up eggs in a pan with a spatula, in a simple kitchen; it reads clearly, but the spatula arm is confusingly built.",
+    "scores": {
+      "main": 4,
+      "background": 4,
+      "count": 4,
+      "shape": 3,
+      "contact": 3,
+      "clean": 3,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "shape",
+        "severity": "major",
+        "what": "The spatula arm ends in a brown blob gripping a handle that points up and away, while the spatula blade hangs below on a separate stem, so the tool's structure is confusing",
+        "where": "the beaver's right arm and the spatula",
+        "expected": "The paw holds one continuous spatula handle that leads straight to the blade"
+      },
+      {
+        "criterion": "contact",
+        "severity": "minor",
+        "what": "The spatula blade hovers above the pan and does not touch the eggs",
+        "where": "the spatula blade above the pan",
+        "expected": "The spatula blade is in the pan, touching or sliding under an egg"
+      },
+      {
+        "criterion": "contact",
+        "severity": "minor",
+        "what": "The pan sits on the front edge of the counter instead of on a visible burner",
+        "where": "the pan on the stove at the bottom",
+        "expected": "The pan clearly rests on a stove burner"
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "Small orange dashes around the pan look like stray marks rather than clear sizzle lines",
+        "where": "around the eggs and the pan",
+        "expected": "Any sizzle marks clearly read as cooking motion, or are left out"
+      },
+      {
+        "criterion": "background",
+        "severity": "minor",
+        "what": "The stove front is a plain grey panel with no visible burners or knobs that connect it to the pan",
+        "where": "the bottom of the image",
+        "expected": "The stove clearly reads as a cooktop the pan is cooking on"
+      }
+    ]
+  },
+  "not_applicable": []
+}

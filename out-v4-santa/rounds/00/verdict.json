@@ -1,0 +1,86 @@
+{
+  "session_id": "d5022772-d3a7-4cd5-8572-b88926cced12",
+  "judge_prompt": "prompts/judge_v4.txt",
+  "blind": {
+    "A": "attempt",
+    "B": "reference"
+  },
+  "parity": false,
+  "parity_reason": "Totals are A=17 and B=24, a gap well over 1, and coherence, composition and clean each differ by 2. Neither image has a critical defect, but the score rules already fail, so parity is false.",
+  "rule_parity": false,
+  "attempt_at_least_reference": false,
+  "reference": {
+    "summary": "A large, well-drawn Santa stands on a grey kick scooter, gripping the handlebar with one hand and holding a stack of wrapped presents in the other, with speed lines, a full moon and a snowy night; the scene is clear and polished.",
+    "scores": {
+      "fidelity": 5,
+      "coherence": 4,
+      "readability": 5,
+      "composition": 5,
+      "clean": 5
+    },
+    "defects": [
+      {
+        "criterion": "coherence",
+        "severity": "minor",
+        "what": "The arm holding the presents is mostly hidden, so only a white glove pokes out under the stack",
+        "where": "the gift stack on Santa's left side",
+        "expected": "Santa's arm is visibly connected to the hand that supports the presents"
+      },
+      {
+        "criterion": "coherence",
+        "severity": "minor",
+        "what": "Santa's head and beard are slightly large next to his body",
+        "where": "Santa's head",
+        "expected": "The head is in proportion with the torso for the cartoon style"
+      }
+    ]
+  },
+  "attempt": {
+    "summary": "Santa in a red suit rides a small red kick scooter across snow at night under a full moon, with a sack of presents behind him; the drawing is simple and readable, but several parts float or overlap, and the caption is nearly invisible.",
+    "scores": {
+      "fidelity": 4,
+      "coherence": 3,
+      "readability": 4,
+      "composition": 3,
+      "clean": 3
+    },
+    "defects": [
+      {
+        "criterion": "coherence",
+        "severity": "major",
+        "what": "A teal gift box and a red-and-white gift float in the air behind Santa's head and overlap his hat, with nothing holding them",
+        "where": "around Santa's head and hat",
+        "expected": "Every present sits clearly in the sack or in Santa's arms, and none crosses his hat or face"
+      },
+      {
+        "criterion": "coherence",
+        "severity": "major",
+        "what": "Both hands are stretched out as floating dots near the top of the stem, and the handlebar is barely there, so Santa does not clearly grip anything",
+        "where": "Santa's arms and the scooter's handlebar",
+        "expected": "The scooter has a visible handlebar, and Santa's hands clearly wrap around its grips"
+      },
+      {
+        "criterion": "clean",
+        "severity": "major",
+        "what": "The caption 'Santa on a Scooter' is white text on white snow and can hardly be read",
+        "where": "bottom centre",
+        "expected": "Any caption stands out clearly against the background, or there is no caption"
+      },
+      {
+        "criterion": "composition",
+        "severity": "minor",
+        "what": "Santa and the scooter are small and sit low in the frame, leaving a large empty sky above",
+        "where": "whole picture",
+        "expected": "Santa on the scooter fills more of the frame and is clearly the focal point"
+      },
+      {
+        "criterion": "coherence",
+        "severity": "minor",
+        "what": "The brown sack hangs in the air behind Santa's back without resting on the deck or his shoulder",
+        "where": "left of Santa",
+        "expected": "The sack visibly rests on the scooter or is slung over Santa's shoulder"
+      }
+    ]
+  },
+  "not_applicable": []
+}

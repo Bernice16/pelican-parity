@@ -1,0 +1,150 @@
+{
+  "prompt": "A beaver is cooking sunshine eggs",
+  "success": true,
+  "parity": true,
+  "stop_reason": "parity",
+  "rounds": 4,
+  "final_round": 4,
+  "final_svg": "out-final-v3-beaver/rounds/04/attempt.svg",
+  "final_png": "out-final-v3-beaver/rounds/04/attempt.png",
+  "reference_svg": "out-final-v3-beaver/rounds/00/reference.svg",
+  "history": [
+    {
+      "round": 0,
+      "parity": false,
+      "rule_parity": false,
+      "attempt_total": 21,
+      "reference_total": 30,
+      "attempt_scores": {
+        "main": 3,
+        "background": 3,
+        "count": 4,
+        "shape": 3,
+        "contact": 2,
+        "clean": 2,
+        "color": 4
+      },
+      "attempt_defects": {
+        "critical": 0,
+        "major": 3,
+        "minor": 2
+      },
+      "confirmation": null
+    },
+    {
+      "round": 1,
+      "parity": false,
+      "rule_parity": false,
+      "attempt_total": 22,
+      "reference_total": 31,
+      "attempt_scores": {
+        "main": 3,
+        "background": 3,
+        "count": 4,
+        "shape": 3,
+        "contact": 2,
+        "clean": 3,
+        "color": 4
+      },
+      "attempt_defects": {
+        "critical": 0,
+        "major": 3,
+        "minor": 2
+      },
+      "confirmation": null
+    },
+    {
+      "round": 2,
+      "parity": false,
+      "rule_parity": false,
+      "attempt_total": 29,
+      "reference_total": 31,
+      "attempt_scores": {
+        "main": 4,
+        "background": 5,
+        "count": 5,
+        "shape": 3,
+        "contact": 3,
+        "clean": 4,
+        "color": 5
+      },
+      "attempt_defects": {
+        "critical": 0,
+        "major": 2,
+        "minor": 3
+      },
+      "confirmation": null
+    },
+    {
+      "round": 3,
+      "parity": true,
+      "rule_parity": true,
+      "attempt_total": 29,
+      "reference_total": 30,
+      "attempt_scores": {
+        "main": 4,
+        "background": 5,
+        "count": 5,
+        "shape": 3,
+        "contact": 4,
+        "clean": 3,
+        "color": 5
+      },
+      "attempt_defects": {
+        "critical": 0,
+        "major": 2,
+        "minor": 3
+      },
+      "confirmation": {
+        "parity": false,
+        "attempt_at_least_reference": false,
+        "attempt_total": 26,
+        "reference_total": 29
+      }
+    },
+    {
+      "round": 4,
+      "parity": true,
+      "rule_parity": true,
+      "attempt_total": 28,
+      "reference_total": 28,
+      "attempt_scores": {
+        "main": 4,
+        "background": 5,
+        "count": 4,
+        "shape": 4,
+        "contact": 3,
+        "clean": 3,
+        "color": 5
+      },
+      "attempt_defects": {
+        "critical": 0,
+        "major": 2,
+        "minor": 3
+      },
+      "confirmation": {
+        "parity": true,
+        "attempt_at_least_reference": false,
+        "attempt_total": 26,
+        "reference_total": 27
+      }
+    }
+  ],
+  "budget_usd": 20.0,
+  "cost_usd": {
+    "reference": 0.3898162,
+    "baseline": 0.0015395,
+    "judge": 0.4169382,
+    "refine": 0.0148881
+  },
+  "total_cost_usd": 0.823182,
+  "reserved_unmeasured_usd": 0.0,
+  "models": {
+    "reference": "claude-fable-5-1 (high)",
+    "baseline": "claude-haiku-5-5 (low)",
+    "judge": "claude-opus-5-5 (high)",
+    "refine": "claude-haiku-5-5 (low)"
+  },
+  "judge_prompt": "prompts/judge_v3.txt",
+  "refine_prompt": "prompts/refine_v2.txt"
+}

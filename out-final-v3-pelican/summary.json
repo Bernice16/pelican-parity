@@ -1,0 +1,79 @@
+{
+  "prompt": "Generate an SVG of a pelican riding a bicycle.",
+  "success": true,
+  "parity": true,
+  "stop_reason": "parity",
+  "rounds": 1,
+  "final_round": 1,
+  "final_svg": "out-final-v3-pelican/rounds/01/attempt.svg",
+  "final_png": "out-final-v3-pelican/rounds/01/attempt.png",
+  "reference_svg": "out-final-v3-pelican/rounds/00/reference.svg",
+  "history": [
+    {
+      "round": 0,
+      "parity": false,
+      "rule_parity": false,
+      "attempt_total": 25,
+      "reference_total": 30,
+      "attempt_scores": {
+        "main": 3,
+        "background": 4,
+        "count": 4,
+        "shape": 3,
+        "contact": 2,
+        "clean": 4,
+        "color": 5
+      },
+      "attempt_defects": {
+        "critical": 0,
+        "major": 3,
+        "minor": 2
+      },
+      "confirmation": null
+    },
+    {
+      "round": 1,
+      "parity": true,
+      "rule_parity": true,
+      "attempt_total": 29,
+      "reference_total": 29,
+      "attempt_scores": {
+        "main": 5,
+        "background": 4,
+        "count": 5,
+        "shape": 4,
+        "contact": 4,
+        "clean": 3,
+        "color": 4
+      },
+      "attempt_defects": {
+        "critical": 0,
+        "major": 1,
+        "minor": 4
+      },
+      "confirmation": {
+        "parity": true,
+        "attempt_at_least_reference": false,
+        "attempt_total": 30,
+        "reference_total": 31
+      }
+    }
+  ],
+  "budget_usd": 20.0,
+  "cost_usd": {
+    "reference": 0.1420685,
+    "baseline": 0.001035,
+    "judge": 0.1839918,
+    "refine": 0.0030943
+  },
+  "total_cost_usd": 0.3301896,
+  "reserved_unmeasured_usd": 0.0,
+  "models": {
+    "reference": "claude-fable-5-1 (high)",
+    "baseline": "claude-haiku-5-5 (low)",
+    "judge": "claude-opus-5-5 (high)",
+    "refine": "claude-haiku-5-5 (low)"
+  },
+  "judge_prompt": "prompts/judge_v3.txt",
+  "refine_prompt": "prompts/refine_v2.txt"
+}

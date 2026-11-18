@@ -1,0 +1,41 @@
+{
+  "source_round": 0,
+  "kept": [
+    {
+      "severity": "major",
+      "criterion": "shape",
+      "what": "The monkey's arms, ears and hands blend into one shapeless mass around the head, with dark balls for hands that look like extra ears",
+      "where": "the monkey's head and raised arms",
+      "expected": "Ears, arms and hands should be separate and recognisable, with the arms clearly reaching up the trunk"
+    },
+    {
+      "severity": "major",
+      "criterion": "count",
+      "what": "The legs are thin sticks ending in dark ovals and blend into a stray line on the trunk, so you can't count the legs and tail",
+      "where": "the monkey's lower body and the trunk below it",
+      "expected": "Two clear legs gripping the trunk and one clearly visible tail"
+    },
+    {
+      "severity": "major",
+      "criterion": "clean",
+      "what": "Stray dark lines and blobs run down the trunk below the monkey and look like broken pieces",
+      "where": "the middle of the trunk under the monkey",
+      "expected": "The trunk should be clean, and only the monkey's own limbs should show on it"
+    },
+    {
+      "severity": "minor",
+      "criterion": "background",
+      "what": "A huge pale sun is cut off at the edge and fills much of the upper right, so it competes with the tree",
+      "where": "upper right sky",
+      "expected": "A smaller sun that sits fully in the sky and stays in the background"
+    },
+    {
+      "severity": "minor",
+      "criterion": "contact",
+      "what": "The monkey's hands and feet don't clearly hold the trunk; the feet sit as flat ovals on its surface",
+      "where": "the monkey's hands and feet",
+      "expected": "Hands and feet should visibly wrap around and grip the trunk"
+    }
+  ],
+  "dropped": []
+}

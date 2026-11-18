@@ -1,0 +1,90 @@
+{
+  "session_id": "1f5a6834-e4b4-49f2-91f0-8ccc970c1929",
+  "judge_prompt": "prompts/judge_v3.txt",
+  "blind": {
+    "A": "attempt",
+    "B": "reference"
+  },
+  "parity": true,
+  "parity_reason": "No criterion differs by more than 1 (only count differs, 4 vs 5). The totals are 30 and 31, a difference of 1, and neither image has a critical defect, so all three conditions hold.",
+  "rule_parity": true,
+  "attempt_at_least_reference": false,
+  "reference": {
+    "summary": "A white pelican with a long neck and orange beak rides a red bicycle across green grass under a sunny sky with clouds and speed lines. The drawing is clean and readable, with a stiff wing and a neck that slightly overlaps the body.",
+    "scores": {
+      "main": 4,
+      "background": 5,
+      "count": 5,
+      "shape": 4,
+      "contact": 4,
+      "clean": 4,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "shape",
+        "severity": "minor",
+        "what": "The wing reaching the handlebar is a thin gray stroke that looks more like a stick than a wing",
+        "where": "the pelican's wing, from the body to the handlebar",
+        "expected": "A wing with some feathered width that clearly grips the handlebar"
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "The neck's outline runs over the body outline, so the lines cross where the neck meets the body",
+        "where": "the base of the neck on the body",
+        "expected": "The neck joins the body smoothly without crossing outlines"
+      },
+      {
+        "criterion": "contact",
+        "severity": "minor",
+        "what": "The saddle is hidden under the body, so the seat contact is only implied",
+        "where": "the pelican's belly over the frame",
+        "expected": "The pelican visibly sits on a saddle"
+      }
+    ]
+  },
+  "attempt": {
+    "summary": "A white pelican with a big orange beak pouch rides a red bicycle along a road with hills and trees. The drawing is clear and appealing, with small problems in the frame and the neck joint.",
+    "scores": {
+      "main": 4,
+      "background": 5,
+      "count": 4,
+      "shape": 4,
+      "contact": 4,
+      "clean": 4,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "count",
+        "severity": "minor",
+        "what": "The bicycle frame has no lower rear tube between the pedal crank and the rear wheel hub, so the rear triangle is incomplete",
+        "where": "the lower rear part of the bicycle frame",
+        "expected": "A complete bicycle frame whose rear section links the crank to the rear wheel hub"
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "The tip of the beak pouch almost touches the sun, so the two shapes merge visually",
+        "where": "upper right, the beak and the sun",
+        "expected": "The beak stands clearly apart from the sun, with sky visible between them"
+      },
+      {
+        "criterion": "shape",
+        "severity": "minor",
+        "what": "The neck starts from a round blob on top of the wing and looks pasted on instead of growing out of the body",
+        "where": "the base of the pelican's neck",
+        "expected": "The neck flows smoothly out of the front of the body"
+      },
+      {
+        "criterion": "contact",
+        "severity": "minor",
+        "what": "The body hides the saddle and the frame top, so it is unclear whether the pelican is sitting on the seat",
+        "where": "the pelican's belly and the saddle",
+        "expected": "The pelican is clearly seated on a visible saddle"
+      }
+    ]
+  },
+  "not_applicable": []
+}

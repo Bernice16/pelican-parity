@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 9238,
+  "stop_reason": "end_turn",
+  "session_id": "7d8940ed-4bc3-44a6-8f18-e505878b5353",
+  "total_cost_usd": 0.00145404,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1332,
+    "cache_read_input_tokens": 3194,
+    "output_tokens": 2311,
+    "output_tokens_details": {
+      "thinking_tokens": 169
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1332,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 2311,
+        "cache_read_input_tokens": 3194,
+        "cache_creation_input_tokens": 1332,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1332
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-haiku-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2311,
+      "cacheReadInputTokens": 3194,
+      "cacheCreationInputTokens": 1332,
+      "webSearchRequests": 0,
+      "costUSD": 0.00145404,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 169,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1332,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```svg\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 500\" width=\"400\" height=\"500\">\n  <!-- Sky -->\n  <rect width=\"400\" height=\"500\" fill=\"#bfe6ff\"/>\n  <!-- Sun -->\n  <circle cx=\"340\" cy=\"60\" r=\"90\" fill=\"#ffe27a\" opacity=\"0.6\"/>\n  <!-- Ground -->\n  <rect y=\"440\" width=\"400\" height=\"60\" fill=\"#7cc35a\"/>\n  <path d=\"M0 440 Q100 425 200 440 T400 440 L400 445 L0 445 Z\" fill=\"#6ab04c\"/>\n\n  <!-- Tree trunk -->\n  <path d=\"M175 440 L165 260 Q160 230 140 210 L155 205 Q178 225 185 255 L200 255 Q210 225 235 200 L248 210 Q225 232 222 262 L228 440 Z\" fill=\"#8b5a2b\"/>\n  <path d=\"M190 440 L186 300\" stroke=\"#6b4420\" stroke-width=\"4\" fill=\"none\"/>\n  <path d=\"M205 380 L200 320\" stroke=\"#6b4420\" stroke-width=\"3\" fill=\"none\"/>\n\n  <!-- Canopy -->\n  <g fill=\"#3f9b3a\">\n    <circle cx=\"200\" cy=\"170\" r=\"75\"/>\n    <circle cx=\"140\" cy=\"200\" r=\"55\"/>\n    <circle cx=\"265\" cy=\"195\" r=\"58\"/>\n    <circle cx=\"200\" cy=\"110\" r=\"55\"/>\n    <circle cx=\"120\" cy=\"140\" r=\"40\"/>\n    <circle cx=\"285\" cy=\"130\" r=\"42\"/>\n  </g>\n  <g fill=\"#56b84c\">\n    <circle cx=\"185\" cy=\"150\" r=\"30\"/>\n    <circle cx=\"255\" cy=\"165\" r=\"25\"/>\n  </g>\n\n  <!-- Apples -->\n  <g>\n    <circle cx=\"160\" cy=\"130\" r=\"10\" fill=\"#d62828\"/>\n    <circle cx=\"232\" cy=\"110\" r=\"10\" fill=\"#d62828\"/>\n    <circle cx=\"275\" cy=\"160\" r=\"10\" fill=\"#d62828\"/>\n    <circle cx=\"120\" cy=\"180\" r=\"10\" fill=\"#d62828\"/>\n    <circle cx=\"205\" cy=\"180\" r=\"10\" fill=\"#d62828\"/>\n    <circle cx=\"300\" cy=\"200\" r=\"10\" fill=\"#d62828\"/>\n    <circle cx=\"170\" cy=\"210\" r=\"9\" fill=\"#e63946\"/>\n    <path d=\"M160 120 Q163 114 166 120\" stroke=\"#2d6a2d\" stroke-width=\"2\" fill=\"none\"/>\n    <path d=\"M232 100 Q235 94 238 100\" stroke=\"#2d6a2d\" stroke-width=\"2\" fill=\"none\"/>\n    <path d=\"M275 150 Q278 144 281 150\" stroke=\"#2d6a2d\" stroke-width=\"2\" fill=\"none\"/>\n  </g>\n\n  <!-- Monkey climbing the trunk -->\n  <g id=\"monkey\">\n    <!-- Tail -->\n    <path d=\"M182 330 Q165 320 170 300 Q175 288 165 280\" stroke=\"#7a4a1e\" stroke-width=\"6\" fill=\"none\" stroke-linecap=\"round\"/>\n    <!-- Body -->\n    <ellipse cx=\"200\" cy=\"320\" rx=\"22\" ry=\"28\" fill=\"#a0692f\"/>\n    <!-- Belly -->\n    <ellipse cx=\"200\" cy=\"325\" rx=\"13\" ry=\"18\" fill=\"#e8c39e\"/>\n    <!-- Arms reaching up the trunk -->\n    <path d=\"M182 305 Q168 285 178 268\" stroke=\"#8b5a2b\" stroke-width=\"8\" fill=\"none\" stroke-linecap=\"round\"/>\n    <path d=\"M218 300 Q232 280 222 262\" stroke=\"#a0692f\" stroke-width=\"8\" fill=\"none\" stroke-linecap=\"round\"/>\n    <!-- Hands -->\n    <circle cx=\"178\" cy=\"266\" r=\"6\" fill=\"#5c3a1a\"/>\n    <circle cx=\"222\" cy=\"260\" r=\"6\" fill=\"#5c3a1a\"/>\n    <!-- Legs -->\n    <path d=\"M190 342 Q184 362 190 372\" stroke=\"#8b5a2b\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/>\n    <path d=\"M210 342 Q216 362 210 372\" stroke=\"#a0692f\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/>\n    <!-- Feet -->\n    <ellipse cx=\"188\" cy=\"374\" rx=\"7\" ry=\"4\" fill=\"#5c3a1a\"/>\n    <ellipse cx=\"212\" cy=\"374\" rx=\"7\" ry=\"4\" fill=\"#5c3a1a\"/>\n    <!-- Head -->\n    <circle cx=\"200\" cy=\"282\" r=\"20\" fill=\"#a0692f\"/>\n    <!-- Face -->\n    <ellipse cx=\"200\" cy=\"288\" rx=\"12\" ry=\"10\" fill=\"#e8c39e\"/>\n    <!-- Ears -->\n    <circle cx=\"181\" cy=\"278\" r=\"6\" fill=\"#8b5a2b\"/>\n    <circle cx=\"219\" cy=\"278\" r=\"6\" fill=\"#8b5a2b\"/>\n    <!-- Eyes -->\n    <circle cx=\"194\" cy=\"279\" r=\"2.5\" fill=\"#1a1a1a\"/>\n    <circle cx=\"206\" cy=\"279\" r=\"2.5\" fill=\"#1a1a1a\"/>\n    <circle cx=\"195\" cy=\"278\" r=\"0.8\" fill=\"#fff\"/>\n    <circle cx=\"207\" cy=\"278\" r=\"0.8\" fill=\"#fff\"/>\n    <!-- Nose and smile -->\n    <ellipse cx=\"200\" cy=\"287\" rx=\"2.5\" ry=\"1.8\" fill=\"#5c3a1a\"/>\n    <path d=\"M194 292 Q200 297 206 292\" stroke=\"#5c3a1a\" stroke-width=\"1.5\" fill=\"none\" stroke-linecap=\"round\"/>\n  </g>\n\n  <!-- Title -->\n  <text x=\"200\" y=\"478\" font-family=\"Arial, sans-serif\" font-size=\"18\" text-anchor=\"middle\" fill=\"#2d4a22\">A monkey climbing an apple tree</text>\n</svg>\n```",
+  "ttft_ms": 1862,
+  "type": "result",
+  "duration_ms": 9421,
+  "uuid": "6df68cc3-e288-4806-9b22-c15396f8effd",
+  "ttft_stream_ms": 1861,
+  "time_to_request_ms": 175,
+  "first_content_frame_ms": 1861,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:48.999Z"
+}

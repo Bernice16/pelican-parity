@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 23258,
+  "stop_reason": "end_turn",
+  "session_id": "a63e2a27-9c16-4413-9d0f-e4521119c908",
+  "total_cost_usd": 0.05997879999999999,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 1830,
+    "cache_read_input_tokens": 12714,
+    "output_tokens": 2139,
+    "output_tokens_details": {
+      "thinking_tokens": 849
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1830,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1972,
+        "cache_read_input_tokens": 6561,
+        "cache_creation_input_tokens": 1422,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1422
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 2139,
+      "cacheReadInputTokens": 12714,
+      "cacheCreationInputTokens": 1830,
+      "webSearchRequests": 0,
+      "costUSD": 0.05997879999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 849,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1830,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"images\":{\"A\":{\"summary\":\"Santa stands on a red kick scooter at night in the snow, holding the handlebar with a sack of presents on the back of the deck; it is clear and tidy, but the parts are loosely joined.\",\"scores\":{\"fidelity\":4,\"coherence\":3,\"readability\":5,\"composition\":5,\"clean\":4},\"defects\":[{\"criterion\":\"coherence\",\"severity\":\"major\",\"what\":\"The steering stem stops on top of the deck and never reaches the front wheel, so the front wheel just sits under the deck end with nothing connecting it to the steering.\",\"where\":\"the scooter's front stem and front wheel\",\"expected\":\"The steering column runs down to the front wheel's axle so the scooter reads as one working machine.\"},{\"criterion\":\"coherence\",\"severity\":\"minor\",\"what\":\"The arms are thin tubes that start at odd points on the torso. One comes from a dark patch under the beard, so the hands look stuck onto the bar rather than coming from the shoulders.\",\"where\":\"Santa's arms and shoulders\",\"expected\":\"Both arms clearly start at Santa's shoulders and end in mittens gripping the handlebar.\"},{\"criterion\":\"fidelity\",\"severity\":\"minor\",\"what\":\"The legs are very short, blocky stumps with no knees or trouser cuffs, so the lower body looks unfinished next to the detailed head.\",\"where\":\"Santa's legs\",\"expected\":\"Santa's legs look like finished trouser legs that tuck into his boots on the deck.\"},{\"criterion\":\"clean\",\"severity\":\"minor\",\"what\":\"The sack is a flat brown shape with a dark band at its mouth, and the presents float at its opening without looking like they sit inside it.\",\"where\":\"the sack at the back of the deck\",\"expected\":\"The presents clearly poke out of the sack's open top, with the sack tied or gathered at the neck.\"}]},\"B\":{\"summary\":\"Santa rides a grey kick scooter over snow under a full moon, steering with one hand and holding a stack of wrapped presents with the other, with motion lines showing speed; it is lively and well finished.\",\"scores\":{\"fidelity\":5,\"coherence\":4,\"readability\":5,\"composition\":5,\"clean\":4},\"defects\":[{\"criterion\":\"coherence\",\"severity\":\"minor\",\"what\":\"The steering mitten sits next to the stem joint instead of wrapping around one of the red grips.\",\"where\":\"Santa's raised hand on the handlebar\",\"expected\":\"Santa's mitten clearly grips one of the handlebar grips.\"},{\"criterion\":\"coherence\",\"severity\":\"minor\",\"what\":\"The stack of presents seems to float beside the body, held up only by a mitten peeking out underneath, and the arm holding it is hidden.\",\"where\":\"the gift stack on the right of Santa\",\"expected\":\"Santa's arm visibly cradles the stack of presents against his side.\"},{\"criterion\":\"clean\",\"severity\":\"minor\",\"what\":\"The face is crowded. The eyes are tiny slits squeezed under the hat brim, and the pink nose and cheeks overlap in a blurry cluster just above the beard.\",\"where\":\"Santa's face\",\"expected\":\"Santa's eyes, nose and cheeks are clearly separated and easy to read.\"}]}},\"not_applicable\":[],\"parity\":false,\"parity_reason\":\"No criterion differs by more than 1 and neither image has a critical defect, but the totals are 21 for A and 23 for B, a gap of 2, so parity fails.\"}",
+  "ttft_ms": 2121,
+  "type": "result",
+  "duration_ms": 23883,
+  "uuid": "458b7807-0f0b-4e3a-bf04-239bcb13477b",
+  "ttft_stream_ms": 2116,
+  "time_to_request_ms": 263,
+  "first_content_frame_ms": 2117,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:48.999Z"
+}

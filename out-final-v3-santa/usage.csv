@@ -1,0 +1,15 @@
+session_id,role,model,effort,round,input_tokens,output_tokens,cache_read_tokens,cache_write_tokens,cost_usd
+53132a20-9d7c-4b6e-8ba1-f3cac384e7f8,reference,claude-fable-5-1,high,0,2,4853,5162,433,0.2526205
+89232028-2064-4b05-86e8-7355afbb12a9,baseline,claude-haiku-5-5,low,0,2,3692,4091,436,0.0019743
+6dab42b6-8954-4b1c-b553-ec7f19c06e47,judge,claude-opus-5-5,high,0,4,1787,12508,1955,0.0538976
+08055abe-7229-48dd-ac42-6aed9ab6bbb1,refine,claude-haiku-5-5,low,1,2,3160,3194,5206,0.0026533
+7d40c6e1-519c-41ba-a120-e7027556438d,judge,claude-opus-5-5,high,1,4,2096,12508,1955,0.0600776
+a1b28e31-089d-4f86-a455-9adb7027db31,refine,claude-haiku-5-5,low,2,2,5836,3194,5202,0.0039905
+cf2f3885-2e7d-4559-90c8-aeb1a3aa0054,judge,claude-opus-5-5,high,2,4,1930,12508,1955,0.0567576
+14eec8f8-51fa-4339-8925-1669342afd50,refine,claude-haiku-5-5,low,3,2,10367,3194,5806,0.0063768
+45117ef0-aeca-42af-a5dd-69dfc6152267,judge,claude-opus-5-5,high,3,4,1874,12508,1955,0.0556376
+6fe4a942-b7fb-42f5-a27e-fdc4fde76be4,judge,claude-opus-5-5,high,3,4,1946,12512,1964,0.0571504
+279f85e6-6588-4985-baab-46149848053a,refine,claude-haiku-5-5,low,4,2,5301,3194,5444,0.0037714
+b8e92573-21bb-4ce3-b1b3-c6163edeca39,judge,claude-opus-5-5,high,4,4,1888,12508,1955,0.0559176
+4972aa39-0cdf-4a2a-a7e5-0a8ddf6b56b6,refine,claude-haiku-5-5,low,5,2,5666,3194,5538,0.0039727
+bc420d80-a9d1-490c-838a-6eee470f6d61,judge,claude-opus-5-5,high,5,4,1830,9949,4537,0.0749018

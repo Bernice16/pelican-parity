@@ -1,0 +1,41 @@
+{
+  "source_round": 0,
+  "kept": [
+    {
+      "severity": "major",
+      "criterion": "contact",
+      "what": "The bicycle has no cranks or pedals, and both legs end together at the bottom bracket hub, so the bird is not pedalling",
+      "where": "the pelican's legs and the bike's centre hub",
+      "expected": "Each foot rests on its own pedal, attached to cranks on the bottom bracket, so the bird is clearly riding"
+    },
+    {
+      "severity": "major",
+      "criterion": "main",
+      "what": "The pelican does not steer: no wing or other part reaches the handlebar",
+      "where": "the pelican's wing and the handlebar",
+      "expected": "A wing reaches forward and rests on the handlebar, showing the bird is riding the bike"
+    },
+    {
+      "severity": "major",
+      "criterion": "contact",
+      "what": "There is no saddle, and the body sits directly on the top tube",
+      "where": "under the pelican's body",
+      "expected": "The bike has a saddle and the pelican's body sits on it"
+    },
+    {
+      "severity": "minor",
+      "criterion": "shape",
+      "what": "The neck is a short stub, so the head looks stuck onto the front of the body, and the beak is almost as long as the body",
+      "where": "the pelican's head and neck",
+      "expected": "A visible neck joins the head to the body, and the beak is large but in proportion"
+    },
+    {
+      "severity": "minor",
+      "criterion": "background",
+      "what": "The setting is very bare, with only a plain sky, a sun and a flat green strip",
+      "where": "the whole background",
+      "expected": "A simple outdoor setting, such as a road or path, that shows where the bike is riding while still keeping the focus on the rider"
+    }
+  ],
+  "dropped": []
+}

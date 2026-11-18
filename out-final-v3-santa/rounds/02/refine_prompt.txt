@@ -1,0 +1,160 @@
+You are improving your own SVG drawing.
+
+Here is the current SVG:
+<current_svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b1d3a"/>
+      <stop offset="1" stop-color="#3a6ea5"/>
+    </linearGradient>
+    <linearGradient id="coat" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e53935"/>
+      <stop offset="1" stop-color="#b71c1c"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky and moon -->
+  <rect width="800" height="600" fill="url(#sky)"/>
+  <circle cx="680" cy="110" r="45" fill="#fff8dc"/>
+  <circle cx="665" cy="98" r="8" fill="#e8dcb5" opacity="0.6"/>
+  <circle cx="695" cy="125" r="5" fill="#e8dcb5" opacity="0.6"/>
+
+  <!-- Stars -->
+  <g fill="#ffffff">
+    <circle cx="80" cy="60" r="2"/>
+    <circle cx="160" cy="130" r="1.5"/>
+    <circle cx="260" cy="50" r="2"/>
+    <circle cx="420" cy="90" r="1.5"/>
+    <circle cx="520" cy="40" r="2"/>
+    <circle cx="590" cy="200" r="1.5"/>
+    <circle cx="120" cy="230" r="1.5"/>
+    <circle cx="330" cy="180" r="1.5"/>
+  </g>
+
+  <!-- Distant hills -->
+  <path d="M0 420 Q120 340 260 410 T520 400 T800 380 L800 600 L0 600 Z" fill="#e8f1f8"/>
+
+  <!-- Snow ground -->
+  <rect x="0" y="490" width="800" height="110" fill="#ffffff"/>
+  <path d="M0 490 Q200 478 400 490 T800 490" stroke="#cfe3f0" stroke-width="4" fill="none"/>
+
+  <!-- Falling snow -->
+  <g fill="#ffffff" opacity="0.85">
+    <circle cx="150" cy="300" r="3"/>
+    <circle cx="220" cy="250" r="2.5"/>
+    <circle cx="610" cy="300" r="3"/>
+    <circle cx="700" cy="240" r="2.5"/>
+    <circle cx="560" cy="360" r="2"/>
+    <circle cx="100" cy="380" r="2.5"/>
+    <circle cx="740" cy="420" r="3"/>
+  </g>
+
+  <!-- Scooter -->
+  <line x1="462" y1="470" x2="470" y2="330" stroke="#37474f" stroke-width="8" stroke-linecap="round"/>
+  <line x1="440" y1="330" x2="496" y2="330" stroke="#37474f" stroke-width="8" stroke-linecap="round"/>
+  <rect x="432" y="322" width="14" height="16" rx="4" fill="#212121"/>
+  <rect x="490" y="322" width="14" height="16" rx="4" fill="#212121"/>
+  <rect x="300" y="462" width="170" height="12" rx="6" fill="#455a64"/>
+  <line x1="310" y1="470" x2="310" y2="490" stroke="#37474f" stroke-width="8"/>
+  <line x1="455" y1="470" x2="455" y2="490" stroke="#37474f" stroke-width="8"/>
+  <circle cx="310" cy="500" r="24" fill="#212121"/>
+  <circle cx="310" cy="500" r="9" fill="#90a4ae"/>
+  <circle cx="455" cy="500" r="24" fill="#212121"/>
+  <circle cx="455" cy="500" r="9" fill="#90a4ae"/>
+
+  <!-- Gift sack, tied and resting on the scooter deck behind Santa -->
+  <path d="M190 462 Q180 390 215 370 Q240 360 262 372 Q282 392 272 462 Z" fill="#8d6e63"/>
+  <path d="M215 370 Q228 352 240 368" stroke="#6d4c41" stroke-width="4" fill="none"/>
+  <rect x="222" y="352" width="16" height="20" fill="#c62828"/>
+
+  <!-- Presents resting on the deck, in front of the sack -->
+  <rect x="200" y="412" width="50" height="50" fill="#1e88e5"/>
+  <rect x="222" y="412" width="6" height="50" fill="#ffd54f"/>
+  <rect x="200" y="434" width="50" height="6" fill="#ffd54f"/>
+  <rect x="280" y="420" width="0" height="0" fill="none"/>
+
+  <!-- Santa legs and boots (longer legs on the deck) -->
+  <rect x="338" y="410" width="16" height="54" fill="#212121"/>
+  <rect x="378" y="410" width="16" height="54" fill="#212121"/>
+  <rect x="332" y="458" width="28" height="12" rx="4" fill="#000000"/>
+  <rect x="372" y="458" width="28" height="12" rx="4" fill="#000000"/>
+
+  <!-- Santa body -->
+  <path d="M328 440 Q325 350 360 340 L400 340 Q430 350 425 440 Z" fill="url(#coat)"/>
+  <!-- Belt -->
+  <rect x="326" y="400" width="100" height="14" fill="#212121"/>
+  <rect x="368" y="398" width="16" height="18" fill="#ffd54f" stroke="#8d6e63" stroke-width="2"/>
+  <!-- White trim -->
+  <rect x="326" y="436" width="100" height="6" fill="#ffffff"/>
+  <circle cx="340" cy="372" r="4" fill="#ffffff"/>
+  <circle cx="372" cy="368" r="4" fill="#ffffff"/>
+
+  <!-- Arm gripping handlebar grip (hand wraps over the grip) -->
+  <path d="M410 362 L440 335" stroke="url(#coat)" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="440" cy="330" r="9" fill="#ffe0b2"/>
+  <rect x="432" y="322" width="16" height="6" rx="3" fill="#212121"/>
+
+  <!-- Arm holding a single gift, clear of the sack -->
+  <path d="M338 364 L304 392" stroke="#b71c1c" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="300" cy="396" r="9" fill="#ffe0b2"/>
+  <rect x="268" y="372" width="34" height="30" fill="#fdd835" stroke="#f9a825" stroke-width="2"/>
+  <rect x="282" y="372" width="5" height="30" fill="#e53935"/>
+
+  <!-- Head -->
+  <circle cx="370" cy="312" r="26" fill="#ffe0b2"/>
+  <!-- Beard -->
+  <path d="M346 318 Q352 352 370 350 Q390 352 396 318 Q384 334 370 332 Q356 334 346 318 Z" fill="#ffffff"/>
+  <!-- Mustache -->
+  <ellipse cx="370" cy="324" rx="11" ry="4" fill="#ffffff"/>
+  <!-- Cheeks and nose -->
+  <circle cx="356" cy="314" r="4" fill="#ff8a80" opacity="0.7"/>
+  <circle cx="384" cy="314" r="4" fill="#ff8a80" opacity="0.7"/>
+  <circle cx="370" cy="316" r="3" fill="#ef9a9a"/>
+  <!-- Eyes -->
+  <circle cx="362" cy="306" r="2.5" fill="#212121"/>
+  <circle cx="378" cy="306" r="2.5" fill="#212121"/>
+
+  <!-- Hat -->
+  <path d="M344 296 Q350 252 372 246 Q400 250 396 296 Z" fill="url(#coat)"/>
+  <rect x="340" y="288" width="60" height="12" rx="6" fill="#ffffff"/>
+  <circle cx="374" cy="244" r="9" fill="#ffffff"/>
+
+  <!-- Sparkles -->
+  <g fill="#fff59d">
+    <path d="M520 220 L523 228 L531 231 L523 234 L520 242 L517 234 L509 231 L517 228 Z"/>
+    <path d="M150 180 L152 185 L157 187 L152 189 L150 194 L148 189 L143 187 L148 185 Z"/>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="560" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#ffffff" text-anchor="middle">Merry Christmas from Santa!</text>
+</svg>
+</current_svg>
+
+An art director looked at the rendered image and listed these problems, most severe first:
+<problems>
+1. [major, clean] The blue present is a flat square stuck onto the front of the sack, so it reads as a sticker rather than a gift inside or beside the sack
+   Where: the gift sack at left
+   Expected: The present should look like it is poking out of the sack's opening or sitting next to it as a separate object
+2. [major, shape] The sack is a stiff, blocky shape with a square red knot on top and does not look like a soft bag full of toys
+   Where: the brown sack at left
+   Expected: The sack should have a rounded, lumpy, cloth-like shape tied at the neck
+3. [minor, contact] The sack sits on the far hill, apart from the scooter, so it does not seem to travel with Santa
+   Where: the sack behind the scooter
+   Expected: The sack should ride on the scooter deck or be slung over Santa's shoulder
+4. [minor, shape] Santa's arms are thin sticks and his body is a plain rectangle, so the figure looks stiff
+   Where: Santa's arms and torso
+   Expected: Santa should have rounder, fuller arms and a belly that looks plump
+5. [minor, background] The hill line behind runs right through the sack, so the sack seems to be sinking into the background
+   Where: left middle, around the sack
+   Expected: The sack should sit clearly on the ground in front of the hills
+</problems>
+
+Write an improved version of the drawing:
+- Fix every listed problem, starting with the most severe ones.
+- Make meaningful, visible improvements for each listed problem. Never return an unchanged or nearly identical SVG.
+- Keep what already works: same subject, same overall layout and style, unless a problem asks for a change.
+- Check the geometry as you go: parts that should touch must touch (a figure resting on what supports it, objects standing on the ground), and parts that should connect must connect.
+- Ensure the root `<svg>` tag preserves a valid `viewBox` and proper dimensions so nothing is clipped.
+
+Reply with the complete new SVG document only, inside one ```svg code block.

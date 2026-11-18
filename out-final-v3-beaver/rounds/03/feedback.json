@@ -1,0 +1,41 @@
+{
+  "source_round": 2,
+  "kept": [
+    {
+      "severity": "major",
+      "criterion": "contact",
+      "what": "The beaver's flat tail floats in the air beside the body and is not joined to it",
+      "where": "left side, the dark oval tail",
+      "expected": "The tail clearly attaches to the beaver's lower back or rump and comes out from behind the body"
+    },
+    {
+      "severity": "major",
+      "criterion": "shape",
+      "what": "The spatula is just a plain grey rod with a rounded end and has no flat turner blade, so it is hard to recognise",
+      "where": "the utensil in the pan on the right",
+      "expected": "The utensil reads clearly as a spatula, with a handle and a flat, wide blade resting under or beside an egg"
+    },
+    {
+      "severity": "minor",
+      "criterion": "contact",
+      "what": "The beaver's paw only touches the middle of the spatula rod loosely, so it is unclear whether the beaver is gripping it",
+      "where": "the beaver's right paw at the spatula",
+      "expected": "The paw clearly wraps around the spatula's handle"
+    },
+    {
+      "severity": "minor",
+      "criterion": "contact",
+      "what": "The chef hat seems to sit on top of the head instead of fitting around it",
+      "where": "top of the beaver's head",
+      "expected": "The hat band fits snugly around the top of the head"
+    },
+    {
+      "severity": "minor",
+      "criterion": "main",
+      "what": "The beaver's body is cut off by the counter, and the left arm seems to rest on the counter without doing anything",
+      "where": "the beaver's lower body and left arm",
+      "expected": "The beaver's pose clearly shows both paws taking part in the cooking or resting naturally"
+    }
+  ],
+  "dropped": []
+}

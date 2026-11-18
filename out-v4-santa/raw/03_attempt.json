@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 22001,
+  "stop_reason": "end_turn",
+  "session_id": "59fa3f7d-a0fb-4470-8e84-0e2360730437",
+  "total_cost_usd": 0.00369974,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 4663,
+    "cache_read_input_tokens": 3194,
+    "output_tokens": 5470,
+    "output_tokens_details": {
+      "thinking_tokens": 2586
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 4663,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 5470,
+        "cache_read_input_tokens": 3194,
+        "cache_creation_input_tokens": 4663,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 4663
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-haiku-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5470,
+      "cacheReadInputTokens": 3194,
+      "cacheCreationInputTokens": 4663,
+      "webSearchRequests": 0,
+      "costUSD": 0.00369974,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2586,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 4663,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```svg\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 500\" width=\"800\" height=\"500\">\n  <defs>\n    <linearGradient id=\"sky\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"0%\" stop-color=\"#0b1d3a\"/>\n      <stop offset=\"100%\" stop-color=\"#2a4d7a\"/>\n    </linearGradient>\n  </defs>\n  <rect width=\"800\" height=\"500\" fill=\"url(#sky)\"/>\n\n  <!-- Stars -->\n  <g fill=\"#fff\">\n    <circle cx=\"60\" cy=\"50\" r=\"2\"/>\n    <circle cx=\"150\" cy=\"90\" r=\"1.5\"/>\n    <circle cx=\"320\" cy=\"40\" r=\"2\"/>\n    <circle cx=\"480\" cy=\"70\" r=\"1.5\"/>\n    <circle cx=\"640\" cy=\"45\" r=\"2\"/>\n    <circle cx=\"730\" cy=\"110\" r=\"1.5\"/>\n    <circle cx=\"240\" cy=\"130\" r=\"1\"/>\n    <circle cx=\"560\" cy=\"150\" r=\"1\"/>\n  </g>\n\n  <!-- Moon -->\n  <circle cx=\"700\" cy=\"80\" r=\"30\" fill=\"#fff8dc\"/>\n\n  <!-- Snow ground -->\n  <rect x=\"0\" y=\"434\" width=\"800\" height=\"66\" fill=\"#f5fbff\"/>\n  <ellipse cx=\"200\" cy=\"436\" rx=\"260\" ry=\"10\" fill=\"#e6f2fb\"/>\n  <ellipse cx=\"620\" cy=\"440\" rx=\"300\" ry=\"12\" fill=\"#e6f2fb\"/>\n\n  <!-- Scooter and Santa, larger and centred, wheels resting on the snow -->\n  <g transform=\"translate(-230 -295) scale(1.8)\">\n\n    <!-- Sack body -->\n    <path d=\"M 236 355 Q 222 300 246 262 Q 268 240 284 262 L 290 355 Z\" fill=\"#8b5a2b\"/>\n    <!-- Dark mouth of the sack -->\n    <ellipse cx=\"262\" cy=\"264\" rx=\"22\" ry=\"7\" fill=\"#3a2410\"/>\n    <!-- Presents poking out of the opening -->\n    <rect x=\"248\" y=\"250\" width=\"22\" height=\"20\" fill=\"#e63946\"/>\n    <rect x=\"257\" y=\"250\" width=\"3\" height=\"20\" fill=\"#f4c542\"/>\n    <rect x=\"268\" y=\"244\" width=\"18\" height=\"18\" fill=\"#457b9d\"/>\n    <rect x=\"275\" y=\"244\" width=\"3\" height=\"18\" fill=\"#f4c542\"/>\n    <!-- Front rim of the sack covering the lower part of the presents -->\n    <path d=\"M 240 266 Q 262 280 286 266 L 288 276 Q 262 292 238 276 Z\" fill=\"#8b5a2b\"/>\n    <!-- Sack tie around the neck -->\n    <path d=\"M 240 270 Q 262 262 286 270\" fill=\"none\" stroke=\"#5a3a1a\" stroke-width=\"3\" stroke-linecap=\"round\"/>\n\n    <!-- Deck -->\n    <line x1=\"230\" y1=\"360\" x2=\"440\" y2=\"360\" stroke=\"#d62828\" stroke-width=\"10\" stroke-linecap=\"round\"/>\n    <!-- Handlebar stem -->\n    <line x1=\"430\" y1=\"360\" x2=\"450\" y2=\"250\" stroke=\"#333\" stroke-width=\"6\" stroke-linecap=\"round\"/>\n    <!-- Handlebar with grips -->\n    <line x1=\"412\" y1=\"248\" x2=\"478\" y2=\"248\" stroke=\"#111\" stroke-width=\"7\" stroke-linecap=\"round\"/>\n    <circle cx=\"412\" cy=\"248\" r=\"5\" fill=\"#111\"/>\n    <circle cx=\"478\" cy=\"248\" r=\"5\" fill=\"#111\"/>\n\n    <!-- Wheels -->\n    <circle cx=\"290\" cy=\"385\" r=\"22\" fill=\"#222\"/>\n    <circle cx=\"290\" cy=\"385\" r=\"8\" fill=\"#bbb\"/>\n    <circle cx=\"440\" cy=\"385\" r=\"22\" fill=\"#222\"/>\n    <circle cx=\"440\" cy=\"385\" r=\"8\" fill=\"#bbb\"/>\n\n    <!-- Legs and boots -->\n    <rect x=\"330\" y=\"330\" width=\"22\" height=\"35\" fill=\"#b00000\"/>\n    <rect x=\"356\" y=\"330\" width=\"22\" height=\"35\" fill=\"#b00000\"/>\n    <rect x=\"322\" y=\"355\" width=\"30\" height=\"12\" rx=\"4\" fill=\"#111\"/>\n    <rect x=\"352\" y=\"355\" width=\"30\" height=\"12\" rx=\"4\" fill=\"#111\"/>\n\n    <!-- Torso and belt -->\n    <rect x=\"325\" y=\"260\" width=\"70\" height=\"75\" rx=\"18\" fill=\"#d62828\"/>\n    <rect x=\"325\" y=\"312\" width=\"70\" height=\"10\" fill=\"#111\"/>\n    <rect x=\"356\" y=\"310\" width=\"8\" height=\"14\" fill=\"#f4c542\"/>\n\n    <!-- Far arm (darker red), from the left shoulder in a gentle arc to the left grip -->\n    <path d=\"M 345 272 Q 372 288 412 250\" fill=\"none\" stroke=\"#9d0208\" stroke-width=\"12\" stroke-linecap=\"round\"/>\n    <circle cx=\"345\" cy=\"272\" r=\"7\" fill=\"#9d0208\"/>\n    <!-- Near arm (brighter red), from the right shoulder, sweeping out to the right grip -->\n    <path d=\"M 388 270 Q 428 282 458 250\" fill=\"none\" stroke=\"#d62828\" stroke-width=\"12\" stroke-linecap=\"round\"/>\n    <circle cx=\"388\" cy=\"270\" r=\"7\" fill=\"#d62828\"/>\n\n    <!-- Hands wrapped around the grips -->\n    <circle cx=\"412\" cy=\"248\" r=\"7\" fill=\"#f2c9a0\" stroke=\"#111\" stroke-width=\"2\"/>\n    <circle cx=\"458\" cy=\"248\" r=\"7\" fill=\"#f2c9a0\" stroke=\"#111\" stroke-width=\"2\"/>\n\n    <!-- Head -->\n    <circle cx=\"360\" cy=\"233\" r=\"24\" fill=\"#f2c9a0\"/>\n\n    <!-- Hat -->\n    <path d=\"M 336 212 Q 338 176 372 176 Q 392 178 398 192 L 384 214 Q 370 206 352 212 Z\" fill=\"#d62828\"/>\n    <circle cx=\"398\" cy=\"190\" r=\"6\" fill=\"#fff\"/>\n    <rect x=\"332\" y=\"206\" width=\"56\" height=\"12\" rx=\"6\" fill=\"#fff\"/>\n\n    <!-- Beard -->\n    <path d=\"M 336 236 Q 332 270 360 272 Q 388 270 384 236 Q 378 248 360 246 Q 342 248 336 236 Z\" fill=\"#fff\"/>\n    <path d=\"M 346 252 Q 360 262 374 252\" fill=\"none\" stroke=\"#e0e0e0\" stroke-width=\"2\" stroke-linecap=\"round\"/>\n    <!-- Moustache -->\n    <path d=\"M 348 244 Q 354 240 360 244 Q 366 240 372 244 Q 366 248 360 246 Q 354 248 348 244 Z\" fill=\"#f5f5f5\"/>\n\n    <!-- Nose -->\n    <ellipse cx=\"360\" cy=\"236\" rx=\"3\" ry=\"4\" fill=\"#e8a87c\"/>\n    <!-- Eyes with brows -->\n    <circle cx=\"350\" cy=\"228\" r=\"2.5\" fill=\"#111\"/>\n    <circle cx=\"370\" cy=\"228\" r=\"2.5\" fill=\"#111\"/>\n    <path d=\"M 345 223 Q 350 220 355 223\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2\" stroke-linecap=\"round\"/>\n    <path d=\"M 365 223 Q 370 220 375 223\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2\" stroke-linecap=\"round\"/>\n    <!-- Cheeks -->\n    <circle cx=\"344\" cy=\"238\" r=\"3.5\" fill=\"#f08080\" opacity=\"0.6\"/>\n    <circle cx=\"376\" cy=\"238\" r=\"3.5\" fill=\"#f08080\" opacity=\"0.6\"/>\n  </g>\n\n  <!-- Caption panel -->\n  <rect x=\"270\" y=\"458\" width=\"260\" height=\"30\" rx=\"8\" fill=\"#0b1d3a\" opacity=\"0.9\"/>\n  <text x=\"400\" y=\"479\" font-family=\"Arial, sans-serif\" font-size=\"18\" fill=\"#fff\" text-anchor=\"middle\">Santa on a Scooter</text>\n</svg>\n```",
+  "ttft_ms": 14541,
+  "type": "result",
+  "duration_ms": 22219,
+  "uuid": "f1333337-5880-4d4f-a8be-a2352ca2201c",
+  "ttft_stream_ms": 2078,
+  "time_to_request_ms": 215,
+  "first_content_frame_ms": 2078,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:48.999Z"
+}

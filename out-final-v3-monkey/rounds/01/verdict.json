@@ -1,0 +1,97 @@
+{
+  "session_id": "145b65d4-f71d-48f7-bf2e-8cfaf219674f",
+  "judge_prompt": "prompts/judge_v3.txt",
+  "blind": {
+    "A": "reference",
+    "B": "attempt"
+  },
+  "parity": false,
+  "parity_reason": "Image A totals 30 and image B totals 21, a gap well over 1, and contact (4 vs 2) and clean (4 vs 2) each differ by 2. Neither image has a critical defect, but conditions 1 and 2 fail.",
+  "rule_parity": false,
+  "attempt_at_least_reference": false,
+  "reference": {
+    "summary": "A cheerful brown monkey climbs the trunk of a leafy apple tree full of red apples under a sunny sky; it is clearly drawn with only small flaws in the limbs.",
+    "scores": {
+      "main": 4,
+      "background": 5,
+      "count": 4,
+      "shape": 4,
+      "contact": 4,
+      "clean": 4,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "One raised hand sits behind the top of the monkey's head, so it looks like a bump on the head instead of a hand.",
+        "where": "top of the monkey's head",
+        "expected": "Both raised hands should be clearly separate from the head and visibly gripping the trunk."
+      },
+      {
+        "criterion": "shape",
+        "severity": "minor",
+        "what": "The legs are drawn as one looping curve, so it is hard to tell the two legs apart.",
+        "where": "the monkey's lower body and legs",
+        "expected": "Two distinct legs should bend around the trunk, each ending in a foot."
+      },
+      {
+        "criterion": "contact",
+        "severity": "minor",
+        "what": "The feet float slightly to either side of the trunk instead of pressing against it.",
+        "where": "the monkey's feet near the bottom of the trunk",
+        "expected": "The feet should rest firmly against the trunk, as a climber's would."
+      }
+    ]
+  },
+  "attempt": {
+    "summary": "A brown monkey sits on the trunk of an apple tree beneath a rounded green canopy with red apples and a caption below; the monkey's limbs are confusing and barely hold onto the tree.",
+    "scores": {
+      "main": 3,
+      "background": 4,
+      "count": 3,
+      "shape": 3,
+      "contact": 2,
+      "clean": 2,
+      "color": 4
+    },
+    "defects": [
+      {
+        "criterion": "contact",
+        "severity": "major",
+        "what": "Both raised arms end in curled hooks in the open air beside the trunk, and neither one grips the tree.",
+        "where": "the monkey's arms and hands",
+        "expected": "The monkey's hands should wrap around the trunk or a branch so it clearly looks like it is climbing."
+      },
+      {
+        "criterion": "clean",
+        "severity": "major",
+        "what": "The feet are separate dark dashes with nothing joining them to the legs, and there are extra curved limb shapes, so it is unclear which shapes are legs and which is the tail.",
+        "where": "the monkey's lower body and both sides of its torso",
+        "expected": "Two legs should be clearly joined to the body and end in feet, with one tail that is easy to tell apart from them."
+      },
+      {
+        "criterion": "count",
+        "severity": "major",
+        "what": "The monkey seems to have extra limbs: two hooked arms, a long curve on the left and a hanging curve below, which do not add up to a clear two arms, two legs and a tail.",
+        "where": "around the monkey's body",
+        "expected": "The monkey should have two arms, two legs and one tail, each easy to recognise."
+      },
+      {
+        "criterion": "main",
+        "severity": "minor",
+        "what": "Several apples have no stems, and one apple is a paler pink than the others, so it looks out of place.",
+        "where": "the apples in the tree canopy",
+        "expected": "All the apples should look alike and clearly read as apples hanging in the tree."
+      },
+      {
+        "criterion": "color",
+        "severity": "minor",
+        "what": "The sun is a washed-out cream colour that almost disappears into the pale sky.",
+        "where": "upper right",
+        "expected": "The sun should be clearly visible against the sky."
+      }
+    ]
+  },
+  "not_applicable": []
+}

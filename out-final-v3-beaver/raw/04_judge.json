@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 22297,
+  "stop_reason": "end_turn",
+  "session_id": "52b9e28a-3b81-4f0f-8966-585ef541384e",
+  "total_cost_usd": 0.060581800000000005,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 1958,
+    "cache_read_input_tokens": 12509,
+    "output_tokens": 2120,
+    "output_tokens_details": {
+      "thinking_tokens": 846
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1958,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1947,
+        "cache_read_input_tokens": 6460,
+        "cache_creation_input_tokens": 1547,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1547
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 2120,
+      "cacheReadInputTokens": 12509,
+      "cacheCreationInputTokens": 1958,
+      "webSearchRequests": 0,
+      "costUSD": 0.060581800000000005,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 846,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1958,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"images\":{\"A\":{\"summary\":\"A brown beaver in a chef's hat and apron fries two sunny-side-up eggs in a pan at a kitchen counter. It is clearly drawn, but the spatula and the hand holding it are confusing.\",\"scores\":{\"main\":4,\"background\":5,\"count\":4,\"shape\":4,\"contact\":3,\"clean\":3,\"color\":5},\"defects\":[{\"criterion\":\"clean\",\"severity\":\"major\",\"what\":\"The spatula is unclear: a brown stick points up and away from the fist, while a thin grey shaft runs down to a blade floating beside it, so it looks like two separate pieces\",\"where\":\"the beaver's right hand above the pan\",\"expected\":\"One spatula with a single handle held in the fist, running straight to the blade\"},{\"criterion\":\"contact\",\"severity\":\"major\",\"what\":\"The spatula blade hangs in the air above the pan and does not touch the eggs or the pan\",\"where\":\"above the right egg\",\"expected\":\"The spatula blade rests in the pan, touching or sliding under an egg\"},{\"criterion\":\"contact\",\"severity\":\"minor\",\"what\":\"The frying pan sits on a wooden counter edge, not on a burner, so it is unclear how the eggs are cooking\",\"where\":\"the pan at lower right\",\"expected\":\"The pan sits clearly on a stove burner\"},{\"criterion\":\"shape\",\"severity\":\"minor\",\"what\":\"The reaching arm is stretched very long and thin compared with the body\",\"where\":\"the beaver's right arm\",\"expected\":\"The arm is in proportion with the beaver's chunky body\"},{\"criterion\":\"clean\",\"severity\":\"minor\",\"what\":\"A stray vertical line runs down the middle of the apron\",\"where\":\"the apron front\",\"expected\":\"A clean apron without unexplained lines\"}]},\"B\":{\"summary\":\"A brown beaver chef with a sun-patterned apron fries two eggs in a pan on a stove, with a smiling sun in the window. It is cheerful and clear, but the arm is drawn very thin.\",\"scores\":{\"main\":4,\"background\":4,\"count\":5,\"shape\":3,\"contact\":4,\"clean\":4,\"color\":4},\"defects\":[{\"criterion\":\"shape\",\"severity\":\"major\",\"what\":\"The arm holding the spatula is an extremely long, thin, noodle-like stretch\",\"where\":\"the beaver's right arm reaching to the pan\",\"expected\":\"A thicker, shorter arm in proportion with the beaver's body\"},{\"criterion\":\"contact\",\"severity\":\"minor\",\"what\":\"The pan is drawn over the back of the stove and does not clearly sit on a burner\",\"where\":\"the pan on the stove top\",\"expected\":\"The pan sits squarely on a burner\"},{\"criterion\":\"background\",\"severity\":\"minor\",\"what\":\"The big smiling sun in the window and the floating heart compete for attention with the beaver\",\"where\":\"upper left window and above the pan\",\"expected\":\"Background details stay quieter than the beaver and the eggs\"},{\"criterion\":\"color\",\"severity\":\"minor\",\"what\":\"The caption is pale brown on a brown wood floor and hard to read\",\"where\":\"bottom caption\",\"expected\":\"The caption contrasts clearly with the floor\"}]}},\"not_applicable\":[],\"parity\":true,\"parity_reason\":\"No criterion differs by more than 1 (background, count, shape, contact, clean and color differ by 1; main is equal), both totals are 28, and neither image has a critical defect.\"}",
+  "ttft_ms": 1772,
+  "type": "result",
+  "duration_ms": 22518,
+  "uuid": "f958c9b2-0058-48c2-8dca-77ceb4206b7f",
+  "ttft_stream_ms": 1770,
+  "time_to_request_ms": 178,
+  "first_content_frame_ms": 1770,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:48.999Z"
+}

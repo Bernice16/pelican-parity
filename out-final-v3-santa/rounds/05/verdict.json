@@ -1,0 +1,90 @@
+{
+  "session_id": "bc420d80-a9d1-490c-838a-6eee470f6d61",
+  "judge_prompt": "prompts/judge_v3.txt",
+  "blind": {
+    "A": "reference",
+    "B": "attempt"
+  },
+  "parity": false,
+  "parity_reason": "No criterion differs by more than 1 and neither image has a critical defect, but the totals are A 32 and B 30. That difference of 2 is more than 1, so the images are not at parity.",
+  "rule_parity": false,
+  "attempt_at_least_reference": false,
+  "reference": {
+    "summary": "Santa rides a kick scooter across snowy ground at night, one hand on the handlebar and the other holding a stack of gifts, with a full moon and speed lines; the drawing is clean and lively.",
+    "scores": {
+      "main": 5,
+      "background": 5,
+      "count": 5,
+      "shape": 4,
+      "contact": 4,
+      "clean": 4,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "contact",
+        "severity": "minor",
+        "what": "The stack of gifts seems to float beside Santa, and only the lowest box touches his gloved hand",
+        "where": "the gift stack on the left of Santa",
+        "expected": "The gifts look clearly carried, either held firmly against his body or resting on the scooter deck"
+      },
+      {
+        "criterion": "shape",
+        "severity": "minor",
+        "what": "The hat's tip shoots high up and back in a long, stiff curve, so it looks like a hook more than a floppy hat",
+        "where": "the top of Santa's hat",
+        "expected": "The hat tip droops or trails naturally behind his head"
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "A small dark curved shape sticks up from the back end of the deck and is hard to identify",
+        "where": "above the rear wheel",
+        "expected": "The rear of the scooter reads clearly as a fender or brake, or the stray shape is gone"
+      }
+    ]
+  },
+  "attempt": {
+    "summary": "Santa stands on a kick scooter in a snowy night landscape under a full moon, gripping the handlebar and holding a small yellow gift, with a sack of presents on the deck behind him; the figure is readable but stiff and blocky.",
+    "scores": {
+      "main": 4,
+      "background": 5,
+      "count": 5,
+      "shape": 3,
+      "contact": 4,
+      "clean": 4,
+      "color": 5
+    },
+    "defects": [
+      {
+        "criterion": "shape",
+        "severity": "major",
+        "what": "Santa's body is built from stiff, narrow rectangles, with thin straight legs and arms, so he looks thin and wooden instead of round and jolly",
+        "where": "Santa's torso, arms and legs",
+        "expected": "Santa has a rounded, plump body and natural limbs, so he reads at once as a jolly Santa"
+      },
+      {
+        "criterion": "main",
+        "severity": "minor",
+        "what": "Santa's face and beard are small compared to his body, which makes the character harder to recognise",
+        "where": "Santa's head",
+        "expected": "A fuller white beard and a face in proportion, so Santa is instantly recognisable"
+      },
+      {
+        "criterion": "clean",
+        "severity": "minor",
+        "what": "The blue gift sits flat on the front of the sack and reads as a sticker more than a present inside the sack or beside it",
+        "where": "the sack at the back of the deck",
+        "expected": "The gift clearly sticks out of the sack's opening or stands next to it"
+      },
+      {
+        "criterion": "contact",
+        "severity": "minor",
+        "what": "The steering post is not clearly joined to the front of the deck, so the front of the scooter looks loosely put together",
+        "where": "the front of the scooter, where the post meets the deck and wheel",
+        "expected": "The steering post clearly connects the handlebar, the deck and the front wheel as one sturdy scooter"
+      }
+    ]
+  },
+  "not_applicable": []
+}

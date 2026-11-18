@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 19098,
+  "stop_reason": "end_turn",
+  "session_id": "fb6c0ca6-6eb5-4382-b915-38241d4c1688",
+  "total_cost_usd": 0.05525200000000001,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 1896,
+    "cache_read_input_tokens": 12440,
+    "output_tokens": 1879,
+    "output_tokens_details": {
+      "thinking_tokens": 468
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1896,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1708,
+        "cache_read_input_tokens": 6425,
+        "cache_creation_input_tokens": 1486,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1486
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1879,
+      "cacheReadInputTokens": 12440,
+      "cacheCreationInputTokens": 1896,
+      "webSearchRequests": 0,
+      "costUSD": 0.05525200000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 468,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1896,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"images\":{\"A\":{\"summary\":\"Santa stands on a kick scooter, gripping the handlebar and carrying a stack of presents through a snowy night with a moon and pine trees; the drawing is polished, with a few small rough spots around the presents.\",\"scores\":{\"main\":4,\"background\":5,\"count\":4,\"shape\":4,\"contact\":4,\"clean\":3,\"color\":5},\"defects\":[{\"criterion\":\"clean\",\"severity\":\"major\",\"what\":\"A teal curved stroke floats across Santa's shoulder and the presents. It doesn't read as a strap or a sack and looks like a stray shape.\",\"where\":\"Santa's back, left of his head\",\"expected\":\"Any strap or sack holding the presents should be clearly shaped and attached. Otherwise it should not be there.\"},{\"criterion\":\"contact\",\"severity\":\"minor\",\"what\":\"The stack of presents overlaps Santa's arm and torso without being clearly held or strapped, so it seems to hover behind him.\",\"where\":\"the presents at Santa's left side\",\"expected\":\"The presents should clearly rest in Santa's arm, in a sack, or on his back.\"},{\"criterion\":\"clean\",\"severity\":\"minor\",\"what\":\"Green curved shapes behind the wheels show only partly and look like leftover fragments.\",\"where\":\"behind the front and rear wheels\",\"expected\":\"Wheel guards should be clearly shaped. Otherwise only the wheels should show.\"},{\"criterion\":\"shape\",\"severity\":\"minor\",\"what\":\"The scooter deck is very long and low, and the front end connects awkwardly to the stem.\",\"where\":\"the scooter deck and the bottom of the stem\",\"expected\":\"The deck and stem should join cleanly at a believable scooter size.\"}]},\"B\":{\"summary\":\"A simple Santa rides a blue scooter with presents stacked at the back under a 'Merry Christmas!' banner on a snowy night; the figure is crude, has only one arm, and the presents are badly placed.\",\"scores\":{\"main\":3,\"background\":4,\"count\":3,\"shape\":3,\"contact\":3,\"clean\":3,\"color\":5},\"defects\":[{\"criterion\":\"count\",\"severity\":\"major\",\"what\":\"Santa has only one arm. The other is missing completely.\",\"where\":\"Santa's left side\",\"expected\":\"Santa should have two arms, with the second one visible holding on or resting at his side.\"},{\"criterion\":\"contact\",\"severity\":\"major\",\"what\":\"The bottom present sits below the deck and overlaps the rear wheel, so the stack isn't resting on the scooter.\",\"where\":\"the stack of presents at the rear of the scooter\",\"expected\":\"The presents should sit on the scooter deck or be held by Santa, clear of the wheel.\"},{\"criterion\":\"shape\",\"severity\":\"major\",\"what\":\"Santa's body is a plain egg shape with no legs, and the boots stick out from under it. He looks more like a blob than a rider.\",\"where\":\"Santa's body and lower half\",\"expected\":\"Santa should have a recognisable body with legs reaching down to his boots on the deck.\"},{\"criterion\":\"clean\",\"severity\":\"minor\",\"what\":\"A star dot sits on the first letter of the greeting.\",\"where\":\"the 'M' of 'Merry Christmas!' in the upper left\",\"expected\":\"The text should be clear of stars and other shapes.\"},{\"criterion\":\"background\",\"severity\":\"minor\",\"what\":\"The background is sparse: just a few dots and a flat snow hill, with little winter setting.\",\"where\":\"the whole background\",\"expected\":\"The snowy night setting should be clearly shown, for example with falling snow or trees, without pulling attention from Santa.\"}]}},\"not_applicable\":[],\"parity\":false,\"parity_reason\":\"The totals differ by 5 (A 29, B 24), which is more than the allowed 2, so parity is false even though no criterion differs by more than 1 and neither image has a critical defect.\"}",
+  "ttft_ms": 1813,
+  "type": "result",
+  "duration_ms": 19340,
+  "uuid": "07b07b74-2012-4cf8-a0dc-8f4bfcbee2d4",
+  "ttft_stream_ms": 1811,
+  "time_to_request_ms": 151,
+  "first_content_frame_ms": 1811,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-11-22T18:40:48.999Z"
+}
